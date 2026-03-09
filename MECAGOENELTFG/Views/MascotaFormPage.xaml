@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:MECAGOENELTFG.ViewModels"
+             xmlns:converters="clr-namespace:MECAGOENELTFG.Converters"
+             x:Class="MECAGOENELTFG.Views.MascotaFormPage"
+             x:DataType="vm:MascotaFormViewModel"
+             Title="Formulario de Mascota">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:StringIsNotNullOrEmptyConverter x:Key="StringIsNotNullOrEmptyConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView Padding="20">
+        <VerticalStackLayout Spacing="15">
+
+            <Frame BackgroundColor="#E3F2FD" 
+                   Padding="10"
+                   CornerRadius="5"
+                   IsVisible="{Binding NombreCliente, Converter={StaticResource StringIsNotNullOrEmptyConverter}}">
+                <Label Text="{Binding NombreCliente}"
+                       FontAttributes="Bold"
+                       TextColor="#1976D2"
+                       HorizontalOptions="Center" />
+            </Frame>
+
+            <VerticalStackLayout Spacing="5">
+                <Label Text="Nombre de la mascota *"
+                       FontAttributes="Bold"
+                       TextColor="#333" />
+                <Entry Text="{Binding NombreMasc}"
+                       Placeholder="Ej: Max, Luna, Rocky..."
+                       MaxLength="100" />
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Spacing="5">
+                <Label Text="Especie *"
+                       FontAttributes="Bold"
+                       TextColor="#333" />
+                <Picker Title="Seleccione una especie"
+                        ItemsSource="{Binding EspeciesDisponibles}"
+                        SelectedItem="{Binding Especie}" />
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Spacing="5">
+                <Label Text="Raza (opcional)"
+                       FontAttributes="Bold"
+                       TextColor="#333" />
+                <Entry Text="{Binding Raza}"
+                       Placeholder="Ej: Golden Retriever, Siamés..."
+                       MaxLength="100" />
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Spacing="5">
+                <Label Text="Edad (años, opcional)"
+                       FontAttributes="Bold"
+                       TextColor="#333" />
+                <Entry Text="{Binding Edad}"
+                       Placeholder="Ingrese la edad en años"
+                       Keyboard="Numeric"
+                       MaxLength="2" />
+            </VerticalStackLayout>
+
+            <Label Text="* Campos obligatorios"
+                   FontSize="12"
+                   TextColor="Gray"
+                   Margin="0,10,0,0" />
+
+            <Grid ColumnDefinitions="*,*"
+                  ColumnSpacing="10"
+                  Margin="0,20,0,0">
+
+                <Button Grid.Column="0"
+                        Text="💾 Guardar"
+                        Command="{Binding GuardarCommand}"
+                        BackgroundColor="#4CAF50"
+                        TextColor="White"
+                        HeightRequest="50" />
+
+                <Button Grid.Column="1"
+                        Text="❌ Cancelar"
+                        Command="{Binding CancelarCommand}"
+                        BackgroundColor="#F44336"
+                        TextColor="White"
+                        HeightRequest="50" />
+            </Grid>
+
+            <ActivityIndicator IsRunning="{Binding IsLoading}"
+                               IsVisible="{Binding IsLoading}"
+                               Color="#2196F3"
+                               WidthRequest="50"
+                               HeightRequest="50"
+                               Margin="0,20,0,0"
+                               HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

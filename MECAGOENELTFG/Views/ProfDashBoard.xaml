@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:MECAGOENELTFG.ViewModels"
+             x:Class="MECAGOENELTFG.Views.ProfDashBoard"
+             Title="ProfDashBoard"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.BindingContext>
+        <vm:ProfDashBoardModelView />
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="24" Spacing="24">
+
+            <!-- CABECERA -->
+            <Image Source="salovet_logo1.png"
+                   HeightRequest="350"
+                   Aspect="AspectFit"
+                   HorizontalOptions="Center" />
+
+            <Label Text="Panel de Profesional"
+                   FontSize="22"
+                   FontAttributes="Bold"
+                   TextColor="#1A3C6E"
+                   HorizontalOptions="Center" />
+
+            <Label Text="¿Qué quieres gestionar hoy?"
+                   FontSize="14"
+                   TextColor="#555555"
+                   HorizontalOptions="Center" />
+
+            <!-- GRID 2x2 -->
+            <Grid ColumnDefinitions="*,*"
+                  RowDefinitions="Auto,Auto"
+                  ColumnSpacing="16"
+                  RowSpacing="16">
+
+                <!-- CLIENTES -->
+                <Border Grid.Row="0" Grid.Column="0"
+                        BackgroundColor="White"
+                        StrokeShape="RoundRectangle 16"
+                        Stroke="Transparent"
+                        Padding="20">
+                    <Border.Shadow>
+                        <Shadow Brush="Black" Offset="0,4" Radius="12" Opacity="0.1" />
+                    </Border.Shadow>
+                    <VerticalStackLayout Spacing="12"
+                                         HorizontalOptions="Center">
+                        <Label Text="👤"
+                               FontSize="36"
+                               HorizontalOptions="Center" />
+                        <Label Text="Clientes"
+                               FontSize="16"
+                               FontAttributes="Bold"
+                               TextColor="#1A3C6E"
+                               HorizontalOptions="Center" />
+                        <Button Text="Gestionar"
+                                Command="{Binding IrAClientesCommand}"
+                                BackgroundColor="#1A3C6E"
+                                TextColor="White"
+                                CornerRadius="8"
+                                FontSize="13"
+                                HeightRequest="38" />
+                    </VerticalStackLayout>
+                </Border>
+
+                <!-- MASCOTAS -->
+                <Border Grid.Row="0" Grid.Column="1"
+                        BackgroundColor="White"
+                        StrokeShape="RoundRectangle 16"
+                        Stroke="Transparent"
+                        Padding="20">
+                    <Border.Shadow>
+                        <Shadow Brush="Black" Offset="0,4" Radius="12" Opacity="0.1" />
+                    </Border.Shadow>
+                    <VerticalStackLayout Spacing="12"
+                                         HorizontalOptions="Center">
+                        <Label Text="🐾"
+                               FontSize="36"
+                               HorizontalOptions="Center" />
+                        <Label Text="Mascotas"
+                               FontSize="16"
+                               FontAttributes="Bold"
+                               TextColor="#1A3C6E"
+                               HorizontalOptions="Center" />
+                        <Button Text="Gestionar"
+                                Command="{Binding IrAMascotasCommand}"
+                                BackgroundColor="#1A3C6E"
+                                TextColor="White"
+                                CornerRadius="8"
+                                FontSize="13"
+                                HeightRequest="38" />
+                    </VerticalStackLayout>
+                </Border>
+
+                <!-- CITAS -->
+                <Border Grid.Row="1" Grid.Column="0"
+                        BackgroundColor="White"
+                        StrokeShape="RoundRectangle 16"
+                        Stroke="Transparent"
+                        Padding="20">
+                    <Border.Shadow>
+                        <Shadow Brush="Black" Offset="0,4" Radius="12" Opacity="0.1" />
+                    </Border.Shadow>
+                    <VerticalStackLayout Spacing="12"
+                                         HorizontalOptions="Center">
+                        <Label Text="📅"
+                               FontSize="36"
+                               HorizontalOptions="Center" />
+                        <Label Text="Citas"
+                               FontSize="16"
+                               FontAttributes="Bold"
+                               TextColor="#1A3C6E"
+                               HorizontalOptions="Center" />
+                        <Button Text="Gestionar"
+                                Command="{Binding IrACitasCommand}"
+                                BackgroundColor="#1A3C6E"
+                                TextColor="White"
+                                CornerRadius="8"
+                                FontSize="13"
+                                HeightRequest="38" />
+                    </VerticalStackLayout>
+                </Border>
+
+                <!-- MEDICAMENTOS -->
+                <Border Grid.Row="1" Grid.Column="1"
+                        BackgroundColor="White"
+                        StrokeShape="RoundRectangle 16"
+                        Stroke="Transparent"
+                        Padding="20">
+                    <Border.Shadow>
+                        <Shadow Brush="Black" Offset="0,4" Radius="12" Opacity="0.1" />
+                    </Border.Shadow>
+                    <VerticalStackLayout Spacing="12"
+                                         HorizontalOptions="Center">
+                        <Label Text="💊"
+                               FontSize="36"
+                               HorizontalOptions="Center" />
+                        <Label Text="Medicamentos"
+                               FontSize="16"
+                               FontAttributes="Bold"
+                               TextColor="#1A3C6E"
+                               HorizontalOptions="Center" />
+                        <Button Text="Gestionar"
+                                Command="{Binding IrAMedicamentosCommand}"
+                                BackgroundColor="#1A3C6E"
+                                TextColor="White"
+                                CornerRadius="8"
+                                FontSize="13"
+                                HeightRequest="38" />
+                    </VerticalStackLayout>
+                </Border>
+
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

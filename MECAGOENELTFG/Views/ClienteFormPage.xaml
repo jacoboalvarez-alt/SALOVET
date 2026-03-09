@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MECAGOENELTFG.Views.ClienteFormPage"
+             Title="ClienteFormPage">
+    <ScrollView Padding="20">
+        <VerticalStackLayout Spacing="15">
+
+            <!-- Nombre -->
+            <VerticalStackLayout Spacing="5">
+                <Label Text="Nombre *" 
+                       FontAttributes="Bold"
+                       TextColor="#333" />
+                <Entry Text="{Binding NombreCli}"
+                       Placeholder="Ingrese el nombre"
+                       MaxLength="200" />
+            </VerticalStackLayout>
+
+            <!-- Apellido -->
+            <VerticalStackLayout Spacing="5">
+                <Label Text="Apellido *" 
+                       FontAttributes="Bold"
+                       TextColor="#333" />
+                <Entry Text="{Binding ApeCli}"
+                       Placeholder="Ingrese el apellido"
+                       MaxLength="100" />
+            </VerticalStackLayout>
+
+            <!-- Edad -->
+            <VerticalStackLayout Spacing="5">
+                <Label Text="Edad *" 
+                       FontAttributes="Bold"
+                       TextColor="#333" />
+                <Entry Text="{Binding Edad}"
+                       Placeholder="Ingrese la edad"
+                       Keyboard="Numeric"
+                       MaxLength="3" />
+            </VerticalStackLayout>
+
+            <!-- Correo -->
+            <VerticalStackLayout Spacing="5">
+                <Label Text="Correo electrónico *" 
+                       FontAttributes="Bold"
+                       TextColor="#333" />
+                <Entry Text="{Binding Correo}"
+                       Placeholder="ejemplo@email.com"
+                       Keyboard="Email"
+                       MaxLength="100" />
+            </VerticalStackLayout>
+
+            <!-- Teléfono -->
+            <VerticalStackLayout Spacing="5">
+                <Label Text="Teléfono (opcional)" 
+                       FontAttributes="Bold"
+                       TextColor="#333" />
+                <Entry Text="{Binding Tel}"
+                       Placeholder="Ingrese el teléfono"
+                       Keyboard="Telephone"
+                       MaxLength="100" />
+            </VerticalStackLayout>
+
+            <!-- Nota -->
+            <Label Text="* Campos obligatorios"
+                   FontSize="12"
+                   TextColor="Gray"
+                   Margin="0,10,0,0" />
+
+            <!-- Botones -->
+            <Grid ColumnDefinitions="*,*" 
+                  ColumnSpacing="10"
+                  Margin="0,20,0,0">
+
+                <Button Grid.Column="0"
+                        Text="💾 Guardar"
+                        Command="{Binding GuardarCommand}"
+                        BackgroundColor="#4CAF50"
+                        TextColor="White"
+                        HeightRequest="50" />
+
+                <Button Grid.Column="1"
+                        Text="❌ Cancelar"
+                        Command="{Binding CancelarCommand}"
+                        BackgroundColor="#F44336"
+                        TextColor="White"
+                        HeightRequest="50" />
+            </Grid>
+
+            <!-- Indicador de carga -->
+            <ActivityIndicator IsRunning="{Binding IsLoading}"
+                              IsVisible="{Binding IsLoading}"
+                              Color="#2196F3"
+                              WidthRequest="50"
+                              HeightRequest="50"
+                              Margin="0,20,0,0"
+                              HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

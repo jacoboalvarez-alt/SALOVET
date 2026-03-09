@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:MECAGOENELTFG.ViewModels"
+             x:Class="MECAGOENELTFG.Views.ClientesPage"
+             x:DataType="vm:ClientesViewModel"
+             Title="Gestion de Clientes">
+    
+    <Grid RowDefinitions="Auto,*" Padding="10">
+
+        <!-- Encabezado con botón agregar -->
+        <HorizontalStackLayout Grid.Row="0" 
+                               Spacing="10" 
+                               Margin="0,0,0,10">
+            <Button Text="➕ Agregar Cliente"
+                    Command="{Binding AgregarClienteCommand}"
+                    BackgroundColor="#4CAF50"
+                    TextColor="White" />
+
+            <Button Text="🔄 Refrescar"
+                    Command="{Binding CargarClientesCommand}"
+                    BackgroundColor="#2196F3"
+                    TextColor="White" />
+        </HorizontalStackLayout>
+
+        <!-- Tabla de Clientes -->
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Spacing="0">
+
+                <!-- Encabezado de la tabla -->
+                <Grid ColumnDefinitions="40,*,*,80,150,80,120" 
+                      BackgroundColor="#E0E0E0"
+                      Padding="10,15"
+                      Margin="0,0,0,2">
+                    <Label Grid.Column="0" Text="ID" FontAttributes="Bold" />
+                    <Label Grid.Column="1" Text="Nombre" FontAttributes="Bold" />
+                    <Label Grid.Column="2" Text="Apellido" FontAttributes="Bold" />
+                    <Label Grid.Column="3" Text="Edad" FontAttributes="Bold" />
+                    <Label Grid.Column="4" Text="Correo" FontAttributes="Bold" />
+                    <Label Grid.Column="5" Text="Teléfono" FontAttributes="Bold" />
+                    <Label Grid.Column="6" Text="Acciones" FontAttributes="Bold" HorizontalOptions="Center" />
+                </Grid>
+
+                <!-- Filas de datos -->
+                <CollectionView ItemsSource="{Binding Clientes}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid ColumnDefinitions="40,*,*,80,150,80,120" 
+                                  BackgroundColor="White"
+                                  Padding="10"
+                                  Margin="0,0,0,1">
+
+                                <!-- ID -->
+                                <Label Grid.Column="0" 
+                                       Text="{Binding IdCliente}" 
+                                       VerticalOptions="Center" />
+
+                                <!-- Nombre -->
+                                <Label Grid.Column="1" 
+                                       Text="{Binding NombreCli}" 
+                                       VerticalOptions="Center" />
+
+                                <!-- Apellido -->
+                                <Label Grid.Column="2" 
+                                       Text="{Binding ApeCli}" 
+                                       VerticalOptions="Center" />
+
+                                <!-- Edad -->
+                                <Label Grid.Column="3" 
+                                       Text="{Binding Edad}" 
+                                       VerticalOptions="Center" />
+
+                                <!-- Correo -->
+                                <Label Grid.Column="4" 
+                                       Text="{Binding Correo}" 
+                                       FontSize="12"
+                                       VerticalOptions="Center" />
+
+                                <!-- Teléfono -->
+                                <Label Grid.Column="5" 
+                                       Text="{Binding Tel}" 
+                                       VerticalOptions="Center" />
+
+                                <!-- Botones de acción -->
+                                <HorizontalStackLayout Grid.Column="6" 
+                                                       Spacing="5"
+                                                       HorizontalOptions="Center">
+
+                                    <!-- Botón Ver Mascotas -->
+                                    <Button Text="🐾"
+                                            ToolTipProperties.Text="Ver mascotas"
+                                            Command="{Binding Source={RelativeSource AncestorType={x:Type vm:ClientesViewModel}}, Path=VerMascotasCommand}"
+                                            CommandParameter="{Binding .}"
+                                            BackgroundColor="#FF9800"
+                                            TextColor="White"
+                                            WidthRequest="40"
+                                            HeightRequest="35"
+                                            Padding="0"
+                                            FontSize="16" />
+
+                                    <!-- Botón Editar -->
+                                    <Button Text="✏️"
+                                            ToolTipProperties.Text="Editar"
+                                            Command="{Binding Source={RelativeSource AncestorType={x:Type vm:ClientesViewModel}}, Path=EditarClienteCommand}"
+                                            CommandParameter="{Binding .}"
+                                            BackgroundColor="#2196F3"
+                                            TextColor="White"
+                                            WidthRequest="40"
+                                            HeightRequest="35"
+                                            Padding="0"
+                                            FontSize="16" />
+
+                                    <!-- Botón Eliminar -->
+                                    <Button Text="🗑️"
+                                            ToolTipProperties.Text="Eliminar"
+                                            Command="{Binding Source={RelativeSource AncestorType={x:Type vm:ClientesViewModel}}, Path=EliminarClienteCommand}"
+                                            CommandParameter="{Binding .}"
+                                            BackgroundColor="#F44336"
+                                            TextColor="White"
+                                            WidthRequest="40"
+                                            HeightRequest="35"
+                                            Padding="0"
+                                            FontSize="16" />
+                                </HorizontalStackLayout>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <!-- Mensaje cuando no hay datos -->
+                <Label Text="No hay clientes registrados"
+                       IsVisible="{Binding Clientes.Count, Converter={StaticResource IsZeroConverter}}"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       Margin="0,50,0,0"
+                       FontSize="18"
+                       TextColor="Gray" />
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- Indicador de carga -->
+        <ActivityIndicator Grid.Row="1"
+                          IsRunning="{Binding IsLoading}"
+                          IsVisible="{Binding IsLoading}"
+                          Color="#2196F3"
+                          WidthRequest="50"
+                          HeightRequest="50"
+                          HorizontalOptions="Center"
+                          VerticalOptions="Center" />
+    </Grid>
+</ContentPage>

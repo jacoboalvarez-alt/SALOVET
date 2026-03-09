@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:MECAGOENELTFG.ViewModels"
+             x:Class="MECAGOENELTFG.Views.Registro"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="#EEF2F7"
+             Title="Registro">
+
+    <ContentPage.BindingContext>
+        <vm:RegistroViewModel />
+    </ContentPage.BindingContext>
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30"
+            Spacing="24"
+            VerticalOptions="Center">
+
+            <!-- LOGO -->
+            <Image Source="salovet_logo1.png"
+                   HeightRequest="120"
+                   Aspect="AspectFit"
+                   HorizontalOptions="Center" />
+
+            <!-- TARJETA DATOS PERSONALES -->
+            <Border BackgroundColor="White"
+                    StrokeShape="RoundRectangle 16"
+                    Stroke="Transparent"
+                    Padding="24">
+                <Border.Shadow>
+                    <Shadow Brush="Black"
+                            Offset="0,4"
+                            Radius="12"
+                            Opacity="0.1" />
+                </Border.Shadow>
+
+                <VerticalStackLayout Spacing="16">
+
+                    <Label Text="Datos Personales"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           TextColor="#1A3C6E"
+                           HorizontalOptions="Center" />
+
+                    <!-- NOMBRE -->
+                    <VerticalStackLayout Spacing="4">
+                        <Label Text="Nombre *"
+                               FontSize="13"
+                               TextColor="#555555" />
+                        <Entry Placeholder="Introduce tu nombre"
+                               Text="{Binding Nombre}"
+                               PlaceholderColor="#AAAAAA"
+                               TextColor="#1A1A1A"
+                               BackgroundColor="#F5F7FA"
+                               HeightRequest="48" />
+                    </VerticalStackLayout>
+
+                    <!-- APELLIDO -->
+                    <VerticalStackLayout Spacing="4">
+                        <Label Text="Apellido *"
+                               FontSize="13"
+                               TextColor="#555555" />
+                        <Entry Placeholder="Introduce tu apellido"
+                               Text="{Binding Apellidos}"
+                               PlaceholderColor="#AAAAAA"
+                               TextColor="#1A1A1A"
+                               BackgroundColor="#F5F7FA"
+                               HeightRequest="48" />
+                    </VerticalStackLayout>
+
+                    <!-- EDAD -->
+                    <VerticalStackLayout Spacing="4">
+                        <Label Text="Edad *"
+                               FontSize="13"
+                               TextColor="#555555" />
+                        <Entry Placeholder="Introduce tu edad"
+                               Text="{Binding Edad}"
+                               Keyboard="Numeric"
+                               PlaceholderColor="#AAAAAA"
+                               TextColor="#1A1A1A"
+                               BackgroundColor="#F5F7FA"
+                               HeightRequest="48" />
+                    </VerticalStackLayout>
+
+                    <!-- CORREO -->
+                    <VerticalStackLayout Spacing="4">
+                        <Label Text="Correo electrónico *"
+                               FontSize="13"
+                               TextColor="#555555" />
+                        <Entry Placeholder="Introduce tu correo"
+                               Text="{Binding Correo}"
+                               Keyboard="Email"
+                               PlaceholderColor="#AAAAAA"
+                               TextColor="#1A1A1A"
+                               BackgroundColor="#F5F7FA"
+                               HeightRequest="48" />
+                    </VerticalStackLayout>
+
+                    <!-- TELÉFONO -->
+                    <VerticalStackLayout Spacing="4">
+                        <Label Text="Teléfono"
+                               FontSize="13"
+                               TextColor="#555555" />
+                        <Entry Placeholder="Introduce tu teléfono (opcional)"
+                               Text="{Binding Telefono}"
+                               Keyboard="Telephone"
+                               PlaceholderColor="#AAAAAA"
+                               TextColor="#1A1A1A"
+                               BackgroundColor="#F5F7FA"
+                               HeightRequest="48" />
+                    </VerticalStackLayout>
+
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- TARJETA CREDENCIALES -->
+            <Border BackgroundColor="White"
+                    StrokeShape="RoundRectangle 16"
+                    Stroke="Transparent"
+                    Padding="24">
+                <Border.Shadow>
+                    <Shadow Brush="Black"
+                            Offset="0,4"
+                            Radius="12"
+                            Opacity="0.1" />
+                </Border.Shadow>
+
+                <VerticalStackLayout Spacing="16">
+
+                    <Label Text="Credenciales"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           TextColor="#1A3C6E"
+                           HorizontalOptions="Center" />
+
+                    <!-- USERNAME -->
+                    <VerticalStackLayout Spacing="4">
+                        <Label Text="Usuario *"
+                               FontSize="13"
+                               TextColor="#555555" />
+                        <Entry Placeholder="Elige un nombre de usuario"
+                               Text="{Binding Usuario}"
+                               PlaceholderColor="#AAAAAA"
+                               TextColor="#1A1A1A"
+                               BackgroundColor="#F5F7FA"
+                               HeightRequest="48" />
+                    </VerticalStackLayout>
+
+                    <!-- PASSWORD -->
+                    <VerticalStackLayout Spacing="4">
+                        <Label Text="Contraseña *"
+                               FontSize="13"
+                               TextColor="#555555" />
+                        <Entry Placeholder="Elige una contraseña"
+                               Text="{Binding Pass}"
+                               IsPassword="True"
+                               PlaceholderColor="#AAAAAA"
+                               TextColor="#1A1A1A"
+                               BackgroundColor="#F5F7FA"
+                               HeightRequest="48" />
+                    </VerticalStackLayout>
+
+                    <!-- CONFIRMAR PASSWORD -->
+                    <VerticalStackLayout Spacing="4">
+                        <Label Text="Confirmar contraseña *"
+                               FontSize="13"
+                               TextColor="#555555" />
+                        <Entry Placeholder="Repite tu contraseña"
+                               Text="{Binding ConfirmarPass}"
+                               IsPassword="True"
+                               PlaceholderColor="#AAAAAA"
+                               TextColor="#1A1A1A"
+                               BackgroundColor="#F5F7FA"
+                               HeightRequest="48" />
+                    </VerticalStackLayout>
+
+                    <!-- ERROR MESSAGE -->
+                    <Label Text="{Binding MensajeError}"
+                           TextColor="#E53935"
+                           FontSize="12"
+                           HorizontalOptions="Center"
+                           IsVisible="{Binding MensajeError, Converter={x:StaticResource StringToBoolConverter}}" />
+
+                    <!-- BOTÓN REGISTRO -->
+                    <Button Text="Crear cuenta"
+                            Command="{Binding RegistrarCommand}"
+                            BackgroundColor="#1A3C6E"
+                            TextColor="White"
+                            FontAttributes="Bold"
+                            CornerRadius="10"
+                            HeightRequest="50"
+                            IsEnabled="{Binding IsLoading, Converter={x:StaticResource InvertedBoolConverter}}" />
+
+                    <!-- LOADING -->
+                    <ActivityIndicator IsRunning="{Binding IsLoading}"
+                                       IsVisible="{Binding IsLoading}"
+                                       Color="#1A3C6E"
+                                       HorizontalOptions="Center" />
+
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- VOLVER AL LOGIN -->
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="4">
+                <Label Text="¿Ya tienes cuenta?"
+                       TextColor="#555555"
+                       FontSize="14"
+                       VerticalOptions="Center" />
+                <Label Text="Inicia sesión"
+                       TextColor="#1A3C6E"
+                       FontSize="14"
+                       FontAttributes="Bold"
+                       VerticalOptions="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding IrALoginCommand}" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
