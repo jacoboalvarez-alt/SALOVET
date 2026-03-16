@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:MECAGOENELTFG.ViewModels"
              x:Class="MECAGOENELTFG.Views.MascotasGeneralPage"
-             Title="MascotasGeneralPage">
+             Title="MascotasGeneralPage"
+             BackgroundImageSource="fondo2.png"
+             Shell.NavBarIsVisible="False">
 
     <ContentPage.BindingContext>
         <vm:MascotasGeneralPageViewModel/>
@@ -11,10 +13,22 @@
     
     
     <VerticalStackLayout>
-        
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <Button Text="Volver"
+        Command="{Binding IrADashboardCommand}"
+        BackgroundColor="#2EBBB0"
+        TextColor="White"
+        HorizontalOptions="End"
+        WidthRequest="140"
+        VerticalOptions="End" Margin="0,5,10,0"/>
+
+        <Label Text="Mascotas"
+               FontSize="50"
+               Margin="10"
+               FontAttributes="Bold,Italic"
+               FontFamily="Notedry"
+               TextColor="White"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"/>
+
     </VerticalStackLayout>
 </ContentPage>

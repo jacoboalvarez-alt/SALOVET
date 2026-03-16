@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+
+    <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:MECAGOENELTFG.ViewModels"
              x:Class="MECAGOENELTFG.Views.Login"
@@ -17,21 +17,21 @@
             <Image Source="salovet_logo1.png" HeightRequest="350" Aspect="AspectFit" HorizontalOptions="Center" />
         
             <!--ESPACIO PARA FORMULARIO-->
-            <Border BackgroundColor="White" StrokeShape="RoundRectangle 16" Stroke="Transparent" Padding="24">
+            <Border BackgroundColor="White" StrokeShape="RoundRectangle 16" Stroke="Transparent" Padding="24" WidthRequest="600">
                 <Border.Shadow>
                     <Shadow Brush="Black" Offset="0,4" Radius="12" Opacity="0.1"></Shadow>          
                 </Border.Shadow>
             
                 <VerticalStackLayout Spacing="16">
                     <!--LABEL DE INICIO DE SESION-->
-                    <Label Text="Iniciar Sesion" FontSize="22" FontAttributes="Bold" TextColor="Black" HorizontalOptions="Center"/>
+                    <Label Text="Iniciar Sesion" FontSize="22" FontAttributes="Bold" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center" />
                     
                     <!-- USUARIO-->
                     <VerticalStackLayout Padding="4">
-                    <Label Text="Usuario" FontSize="22" TextColor="Black"/>
+                    <Label Text="Usuario" FontSize="22" TextColor="Black" HorizontalOptions="Start" /> 
                     <Entry Placeholder="Introduce tu usuario: Ex: usario123" PlaceholderColor="#AAAAAA" 
                            TextColor="Black" BackgroundColor="#F5F7FA"
-                           HeightRequest="45" Text="{Binding Username}"  
+                           HeightRequest="45" WidthRequest="490" MinimumWidthRequest="250" MaximumWidthRequest="600" Text="{Binding Username}"  
                        />
                     </VerticalStackLayout>
 
@@ -39,7 +39,9 @@
                     <VerticalStackLayout Padding="4">
                         <Label Text="Contraseña" FontSize="22" TextColor="Black" />
                         <Entry Placeholder="Introduce tu Contraseña: " PlaceholderColor="#AAAAAA"
-                               TextColor="Black" BackgroundColor="#F5F7FA"  HeightRequest="45" Text="{Binding Password}"  />
+                               TextColor="Black" BackgroundColor="#F5F7FA"  HeightRequest="45" Text="{Binding Password}" WidthRequest="490" 
+                               MinimumWidthRequest="250" MaximumWidthRequest="600"
+                               />
                     </VerticalStackLayout>
 
                     <!--MENSAJE PARA ERRORES-->

@@ -1,27 +1,41 @@
 ﻿using MECAGOENELTFG.Models;
 using System.Net.Http.Json;
+using System.Text.Json;
 
 namespace MECAGOENELTFG.Services
 {
     public class ClienteApiService
     {
         private readonly HttpClient _httpClient;
-        private const string BaseUrl = "http://localhost:4000/api/clientes";
+        private const string BaseUrl = "http://localhost:5201/api/clientes";
+        private readonly JsonSerializerOptions _jsonOptions;
 
         public ClienteApiService()
         {
             _httpClient = new HttpClient();
+            _jsonOptions = new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true,
+                ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles
+            };
         }
 
         public async Task<List<Cliente>> ObtenerTodos()
         {
             try
             {
-                return await _httpClient.GetFromJsonAsync<List<Cliente>>(BaseUrl) ?? new List<Cliente>();
+                var json = await _httpClient.GetStringAsync(BaseUrl);
+                Console.WriteLine($"JSON recibido: {json}");
+
+                var lista = JsonSerializer.Deserialize<List<Cliente>>(json, _jsonOptions);
+                Console.WriteLine($"Clientes deserializados: {lista?.Count ?? 0}");
+
+                return lista ?? new List<Cliente>();
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error al obtener clientes: {ex.Message}");
+                // Muestra el error completo con stack trace
+                Console.WriteLine($"ERROR COMPLETO: {ex}");
                 return new List<Cliente>();
             }
         }

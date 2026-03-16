@@ -1361,3 +1361,13 @@ D:\TFG\MECAGOENELTFG\MECAGOENELTFG\obj\Debug\net9.0-android\android\bin\com.comp
 D:\TFG\MECAGOENELTFG\MECAGOENELTFG\obj\Debug\net9.0-android\android\src\com\companyname\mecagoeneltfg\R.java
 D:\TFG\MECAGOENELTFG\MECAGOENELTFG\obj\Debug\net9.0-android\resizetizer\r\drawable\salovet_logo1.png
 D:\TFG\MECAGOENELTFG\MECAGOENELTFG\obj\Debug\net9.0-android\resizetizer\r\drawable\fondo1.png
+D:\TFG\MECAGOENELTFG\MECAGOENELTFG\obj\Debug\net9.0-android\MECAGOENELTFG.sourcelink.json
+D:\TFG\MECAGOENELTFG\MECAGOENELTFG\obj\Debug\net9.0-android\resizetizer\f\Euphorigenic.otf
+D:\TFG\MECAGOENELTFG\MECAGOENELTFG\obj\Debug\net9.0-android\resizetizer\f\Notedry.ttf
+D:\TFG\MECAGOENELTFG\MECAGOENELTFG\obj\Debug\net9.0-android\resizetizer\f\PrinceOutfitDemoRegular.ttf
+D:\TFG\MECAGOENELTFG\MECAGOENELTFG\obj\Debug\net9.0-android\resizetizer\r\drawable\fondo2.png
+D:\TFG\MECAGOENELTFG\MECAGOENELTFG\obj\Debug\net9.0-android\assets\Euphorigenic.otf
+D:\TFG\MECAGOENELTFG\MECAGOENELTFG\obj\Debug\net9.0-android\assets\Notedry.ttf
+D:\TFG\MECAGOENELTFG\MECAGOENELTFG\obj\Debug\net9.0-android\assets\PrinceOutfitDemoRegular.ttf
+D:\TFG\MECAGOENELTFG\MECAGOENELTFG\obj\Debug\net9.0-android\resizetizer\f\Nunito-Regular.ttf
+D:\TFG\MECAGOENELTFG\MECAGOENELTFG\obj\Debug\net9.0-android\assets\Nunito-Regular.ttf

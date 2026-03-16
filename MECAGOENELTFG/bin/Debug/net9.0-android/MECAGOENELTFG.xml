@@ -34,6 +34,15 @@
             Maneja el 409 Conflict si el username ya existe.
             </summary>
         </member>
+        <member name="T:MECAGOENELTFG.ViewModels.CitasViewModel">
+            <inheritdoc/>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels.CitasViewModel.irADashboardCommand">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels.CitasViewModel.IrADashboardCommand"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.CitasViewModel.IrADashboardCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.CitasViewModel.IrADashboard"/>.</summary>
+        </member>
         <member name="T:MECAGOENELTFG.ViewModels.ClienteFormViewModel">
             <inheritdoc/>
             <inheritdoc/>
@@ -210,6 +219,15 @@
         <member name="P:MECAGOENELTFG.ViewModels.MascotaFormViewModel.CancelarCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.MascotaFormViewModel.Cancelar"/>.</summary>
         </member>
+        <member name="T:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel">
+            <inheritdoc/>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel.irADashboardCommand">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel.IrADashboardCommand"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel.IrADashboardCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel.IrADashboard"/>.</summary>
+        </member>
         <member name="T:MECAGOENELTFG.ViewModels.MascotasViewModel">
             <inheritdoc/>
             <inheritdoc/>
@@ -265,7 +283,17 @@
         <member name="P:MECAGOENELTFG.ViewModels.MascotasViewModel.VolverCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.MascotasViewModel.Volver"/>.</summary>
         </member>
+        <member name="T:MECAGOENELTFG.ViewModels.MedicamentosViewModel">
+            <inheritdoc/>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels.MedicamentosViewModel.irADashboardCommand">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels.MedicamentosViewModel.IrADashboardCommand"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.MedicamentosViewModel.IrADashboardCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.MedicamentosViewModel.IrADashboard"/>.</summary>
+        </member>
         <member name="T:MECAGOENELTFG.ViewModels.ProfDashBoardModelView">
+            <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
@@ -294,6 +322,12 @@
         </member>
         <member name="P:MECAGOENELTFG.ViewModels.ProfDashBoardModelView.IrAMedicamentosCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.ProfDashBoardModelView.IrAMedicamentos"/>.</summary>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels.ProfDashBoardModelView.irALoginCommand">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels.ProfDashBoardModelView.IrALoginCommand"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.ProfDashBoardModelView.IrALoginCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.ProfDashBoardModelView.IrALogin"/>.</summary>
         </member>
         <member name="T:MECAGOENELTFG.ViewModels.RegistroViewModel">
             <inheritdoc/>

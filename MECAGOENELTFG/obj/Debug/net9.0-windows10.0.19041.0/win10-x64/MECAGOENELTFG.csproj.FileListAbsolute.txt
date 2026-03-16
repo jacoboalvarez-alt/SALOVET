@@ -188,3 +188,9 @@ D:\TFG\MECAGOENELTFG\MECAGOENELTFG\obj\Debug\net9.0-windows10.0.19041.0\win10-x6
 D:\TFG\MECAGOENELTFG\MECAGOENELTFG\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\ProjectArchitectures.txt
 D:\TFG\MECAGOENELTFG\MECAGOENELTFG\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\salovet_logo1.scale-100.png
 D:\TFG\MECAGOENELTFG\MECAGOENELTFG\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\fondo1.scale-100.png
+D:\TFG\MECAGOENELTFG\MECAGOENELTFG\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\MECAGOENELTFG.sourcelink.json
+D:\TFG\MECAGOENELTFG\MECAGOENELTFG\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\f\Euphorigenic.otf
+D:\TFG\MECAGOENELTFG\MECAGOENELTFG\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\f\Notedry.ttf
+D:\TFG\MECAGOENELTFG\MECAGOENELTFG\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\f\PrinceOutfitDemoRegular.ttf
+D:\TFG\MECAGOENELTFG\MECAGOENELTFG\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\fondo2.scale-100.png
+D:\TFG\MECAGOENELTFG\MECAGOENELTFG\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\f\Nunito-Regular.ttf

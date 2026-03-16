@@ -20,6 +20,7 @@ namespace MECAGOENELTFG
             Routing.RegisterRoute("ClientesPage",typeof(ClientesPage));
             Routing.RegisterRoute("CitasPage",typeof(CitasPage));
             Routing.RegisterRoute("MedicamentosPage", typeof(MedicamentosPage));
+            
 
             //CLIENTES
             Routing.RegisterRoute("ClientDashBoard", typeof(ClientDashBoard));

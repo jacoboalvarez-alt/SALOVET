@@ -294,3 +294,9 @@ D:\TFG\MECAGOENELTFG\MECAGOENELTFG\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\
 D:\TFG\MECAGOENELTFG\MECAGOENELTFG\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\ref\MECAGOENELTFG.dll
 D:\TFG\MECAGOENELTFG\MECAGOENELTFG\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\r\Resources\salovet_logo1.png
 D:\TFG\MECAGOENELTFG\MECAGOENELTFG\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\r\Resources\fondo1.png
+D:\TFG\MECAGOENELTFG\MECAGOENELTFG\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\MECAGOENELTFG.sourcelink.json
+D:\TFG\MECAGOENELTFG\MECAGOENELTFG\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\r\Resources\fondo2.png
+D:\TFG\MECAGOENELTFG\MECAGOENELTFG\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\f\Euphorigenic.otf
+D:\TFG\MECAGOENELTFG\MECAGOENELTFG\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\f\Notedry.ttf
+D:\TFG\MECAGOENELTFG\MECAGOENELTFG\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\f\PrinceOutfitDemoRegular.ttf
+D:\TFG\MECAGOENELTFG\MECAGOENELTFG\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\f\Nunito-Regular.ttf

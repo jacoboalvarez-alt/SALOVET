@@ -4,7 +4,7 @@
              xmlns:vm="clr-namespace:MECAGOENELTFG.ViewModels"
              x:Class="MECAGOENELTFG.Views.Registro"
              Shell.NavBarIsVisible="False"
-             BackgroundColor="#EEF2F7"
+             BackgroundImageSource="fondo2.png"
              Title="Registro">
 
     <ContentPage.BindingContext>
@@ -18,7 +18,7 @@
 
             <!-- LOGO -->
             <Image Source="salovet_logo1.png"
-                   HeightRequest="120"
+                   HeightRequest="240"
                    Aspect="AspectFit"
                    HorizontalOptions="Center" />
 
@@ -26,6 +26,7 @@
             <Border BackgroundColor="White"
                     StrokeShape="RoundRectangle 16"
                     Stroke="Transparent"
+                    WidthRequest="500"
                     Padding="24">
                 <Border.Shadow>
                     <Shadow Brush="Black"
@@ -117,7 +118,8 @@
             <Border BackgroundColor="White"
                     StrokeShape="RoundRectangle 16"
                     Stroke="Transparent"
-                    Padding="24">
+                    Padding="24"
+                    WidthRequest="500">
                 <Border.Shadow>
                     <Shadow Brush="Black"
                             Offset="0,4"

@@ -2,11 +2,22 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MECAGOENELTFG.Views.ClientDashBoard"
-             Title="ClientDashBoard">
+             xmlns:vm="clr-namespace:MECAGOENELTFG.ViewModels"
+             Title="ClientDashBoard"
+             BackgroundImageSource="fondo3.png"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.BindingContext>
+        <vm:ClientDashBoardViewModel/>
+    </ContentPage.BindingContext>   
+
     <VerticalStackLayout>
         <Label 
-            Text="Welcome to .NET MAUI!"
+            Text="Bienvenido!"
             VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            FontSize="36"
+            FontAttributes="Bold"
+            FontFamily="Notedry"
+            HorizontalOptions="Center" 
+            Margin="0,10,0,0"/>
     </VerticalStackLayout>
 </ContentPage>

@@ -29,5 +29,11 @@ namespace MECAGOENELTFG.ViewModels
         {
             await Shell.Current.GoToAsync("MedicamentosPage");
         }
+
+        [RelayCommand]
+        public async Task IrALogin() 
+        {
+            await Shell.Current.GoToAsync("///Login");    
+        }
     }
 }

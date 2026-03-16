@@ -2,10 +2,16 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MECAGOENELTFG.Views.ClienteFormPage"
-             Title="ClienteFormPage">
+             Title="ClienteFormPage"
+             BackgroundImageSource="fondo2.png"
+             Shell.NavBarIsVisible="False">
     <ScrollView Padding="20">
         <VerticalStackLayout Spacing="15">
-
+            <Label Text="AGREGAR NUEVO CLIENTE"
+                   HorizontalOptions="Center" 
+                   VerticalOptions="Center" 
+                   FontSize="50" FontFamily="Notedry"
+                   Margin="0,30,0,0"/>
             <!-- Nombre -->
             <VerticalStackLayout Spacing="5">
                 <Label Text="Nombre *" 

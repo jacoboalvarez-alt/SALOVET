@@ -273,3 +273,4 @@ D:\TFG\MECAGOENELTFG\SalovetAPI\obj\Debug\net8.0\refint\SalovetAPI.dll
 D:\TFG\MECAGOENELTFG\SalovetAPI\obj\Debug\net8.0\SalovetAPI.pdb
 D:\TFG\MECAGOENELTFG\SalovetAPI\obj\Debug\net8.0\SalovetAPI.genruntimeconfig.cache
 D:\TFG\MECAGOENELTFG\SalovetAPI\obj\Debug\net8.0\ref\SalovetAPI.dll
+D:\TFG\MECAGOENELTFG\SalovetAPI\obj\Debug\net8.0\SalovetAPI.sourcelink.json

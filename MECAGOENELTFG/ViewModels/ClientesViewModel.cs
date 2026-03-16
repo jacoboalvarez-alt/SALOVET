@@ -28,6 +28,12 @@ namespace MECAGOENELTFG.ViewModels
         {
             _service = new ClienteApiService();
             clientes = new ObservableCollection<Cliente>();
+
+        }
+
+        public async Task InitializeAsync()
+        {
+            await CargarClientes();
         }
 
         [RelayCommand]
@@ -35,8 +41,17 @@ namespace MECAGOENELTFG.ViewModels
         {
             if (IsLoading) return;
 
+
+
             try
             {
+                var lista2 = await _service.ObtenerTodos();
+
+                // Log temporal para depurar
+                Console.WriteLine($"Registros recibidos: {lista2.Count}");
+                if (lista2.Any())
+                    Console.WriteLine($"Primer cliente: {lista2[0].IdCliente} - {lista2[0].NombreCli}");
+
                 IsLoading = true;
                 var lista = await _service.ObtenerTodos();
 

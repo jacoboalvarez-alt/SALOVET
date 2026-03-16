@@ -4,8 +4,13 @@
 <dict>
   <key>UIAppFonts</key>
   <array>
+	<string>Euphorigenic.otf</string>
+	<string>MauiInfo.plist</string>
+	<string>Notedry.ttf</string>
+	<string>Nunito-Regular.ttf</string>
 	<string>OpenSans-Regular.ttf</string>
 	<string>OpenSans-Semibold.ttf</string>
+	<string>PrinceOutfitDemoRegular.ttf</string>
   </array>
 
 </dict>

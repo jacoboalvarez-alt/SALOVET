@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "bWg4X6oinDE=",
+  "dgSpecHash": "DlAyaaO7J7E=",
   "success": true,
   "projectFilePath": "D:\\TFG\\MECAGOENELTFG\\MECAGOENELTFG\\MECAGOENELTFG.csproj",
   "expectedPackageFiles": [
@@ -26,7 +26,7 @@
     "C:\\Users\\Jaobo Alvarez\\.nuget\\packages\\microsoft.maui.graphics\\9.0.120\\microsoft.maui.graphics.9.0.120.nupkg.sha512",
     "C:\\Users\\Jaobo Alvarez\\.nuget\\packages\\microsoft.maui.graphics.win2d.winui.desktop\\9.0.120\\microsoft.maui.graphics.win2d.winui.desktop.9.0.120.nupkg.sha512",
     "C:\\Users\\Jaobo Alvarez\\.nuget\\packages\\microsoft.maui.resizetizer\\9.0.120\\microsoft.maui.resizetizer.9.0.120.nupkg.sha512",
-    "C:\\Users\\Jaobo Alvarez\\.nuget\\packages\\microsoft.net.illink.tasks\\9.0.13\\microsoft.net.illink.tasks.9.0.13.nupkg.sha512",
+    "C:\\Users\\Jaobo Alvarez\\.nuget\\packages\\microsoft.net.illink.tasks\\9.0.14\\microsoft.net.illink.tasks.9.0.14.nupkg.sha512",
     "C:\\Users\\Jaobo Alvarez\\.nuget\\packages\\microsoft.web.webview2\\1.0.3179.45\\microsoft.web.webview2.1.0.3179.45.nupkg.sha512",
     "C:\\Users\\Jaobo Alvarez\\.nuget\\packages\\microsoft.windows.sdk.buildtools\\10.0.22621.756\\microsoft.windows.sdk.buildtools.10.0.22621.756.nupkg.sha512",
     "C:\\Users\\Jaobo Alvarez\\.nuget\\packages\\microsoft.windowsappsdk\\1.7.250909003\\microsoft.windowsappsdk.1.7.250909003.nupkg.sha512",

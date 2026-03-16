@@ -16,6 +16,10 @@ namespace MECAGOENELTFG
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+                    fonts.AddFont("Euphorigenic.otf", "Euphorigenic");
+                    fonts.AddFont("Nunito-Regular.ttf", "Nunito");
+                    fonts.AddFont("Notedry.ttf", "Notedry");
+                    fonts.AddFont("PrinceOutfitDemoRegular.ttf", "PriceOut");
                 });
             builder.Services.AddSingleton<ClienteApiService>();
             builder.Services.AddSingleton<MascotaApiService>();

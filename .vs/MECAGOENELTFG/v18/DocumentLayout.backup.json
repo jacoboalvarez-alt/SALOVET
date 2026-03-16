@@ -3,28 +3,32 @@
   "WorkspaceRootPath": "D:\\TFG\\MECAGOENELTFG\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|d:\\tfg\\mecagoeneltfg\\mecagoeneltfg\\viewmodels\\profdashboardmodelview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|solutionrelative:mecagoeneltfg\\viewmodels\\profdashboardmodelview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|d:\\tfg\\mecagoeneltfg\\mecagoeneltfg\\viewmodels\\clientesviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|solutionrelative:mecagoeneltfg\\viewmodels\\clientesviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|d:\\tfg\\mecagoeneltfg\\mecagoeneltfg\\appshell.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|solutionrelative:mecagoeneltfg\\appshell.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|d:\\tfg\\mecagoeneltfg\\mecagoeneltfg\\views\\clientespage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|solutionrelative:mecagoeneltfg\\views\\clientespage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|d:\\tfg\\mecagoeneltfg\\mecagoeneltfg\\viewmodels\\mascotasgeneralpageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|solutionrelative:mecagoeneltfg\\viewmodels\\mascotasgeneralpageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|d:\\tfg\\mecagoeneltfg\\mecagoeneltfg\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|solutionrelative:mecagoeneltfg\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|d:\\tfg\\mecagoeneltfg\\mecagoeneltfg\\views\\mascotasgeneralpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|solutionrelative:mecagoeneltfg\\views\\mascotasgeneralpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|d:\\tfg\\mecagoeneltfg\\mecagoeneltfg\\views\\citaspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|solutionrelative:mecagoeneltfg\\views\\citaspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|d:\\tfg\\mecagoeneltfg\\mecagoeneltfg\\views\\profdashboard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|solutionrelative:mecagoeneltfg\\views\\profdashboard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|d:\\tfg\\mecagoeneltfg\\mecagoeneltfg\\views\\clienteformpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|solutionrelative:mecagoeneltfg\\views\\clienteformpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|d:\\tfg\\mecagoeneltfg\\mecagoeneltfg\\views\\login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|solutionrelative:mecagoeneltfg\\views\\login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|d:\\tfg\\mecagoeneltfg\\mecagoeneltfg\\views\\clientespage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|solutionrelative:mecagoeneltfg\\views\\clientespage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|d:\\tfg\\mecagoeneltfg\\mecagoeneltfg\\services\\clienteapiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|solutionrelative:mecagoeneltfg\\services\\clienteapiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|d:\\tfg\\mecagoeneltfg\\mecagoeneltfg\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -35,8 +39,12 @@
       "RelativeMoniker": "D:0:0:{23E3659B-639A-4993-9391-E53EBDD18059}|SalovetAPI\\SalovetAPI.csproj|solutionrelative:salovetapi\\services\\clienteapiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|d:\\tfg\\mecagoeneltfg\\mecagoeneltfg\\models\\hashhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|solutionrelative:mecagoeneltfg\\models\\hashhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|d:\\tfg\\mecagoeneltfg\\mecagoeneltfg\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|solutionrelative:mecagoeneltfg\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|d:\\tfg\\mecagoeneltfg\\mecagoeneltfg\\models\\mascota.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|solutionrelative:mecagoeneltfg\\models\\mascota.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,120 +54,150 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AppShell.xaml.cs",
-              "DocumentMoniker": "D:\\TFG\\MECAGOENELTFG\\MECAGOENELTFG\\AppShell.xaml.cs",
-              "RelativeDocumentMoniker": "MECAGOENELTFG\\AppShell.xaml.cs",
-              "ToolTip": "D:\\TFG\\MECAGOENELTFG\\MECAGOENELTFG\\AppShell.xaml.cs",
-              "RelativeToolTip": "MECAGOENELTFG\\AppShell.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-08T23:00:04.019Z"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "MascotasGeneralPageViewModel.cs",
-              "DocumentMoniker": "D:\\TFG\\MECAGOENELTFG\\MECAGOENELTFG\\ViewModels\\MascotasGeneralPageViewModel.cs",
-              "RelativeDocumentMoniker": "MECAGOENELTFG\\ViewModels\\MascotasGeneralPageViewModel.cs",
-              "ToolTip": "D:\\TFG\\MECAGOENELTFG\\MECAGOENELTFG\\ViewModels\\MascotasGeneralPageViewModel.cs",
-              "RelativeToolTip": "MECAGOENELTFG\\ViewModels\\MascotasGeneralPageViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Title": "MauiProgram.cs",
+              "DocumentMoniker": "D:\\TFG\\MECAGOENELTFG\\MECAGOENELTFG\\MauiProgram.cs",
+              "RelativeDocumentMoniker": "MECAGOENELTFG\\MauiProgram.cs",
+              "ToolTip": "D:\\TFG\\MECAGOENELTFG\\MECAGOENELTFG\\MauiProgram.cs",
+              "RelativeToolTip": "MECAGOENELTFG\\MauiProgram.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-08T22:58:07.284Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ProfDashBoardModelView.cs",
-              "DocumentMoniker": "D:\\TFG\\MECAGOENELTFG\\MECAGOENELTFG\\ViewModels\\ProfDashBoardModelView.cs",
-              "RelativeDocumentMoniker": "MECAGOENELTFG\\ViewModels\\ProfDashBoardModelView.cs",
-              "ToolTip": "D:\\TFG\\MECAGOENELTFG\\MECAGOENELTFG\\ViewModels\\ProfDashBoardModelView.cs",
-              "RelativeToolTip": "MECAGOENELTFG\\ViewModels\\ProfDashBoardModelView.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAqwAkAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-08T22:57:38.607Z",
+              "WhenOpened": "2026-03-16T16:00:30.754Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "MascotasGeneralPage.xaml",
-              "DocumentMoniker": "D:\\TFG\\MECAGOENELTFG\\MECAGOENELTFG\\Views\\MascotasGeneralPage.xaml",
-              "RelativeDocumentMoniker": "MECAGOENELTFG\\Views\\MascotasGeneralPage.xaml",
-              "ToolTip": "D:\\TFG\\MECAGOENELTFG\\MECAGOENELTFG\\Views\\MascotasGeneralPage.xaml",
-              "RelativeToolTip": "MECAGOENELTFG\\Views\\MascotasGeneralPage.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAEAAAAAAAAAA==",
+              "Title": "CitasPage.xaml",
+              "DocumentMoniker": "D:\\TFG\\MECAGOENELTFG\\MECAGOENELTFG\\Views\\CitasPage.xaml",
+              "RelativeDocumentMoniker": "MECAGOENELTFG\\Views\\CitasPage.xaml",
+              "ToolTip": "D:\\TFG\\MECAGOENELTFG\\MECAGOENELTFG\\Views\\CitasPage.xaml",
+              "RelativeToolTip": "MECAGOENELTFG\\Views\\CitasPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-03-08T22:53:40.199Z"
+              "WhenOpened": "2026-03-16T15:59:06.668Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "ProfDashBoard.xaml",
-              "DocumentMoniker": "D:\\TFG\\MECAGOENELTFG\\MECAGOENELTFG\\Views\\ProfDashBoard.xaml",
-              "RelativeDocumentMoniker": "MECAGOENELTFG\\Views\\ProfDashBoard.xaml",
-              "ToolTip": "D:\\TFG\\MECAGOENELTFG\\MECAGOENELTFG\\Views\\ProfDashBoard.xaml",
-              "RelativeToolTip": "MECAGOENELTFG\\Views\\ProfDashBoard.xaml",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAAAFYAAAA3AAAAAAAAAA==",
+              "Title": "ClienteFormPage.xaml",
+              "DocumentMoniker": "D:\\TFG\\MECAGOENELTFG\\MECAGOENELTFG\\Views\\ClienteFormPage.xaml",
+              "RelativeDocumentMoniker": "MECAGOENELTFG\\Views\\ClienteFormPage.xaml",
+              "ToolTip": "D:\\TFG\\MECAGOENELTFG\\MECAGOENELTFG\\Views\\ClienteFormPage.xaml",
+              "RelativeToolTip": "MECAGOENELTFG\\Views\\ClienteFormPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-03-07T22:51:40.14Z"
+              "WhenOpened": "2026-03-16T15:54:35.79Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ClienteApiService.cs",
+              "DocumentMoniker": "D:\\TFG\\MECAGOENELTFG\\MECAGOENELTFG\\Services\\ClienteApiService.cs",
+              "RelativeDocumentMoniker": "MECAGOENELTFG\\Services\\ClienteApiService.cs",
+              "ToolTip": "D:\\TFG\\MECAGOENELTFG\\MECAGOENELTFG\\Services\\ClienteApiService.cs",
+              "RelativeToolTip": "MECAGOENELTFG\\Services\\ClienteApiService.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAADwv0EAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-16T15:14:36.148Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ClientesViewModel.cs",
+              "DocumentMoniker": "D:\\TFG\\MECAGOENELTFG\\MECAGOENELTFG\\ViewModels\\ClientesViewModel.cs",
+              "RelativeDocumentMoniker": "MECAGOENELTFG\\ViewModels\\ClientesViewModel.cs",
+              "ToolTip": "D:\\TFG\\MECAGOENELTFG\\MECAGOENELTFG\\ViewModels\\ClientesViewModel.cs",
+              "RelativeToolTip": "MECAGOENELTFG\\ViewModels\\ClientesViewModel.cs",
+              "ViewState": "AgIAAHEAAAAAAAAAAAAgwIIAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-16T12:26:49.575Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ClientesPage.xaml",
+              "DocumentMoniker": "D:\\TFG\\MECAGOENELTFG\\MECAGOENELTFG\\Views\\ClientesPage.xaml",
+              "RelativeDocumentMoniker": "MECAGOENELTFG\\Views\\ClientesPage.xaml",
+              "ToolTip": "D:\\TFG\\MECAGOENELTFG\\MECAGOENELTFG\\Views\\ClientesPage.xaml",
+              "RelativeToolTip": "MECAGOENELTFG\\Views\\ClientesPage.xaml",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAMwHEAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-03-16T09:04:29.145Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Login.xaml",
-              "DocumentMoniker": "D:\\TFG\\MECAGOENELTFG\\MECAGOENELTFG\\Views\\Login.xaml",
-              "RelativeDocumentMoniker": "MECAGOENELTFG\\Views\\Login.xaml",
-              "ToolTip": "D:\\TFG\\MECAGOENELTFG\\MECAGOENELTFG\\Views\\Login.xaml",
-              "RelativeToolTip": "MECAGOENELTFG\\Views\\Login.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-03-07T17:42:12.561Z"
+              "Title": "ClientesPage.xaml.cs",
+              "DocumentMoniker": "D:\\TFG\\MECAGOENELTFG\\MECAGOENELTFG\\Views\\ClientesPage.xaml.cs",
+              "RelativeDocumentMoniker": "MECAGOENELTFG\\Views\\ClientesPage.xaml.cs",
+              "ToolTip": "D:\\TFG\\MECAGOENELTFG\\MECAGOENELTFG\\Views\\ClientesPage.xaml.cs",
+              "RelativeToolTip": "MECAGOENELTFG\\Views\\ClientesPage.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-16T15:21:06.59Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
+              "Title": "Cliente.cs",
+              "DocumentMoniker": "D:\\TFG\\MECAGOENELTFG\\MECAGOENELTFG\\Models\\Cliente.cs",
+              "RelativeDocumentMoniker": "MECAGOENELTFG\\Models\\Cliente.cs",
+              "ToolTip": "D:\\TFG\\MECAGOENELTFG\\MECAGOENELTFG\\Models\\Cliente.cs",
+              "RelativeToolTip": "MECAGOENELTFG\\Models\\Cliente.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAAwBoAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-16T15:29:33.919Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Mascota.cs",
+              "DocumentMoniker": "D:\\TFG\\MECAGOENELTFG\\MECAGOENELTFG\\Models\\Mascota.cs",
+              "RelativeDocumentMoniker": "MECAGOENELTFG\\Models\\Mascota.cs",
+              "ToolTip": "D:\\TFG\\MECAGOENELTFG\\MECAGOENELTFG\\Models\\Mascota.cs",
+              "RelativeToolTip": "MECAGOENELTFG\\Models\\Mascota.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAwBIAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-16T15:29:35.281Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "ClienteApiService.cs",
               "DocumentMoniker": "D:\\TFG\\MECAGOENELTFG\\SalovetAPI\\Services\\ClienteApiService.cs",
               "RelativeDocumentMoniker": "SalovetAPI\\Services\\ClienteApiService.cs",
               "ToolTip": "D:\\TFG\\MECAGOENELTFG\\SalovetAPI\\Services\\ClienteApiService.cs",
               "RelativeToolTip": "SalovetAPI\\Services\\ClienteApiService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-07T22:21:53.473Z"
+              "WhenOpened": "2026-03-16T15:36:13.806Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "AuthService.cs",
               "DocumentMoniker": "D:\\TFG\\MECAGOENELTFG\\MECAGOENELTFG\\Services\\AuthService.cs",
               "RelativeDocumentMoniker": "MECAGOENELTFG\\Services\\AuthService.cs",
               "ToolTip": "D:\\TFG\\MECAGOENELTFG\\MECAGOENELTFG\\Services\\AuthService.cs",
               "RelativeToolTip": "MECAGOENELTFG\\Services\\AuthService.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAUwB4AAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-07T18:56:23.655Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "HashHelper.cs",
-              "DocumentMoniker": "D:\\TFG\\MECAGOENELTFG\\MECAGOENELTFG\\Models\\HashHelper.cs",
-              "RelativeDocumentMoniker": "MECAGOENELTFG\\Models\\HashHelper.cs",
-              "ToolTip": "D:\\TFG\\MECAGOENELTFG\\MECAGOENELTFG\\Models\\HashHelper.cs",
-              "RelativeToolTip": "MECAGOENELTFG\\Models\\HashHelper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-07T17:58:40.493Z"
+              "WhenOpened": "2026-03-16T15:36:58.062Z",
+              "EditorCaption": ""
             }
           ]
         }
