@@ -20,6 +20,7 @@ namespace MECAGOENELTFG
                     fonts.AddFont("Nunito-Regular.ttf", "Nunito");
                     fonts.AddFont("Notedry.ttf", "Notedry");
                     fonts.AddFont("PrinceOutfitDemoRegular.ttf", "PriceOut");
+                    fonts.AddFont("MiranoExtendedFreebie-Light", "Mirano");
                 });
             builder.Services.AddSingleton<ClienteApiService>();
             builder.Services.AddSingleton<MascotaApiService>();

@@ -4,6 +4,7 @@
              xmlns:vm="clr-namespace:MECAGOENELTFG.ViewModels"
              x:Class="MECAGOENELTFG.Views.Login"
              Shell.NavBarIsVisible="False"
+             IconImageSource="salovet_logo.ico"
              Title="Login"
              BackgroundImageSource="fondo1.png">
 
@@ -38,7 +39,7 @@
                     <!--CONTRASENA-->
                     <VerticalStackLayout Padding="4">
                         <Label Text="Contraseña" FontSize="22" TextColor="Black" />
-                        <Entry Placeholder="Introduce tu Contraseña: " PlaceholderColor="#AAAAAA"
+                        <Entry Placeholder="Introduce tu Contraseña: " PlaceholderColor="#AAAAAA" IsPassword="True"
                                TextColor="Black" BackgroundColor="#F5F7FA"  HeightRequest="45" Text="{Binding Password}" WidthRequest="490" 
                                MinimumWidthRequest="250" MaximumWidthRequest="600"
                                />
@@ -57,7 +58,7 @@
                     <ActivityIndicator IsRunning="{Binding IsLoading}" IsVisible="{Binding IsLoading}" Color="#1A3C6E"  HorizontalOptions="Center" />
                 </VerticalStackLayout>
             </Border>
-
+            <Label Text="Usuario:vet_roberto Pass:vetpass001" FontSize="22" TextColor="Black" />
             <!-- REGISTRO -->
             <HorizontalStackLayout HorizontalOptions="Center" Spacing="4">
                 <Label Text="¿No tienes cuenta?"

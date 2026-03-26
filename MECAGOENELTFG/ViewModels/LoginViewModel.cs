@@ -52,13 +52,20 @@ namespace MECAGOENELTFG.ViewModels
 
                 }
 
+
                 if (usuario.Profesional)
                 {
                     await Shell.Current.GoToAsync("ProfDashBoard");
+
+                    username = string.Empty;
+                    password = string.Empty;
                 }
                 else
                 {
                     await Shell.Current.GoToAsync("ClientDashBoard");
+
+                    username = string.Empty;
+                    password = string.Empty;
                 }
             }
             catch (Exception ex)

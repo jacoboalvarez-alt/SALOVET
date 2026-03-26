@@ -202,5 +202,11 @@ namespace MECAGOENELTFG.ViewModels
                 await Shell.Current.GoToAsync("..");
             }
         }
+
+        [RelayCommand]
+        public static async Task IrADashboard() 
+        {
+            await Shell.Current.GoToAsync("ClientesPage");
+        }
     }
 }

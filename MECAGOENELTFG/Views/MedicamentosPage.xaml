@@ -19,8 +19,8 @@
           VerticalOptions="End" Margin="0,5,10,0"/>
 
         <Label 
-            Text="MEDICAMENTOS" FontSize="50" FontFamily="Notedry" Margin=" 0,20,0,0"
-            VerticalOptions="Center" 
+            Text="MEDICAMENTOS" FontSize="50" FontFamily="Milano" Margin=" 0,20,0,0" 
+            VerticalOptions="Center"  TextColor="White" FontAttributes="Bold"
             HorizontalOptions="Center" />
     </VerticalStackLayout>
 </ContentPage>

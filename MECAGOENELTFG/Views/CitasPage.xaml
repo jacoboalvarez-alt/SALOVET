@@ -20,7 +20,7 @@
          VerticalOptions="End" Margin="0,5,10,0"/>
         <Label 
             Text="CITAS" FontSize="55" HorizontalOptions="Center" VerticalOptions="Center"
-            FontFamily="Notedry" Margin="0,20,0,0"
+            FontFamily="Milano" Margin="0,20,0,0" FontAttributes="Bold" TextColor="White"
             />
 
 

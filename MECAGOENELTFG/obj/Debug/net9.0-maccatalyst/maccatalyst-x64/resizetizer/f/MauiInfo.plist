@@ -5,7 +5,8 @@
   <key>UIAppFonts</key>
   <array>
 	<string>Euphorigenic.otf</string>
-	<string>MauiInfo.plist</string>
+	<string>MiranoExtendedFreebie-Light.ttf</string>
+	<string>MiranoExtendedFreebie-LightItalic.ttf</string>
 	<string>Notedry.ttf</string>
 	<string>Nunito-Regular.ttf</string>
 	<string>OpenSans-Regular.ttf</string>

@@ -3,32 +3,163 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:MECAGOENELTFG.ViewModels"
              x:Class="MECAGOENELTFG.Views.MascotasGeneralPage"
-             Title="MascotasGeneralPage"
+             x:DataType="vm:MascotasGeneralPageViewModel"
+             xmlns:models="clr-namespace:MECAGOENELTFG.Models"
+             Title="Mascotas"
              BackgroundImageSource="fondo2.png"
              Shell.NavBarIsVisible="False">
 
     <ContentPage.BindingContext>
-        <vm:MascotasGeneralPageViewModel/>
+        <vm:MascotasGeneralPageViewModel />
     </ContentPage.BindingContext>
-    
-    
-    <VerticalStackLayout>
-        <Button Text="Volver"
-        Command="{Binding IrADashboardCommand}"
-        BackgroundColor="#2EBBB0"
-        TextColor="White"
-        HorizontalOptions="End"
-        WidthRequest="140"
-        VerticalOptions="End" Margin="0,5,10,0"/>
 
-        <Label Text="Mascotas"
-               FontSize="50"
-               Margin="10"
-               FontAttributes="Bold,Italic"
-               FontFamily="Notedry"
-               TextColor="White"
-               HorizontalOptions="Center"
-               VerticalOptions="Center"/>
+    <Grid RowDefinitions="Auto,Auto,Auto,*" Padding="30,20,30,20">
 
-    </VerticalStackLayout>
+        <!-- Fila superior: Título + Volver -->
+        <Grid Grid.Row="0" ColumnDefinitions="150,*,150" Margin="0,10,0,10">
+            <Label Grid.Column="1"
+                   Text="Lista de Mascotas"
+                   FontSize="38"
+                   TextColor="White"
+                   FontFamily="Milano"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" />
+            <Button Grid.Column="2"
+                    Text="← Volver"
+                    Command="{Binding IrADashboardCommand}"
+                    BackgroundColor="#1A9E94"
+                    TextColor="White"
+                    CornerRadius="10"
+                    HeightRequest="40"
+                    WidthRequest="130"
+                    FontAttributes="Bold"
+                    HorizontalOptions="End"
+                    VerticalOptions="Center" />
+        </Grid>
+
+        <!-- Separador decorativo -->
+        <BoxView Grid.Row="1"
+                 HeightRequest="1" WidthRequest="450"
+                 BackgroundColor="#FFFFFF40"
+                 Margin="0,0,0,15" />
+
+        <!-- Barra de acciones -->
+        <Grid Grid.Row="2" ColumnDefinitions="*,Auto" Margin="0,0,0,12">
+            <HorizontalStackLayout Grid.Column="1" Spacing="8">
+                <Button Text="🔄  Refrescar"
+                        Command="{Binding CargarMascotasCommand}"
+                        BackgroundColor="#1A9E94"
+                        TextColor="White"
+                        CornerRadius="10"
+                        HeightRequest="40"
+                        FontAttributes="Bold"
+                        Padding="16,0" />
+                <Button Text="➕ Agregar Mascota"  BackgroundColor="#1A9E94"
+                        Command="{Binding IrACrearMascotaCommand}" TextColor="White" CornerRadius="10"
+                        HeightRequest="40" FontAttributes="Bold" Padding="16,0"
+                        />
+            </HorizontalStackLayout>
+        </Grid>
+
+        <!-- Tabla -->
+        <Border Grid.Row="3"
+                BackgroundColor="White"
+                StrokeShape="RoundRectangle 14"
+                Stroke="#FFFFFF30" WidthRequest="790" 
+                Padding="0">
+
+            <Grid RowDefinitions="Auto,*">
+
+                <!-- Encabezado -->
+                <Grid Grid.Row="0"
+                      ColumnDefinitions="45,130,130,50,110,140,110"
+                      BackgroundColor="#2EBBB0"
+                      Padding="12,12">
+                    <Label Grid.Column="0" Text="ID"       TextColor="White" FontAttributes="Bold" FontSize="13" FontFamily="Nunito" VerticalOptions="Center"/>
+                    <Label Grid.Column="1" Text="Dueño"    TextColor="White" FontAttributes="Bold" FontSize="13" FontFamily="Nunito" VerticalOptions="Center"/>
+                    <Label Grid.Column="2" Text="Nombre"   TextColor="White" FontAttributes="Bold" FontSize="13" FontFamily="Nunito" VerticalOptions="Center"/>
+                    <Label Grid.Column="3" Text="Edad"     TextColor="White" FontAttributes="Bold" FontSize="13" FontFamily="Nunito" VerticalOptions="Center"/>
+                    <Label Grid.Column="4" Text="Especie"  TextColor="White" FontAttributes="Bold" FontSize="13" FontFamily="Nunito" VerticalOptions="Center"/>
+                    <Label Grid.Column="5" Text="Raza"     TextColor="White" FontAttributes="Bold" FontSize="13" FontFamily="Nunito" VerticalOptions="Center"/>
+                    <Label Grid.Column="6" Text="Acciones" TextColor="White" FontAttributes="Bold" FontSize="13" FontFamily="Nunito" HorizontalOptions="Center" VerticalOptions="Center"/>
+                </Grid>
+
+                <!-- Indicador de carga -->
+                <ActivityIndicator Grid.Row="1"
+                                   IsRunning="{Binding IsLoading}"
+                                   IsVisible="{Binding IsLoading}"
+                                   Color="#2EBBB0"
+                                   WidthRequest="50"
+                                   HeightRequest="50"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center" />
+
+                <!-- Filas de datos -->
+                <ScrollView Grid.Row="1">
+                    <CollectionView ItemsSource="{Binding Mascotas}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate x:DataType="models:Mascota">
+                                <Grid ColumnDefinitions="45,130,130,50,110,140,110"
+                                      Padding="12,8"
+                                      BackgroundColor="#F9FFFE">
+
+                                    <BoxView Grid.ColumnSpan="7"
+                                             HeightRequest="1"
+                                             BackgroundColor="#E0F5F3"
+                                             VerticalOptions="End" />
+
+                                    <Label Grid.Column="0" Text="{Binding IdMascota}"         TextColor="#444" FontSize="14" FontFamily="Nunito" VerticalOptions="Center"/>
+                                    <Label Grid.Column="1" Text="{Binding Cliente.NombreCli}" TextColor="#444" FontSize="14" FontFamily="Nunito" VerticalOptions="Center"/>
+                                    <Label Grid.Column="2" Text="{Binding NombreMasc}"        TextColor="#222" FontSize="14" FontFamily="Nunito" VerticalOptions="Center" FontAttributes="Bold"/>
+                                    <Label Grid.Column="3" Text="{Binding Edad}"              TextColor="#444" FontSize="14" FontFamily="Nunito" VerticalOptions="Center"/>
+                                    <Label Grid.Column="4" Text="{Binding Especie}"           TextColor="#444" FontSize="14" FontFamily="Nunito" VerticalOptions="Center"/>
+                                    <Label Grid.Column="5" Text="{Binding Raza}"              TextColor="#555" FontSize="13" FontFamily="Nunito" VerticalOptions="Center"/>
+
+                                    <HorizontalStackLayout Grid.Column="6"
+                                                           Spacing="5"
+                                                           HorizontalOptions="Center"
+                                                           VerticalOptions="Center">
+                                        <Button Text="✏️"
+                                                Command="{Binding Source={RelativeSource AncestorType={x:Type vm:MascotasGeneralPageViewModel}}, Path=EditarMascotaCommand}"
+                                                CommandParameter="{Binding .}"
+                                                BackgroundColor="#2196F3"
+                                                TextColor="White"
+                                                Margin="20,0,0,0"
+                                                CornerRadius="8"
+                                                WidthRequest="36"
+                                                HeightRequest="32"
+                                                Padding="0"
+                                                FontSize="14" />
+                                        <Button Text="🗑️"
+                                                Command="{Binding Source={RelativeSource AncestorType={x:Type vm:MascotasGeneralPageViewModel}}, Path=EliminarMascotaCommand}"
+                                                CommandParameter="{Binding .}"
+                                                BackgroundColor="#F44336"
+                                                TextColor="White"
+                                                Margin="2,0,0,0"
+                                                CornerRadius="8"
+                                                WidthRequest="36"
+                                                HeightRequest="32"
+                                                Padding="0"
+                                                FontSize="14" />
+                                        <Button Text="📖"
+                                                Command="{Binding Source={RelativeSource AncestorType={x:Type vm:MascotasGeneralPageViewModel}},Path=IrAHistorialCommand}"
+                                                BackgroundColor="Green"
+                                                TextColor="White"
+                                                Margin="0,0,0,0"
+                                                CornerRadius="20"
+                                                WidthRequest="36"
+                                                HeightRequest="32"
+                                                Padding="0"
+                                                FontSize="14"
+                                                />
+                                    </HorizontalStackLayout>
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </ScrollView>
+            </Grid>
+        </Border>
+    </Grid>
 </ContentPage>

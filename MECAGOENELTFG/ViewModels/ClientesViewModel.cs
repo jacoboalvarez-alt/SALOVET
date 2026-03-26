@@ -146,5 +146,11 @@ namespace MECAGOENELTFG.ViewModels
             // Navegar a página de formulario con el ID
             await Shell.Current.GoToAsync($"clienteform?clienteId={cliente.IdCliente}");
         }
+
+        [RelayCommand]
+        public static async Task IrADashboard() 
+        {
+            await Shell.Current.GoToAsync("ProfDashBoard");
+        }
     }
 }

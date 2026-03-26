@@ -19,7 +19,7 @@
                    FontSize="39"
                    Margin="10"
                    FontAttributes="Bold,Italic"
-                   FontFamily="PrinceOut"
+                   FontFamily="Mirano"
                    TextColor="#1A3C6E"
                    HorizontalOptions="Center" />
             
@@ -52,7 +52,7 @@
                                FontSize="36" 
                                HorizontalOptions="Center" />
                         <Label Text="Clientes"
-                               FontSize="16" FontFamily="Euphorigenic"
+                               FontSize="16" FontFamily="Mirano"
                                FontAttributes="Bold"
                                TextColor="#1A3C6E"
                                HorizontalOptions="Center" />
@@ -84,7 +84,7 @@
                         <Label Text="Mascotas"
                                FontSize="16"
                                FontAttributes="Bold"
-                               FontFamily="Euphorigenic"
+                               FontFamily="Mirano"
                                TextColor="#1A3C6E"
                                HorizontalOptions="Center" />
                         <Button Text="Gestionar"
@@ -114,7 +114,7 @@
                         <Label Text="Citas"
                                FontSize="16"
                                FontAttributes="Bold"
-                               FontFamily="Euphorigenic"
+                               FontFamily="Mirano"
                                TextColor="#1A3C6E"
                                HorizontalOptions="Center" />
                         <Button Text="Gestionar"
@@ -145,7 +145,7 @@
                                FontSize="16"
                                FontAttributes="Bold"
                                TextColor="#1A3C6E"
-                               FontFamily="Euphorigenic"
+                               FontFamily="Mirano"
                                HorizontalOptions="Center" />
                         <Button Text="Gestionar"
                                 Command="{Binding IrAMedicamentosCommand}"

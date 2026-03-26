@@ -12,153 +12,163 @@
         <vm:ClientesViewModel />
     </ContentPage.BindingContext>
 
-    <Grid RowDefinitions="Auto,Auto,*" Padding="10">
+    <Grid RowDefinitions="Auto,Auto,Auto,*" Padding="30,20,30,20">
 
-        <!-- Título -->
-        <Label Grid.Row="0"
-           Text="Lista de Clientes"
-           FontSize="50"
-           TextColor="White"
-           FontFamily="Notedry"
-           FontAttributes="Bold"
-           Margin="0,20,0,80"
-           HorizontalOptions="Center" />
+        <!-- Fila superior: Título centrado + Volver a la derecha -->
+        <Grid Grid.Row="0" ColumnDefinitions="150,*,150" Margin="0,10,0,10">
 
-        <!-- Encabezado con botones -->
-        <HorizontalStackLayout Grid.Row="1" 
-                           Spacing="10" 
-                           Padding="10"
-                           Margin="0,0,0,10">
-            <Button Text="➕ Agregar Cliente"
-                Command="{Binding AgregarClienteCommand}"
-                BackgroundColor="#4CAF50"
-                TextColor="White" />
-            <Button Text="🔄 Refrescar"
-                Command="{Binding CargarClientesCommand}"
-                BackgroundColor="#2196F3"
-                TextColor="White" />
-        </HorizontalStackLayout>
+            <Label Grid.Column="1"
+                   Text="Lista de Clientes"
+                   FontSize="38"
+                   TextColor="White"
+                   FontFamily="Milano"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" />
+            <Button Grid.Column="2"
+                    Text="← Volver"
+                    Command="{Binding IrADashboardCommand}"
+                    BackgroundColor="#1A9E94"
+                    TextColor="White"
+                    CornerRadius="10"
+                    HeightRequest="40"
+                    WidthRequest="130"
+                    FontAttributes="Bold"
+                    HorizontalOptions="End"
+                    VerticalOptions="Center" />
+        </Grid>
 
-        <!-- Indicador de carga -->
-        <ActivityIndicator Grid.Row="1"
-                       IsRunning="{Binding IsLoading}"
-                       IsVisible="{Binding IsLoading}"
-                       Color="#2196F3"
-                       WidthRequest="50"
-                       HeightRequest="50"
-                       HorizontalOptions="Center"
-                       VerticalOptions="Center" />
+        <!-- Separador decorativo -->
+        <BoxView Grid.Row="1"
+                 HeightRequest="1" WidthRequest="270"
+                 BackgroundColor="#FFFFFF40"
+                 Margin="0,0,0,15" />
 
-        <!-- Tabla de Clientes -->
-        <ScrollView Grid.Row="2">
-            <!-- ← CORREGIDO: era Row="3" -->
-            <VerticalStackLayout Spacing="0">
+        <!-- Barra de acciones -->
+        <Grid Grid.Row="2" ColumnDefinitions="*,Auto" Margin="0,0,0,12">
+            <HorizontalStackLayout Grid.Column="1" Spacing="8">
+                <Button Text="➕  Agregar Cliente"
+                        Command="{Binding AgregarClienteCommand}"
+                        BackgroundColor="#4CAF50"
+                        TextColor="White"
+                        CornerRadius="10"
+                        HeightRequest="40"
+                        FontAttributes="Bold"
+                        Padding="16,0" />
+                <Button Text="🔄  Refrescar"
+                        Command="{Binding CargarClientesCommand}"
+                        BackgroundColor="#1A9E94"
+                        TextColor="White"
+                        CornerRadius="10"
+                        HeightRequest="40"
+                        FontAttributes="Bold"
+                        Padding="16,0" />
+            </HorizontalStackLayout>
+        </Grid>
 
-                <!-- Encabezado de la tabla -->
-                <Grid ColumnDefinitions="35,100,110,45,*,95,140"
-                  BackgroundColor="#E0E0E0"
-                  Padding="8,10"
-                  Margin="0,0,0,2">
-                    <Label Grid.Column="0" Text="ID" FontAttributes="Bold" FontSize="13"  FontFamily="Nunito"/>
-                    <Label Grid.Column="1" Text="Nombre" FontAttributes="Bold" FontSize="13" FontFamily="Nunito" />
-                    <Label Grid.Column="2" Text="Apellido" FontAttributes="Bold" FontSize="13"  FontFamily="Nunito"/>
-                    <Label Grid.Column="3" Text="Edad" FontAttributes="Bold" FontSize="13"  FontFamily="Nunito" />
-                    <Label Grid.Column="4" Text="Correo" FontAttributes="Bold" FontSize="13"  FontFamily="Nunito" />
-                    <Label Grid.Column="5" Text="Teléfono" FontAttributes="Bold" FontSize="13" FontFamily="Nunito" />
-                    <Label Grid.Column="6" Text="Acciones" FontAttributes="Bold" FontSize="13" HorizontalOptions="Center"  FontFamily="Nunito"/>
+        <!-- Tabla con borde y sombra -->
+        <Border Grid.Row="3" WidthRequest="1250"
+                BackgroundColor="White"
+                StrokeShape="RoundRectangle 14"
+                Stroke="#FFFFFF30"
+                Padding="0">
+
+            <Grid RowDefinitions="Auto,*">
+
+                <!-- Encabezado de tabla -->
+                <Grid Grid.Row="0"
+                      ColumnDefinitions="45,120,130,55,*,100,150"
+                      BackgroundColor="#2EBBB0"
+                      Padding="12,12">
+                    <Label Grid.Column="0" Text="ID"       TextColor="White" FontAttributes="Bold" FontSize="13" FontFamily="Nunito" VerticalOptions="Center"/>
+                    <Label Grid.Column="1" Text="Nombre"   TextColor="White" FontAttributes="Bold" FontSize="13" FontFamily="Nunito" VerticalOptions="Center"/>
+                    <Label Grid.Column="2" Text="Apellido" TextColor="White" FontAttributes="Bold" FontSize="13" FontFamily="Nunito" VerticalOptions="Center"/>
+                    <Label Grid.Column="3" Text="Edad"     TextColor="White" FontAttributes="Bold" FontSize="13" FontFamily="Nunito" VerticalOptions="Center"/>
+                    <Label Grid.Column="4" Text="Correo"   TextColor="White" FontAttributes="Bold" FontSize="13" FontFamily="Nunito" VerticalOptions="Center"/>
+                    <Label Grid.Column="5" Text="Teléfono" TextColor="White" FontAttributes="Bold" FontSize="13" FontFamily="Nunito" VerticalOptions="Center"/>
+                    <Label Grid.Column="6" Text="Acciones" TextColor="White" FontAttributes="Bold" FontSize="13" FontFamily="Nunito" HorizontalOptions="Center" VerticalOptions="Center"/>
                 </Grid>
 
+                <!-- Indicador de carga -->
+                <ActivityIndicator Grid.Row="1"
+                                   IsRunning="{Binding IsLoading}"
+                                   IsVisible="{Binding IsLoading}"
+                                   Color="#2EBBB0"
+                                   WidthRequest="50"
+                                   HeightRequest="50"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center" />
+
                 <!-- Filas de datos -->
-                <CollectionView ItemsSource="{Binding Clientes}">
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate x:DataType="models:Cliente">
-                            <Grid ColumnDefinitions="35,100,110,45,*,95,140"
-                              BackgroundColor="White"
-                              Padding="8,6"
-                              Margin="0,0,0,1">
+                <ScrollView Grid.Row="1">
+                    <CollectionView ItemsSource="{Binding Clientes}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate x:DataType="models:Cliente">
+                                <Grid ColumnDefinitions="45,120,130,55,*,120,150"
+                                      Padding="12,8"
+                                      Margin="0,0,0,0">
+                                    <Grid.Triggers>
+                                        <DataTrigger TargetType="Grid" Binding="{Binding IdCliente}" Value="0">
+                                            <Setter Property="BackgroundColor" Value="#F9FFFE" />
+                                        </DataTrigger>
+                                    </Grid.Triggers>
+                                    <Grid.BackgroundColor>#F9FFFE</Grid.BackgroundColor>
 
-                                <Label Grid.Column="0"
-                                   Text="{Binding IdCliente}"
-                                   TextColor="Black"
-                                   FontSize="16"  FontFamily="Nunito"
-                                   VerticalOptions="Center" />
+                                    <!-- Separador inferior por fila -->
+                                    <BoxView Grid.ColumnSpan="7"
+                                             HeightRequest="1"
+                                             BackgroundColor="#E0F5F3"
+                                             VerticalOptions="End" />
 
-                                <Label Grid.Column="1"
-                                   Text="{Binding NombreCli}"
-                                   TextColor="Black"
-                                   FontSize="16"  FontFamily="Nunito"
-                                   VerticalOptions="Center" />
+                                    <Label Grid.Column="0" Text="{Binding IdCliente}" TextColor="#444" FontSize="14" FontFamily="Nunito" VerticalOptions="Center"/>
+                                    <Label Grid.Column="1" Text="{Binding NombreCli}" TextColor="#222" FontSize="14" FontFamily="Nunito" VerticalOptions="Center" FontAttributes="Bold"/>
+                                    <Label Grid.Column="2" Text="{Binding ApeCli}"    TextColor="#444" FontSize="14" FontFamily="Nunito" VerticalOptions="Center"/>
+                                    <Label Grid.Column="3" Text="{Binding Edad}"      TextColor="#444" FontSize="14" FontFamily="Nunito" VerticalOptions="Center"/>
+                                    <Label Grid.Column="4" Text="{Binding Correo}"    TextColor="#555" FontSize="13" FontFamily="Nunito" LineBreakMode="TailTruncation" VerticalOptions="Center"/>
+                                    <Label Grid.Column="5" Text="{Binding Tel}"       TextColor="#444" FontSize="14" FontFamily="Nunito" VerticalOptions="Center"/>
 
-                                <Label Grid.Column="2"
-                                   Text="{Binding ApeCli}"
-                                   TextColor="Black"
-                                   FontSize="16"  FontFamily="Nunito"
-                                   VerticalOptions="Center" />
+                                    <HorizontalStackLayout Grid.Column="6"
+                                                           Spacing="5"
+                                                           HorizontalOptions="Center"
+                                                           VerticalOptions="Center">
+                                        <Button Text="🐾"
+                                                Command="{Binding Source={RelativeSource AncestorType={x:Type vm:ClientesViewModel}}, Path=VerMascotasCommand}"
+                                                CommandParameter="{Binding .}"
+                                                BackgroundColor="#FF9800"
+                                                TextColor="White"
+                                                CornerRadius="8"
+                                                WidthRequest="36"
+                                                HeightRequest="32"
+                                                Padding="0"
+                                                FontSize="14" />
+                                        <Button Text="✏️"
+                                                Command="{Binding Source={RelativeSource AncestorType={x:Type vm:ClientesViewModel}}, Path=EditarClienteCommand}"
+                                                CommandParameter="{Binding .}"
+                                                BackgroundColor="#2196F3"
+                                                TextColor="White"
+                                                CornerRadius="8"
+                                                WidthRequest="36"
+                                                HeightRequest="32"
+                                                Padding="0"
+                                                FontSize="14" />
+                                        <Button Text="🗑️"
+                                                Command="{Binding Source={RelativeSource AncestorType={x:Type vm:ClientesViewModel}}, Path=EliminarClienteCommand}"
+                                                CommandParameter="{Binding .}"
+                                                BackgroundColor="#F44336"
+                                                TextColor="White"
+                                                CornerRadius="8"
+                                                WidthRequest="36"
+                                                HeightRequest="32"
+                                                Padding="0"
+                                                FontSize="14" />
+                                    </HorizontalStackLayout>
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </ScrollView>
+            </Grid>
+        </Border>
 
-                                <Label Grid.Column="3"
-                                   Text="{Binding Edad}"
-                                   TextColor="Black"
-                                   FontSize="16"  FontFamily="Nunito"
-                                   VerticalOptions="Center" />
-
-                                <Label Grid.Column="4"
-                                   Text="{Binding Correo}"
-                                   TextColor="Black"
-                                   FontSize="16"  FontFamily="Nunito"
-                                   LineBreakMode="TailTruncation"
-                                   VerticalOptions="Center" />
-
-                                <Label Grid.Column="5"
-                                   Text="{Binding Tel}"
-                                   TextColor="Black"
-                                   FontSize="16"   FontFamily="Nunito"
-                                   VerticalOptions="Center" />
-
-                                <HorizontalStackLayout Grid.Column="6"
-                                                   Spacing="4"
-                                                   HorizontalOptions="Center"
-                                                   VerticalOptions="Center">
-                                    <Button Text="🐾"
-                                        Command="{Binding Source={RelativeSource AncestorType={x:Type vm:ClientesViewModel}}, Path=VerMascotasCommand}"
-                                        CommandParameter="{Binding .}"
-                                        BackgroundColor="#FF9800"
-                                        TextColor="White"
-                                        WidthRequest="38"
-                                        HeightRequest="32"
-                                        Padding="0"
-                                        FontSize="14" />
-                                    <Button Text="✏️"
-                                        Command="{Binding Source={RelativeSource AncestorType={x:Type vm:ClientesViewModel}}, Path=EditarClienteCommand}"
-                                        CommandParameter="{Binding .}"
-                                        BackgroundColor="#2196F3"
-                                        TextColor="White"
-                                        WidthRequest="38"
-                                        HeightRequest="32"
-                                        Padding="0"
-                                        FontSize="14" />
-                                    <Button Text="🗑️"
-                                        Command="{Binding Source={RelativeSource AncestorType={x:Type vm:ClientesViewModel}}, Path=EliminarClienteCommand}"
-                                        CommandParameter="{Binding .}"
-                                        BackgroundColor="#F44336"
-                                        TextColor="White"
-                                        WidthRequest="38"
-                                        HeightRequest="32"
-                                        Padding="0"
-                                        FontSize="14" />
-                                </HorizontalStackLayout>
-                            </Grid>
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
-
-                <Label Text="No hay clientes registrados"
-                   IsVisible="{Binding Clientes.Count, Converter={StaticResource IsZeroConverter}}"
-                   HorizontalOptions="Center"
-                   Margin="0,50,0,0"
-                   FontSize="18"
-                   TextColor="Gray" />
-
-            </VerticalStackLayout>
-        </ScrollView>
     </Grid>
 </ContentPage>

@@ -3381,23 +3381,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Jaobo Alvarez\\.nuget\\packages\\": {},
+    "C:\\Users\\jorgeg\\.nuget\\packages\\": {},
+    "C:\\Program Files\\DevExpress 22.1\\Components\\Offline Packages": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\TFG\\MECAGOENELTFG\\SalovetAPI\\SalovetAPI.csproj",
+      "projectUniqueName": "C:\\Users\\jorgeg\\Videos\\Jacobo\\TFG\\SALOVET\\SalovetAPI\\SalovetAPI.csproj",
       "projectName": "SalovetAPI",
-      "projectPath": "D:\\TFG\\MECAGOENELTFG\\SalovetAPI\\SalovetAPI.csproj",
-      "packagesPath": "C:\\Users\\Jaobo Alvarez\\.nuget\\packages\\",
-      "outputPath": "D:\\TFG\\MECAGOENELTFG\\SalovetAPI\\obj\\",
+      "projectPath": "C:\\Users\\jorgeg\\Videos\\Jacobo\\TFG\\SALOVET\\SalovetAPI\\SalovetAPI.csproj",
+      "packagesPath": "C:\\Users\\jorgeg\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\jorgeg\\Videos\\Jacobo\\TFG\\SALOVET\\SalovetAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\Program Files\\DevExpress 22.1\\Components\\Offline Packages",
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Jaobo Alvarez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\jorgeg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 22.1.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3406,7 +3409,9 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\DevExpress 22.1\\Components\\System\\Components\\Packages": {},
         "C:\\Program Files\\dotnet\\library-packs": {},
+        "C:\\nugget.local": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -3425,7 +3430,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "10.0.100"
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net8.0": {
@@ -3471,7 +3476,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.104/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.312/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -11,7 +11,7 @@ namespace MECAGOENELTFG.Services
     public class MascotaApiService
     {
         private readonly HttpClient _httpClient;
-        private const string BaseUrl = "http://localhost:4000/api/mascotas"; 
+        private const string BaseUrl = "http://localhost:5201/api/mascotas"; 
 
         public MascotaApiService()
         {

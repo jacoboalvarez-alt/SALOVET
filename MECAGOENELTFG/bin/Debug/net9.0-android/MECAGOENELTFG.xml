@@ -47,6 +47,7 @@
             <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
+            <inheritdoc/>
         </member>
         <member name="P:MECAGOENELTFG.ViewModels.ClienteFormViewModel.ClienteId">
             <inheritdoc cref="F:MECAGOENELTFG.ViewModels.ClienteFormViewModel.clienteId"/>
@@ -89,7 +90,14 @@
         <member name="P:MECAGOENELTFG.ViewModels.ClienteFormViewModel.CancelarCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.ClienteFormViewModel.Cancelar"/>.</summary>
         </member>
+        <member name="F:MECAGOENELTFG.ViewModels.ClienteFormViewModel.irADashboardCommand">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels.ClienteFormViewModel.IrADashboardCommand"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.ClienteFormViewModel.IrADashboardCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.ClienteFormViewModel.IrADashboard"/>.</summary>
+        </member>
         <member name="T:MECAGOENELTFG.ViewModels.ClientesViewModel">
+            <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
@@ -135,6 +143,12 @@
         </member>
         <member name="P:MECAGOENELTFG.ViewModels.ClientesViewModel.EditarClienteCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.ClientesViewModel.EditarCliente(MECAGOENELTFG.Models.Cliente)"/>.</summary>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels.ClientesViewModel.irADashboardCommand">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels.ClientesViewModel.IrADashboardCommand"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.ClientesViewModel.IrADashboardCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.ClientesViewModel.IrADashboard"/>.</summary>
         </member>
         <member name="T:MECAGOENELTFG.ViewModels.LoginViewModel">
             <inheritdoc/>
@@ -221,12 +235,50 @@
         </member>
         <member name="T:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel">
             <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel.Mascotas">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel.mascotas"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel.IsRefreshing">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel.isRefreshing"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel.IsLoading">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel.isLoading"/>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel.cargarMascotasCommand">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel.CargarMascotasCommand"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel.CargarMascotasCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel.CargarMascotas"/>.</summary>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel.editarMascotaCommand">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel.EditarMascotaCommand"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel.EditarMascotaCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel.EditarMascota(MECAGOENELTFG.Models.Mascota)"/>.</summary>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel.eliminarMascotaCommand">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel.EliminarMascotaCommand"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel.EliminarMascotaCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel.EliminarMascota(MECAGOENELTFG.Models.Mascota)"/>.</summary>
         </member>
         <member name="F:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel.irADashboardCommand">
             <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel.IrADashboardCommand"/>.</summary>
         </member>
         <member name="P:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel.IrADashboardCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel.IrADashboard"/>.</summary>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel.irACrearMascotaCommand">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel.IrACrearMascotaCommand"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel.IrACrearMascotaCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel.IrACrearMascota"/>.</summary>
         </member>
         <member name="T:MECAGOENELTFG.ViewModels.MascotasViewModel">
             <inheritdoc/>
