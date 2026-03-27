@@ -15,6 +15,24 @@
             Devuelve true si el texto coincide con el hash.
             </summary>
         </member>
+        <member name="T:MECAGOENELTFG.Models.Medicamento">
+            <inheritdoc/>
+        </member>
+        <member name="P:MECAGOENELTFG.Models.Medicamento.IdMedica">
+            <inheritdoc cref="F:MECAGOENELTFG.Models.Medicamento.idMedica"/>
+        </member>
+        <member name="P:MECAGOENELTFG.Models.Medicamento.NomMedica">
+            <inheritdoc cref="F:MECAGOENELTFG.Models.Medicamento.nomMedica"/>
+        </member>
+        <member name="P:MECAGOENELTFG.Models.Medicamento.Gramos">
+            <inheritdoc cref="F:MECAGOENELTFG.Models.Medicamento.gramos"/>
+        </member>
+        <member name="P:MECAGOENELTFG.Models.Medicamento.Stock">
+            <inheritdoc cref="F:MECAGOENELTFG.Models.Medicamento.stock"/>
+        </member>
+        <member name="P:MECAGOENELTFG.Models.Medicamento.Estado">
+            <inheritdoc cref="F:MECAGOENELTFG.Models.Medicamento.estado"/>
+        </member>
         <member name="M:MECAGOENELTFG.Services.RegistroService.RegistroAsync(MECAGOENELTFG.Models.Usuario,MECAGOENELTFG.Models.Cliente)">
             <summary>
             Registra un cliente y su usuario asociado en la API.
@@ -36,6 +54,67 @@
         </member>
         <member name="T:MECAGOENELTFG.ViewModels.CitasViewModel">
             <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.CitasViewModel.Citas">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels.CitasViewModel.citas"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.CitasViewModel.IsLoading">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels.CitasViewModel.isLoading"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.CitasViewModel.FiltroIdCliente">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels.CitasViewModel.filtroIdCliente"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.CitasViewModel.FiltroIdProfesional">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels.CitasViewModel.filtroIdProfesional"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.CitasViewModel.FiltroFecha">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels.CitasViewModel.filtroFecha"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.CitasViewModel.FiltroEstado">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels.CitasViewModel.filtroEstado"/>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels.CitasViewModel.cargarCitasCommand">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels.CitasViewModel.CargarCitasCommand"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.CitasViewModel.CargarCitasCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.CitasViewModel.CargarCitas"/>.</summary>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels.CitasViewModel.filtrarCommand">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels.CitasViewModel.FiltrarCommand"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.CitasViewModel.FiltrarCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.CitasViewModel.Filtrar"/>.</summary>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels.CitasViewModel.limpiarFiltrosCommand">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels.CitasViewModel.LimpiarFiltrosCommand"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.CitasViewModel.LimpiarFiltrosCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.CitasViewModel.LimpiarFiltros"/>.</summary>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels.CitasViewModel.eliminarCitaCommand">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels.CitasViewModel.EliminarCitaCommand"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.CitasViewModel.EliminarCitaCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.CitasViewModel.EliminarCita(MECAGOENELTFG.Models.Cita)"/>.</summary>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels.CitasViewModel.agregarCitaCommand">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels.CitasViewModel.AgregarCitaCommand"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.CitasViewModel.AgregarCitaCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.CitasViewModel.AgregarCita"/>.</summary>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels.CitasViewModel.editarCitaCommand">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels.CitasViewModel.EditarCitaCommand"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.CitasViewModel.EditarCitaCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.CitasViewModel.EditarCita(MECAGOENELTFG.Models.Cita)"/>.</summary>
         </member>
         <member name="F:MECAGOENELTFG.ViewModels.CitasViewModel.irADashboardCommand">
             <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels.CitasViewModel.IrADashboardCommand"/>.</summary>
@@ -240,6 +319,7 @@
             <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
+            <inheritdoc/>
         </member>
         <member name="P:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel.Mascotas">
             <inheritdoc cref="F:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel.mascotas"/>
@@ -279,6 +359,12 @@
         </member>
         <member name="P:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel.IrACrearMascotaCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel.IrACrearMascota"/>.</summary>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel.irAHistorialCommand">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel.IrAHistorialCommand"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel.IrAHistorialCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel.IrAHistorial"/>.</summary>
         </member>
         <member name="T:MECAGOENELTFG.ViewModels.MascotasViewModel">
             <inheritdoc/>
@@ -337,6 +423,78 @@
         </member>
         <member name="T:MECAGOENELTFG.ViewModels.MedicamentosViewModel">
             <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.MedicamentosViewModel.Medicamentos">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels.MedicamentosViewModel.medicamentos"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.MedicamentosViewModel.IsLoading">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels.MedicamentosViewModel.isLoading"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.MedicamentosViewModel.FiltroNombre">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels.MedicamentosViewModel.filtroNombre"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.MedicamentosViewModel.FiltroBajoStock">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels.MedicamentosViewModel.filtroBajoStock"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.MedicamentosViewModel.FiltroEstado">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels.MedicamentosViewModel.filtroEstado"/>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels.MedicamentosViewModel.cargarMedicamentosCommand">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels.MedicamentosViewModel.CargarMedicamentosCommand"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.MedicamentosViewModel.CargarMedicamentosCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.MedicamentosViewModel.CargarMedicamentos"/>.</summary>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels.MedicamentosViewModel.filtrarCommand">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels.MedicamentosViewModel.FiltrarCommand"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.MedicamentosViewModel.FiltrarCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.MedicamentosViewModel.Filtrar"/>.</summary>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels.MedicamentosViewModel.limpiarFiltrosCommand">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels.MedicamentosViewModel.LimpiarFiltrosCommand"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.MedicamentosViewModel.LimpiarFiltrosCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.MedicamentosViewModel.LimpiarFiltros"/>.</summary>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels.MedicamentosViewModel.aumentarStockCommand">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels.MedicamentosViewModel.AumentarStockCommand"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.MedicamentosViewModel.AumentarStockCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.MedicamentosViewModel.AumentarStock(MECAGOENELTFG.Models.Medicamento)"/>.</summary>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels.MedicamentosViewModel.disminuirStockCommand">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels.MedicamentosViewModel.DisminuirStockCommand"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.MedicamentosViewModel.DisminuirStockCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.MedicamentosViewModel.DisminuirStock(MECAGOENELTFG.Models.Medicamento)"/>.</summary>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels.MedicamentosViewModel.eliminarMedicamentoCommand">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels.MedicamentosViewModel.EliminarMedicamentoCommand"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.MedicamentosViewModel.EliminarMedicamentoCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.MedicamentosViewModel.EliminarMedicamento(MECAGOENELTFG.Models.Medicamento)"/>.</summary>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels.MedicamentosViewModel.agregarMedicamentoCommand">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels.MedicamentosViewModel.AgregarMedicamentoCommand"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.MedicamentosViewModel.AgregarMedicamentoCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.MedicamentosViewModel.AgregarMedicamento"/>.</summary>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels.MedicamentosViewModel.editarMedicamentoCommand">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels.MedicamentosViewModel.EditarMedicamentoCommand"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.MedicamentosViewModel.EditarMedicamentoCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.MedicamentosViewModel.EditarMedicamento(MECAGOENELTFG.Models.Medicamento)"/>.</summary>
         </member>
         <member name="F:MECAGOENELTFG.ViewModels.MedicamentosViewModel.irADashboardCommand">
             <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels.MedicamentosViewModel.IrADashboardCommand"/>.</summary>
@@ -440,6 +598,39 @@
             for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
             </summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IdMedica">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IdMedica" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.NomMedica">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "NomMedica" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Gramos">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Gramos" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Stock">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Stock" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Estado">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Estado" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Citas">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Citas" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsLoading">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsLoading" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.FiltroIdCliente">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "FiltroIdCliente" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.FiltroIdProfesional">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "FiltroIdProfesional" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.FiltroFecha">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "FiltroFecha" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.FiltroEstado">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "FiltroEstado" generated properties.</summary>
+        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ClienteId">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ClienteId" generated properties.</summary>
         </member>
@@ -460,9 +651,6 @@
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.TituloFormulario">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "TituloFormulario" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsLoading">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsLoading" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Clientes">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Clientes" generated properties.</summary>
@@ -497,6 +685,15 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Mascotas">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Mascotas" generated properties.</summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Medicamentos">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Medicamentos" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.FiltroNombre">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "FiltroNombre" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.FiltroBajoStock">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "FiltroBajoStock" generated properties.</summary>
+        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Nombre">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Nombre" generated properties.</summary>
         </member>
@@ -521,6 +718,39 @@
             for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
             </summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IdMedica">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IdMedica" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.NomMedica">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "NomMedica" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Gramos">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Gramos" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Stock">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Stock" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Estado">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Estado" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Citas">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Citas" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsLoading">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsLoading" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.FiltroIdCliente">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "FiltroIdCliente" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.FiltroIdProfesional">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "FiltroIdProfesional" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.FiltroFecha">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "FiltroFecha" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.FiltroEstado">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "FiltroEstado" generated properties.</summary>
+        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ClienteId">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ClienteId" generated properties.</summary>
         </member>
@@ -541,9 +771,6 @@
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.TituloFormulario">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "TituloFormulario" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsLoading">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsLoading" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Clientes">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Clientes" generated properties.</summary>
@@ -577,6 +804,15 @@
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Mascotas">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Mascotas" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Medicamentos">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Medicamentos" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.FiltroNombre">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "FiltroNombre" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.FiltroBajoStock">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "FiltroBajoStock" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Nombre">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Nombre" generated properties.</summary>

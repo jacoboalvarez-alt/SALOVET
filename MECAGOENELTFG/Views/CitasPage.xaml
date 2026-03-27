@@ -1,28 +1,272 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MECAGOENELTFG.Views.CitasPage"
              xmlns:vm="clr-namespace:MECAGOENELTFG.ViewModels"
-             Shell.NavBarIsVisible="False"
+             x:Class="MECAGOENELTFG.Views.CitasPage"
+             x:DataType="vm:CitasViewModel"
+             xmlns:models="clr-namespace:MECAGOENELTFG.Models"
+             Title="Gestión de Citas"
              BackgroundImageSource="fondo2.png"
-             Title="CitasPage">
+             Shell.NavBarIsVisible="False">
     <ContentPage.BindingContext>
         <vm:CitasViewModel />
     </ContentPage.BindingContext>
-    
-    <VerticalStackLayout>
-        <Button Text="Volver"
-         Command="{Binding IrADashboardCommand}"
-         BackgroundColor="#2EBBB0"
-         TextColor="White"
-         HorizontalOptions="End"
-         WidthRequest="140"
-         VerticalOptions="End" Margin="0,5,10,0"/>
-        <Label 
-            Text="CITAS" FontSize="55" HorizontalOptions="Center" VerticalOptions="Center"
-            FontFamily="Milano" Margin="0,20,0,0" FontAttributes="Bold" TextColor="White"
-            />
 
+    <Grid RowDefinitions="Auto,Auto,Auto,Auto,*" Padding="30,20,30,20">
 
-    </VerticalStackLayout>
+        <!-- Fila superior: Título centrado + Volver a la derecha -->
+        <Grid Grid.Row="0" ColumnDefinitions="150,*,150" Margin="0,10,0,10">
+            <Label Grid.Column="1"
+                   Text="Lista de Citas"
+                   FontSize="38"
+                   TextColor="White"
+                   FontFamily="Milano"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" />
+            <Button Grid.Column="2"
+                    Text="← Volver"
+                    Command="{Binding IrADashboardCommand}"
+                    BackgroundColor="#1A9E94"
+                    TextColor="White"
+                    CornerRadius="10"
+                    HeightRequest="40"
+                    WidthRequest="130"
+                    FontAttributes="Bold"
+                    HorizontalOptions="End"
+                    VerticalOptions="Center" />
+        </Grid>
+
+        <!-- Separador decorativo -->
+        <BoxView Grid.Row="1"
+                 HeightRequest="1" WidthRequest="270"
+                 BackgroundColor="#FFFFFF40"
+                 Margin="0,0,0,15" />
+
+        <!-- Filtros -->
+        <Border Grid.Row="2"
+                BackgroundColor="#FFFFFFCC"
+                StrokeShape="RoundRectangle 12"
+                Stroke="#FFFFFF30"
+                Padding="16,12"
+                Margin="0,0,0,12">
+            <Grid ColumnDefinitions="*,*,*,*,Auto" ColumnSpacing="12">
+
+                <!-- Filtro por ID Cliente -->
+                <VerticalStackLayout Grid.Column="0" Spacing="4">
+                    <Label Text="ID Cliente"
+                           FontSize="12"
+                           FontAttributes="Bold"
+                           FontFamily="Nunito"
+                           TextColor="#444" />
+                    <Border StrokeShape="RoundRectangle 8" Stroke="#2EBBB0" Padding="8,0">
+                        <Entry Placeholder="Ej: 3"
+                               Text="{Binding FiltroIdCliente}"
+                               Keyboard="Numeric"
+                               FontFamily="Nunito"
+                               FontSize="14"
+                               TextColor="#222"
+                               HeightRequest="38" />
+                    </Border>
+                </VerticalStackLayout>
+
+                <!-- Filtro por ID Profesional -->
+                <VerticalStackLayout Grid.Column="1" Spacing="4">
+                    <Label Text="ID Profesional"
+                           FontSize="12"
+                           FontAttributes="Bold"
+                           FontFamily="Nunito"
+                           TextColor="#444" />
+                    <Border StrokeShape="RoundRectangle 8" Stroke="#2EBBB0" Padding="8,0">
+                        <Entry Placeholder="Ej: 1"
+                               Text="{Binding FiltroIdProfesional}"
+                               Keyboard="Numeric"
+                               FontFamily="Nunito"
+                               FontSize="14"
+                               TextColor="#222"
+                               HeightRequest="38" />
+                    </Border>
+                </VerticalStackLayout>
+
+                <!-- Filtro por Fecha -->
+                <VerticalStackLayout Grid.Column="2" Spacing="4">
+                    <Label Text="Fecha"
+                           FontSize="12"
+                           FontAttributes="Bold"
+                           FontFamily="Nunito"
+                           TextColor="#444" />
+                    <Border StrokeShape="RoundRectangle 8" Stroke="#2EBBB0" Padding="8,0">
+                        <DatePicker Date="{Binding FiltroFecha}"
+                                    Format="dd/MM/yyyy"
+                                    FontFamily="Nunito"
+                                    FontSize="14"
+                                    TextColor="#222"
+                                    HeightRequest="38" />
+                    </Border>
+                </VerticalStackLayout>
+
+                <!-- Filtro por Estado -->
+                <VerticalStackLayout Grid.Column="3" Spacing="4">
+                    <Label Text="Estado"
+                           FontSize="12"
+                           FontAttributes="Bold"
+                           FontFamily="Nunito"
+                           TextColor="#444" />
+                    <Border StrokeShape="RoundRectangle 8" Stroke="#2EBBB0" Padding="8,0">
+                        <Picker SelectedItem="{Binding FiltroEstado}"
+                                FontFamily="Nunito"
+                                FontSize="14"
+                                TextColor="#222"
+                                HeightRequest="38"
+                                ItemsSource="{Binding EstadosDisponibles}" />
+                    </Border>
+                </VerticalStackLayout>
+
+                <!-- Botones Filtrar / Limpiar -->
+                <VerticalStackLayout Grid.Column="4" Spacing="6" VerticalOptions="End">
+                    <Button Text="🔍 Filtrar"
+                            Command="{Binding FiltrarCommand}"
+                            BackgroundColor="#2EBBB0"
+                            TextColor="White"
+                            CornerRadius="8"
+                            HeightRequest="38"
+                            FontAttributes="Bold"
+                            FontFamily="Nunito"
+                            Padding="16,0" />
+                    <Button Text="✖ Limpiar"
+                            Command="{Binding LimpiarFiltrosCommand}"
+                            BackgroundColor="#90A4AE"
+                            TextColor="White"
+                            CornerRadius="8"
+                            HeightRequest="38"
+                            FontAttributes="Bold"
+                            FontFamily="Nunito"
+                            Padding="16,0" />
+                </VerticalStackLayout>
+            </Grid>
+        </Border>
+
+        <!-- Barra de acciones -->
+        <Grid Grid.Row="3" ColumnDefinitions="*,Auto" Margin="0,0,0,12">
+            <HorizontalStackLayout Grid.Column="1" Spacing="8">
+                <Button Text="➕  Agregar Cita"
+                        Command="{Binding AgregarCitaCommand}"
+                        BackgroundColor="#4CAF50"
+                        TextColor="White"
+                        CornerRadius="10"
+                        HeightRequest="40"
+                        FontAttributes="Bold"
+                        Padding="16,0" />
+                <Button Text="🔄  Refrescar"
+                        Command="{Binding CargarCitasCommand}"
+                        BackgroundColor="#1A9E94"
+                        TextColor="White"
+                        CornerRadius="10"
+                        HeightRequest="40"
+                        FontAttributes="Bold"
+                        Padding="16,0" />
+            </HorizontalStackLayout>
+        </Grid>
+
+        <!-- Tabla -->
+        <Border Grid.Row="4"
+                BackgroundColor="White"
+                StrokeShape="RoundRectangle 14"
+                Stroke="#FFFFFF30"
+                Padding="0">
+
+            <Grid RowDefinitions="Auto,*">
+
+                <!-- Encabezado -->
+                <Grid Grid.Row="0"
+                      ColumnDefinitions="45,100,130,130,*,120,120"
+                      BackgroundColor="#2EBBB0"
+                      Padding="12,12">
+                    <Label Grid.Column="0" Text="ID"           TextColor="White" FontAttributes="Bold" FontSize="13" FontFamily="Nunito" VerticalOptions="Center"/>
+                    <Label Grid.Column="1" Text="Fecha"        TextColor="White" FontAttributes="Bold" FontSize="13" FontFamily="Nunito" VerticalOptions="Center"/>
+                    <Label Grid.Column="2" Text="Cliente"      TextColor="White" FontAttributes="Bold" FontSize="13" FontFamily="Nunito" VerticalOptions="Center"/>
+                    <Label Grid.Column="3" Text="Profesional"  TextColor="White" FontAttributes="Bold" FontSize="13" FontFamily="Nunito" VerticalOptions="Center"/>
+                    <Label Grid.Column="4" Text="Descripcion"       TextColor="White" FontAttributes="Bold" FontSize="13" FontFamily="Nunito" VerticalOptions="Center"/>
+                    <Label Grid.Column="5" Text="Estado"       TextColor="White" FontAttributes="Bold" FontSize="13" FontFamily="Nunito" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Label Grid.Column="6" Text="Acciones"     TextColor="White" FontAttributes="Bold" FontSize="13" FontFamily="Nunito" HorizontalOptions="Center" VerticalOptions="Center"/>
+                </Grid>
+
+                <!-- Indicador de carga -->
+                <ActivityIndicator Grid.Row="1"
+                                   IsRunning="{Binding IsLoading}"
+                                   IsVisible="{Binding IsLoading}"
+                                   Color="#2EBBB0"
+                                   WidthRequest="50"
+                                   HeightRequest="50"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center" />
+
+                <!-- Filas -->
+                <ScrollView Grid.Row="1">
+                    <CollectionView ItemsSource="{Binding Citas}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate x:DataType="models:Cita">
+                                <Grid ColumnDefinitions="45,100,130,130,*,120,120"
+                                      Padding="12,8">
+                                    <Grid.BackgroundColor>#F9FFFE</Grid.BackgroundColor>
+
+                                    <BoxView Grid.ColumnSpan="7"
+                                             HeightRequest="1"
+                                             BackgroundColor="#E0F5F3"
+                                             VerticalOptions="End" />
+
+                                    <Label Grid.Column="0" Text="{Binding IdCita}"                        TextColor="#444" FontSize="14" FontFamily="Nunito" VerticalOptions="Center"/>
+                                    <Label Grid.Column="1" Text="{Binding FechaHora, StringFormat='{0:dd/MM/yy HH:mm}'}" TextColor="#444" FontSize="13" FontFamily="Nunito" VerticalOptions="Center"/>
+                                    <Label Grid.Column="2" Text="{Binding Cliente.NombreCli}"              TextColor="#222" FontSize="14" FontFamily="Nunito" VerticalOptions="Center" FontAttributes="Bold"/>
+                                    <Label Grid.Column="3" Text="{Binding Profesional.NomProf} " TextColor="#444" FontSize="14" FontFamily="Nunito" VerticalOptions="Center"/>
+                                    <Label Grid.Column="4" Text="{Binding Descripcion}" TextColor="#555" FontSize="13" FontFamily="Nunito" LineBreakMode="TailTruncation" VerticalOptions="Center"/>
+
+                                    <!-- Badge de estado con color -->
+                                    <Border Grid.Column="5"
+                                            StrokeShape="RoundRectangle 8"
+                                            Padding="6,3"
+                                            HorizontalOptions="Center"
+                                            VerticalOptions="Center"
+                                            BackgroundColor="{Binding Estado, Converter={StaticResource EstadoColorConverter}}">
+                                        <Label Text="{Binding Estado}"
+                                               TextColor="White"
+                                               FontSize="12"
+                                               FontAttributes="Bold"
+                                               FontFamily="Nunito"
+                                               HorizontalOptions="Center" />
+                                    </Border>
+
+                                    <HorizontalStackLayout Grid.Column="6"
+                                                           Spacing="5"
+                                                           HorizontalOptions="Center"
+                                                           VerticalOptions="Center">
+                                        <Button Text="✏️"
+                                                Command="{Binding Source={RelativeSource AncestorType={x:Type vm:CitasViewModel}}, Path=EditarCitaCommand}"
+                                                CommandParameter="{Binding .}"
+                                                BackgroundColor="#2196F3"
+                                                TextColor="White"
+                                                CornerRadius="8"
+                                                WidthRequest="36"
+                                                HeightRequest="32"
+                                                Padding="0"
+                                                FontSize="14" />
+                                        <Button Text="🗑️"
+                                                Command="{Binding Source={RelativeSource AncestorType={x:Type vm:CitasViewModel}}, Path=EliminarCitaCommand}"
+                                                CommandParameter="{Binding .}"
+                                                BackgroundColor="#F44336"
+                                                TextColor="White"
+                                                CornerRadius="8"
+                                                WidthRequest="36"
+                                                HeightRequest="32"
+                                                Padding="0"
+                                                FontSize="14" />
+                                    </HorizontalStackLayout>
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </ScrollView>
+            </Grid>
+        </Border>
+    </Grid>
 </ContentPage>

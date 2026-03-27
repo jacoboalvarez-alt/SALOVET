@@ -9,4 +9,18 @@ public partial class CitasPage : ContentPage
 		InitializeComponent();
 		BindingContext = new CitasViewModel();
 	}
+
+
+    protected override async void OnAppearing()
+    {
+        base.OnAppearing();
+
+        // Obtener el ViewModel del BindingContext (que se creó en XAML)
+        var viewModel = BindingContext as CitasViewModel;
+
+        if (viewModel != null)
+        {
+            await viewModel.InitializeAsync();
+        }
+    }
 }

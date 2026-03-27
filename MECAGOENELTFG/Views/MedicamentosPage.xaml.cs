@@ -9,4 +9,17 @@ public partial class MedicamentosPage : ContentPage
 		InitializeComponent();
 		BindingContext = new MedicamentosViewModel();
 	}
+
+    protected override async void OnAppearing()
+    {
+        base.OnAppearing();
+
+        // Obtener el ViewModel del BindingContext (que se creó en XAML)
+        var viewModel = BindingContext as MedicamentosViewModel;
+
+        if (viewModel != null)
+        {
+            await viewModel.CargarMedicamentos();
+        }
+    }
 }

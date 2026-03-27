@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,13 +7,24 @@ using System.Threading.Tasks;
 
 namespace MECAGOENELTFG.Models
 {
-    internal class Medicamento
+    internal partial class Medicamento : ObservableObject
     {
-        public int IdMedica { get; set; }
-        public string NomMedica { get; set; } = string.Empty;
-        public float Gramos { get; set; }
-        public int Stock { get; set; }
-        public bool Estado { get; set; }
+
+        [ObservableProperty]
+        public int idMedica;
+
+        [ObservableProperty]
+        public string nomMedica;
+
+        [ObservableProperty]
+        public float gramos;
+
+
+        [ObservableProperty]
+        public int stock;
+
+        [ObservableProperty]
+        public bool estado;
 
     }
 }

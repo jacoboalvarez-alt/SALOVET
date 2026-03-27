@@ -12,6 +12,10 @@
             </ResourceDictionary.MergedDictionaries>
             <converters:StringToBoolConverter x:Key="StringToBoolConverter" />
             <converters:InvertedBoolConverter x:Key="InvertedBoolConverter" />
+            <converters:EstadoColorConverter x:Key="EstadoColorConverter" />
+            <converters:BoolToEstadoConverter    x:Key="BoolToEstadoConverter" />
+            <converters:BoolToEstadoBgConverter  x:Key="BoolToEstadoBgConverter" />
+            <converters:StockColorConverter      x:Key="StockColorConverter" />
         </ResourceDictionary>
     </Application.Resources>
 </Application>

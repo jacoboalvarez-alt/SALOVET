@@ -1,26 +1,272 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MECAGOENELTFG.Views.MedicamentosPage"
              xmlns:vm="clr-namespace:MECAGOENELTFG.ViewModels"
-             Title="MedicamentosPage"
+             x:Class="MECAGOENELTFG.Views.MedicamentosPage"
+             x:DataType="vm:MedicamentosViewModel"
+             xmlns:models="clr-namespace:MECAGOENELTFG.Models"
+             xmlns:converters="clr-namespace:MECAGOENELTFG.Converters"
+             Title="Gestión de Medicamentos"
              BackgroundImageSource="fondo2.png"
              Shell.NavBarIsVisible="False">
+
+    <ContentPage.Resources>
+        <converters:EstadoColorConverter x:Key="EstadoColorConverter" />
+        <converters:BoolToEstadoConverter x:Key="BoolToEstadoConverter" />
+        <converters:BoolToEstadoBgConverter x:Key="BoolToEstadoBgConverter" />
+        <converters:StockColorConverter x:Key="StockColorConverter" />
+    </ContentPage.Resources>
+
     <ContentPage.BindingContext>
         <vm:MedicamentosViewModel />
     </ContentPage.BindingContext>
-    <VerticalStackLayout>
-        <Button Text="Volver"
-          Command="{Binding IrADashboardCommand}"
-          BackgroundColor="#2EBBB0"
-          TextColor="White"
-          HorizontalOptions="End"
-          WidthRequest="140"
-          VerticalOptions="End" Margin="0,5,10,0"/>
 
-        <Label 
-            Text="MEDICAMENTOS" FontSize="50" FontFamily="Milano" Margin=" 0,20,0,0" 
-            VerticalOptions="Center"  TextColor="White" FontAttributes="Bold"
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <Grid RowDefinitions="Auto,Auto,Auto,Auto,*" Padding="30,20,30,20">
+
+        <!-- Título + Volver -->
+        <Grid Grid.Row="0" ColumnDefinitions="150,*,150" Margin="0,10,0,10">
+            <Label Grid.Column="1"
+                   Text="Medicamentos"
+                   FontSize="38"
+                   TextColor="White"
+                   FontFamily="Milano"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" />
+            <Button Grid.Column="2"
+                    Text="← Volver"
+                    Command="{Binding IrADashboardCommand}"
+                    BackgroundColor="#1A9E94"
+                    TextColor="White"
+                    CornerRadius="10"
+                    HeightRequest="40"
+                    WidthRequest="130"
+                    FontAttributes="Bold"
+                    HorizontalOptions="End"
+                    VerticalOptions="Center" />
+        </Grid>
+
+        <!-- Separador -->
+        <BoxView Grid.Row="1"
+                 HeightRequest="1" WidthRequest="270"
+                 BackgroundColor="White"
+                 Margin="0,0,0,15" />
+
+        <!-- Filtros -->
+        <Border Grid.Row="2"
+                BackgroundColor="#FFFFFFCC"
+                StrokeShape="RoundRectangle 12"
+                Stroke="#FFFFFF30"
+                Padding="16,12"
+                Margin="0,0,0,12">
+            <Grid ColumnDefinitions="*,*,*,Auto" ColumnSpacing="12">
+
+                <!-- Filtro nombre -->
+                <VerticalStackLayout Grid.Column="0" Spacing="4">
+                    <Label Text="Nombre" FontSize="12" FontAttributes="Bold"
+                           FontFamily="Nunito" TextColor="#444" />
+                    <Border StrokeShape="RoundRectangle 8" Stroke="#2EBBB0" Padding="8,0">
+                        <Entry Placeholder="Ej: Amoxicilina"
+                               Text="{Binding FiltroNombre}"
+                               FontFamily="Nunito" FontSize="14"
+                               TextColor="#222" HeightRequest="38" />
+                    </Border>
+                </VerticalStackLayout>
+
+                <!-- Filtro bajo stock -->
+                <VerticalStackLayout Grid.Column="1" Spacing="4">
+                    <Label Text="Límite bajo stock" FontSize="12" FontAttributes="Bold"
+                           FontFamily="Nunito" TextColor="#444" />
+                    <Border StrokeShape="RoundRectangle 8" Stroke="#2EBBB0" Padding="8,0">
+                        <Entry Placeholder="Ej: 10"
+                               Text="{Binding FiltroBajoStock}"
+                               Keyboard="Numeric"
+                               FontFamily="Nunito" FontSize="14"
+                               TextColor="#222" HeightRequest="38" />
+                    </Border>
+                </VerticalStackLayout>
+
+                <!-- Filtro disponibilidad -->
+                <VerticalStackLayout Grid.Column="2" Spacing="4">
+                    <Label Text="Disponibilidad" FontSize="12" FontAttributes="Bold"
+                           FontFamily="Nunito" TextColor="#444" />
+                    <Border StrokeShape="RoundRectangle 8" Stroke="#2EBBB0" Padding="8,0">
+                        <Picker SelectedItem="{Binding FiltroDisponibilidad}"
+                                ItemsSource="{Binding DisponibilidadOpciones}"
+                                FontFamily="Nunito" FontSize="14"
+                                TextColor="#222" HeightRequest="38" />
+                    </Border>
+                </VerticalStackLayout>
+
+                <!-- Botones filtrar / limpiar -->
+                <VerticalStackLayout Grid.Column="3" Spacing="6" VerticalOptions="End">
+                    <Button Text="🔍 Filtrar"
+                            Command="{Binding FiltrarCommand}"
+                            BackgroundColor="#2EBBB0" TextColor="White"
+                            CornerRadius="8" HeightRequest="38"
+                            FontAttributes="Bold" FontFamily="Nunito" Padding="16,0" />
+                    <Button Text="✖ Limpiar"
+                            Command="{Binding LimpiarFiltrosCommand}"
+                            BackgroundColor="#90A4AE" TextColor="White"
+                            CornerRadius="8" HeightRequest="38"
+                            FontAttributes="Bold" FontFamily="Nunito" Padding="16,0" />
+                </VerticalStackLayout>
+            </Grid>
+        </Border>
+
+        <!-- Barra de acciones -->
+        <Grid Grid.Row="3" ColumnDefinitions="*,Auto" Margin="0,0,0,12">
+            <HorizontalStackLayout Grid.Column="1" Spacing="8">
+                <Button Text="➕  Agregar Medicamento"
+                        Command="{Binding AgregarMedicamentoCommand}"
+                        BackgroundColor="#4CAF50" TextColor="White"
+                        CornerRadius="10" HeightRequest="40"
+                        FontAttributes="Bold" Padding="16,0" />
+                <Button Text="🔄  Refrescar"
+                        Command="{Binding CargarMedicamentosCommand}"
+                        BackgroundColor="#1A9E94" TextColor="White"
+                        CornerRadius="10" HeightRequest="40"
+                        FontAttributes="Bold" Padding="16,0" />
+            </HorizontalStackLayout>
+        </Grid>
+
+        <!-- Tabla -->
+        <Border Grid.Row="4"
+                BackgroundColor="White"
+                StrokeShape="RoundRectangle 14"
+                Stroke="#FFFFFF30"
+                Padding="0">
+            <Grid RowDefinitions="Auto,*">
+
+                <!-- Encabezado -->
+                <Grid Grid.Row="0"
+                      ColumnDefinitions="45,*,90,100,90,160,120"
+                      BackgroundColor="#2EBBB0"
+                      Padding="12,12">
+                    <Label Grid.Column="0" Text="ID"        TextColor="White" FontAttributes="Bold" FontSize="13" FontFamily="Nunito" VerticalOptions="Center"/>
+                    <Label Grid.Column="1" Text="Nombre"    TextColor="White" FontAttributes="Bold" FontSize="13" FontFamily="Nunito" VerticalOptions="Center"/>
+                    <Label Grid.Column="2" Text="Gramos"    TextColor="White" FontAttributes="Bold" FontSize="13" FontFamily="Nunito" VerticalOptions="Center"/>
+                    <Label Grid.Column="3" Text="Stock"     TextColor="White" FontAttributes="Bold" FontSize="13" FontFamily="Nunito" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Label Grid.Column="4" Text="Estado"    TextColor="White" FontAttributes="Bold" FontSize="13" FontFamily="Nunito" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Label Grid.Column="5" Text="Gestión Stock" TextColor="White" FontAttributes="Bold" FontSize="13" FontFamily="Nunito" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Label Grid.Column="6" Text="Acciones"  TextColor="White" FontAttributes="Bold" FontSize="13" FontFamily="Nunito" HorizontalOptions="Center" VerticalOptions="Center"/>
+                </Grid>
+
+                <!-- Indicador de carga -->
+                <ActivityIndicator Grid.Row="1"
+                                   IsRunning="{Binding IsLoading}"
+                                   IsVisible="{Binding IsLoading}"
+                                   Color="#2EBBB0"
+                                   WidthRequest="50" HeightRequest="50"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center" />
+
+                <!-- Filas -->
+                <ScrollView Grid.Row="1">
+                    <CollectionView ItemsSource="{Binding Medicamentos}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate x:DataType="models:Medicamento">
+                                <Grid ColumnDefinitions="45,*,90,100,90,160,120"
+                                      Padding="12,8">
+                                    <Grid.BackgroundColor>#F9FFFE</Grid.BackgroundColor>
+
+                                    <BoxView Grid.ColumnSpan="7"
+                                             HeightRequest="1"
+                                             BackgroundColor="#E0F5F3"
+                                             VerticalOptions="End" />
+
+                                    <Label Grid.Column="0"
+                                           Text="{Binding IdMedica}"
+                                           TextColor="#444" FontSize="14" FontFamily="Nunito" VerticalOptions="Center"/>
+
+                                    <Label Grid.Column="1"
+                                           Text="{Binding NomMedica}"
+                                           TextColor="#222" FontSize="14" FontFamily="Nunito"
+                                           FontAttributes="Bold" VerticalOptions="Center"/>
+
+                                    <Label Grid.Column="2"
+                                           Text="{Binding Gramos, StringFormat='{0:F1} g'}"
+                                           TextColor="#444" FontSize="14" FontFamily="Nunito" VerticalOptions="Center"/>
+
+                                    <!-- Stock con color según cantidad -->
+                                    <Border Grid.Column="3"
+                                            StrokeShape="RoundRectangle 8"
+                                            Padding="10,4"
+                                            HorizontalOptions="Center"
+                                            VerticalOptions="Center"
+                                            BackgroundColor="{Binding Stock, Converter={StaticResource StockColorConverter}}">
+                                        <Label Text="{Binding Stock}"
+                                               TextColor="White"
+                                               FontSize="13" FontAttributes="Bold"
+                                               FontFamily="Nunito"
+                                               HorizontalOptions="Center"/>
+                                    </Border>
+
+                                    <!-- Badge estado activo/inactivo -->
+                                    <Border Grid.Column="4"
+                                            StrokeShape="RoundRectangle 8"
+                                            Padding="8,3"
+                                            HorizontalOptions="Center"
+                                            VerticalOptions="Center"
+                                            BackgroundColor="{Binding Estado, Converter={StaticResource BoolToEstadoBgConverter}}">
+                                        <Label Text="{Binding Estado, Converter={StaticResource BoolToEstadoConverter}}"
+                                               TextColor="White"
+                                               FontSize="12" FontAttributes="Bold"
+                                               FontFamily="Nunito"
+                                               HorizontalOptions="Center"/>
+                                    </Border>
+
+                                    <!-- Botones +/- stock -->
+                                    <HorizontalStackLayout Grid.Column="5"
+                                                           Spacing="6"
+                                                           HorizontalOptions="Center"
+                                                           VerticalOptions="Center">
+                                        <Button Text="−"
+                                                Command="{Binding Source={RelativeSource AncestorType={x:Type vm:MedicamentosViewModel}}, Path=DisminuirStockCommand}"
+                                                CommandParameter="{Binding .}"
+                                                BackgroundColor="#F44336"
+                                                TextColor="White"
+                                                CornerRadius="8"
+                                                WidthRequest="36" HeightRequest="32"
+                                                Padding="0" FontSize="18" FontAttributes="Bold"/>
+                                        <Button Text="+"
+                                                Command="{Binding Source={RelativeSource AncestorType={x:Type vm:MedicamentosViewModel}}, Path=AumentarStockCommand}"
+                                                CommandParameter="{Binding .}"
+                                                BackgroundColor="#4CAF50"
+                                                TextColor="White"
+                                                CornerRadius="8"
+                                                WidthRequest="36" HeightRequest="32"
+                                                Padding="0" FontSize="18" FontAttributes="Bold"/>
+                                    </HorizontalStackLayout>
+
+                                    <!-- Editar / Eliminar -->
+                                    <HorizontalStackLayout Grid.Column="6"
+                                                           Spacing="5"
+                                                           HorizontalOptions="Center"
+                                                           VerticalOptions="Center">
+                                        <Button Text="✏️"
+                                                Command="{Binding Source={RelativeSource AncestorType={x:Type vm:MedicamentosViewModel}}, Path=EditarMedicamentoCommand}"
+                                                CommandParameter="{Binding .}"
+                                                BackgroundColor="#2196F3"
+                                                TextColor="White"
+                                                CornerRadius="8"
+                                                WidthRequest="36" HeightRequest="32"
+                                                Padding="0" FontSize="14"/>
+                                        <Button Text="🗑️"
+                                                Command="{Binding Source={RelativeSource AncestorType={x:Type vm:MedicamentosViewModel}}, Path=EliminarMedicamentoCommand}"
+                                                CommandParameter="{Binding .}"
+                                                BackgroundColor="#F44336"
+                                                TextColor="White"
+                                                CornerRadius="8"
+                                                WidthRequest="36" HeightRequest="32"
+                                                Padding="0" FontSize="14"/>
+                                    </HorizontalStackLayout>
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </ScrollView>
+            </Grid>
+        </Border>
+    </Grid>
 </ContentPage>
