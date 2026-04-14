@@ -605,3 +605,8 @@ C:\Users\jorgeg\Videos\Jacobo\TFG\SALOVET\MECAGOENELTFG\obj\Debug\net9.0-maccata
 C:\Users\jorgeg\Videos\Jacobo\TFG\SALOVET\MECAGOENELTFG\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon20x20@3x.png
 C:\Users\jorgeg\Videos\Jacobo\TFG\SALOVET\MECAGOENELTFG\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon20x20@2x.png
 C:\Users\jorgeg\Videos\Jacobo\TFG\SALOVET\MECAGOENELTFG\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\Contents.json
+C:\Users\jorgeg\Videos\Jacobo\TFG\SALOVET\MECAGOENELTFG\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\r\Resources\noticia1.png
+C:\Users\jorgeg\Videos\Jacobo\TFG\SALOVET\MECAGOENELTFG\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\r\Resources\fondo.png
+C:\Users\jorgeg\Videos\Jacobo\TFG\SALOVET\MECAGOENELTFG\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\r\Resources\noticia2.png
+C:\Users\jorgeg\Videos\Jacobo\TFG\SALOVET\MECAGOENELTFG\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\r\Resources\noticia3.png
+C:\Users\jorgeg\Videos\Jacobo\TFG\SALOVET\MECAGOENELTFG\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\r\Resources\logo.png

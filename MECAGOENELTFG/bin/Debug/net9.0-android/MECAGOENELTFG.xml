@@ -52,6 +52,233 @@
             Maneja el 409 Conflict si el username ya existe.
             </summary>
         </member>
+        <member name="T:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel.NombreMascota">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel._nombreMascota"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel.Edad">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel._edad"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel.Raza">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel._raza"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel.Especie">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel._especie"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel.Color">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel._color"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel.Sexo">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel._sexo"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel.TipoPelo">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel._tipoPelo"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel.Notas">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel._notas"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel.EstaVacunado">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel._estaVacunado"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel.VacunadoLabel">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel._vacunadoLabel"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel.IsFormVisible">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel._isFormVisible"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel.IsLoading">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel._isLoading"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel.SizeFieldVisible">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel._sizeFieldVisible"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel.HairFieldVisible">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel._hairFieldVisible"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel.SpeciesFieldVisible">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel._speciesFieldVisible"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel.SelectedType">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel._selectedType"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel.BreedLabel">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel._breedLabel"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel.BreedPlaceholder">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel._breedPlaceholder"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel.SaveButtonText">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel._saveButtonText"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel.TamanoSeleccionado">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel._tamanoSeleccionado"/>
+        </member>
+        <member name="M:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel.OnEstaVacunadoChanged(System.Boolean)">
+            <summary>Executes the logic for when <see cref="P:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel.EstaVacunado"/> just changed.</summary>
+            <param name="value">The new property value that was set.</param>
+            <remarks>This method is invoked right after the value of <see cref="P:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel.EstaVacunado"/> is changed.</remarks>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel.selectDogCommand">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel.SelectDogCommand"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel.SelectDogCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel.SelectDog"/>.</summary>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel.selectCatCommand">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel.SelectCatCommand"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel.SelectCatCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel.SelectCat"/>.</summary>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel.selectOtherCommand">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel.SelectOtherCommand"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel.SelectOtherCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel.SelectOther"/>.</summary>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel.selectTamanoCommand">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel.SelectTamanoCommand"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel.SelectTamanoCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel.SelectTamano(System.String)"/>.</summary>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel.guardarCommand">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel.GuardarCommand"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel.GuardarCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel.Guardar"/>.</summary>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel.volverCommand">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel.VolverCommand"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel.VolverCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels2.AgregarMascotaClientViewModel.Volver"/>.</summary>
+        </member>
+        <member name="T:MECAGOENELTFG.ViewModels2.ClienteCitasViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels2.ClienteCitasViewModel.FiltroActivo">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels2.ClienteCitasViewModel.filtroActivo"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels2.ClienteCitasViewModel.SinCitasProximas">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels2.ClienteCitasViewModel.sinCitasProximas"/>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels2.ClienteCitasViewModel.cambiarFiltroCommand">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels2.ClienteCitasViewModel.CambiarFiltroCommand"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels2.ClienteCitasViewModel.CambiarFiltroCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels2.ClienteCitasViewModel.CambiarFiltro(System.String)"/>.</summary>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels2.ClienteCitasViewModel.solicitarCitaCommand">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels2.ClienteCitasViewModel.SolicitarCitaCommand"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels2.ClienteCitasViewModel.SolicitarCitaCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels2.ClienteCitasViewModel.SolicitarCita"/>.</summary>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels2.ClienteCitasViewModel.modificarCitaCommand">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels2.ClienteCitasViewModel.ModificarCitaCommand"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels2.ClienteCitasViewModel.ModificarCitaCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels2.ClienteCitasViewModel.ModificarCita(MECAGOENELTFG.ViewModels2.CitaItem)"/>.</summary>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels2.ClienteCitasViewModel.cancelarCitaCommand">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels2.ClienteCitasViewModel.CancelarCitaCommand"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels2.ClienteCitasViewModel.CancelarCitaCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels2.ClienteCitasViewModel.CancelarCita(MECAGOENELTFG.ViewModels2.CitaItem)"/>.</summary>
+        </member>
+        <member name="T:MECAGOENELTFG.ViewModels2.ClienteEditarPefilViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels2.ClienteEditarPefilViewModel.ClienteActual">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels2.ClienteEditarPefilViewModel.clienteActual"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels2.ClienteEditarPefilViewModel.Nombre">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels2.ClienteEditarPefilViewModel.nombre"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels2.ClienteEditarPefilViewModel.Apellidos">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels2.ClienteEditarPefilViewModel.apellidos"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels2.ClienteEditarPefilViewModel.Email">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels2.ClienteEditarPefilViewModel.email"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels2.ClienteEditarPefilViewModel.Telefono">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels2.ClienteEditarPefilViewModel.telefono"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels2.ClienteEditarPefilViewModel.Edad">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels2.ClienteEditarPefilViewModel.edad"/>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels2.ClienteEditarPefilViewModel.guardarCommandCommand">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels2.ClienteEditarPefilViewModel.GuardarCommandCommand"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels2.ClienteEditarPefilViewModel.GuardarCommandCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels2.ClienteEditarPefilViewModel.GuardarCommand"/>.</summary>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels2.ClienteEditarPefilViewModel.cancelarCommandCommand">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels2.ClienteEditarPefilViewModel.CancelarCommandCommand"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels2.ClienteEditarPefilViewModel.CancelarCommandCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels2.ClienteEditarPefilViewModel.CancelarCommand"/>.</summary>
+        </member>
+        <member name="T:MECAGOENELTFG.ViewModels2.PerfilPageViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels2.PerfilPageViewModel.NombreCompleto">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels2.PerfilPageViewModel.nombreCompleto"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels2.PerfilPageViewModel.Iniciales">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels2.PerfilPageViewModel.iniciales"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels2.PerfilPageViewModel.ClienteDesde">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels2.PerfilPageViewModel.clienteDesde"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels2.PerfilPageViewModel.Email">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels2.PerfilPageViewModel.email"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels2.PerfilPageViewModel.Telefono">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels2.PerfilPageViewModel.telefono"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels2.PerfilPageViewModel.Edad">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels2.PerfilPageViewModel.edad"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels2.PerfilPageViewModel.ClienteLogueado">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels2.PerfilPageViewModel.clienteLogueado"/>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels2.PerfilPageViewModel.editarCommand">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels2.PerfilPageViewModel.EditarCommand"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels2.PerfilPageViewModel.EditarCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels2.PerfilPageViewModel.Editar"/>.</summary>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels2.PerfilPageViewModel.agregarMascotaCommand">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels2.PerfilPageViewModel.AgregarMascotaCommand"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels2.PerfilPageViewModel.AgregarMascotaCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels2.PerfilPageViewModel.AgregarMascota"/>.</summary>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels2.PerfilPageViewModel.cerrarSesionCommand">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels2.PerfilPageViewModel.CerrarSesionCommand"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels2.PerfilPageViewModel.CerrarSesionCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels2.PerfilPageViewModel.CerrarSesion"/>.</summary>
+        </member>
         <member name="T:MECAGOENELTFG.ViewModels.CitasViewModel">
             <inheritdoc/>
             <inheritdoc/>
@@ -613,11 +840,107 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Estado">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Estado" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Citas">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Citas" generated properties.</summary>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.NombreMascota">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "NombreMascota" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Edad">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Edad" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Raza">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Raza" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Especie">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Especie" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Color">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Color" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Sexo">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Sexo" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.TipoPelo">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "TipoPelo" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Notas">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Notas" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.EstaVacunado">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "EstaVacunado" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.VacunadoLabel">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "VacunadoLabel" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsFormVisible">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsFormVisible" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsLoading">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsLoading" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SizeFieldVisible">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SizeFieldVisible" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.HairFieldVisible">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "HairFieldVisible" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SpeciesFieldVisible">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SpeciesFieldVisible" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SelectedType">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SelectedType" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.BreedLabel">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "BreedLabel" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.BreedPlaceholder">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "BreedPlaceholder" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SaveButtonText">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SaveButtonText" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.TamanoSeleccionado">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "TamanoSeleccionado" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.FiltroActivo">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "FiltroActivo" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.MostrarProximas">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "MostrarProximas" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.MostrarPasadas">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "MostrarPasadas" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SinCitasProximas">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SinCitasProximas" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ClienteActual">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ClienteActual" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Nombre">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Nombre" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Apellidos">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Apellidos" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Email">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Email" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Telefono">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Telefono" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.NombreCompleto">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "NombreCompleto" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Iniciales">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Iniciales" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ClienteDesde">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ClienteDesde" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ClienteLogueado">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ClienteLogueado" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Citas">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Citas" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.FiltroIdCliente">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "FiltroIdCliente" generated properties.</summary>
@@ -639,9 +962,6 @@
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ApeCli">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ApeCli" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Edad">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Edad" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Correo">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Correo" generated properties.</summary>
@@ -673,12 +993,6 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.NombreMasc">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "NombreMasc" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Especie">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Especie" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Raza">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Raza" generated properties.</summary>
-        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.NombreCliente">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "NombreCliente" generated properties.</summary>
         </member>
@@ -693,15 +1007,6 @@
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.FiltroBajoStock">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "FiltroBajoStock" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Nombre">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Nombre" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Apellidos">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Apellidos" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Telefono">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Telefono" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Usuario">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Usuario" generated properties.</summary>
@@ -733,11 +1038,107 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Estado">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Estado" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Citas">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Citas" generated properties.</summary>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.NombreMascota">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "NombreMascota" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Edad">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Edad" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Raza">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Raza" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Especie">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Especie" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Color">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Color" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Sexo">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Sexo" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.TipoPelo">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "TipoPelo" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Notas">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Notas" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.EstaVacunado">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "EstaVacunado" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.VacunadoLabel">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "VacunadoLabel" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsFormVisible">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsFormVisible" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsLoading">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsLoading" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SizeFieldVisible">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SizeFieldVisible" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.HairFieldVisible">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "HairFieldVisible" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SpeciesFieldVisible">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SpeciesFieldVisible" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SelectedType">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SelectedType" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.BreedLabel">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "BreedLabel" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.BreedPlaceholder">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "BreedPlaceholder" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SaveButtonText">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SaveButtonText" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.TamanoSeleccionado">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "TamanoSeleccionado" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.FiltroActivo">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "FiltroActivo" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.MostrarProximas">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "MostrarProximas" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.MostrarPasadas">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "MostrarPasadas" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SinCitasProximas">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SinCitasProximas" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ClienteActual">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ClienteActual" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Nombre">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Nombre" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Apellidos">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Apellidos" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Email">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Email" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Telefono">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Telefono" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.NombreCompleto">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "NombreCompleto" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Iniciales">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Iniciales" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ClienteDesde">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ClienteDesde" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ClienteLogueado">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ClienteLogueado" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Citas">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Citas" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.FiltroIdCliente">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "FiltroIdCliente" generated properties.</summary>
@@ -759,9 +1160,6 @@
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ApeCli">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ApeCli" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Edad">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Edad" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Correo">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Correo" generated properties.</summary>
@@ -793,12 +1191,6 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.NombreMasc">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "NombreMasc" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Especie">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Especie" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Raza">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Raza" generated properties.</summary>
-        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.NombreCliente">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "NombreCliente" generated properties.</summary>
         </member>
@@ -813,15 +1205,6 @@
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.FiltroBajoStock">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "FiltroBajoStock" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Nombre">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Nombre" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Apellidos">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Apellidos" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Telefono">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Telefono" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Usuario">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Usuario" generated properties.</summary>

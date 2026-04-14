@@ -1,4 +1,6 @@
-﻿namespace SalovetAPI.Models
+﻿using System.Text.Json.Serialization;
+
+namespace SalovetAPI.Models
 {
     public class Mascota
     {
@@ -9,7 +11,34 @@
         public string? Raza { get; set; }
         public int? Edad { get; set; }
 
-        // Navegación
-        public Cliente Cliente { get; set; } = null!;
+        public string? Sexo { get; set; }
+        public string? Color { get; set; }
+        public string? Tamano { get; set; }
+        public string? TipoPelo { get; set; }
+        public bool Vacunado { get; set; }
+        public string? Notas { get; set; }
+
+        [JsonIgnore]  // Esto rompe la referencia circular
+        public Cliente? Cliente { get; set; }
+
+
+        public Mascota() { }
+
+        public Mascota(int idMascota, int idCliente, string nombreMasc, string especie, string? raza, int? edad, string? sexo, string? color, string? tamano, string? tipoPelo, bool vacunado, string? notas, Cliente? cliente)
+        {
+            IdMascota = idMascota;
+            IdCliente = idCliente;
+            NombreMasc = nombreMasc;
+            Especie = especie;
+            Raza = raza;
+            Edad = edad;
+            Sexo = sexo;
+            Color = color;
+            Tamano = tamano;
+            TipoPelo = tipoPelo;
+            Vacunado = vacunado;
+            Notas = notas;
+            Cliente = cliente;
+        }
     }
 }

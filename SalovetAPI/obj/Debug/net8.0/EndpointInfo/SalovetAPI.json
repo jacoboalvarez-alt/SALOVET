@@ -2471,8 +2471,28 @@
             "format": "int32",
             "nullable": true
           },
-          "cliente": {
-            "$ref": "#/components/schemas/Cliente"
+          "sexo": {
+            "type": "string",
+            "nullable": true
+          },
+          "color": {
+            "type": "string",
+            "nullable": true
+          },
+          "tamano": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoPelo": {
+            "type": "string",
+            "nullable": true
+          },
+          "vacunado": {
+            "type": "boolean"
+          },
+          "notas": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false

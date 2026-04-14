@@ -87,12 +87,21 @@ namespace SalovetAPI.Data
             {
                 entity.ToTable("mascotas");
                 entity.HasKey(e => e.IdMascota);
+
                 entity.Property(e => e.IdMascota).HasColumnName("id_mascota");
                 entity.Property(e => e.IdCliente).HasColumnName("id_cliente").IsRequired();
                 entity.Property(e => e.NombreMasc).HasColumnName("nombre_masc").HasMaxLength(100).IsRequired();
                 entity.Property(e => e.Especie).HasColumnName("especie").HasMaxLength(50).IsRequired();
                 entity.Property(e => e.Raza).HasColumnName("raza").HasMaxLength(100);
                 entity.Property(e => e.Edad).HasColumnName("edad");
+
+                // Nuevos campos añadidos
+                entity.Property(e => e.Sexo).HasColumnName("sexo").HasMaxLength(10);
+                entity.Property(e => e.Color).HasColumnName("color").HasMaxLength(200);
+                entity.Property(e => e.Tamano).HasColumnName("tamano").HasMaxLength(20);
+                entity.Property(e => e.TipoPelo).HasColumnName("tipo_pelo").HasMaxLength(20);
+                entity.Property(e => e.Vacunado).HasColumnName("vacunado").HasDefaultValue(0);
+                entity.Property(e => e.Notas).HasColumnName("notas").HasColumnType("text");
 
                 // Relación con Cliente
                 entity.HasOne(m => m.Cliente)

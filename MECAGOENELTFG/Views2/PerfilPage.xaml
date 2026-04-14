@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MECAGOENELTFG.Views2.PerfilPage"
+             Title="Perfil"
+             BackgroundImageSource="fondo.png"
+             Shell.NavBarIsVisible="False">
+    <Shell.TitleView>
+        <Label Text="" IsVisible="False"/>
+    </Shell.TitleView>
+
+    <Grid RowDefinitions="Auto,*,Auto">
+
+        <!-- ── Header ── -->
+        <Border Grid.Row="0"
+            StrokeThickness="0"
+            Padding="20,50,20,16">
+            <Grid ColumnDefinitions="*,Auto">
+                <VerticalStackLayout Grid.Column="0" Spacing="2">
+                    <Label Text="Mi cuenta"
+                       FontSize="13"
+                       TextColor="#C8F0EE"/>
+                    <Label Text="Perfil"
+                       FontSize="22"
+                       FontAttributes="Bold"
+                       TextColor="White"/>
+                </VerticalStackLayout>
+                <Button Grid.Column="1"
+                    Text="EDITAR"
+                    BackgroundColor="White"
+                    TextColor="#2EBBB0"
+                    FontAttributes="Bold"
+                    FontSize="13"
+                    CornerRadius="20"
+                    HeightRequest="38"
+                    WidthRequest="80"
+                    Command="{Binding EditarCommand}"/>
+            </Grid>
+        </Border>
+
+        <!-- ── Contenido principal ── -->
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Spacing="0">
+
+                <Border BackgroundColor="#F5F5F0"
+                    StrokeThickness="0"
+                    StrokeShape="RoundRectangle 24,24,0,0"
+                    Padding="16,20,16,30">
+                    <VerticalStackLayout Spacing="20">
+
+                        <!-- ── AVATAR Y NOMBRE ── -->
+                        <VerticalStackLayout Spacing="8" HorizontalOptions="Center">
+                            <Border BackgroundColor="#2EBBB0"
+                                StrokeThickness="3"
+                                Stroke="White"
+                                StrokeShape="RoundRectangle 50"
+                                WidthRequest="80"
+                                HeightRequest="80"
+                                HorizontalOptions="Center">
+                                <Label x:Name="InicialesLabel"
+                                   Text="{Binding Iniciales}"
+                                   FontSize="30"
+                                   FontAttributes="Bold"
+                                   TextColor="White"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"/>
+                            </Border>
+                            <Label Text="{Binding NombreCompleto}"
+                               FontSize="18"
+                               FontAttributes="Bold"
+                               TextColor="#2C2C2A"
+                               HorizontalOptions="Center"/>
+                            <Label Text="{Binding ClienteDesde}"
+                               FontSize="12"
+                               TextColor="#888780"
+                               HorizontalOptions="Center"/>
+                        </VerticalStackLayout>
+
+                        <!-- ── DATOS PERSONALES ── -->
+                        <VerticalStackLayout Spacing="10">
+                            <Label Text="DATOS PERSONALES"
+                               FontAttributes="Bold"
+                               FontSize="13"
+                               TextColor="#888780"
+                               Margin="4,0"/>
+
+                            <Border BackgroundColor="White"
+                                StrokeThickness="0"
+                                StrokeShape="RoundRectangle 14"
+                                Padding="0,4">
+
+                                <VerticalStackLayout>
+
+                                    <!-- Email -->
+                                    <Grid ColumnDefinitions="Auto,*"
+                                      ColumnSpacing="10"
+                                      Padding="14,10">
+                                        <Label Grid.Column="0"
+                                           Text="📧"
+                                           FontSize="18"
+                                           VerticalOptions="Center"/>
+                                        <VerticalStackLayout Grid.Column="1" Spacing="2">
+                                            <Label Text="Correo electrónico"
+                                               FontSize="11"
+                                               TextColor="#888780"/>
+                                            <Label Text="{Binding Email}"
+                                               FontSize="14"
+                                               TextColor="#2C2C2A"/>
+                                        </VerticalStackLayout>
+                                    </Grid>
+
+                                    <BoxView HeightRequest="0.5" Color="#F5F5F0" Margin="14,0"/>
+
+                                    <!-- Teléfono -->
+                                    <Grid ColumnDefinitions="Auto,*"
+                                      ColumnSpacing="10"
+                                      Padding="14,10">
+                                        <Label Grid.Column="0"
+                                           Text="📱"
+                                           FontSize="18"
+                                           VerticalOptions="Center"/>
+                                        <VerticalStackLayout Grid.Column="1" Spacing="2">
+                                            <Label Text="Teléfono"
+                                               FontSize="11"
+                                               TextColor="#888780"/>
+                                            <Label Text="{Binding Telefono}"
+                                               FontSize="14"
+                                               TextColor="#2C2C2A"/>
+                                        </VerticalStackLayout>
+                                    </Grid>
+
+                                    <BoxView HeightRequest="0.5" Color="#F5F5F0" Margin="14,0"/>
+
+                                    <!-- Dirección -->
+                                    <Grid ColumnDefinitions="Auto,*"
+                                      ColumnSpacing="10"
+                                      Padding="14,10">
+                                        <Label Grid.Column="0"
+                                           Text="👤"
+                                           FontSize="18"
+                                           VerticalOptions="Center"/>
+                                        <VerticalStackLayout Grid.Column="1" Spacing="2">
+                                            <Label Text="Edad"
+                                               FontSize="11"
+                                               TextColor="#888780"/>
+                                            <Label Text="{Binding Edad, StringFormat='{0} años'}"
+                                                   FontSize="14"
+                                                   TextColor="#2C2C2A"/>
+                                        </VerticalStackLayout>
+                                    </Grid>
+
+                                </VerticalStackLayout>
+                            </Border>
+                        </VerticalStackLayout>
+
+                        <!-- ── MIS MASCOTAS ── -->
+                        <VerticalStackLayout Spacing="10">
+                            <Label Text="MIS MASCOTAS"
+                               FontAttributes="Bold"
+                               FontSize="13"
+                               TextColor="#888780"
+                               Margin="4,0"/>
+
+                            <Border BackgroundColor="White"
+                                StrokeThickness="0"
+                                StrokeShape="RoundRectangle 14"
+                                Padding="0,4">
+                                <CollectionView ItemsSource="{Binding Mascotas}"
+                                            SelectionMode="None">
+                                    <CollectionView.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid ColumnDefinitions="Auto,*,Auto"
+                                              ColumnSpacing="12"
+                                              Padding="14,10">
+                                                <Border Grid.Column="0"
+                                                    BackgroundColor="#E8F8F7"
+                                                    StrokeThickness="0"
+                                                    StrokeShape="RoundRectangle 10"
+                                                    WidthRequest="44"
+                                                    HeightRequest="44">
+                                                    <Label Text="{Binding Icono}"
+                                                       FontSize="22"
+                                                       HorizontalOptions="Center"
+                                                       VerticalOptions="Center"/>
+                                                </Border>
+                                                <VerticalStackLayout Grid.Column="1"
+                                                                  VerticalOptions="Center"
+                                                                  Spacing="2">
+                                                    <Label Text="{Binding Nombre}"
+                                                       FontAttributes="Bold"
+                                                       FontSize="14"
+                                                       TextColor="#2C2C2A"/>
+                                                    <Label Text="{Binding Descripcion}"
+                                                       FontSize="12"
+                                                       TextColor="#888780"/>
+                                                </VerticalStackLayout>
+                                                <Border Grid.Column="2"
+                                                    BackgroundColor="#E8F8F7"
+                                                    StrokeThickness="0"
+                                                    StrokeShape="RoundRectangle 8"
+                                                    Padding="8,4"
+                                                    VerticalOptions="Center">
+                                                    <Border.GestureRecognizers>
+                                                        <TapGestureRecognizer
+                                                        Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.VerMascotaCommand}"
+                                                        CommandParameter="{Binding .}"/>
+                                                    </Border.GestureRecognizers>
+                                                    <Label Text="Ver"
+                                                       FontSize="11"
+                                                       FontAttributes="Bold"
+                                                       TextColor="#2EBBB0"/>
+                                                </Border>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </CollectionView.ItemTemplate>
+                                </CollectionView>
+                            </Border>
+
+                            <!-- Agregar mascota -->
+                            <Border BackgroundColor="#E8F8F7"
+                                StrokeThickness="0"
+                                StrokeShape="RoundRectangle 14"
+                                Padding="16,14">
+                                <Border.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding AgregarMascotaCommand}"/>
+                                </Border.GestureRecognizers>
+                                <Label Text="+ Agregar mascota"
+                                   FontAttributes="Bold"
+                                   FontSize="14"
+                                   TextColor="#2EBBB0"
+                                   HorizontalOptions="Center"/>
+                            </Border>
+                        </VerticalStackLayout>
+
+                        <!-- ── CERRAR SESIÓN ── -->
+                        <Border BackgroundColor="#F3E5E5"
+                            StrokeThickness="0"
+                            HorizontalOptions="Center"
+                            Margin="0,50,0,0"
+                            StrokeShape="RoundRectangle 14"
+                            Padding="16,14">
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding CerrarSesionCommand}"/>
+                            </Border.GestureRecognizers>
+                            <Grid ColumnDefinitions="Auto,*" ColumnSpacing="12">
+                                <Label Grid.Column="0"
+                                   Text="🚪"
+                                   FontSize="20"
+                                   VerticalOptions="Center"/>
+                                <Label Grid.Column="1"
+                                   Text="Cerrar sesión"
+                                   FontAttributes="Bold"
+                                   FontSize="14"
+                                   TextColor="#E24B4A"
+                                   VerticalOptions="Center"/>
+                            </Grid>
+                        </Border>
+
+                    </VerticalStackLayout>
+                </Border>
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- ── Barra de navegación inferior ── -->
+        <Border Grid.Row="2"
+            BackgroundColor="White"
+            StrokeThickness="0.5"
+            Stroke="#E0E0D8"
+            Padding="10,10,10,30">
+            <Grid ColumnDefinitions="*,*,*,*">
+
+                <VerticalStackLayout Grid.Column="0" HorizontalOptions="Center" Spacing="4">
+                    <Border BackgroundColor="#F5F5F0" StrokeThickness="0"
+                        StrokeShape="RoundRectangle 12" WidthRequest="44" HeightRequest="44" HorizontalOptions="Center">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnChatTapped"/>
+                        </Border.GestureRecognizers>
+                        <Label Text="🐾" FontSize="20" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    </Border>
+                </VerticalStackLayout>
+
+
+                <VerticalStackLayout Grid.Column="1" HorizontalOptions="Center" Spacing="4">
+                    <Border BackgroundColor="#F5F5F0" StrokeThickness="0"
+                        StrokeShape="RoundRectangle 16" WidthRequest="52" HeightRequest="52" HorizontalOptions="Center">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnInicioTapped"/>
+                        </Border.GestureRecognizers>
+                        <Label Text="🏠" FontSize="24" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    </Border>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Grid.Column="2" HorizontalOptions="Center" Spacing="4">
+                    <Border BackgroundColor="#F5F5F0" StrokeThickness="0"
+                        StrokeShape="RoundRectangle 12" WidthRequest="44" HeightRequest="44" HorizontalOptions="Center">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnNavCitasTapped"/>
+                        </Border.GestureRecognizers>
+                        <Label Text="📅" FontSize="20" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    </Border>
+                </VerticalStackLayout>
+
+                <!-- Perfil activo -->
+                <VerticalStackLayout Grid.Column="4" HorizontalOptions="Center" Spacing="4">
+                    <Border BackgroundColor="#2EBBB0" StrokeThickness="0"
+                        StrokeShape="RoundRectangle 12" WidthRequest="44" HeightRequest="44" HorizontalOptions="Center">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnNavPerfilTapped"/>
+                        </Border.GestureRecognizers>
+                        <Label Text="👤" FontSize="20" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    </Border>
+                </VerticalStackLayout>
+
+            </Grid>
+        </Border>
+
+    </Grid>
+</ContentPage>

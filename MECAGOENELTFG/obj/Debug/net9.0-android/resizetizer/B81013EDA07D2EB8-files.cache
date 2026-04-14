@@ -1,5 +1,10 @@
-﻿obj\Debug\net9.0-android\resizetizer\r\drawable\fondo1.png
+﻿obj\Debug\net9.0-android\resizetizer\r\drawable\fondo.png
+obj\Debug\net9.0-android\resizetizer\r\drawable\fondo1.png
 obj\Debug\net9.0-android\resizetizer\r\drawable\fondo2.png
+obj\Debug\net9.0-android\resizetizer\r\drawable\logo.png
+obj\Debug\net9.0-android\resizetizer\r\drawable\noticia1.png
+obj\Debug\net9.0-android\resizetizer\r\drawable\noticia2.png
+obj\Debug\net9.0-android\resizetizer\r\drawable\noticia3.png
 obj\Debug\net9.0-android\resizetizer\r\drawable\salovet_logo.ico
 obj\Debug\net9.0-android\resizetizer\r\drawable\salovet_logo1.png
 obj\Debug\net9.0-android\resizetizer\r\mipmap-anydpi-v26\appicon.xml

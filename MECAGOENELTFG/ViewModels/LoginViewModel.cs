@@ -27,7 +27,7 @@ namespace MECAGOENELTFG.ViewModels
 
 
         public LoginViewModel() { 
-            _authService = new AuthService();    
+            _authService = new AuthService();
         }
 
         [RelayCommand]
@@ -62,8 +62,8 @@ namespace MECAGOENELTFG.ViewModels
                 }
                 else
                 {
+                    SessionService.IdClienteActual = (int)usuario.IdCliente;
                     await Shell.Current.GoToAsync("ClientDashBoard");
-
                     username = string.Empty;
                     password = string.Empty;
                 }

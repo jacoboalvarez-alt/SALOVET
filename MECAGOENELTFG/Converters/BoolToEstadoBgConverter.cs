@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MECAGOENELTFG.Converters
 {
-    internal class BoolToEstadoBgConverter
+    internal class BoolToEstadoBgConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
             => value is bool b && b

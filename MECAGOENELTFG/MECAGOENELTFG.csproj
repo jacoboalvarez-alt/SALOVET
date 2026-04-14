@@ -64,6 +64,21 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<MauiXaml Update="Views2\AgregarMascotaClient.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="Views2\AsistentePageClient.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="Views2\CitasPageClient.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="Views2\ClienteEditarPerfilPage.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="Views2\PerfilPage.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
 		<MauiXaml Update="Views\CitasPage.xaml">
 		  <Generator>MSBuild:Compile</Generator>
 		</MauiXaml>

@@ -217,11 +217,26 @@
     <AppxPackagedFile Include="C:\Users\jorgeg\Videos\Jacobo\TFG\SALOVET\MECAGOENELTFG\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-400.png">
       <PackagePath>appiconWideTile.scale-400.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jorgeg\Videos\Jacobo\TFG\SALOVET\MECAGOENELTFG\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\fondo.scale-100.png">
+      <PackagePath>fondo.scale-100.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jorgeg\Videos\Jacobo\TFG\SALOVET\MECAGOENELTFG\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\fondo1.scale-100.png">
       <PackagePath>fondo1.scale-100.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jorgeg\Videos\Jacobo\TFG\SALOVET\MECAGOENELTFG\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\fondo2.scale-100.png">
       <PackagePath>fondo2.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jorgeg\Videos\Jacobo\TFG\SALOVET\MECAGOENELTFG\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\logo.scale-100.png">
+      <PackagePath>logo.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jorgeg\Videos\Jacobo\TFG\SALOVET\MECAGOENELTFG\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\noticia1.scale-100.png">
+      <PackagePath>noticia1.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jorgeg\Videos\Jacobo\TFG\SALOVET\MECAGOENELTFG\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\noticia2.scale-100.png">
+      <PackagePath>noticia2.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jorgeg\Videos\Jacobo\TFG\SALOVET\MECAGOENELTFG\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\noticia3.scale-100.png">
+      <PackagePath>noticia3.scale-100.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jorgeg\Videos\Jacobo\TFG\SALOVET\MECAGOENELTFG\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\salovet_logo.scale-100.ico">
       <PackagePath>salovet_logo.scale-100.ico</PackagePath>

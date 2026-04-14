@@ -50,7 +50,7 @@
                            IsVisible="{Binding MensajeError, Converter={x:StaticResource StringToBoolConverter }}" Text="{Binding MensajeError}"/>
                     
                     <!--BOTON DE INICIO DE SESION-->
-                    <Button Text="Entrar" Command="{Binding LoginCommand}" BackgroundColor="#1A3C6E" TextColor="White"
+                    <Button Text="Entrar" Command="{Binding LoginCommand}" BackgroundColor="#2EBBB0" TextColor="White"
                             FontAttributes="Bold"     CornerRadius="10"  HeightRequest="50" 
                             IsEnabled="{Binding IsLoading, Converter={x:StaticResource InvertedBoolConverter}}"
                             />

@@ -2749,3 +2749,8 @@ C:\Users\jorgeg\Videos\Jacobo\TFG\SALOVET\MECAGOENELTFG\obj\Debug\net9.0-android
 C:\Users\jorgeg\Videos\Jacobo\TFG\SALOVET\MECAGOENELTFG\obj\Debug\net9.0-android\stamp\_GenerateJavaStubs.stamp
 C:\Users\jorgeg\Videos\Jacobo\TFG\SALOVET\MECAGOENELTFG\obj\Debug\net9.0-android\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\jorgeg\Videos\Jacobo\TFG\SALOVET\MECAGOENELTFG\obj\Debug\net9.0-android\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\jorgeg\Videos\Jacobo\TFG\SALOVET\MECAGOENELTFG\obj\Debug\net9.0-android\resizetizer\r\drawable\fondo.png
+C:\Users\jorgeg\Videos\Jacobo\TFG\SALOVET\MECAGOENELTFG\obj\Debug\net9.0-android\resizetizer\r\drawable\logo.png
+C:\Users\jorgeg\Videos\Jacobo\TFG\SALOVET\MECAGOENELTFG\obj\Debug\net9.0-android\resizetizer\r\drawable\noticia1.png
+C:\Users\jorgeg\Videos\Jacobo\TFG\SALOVET\MECAGOENELTFG\obj\Debug\net9.0-android\resizetizer\r\drawable\noticia2.png
+C:\Users\jorgeg\Videos\Jacobo\TFG\SALOVET\MECAGOENELTFG\obj\Debug\net9.0-android\resizetizer\r\drawable\noticia3.png

@@ -44,10 +44,15 @@ namespace MECAGOENELTFG.Services
         {
             try
             {
-                return await _httpClient.GetFromJsonAsync<Cliente>($"{BaseUrl}/{id}");
+                var json = await _httpClient.GetStringAsync($"{BaseUrl}/{id}");
+                Console.WriteLine($">>> JSON cliente: {json}");
+                var cliente = JsonSerializer.Deserialize<Cliente>(json, _jsonOptions);
+                Console.WriteLine($">>> Cliente deserializado: {cliente?.NombreCli}");
+                return cliente;
             }
-            catch
+            catch (Exception ex)
             {
+                Console.WriteLine($">>> ERROR ObtenerPorId: {ex.Message}");
                 return null;
             }
         }

@@ -1,6 +1,7 @@
 ﻿
 
 using MECAGOENELTFG.Views;
+using MECAGOENELTFG.Views2;
 
 namespace MECAGOENELTFG
 {
@@ -24,6 +25,11 @@ namespace MECAGOENELTFG
 
             //CLIENTES
             Routing.RegisterRoute("ClientDashBoard", typeof(ClientDashBoard));
+            Routing.RegisterRoute("PerfilPage", typeof(PerfilPage));
+            Routing.RegisterRoute("CitasPageClient", typeof(CitasPageClient));
+            Routing.RegisterRoute("ChatAsistente",typeof(AsistentePageClient));
+            Routing.RegisterRoute("AgregarMascotaClient", typeof(AgregarMascotaClient));
+            Routing.RegisterRoute("ClienteEditarPerfilPage", typeof(ClienteEditarPerfilPage));
 
             InitializeComponent();
         }
