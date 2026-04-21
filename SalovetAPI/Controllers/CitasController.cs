@@ -48,11 +48,13 @@ namespace SalovetAPI.Controllers
         public async Task<ActionResult<IEnumerable<Cita>>> GetCitasByCliente(int idCliente)
         {
             return await _context.Citas
+                .Include(c => c.Cliente)
                 .Include(c => c.Profesional)
                 .Include(c => c.Mascota)
                 .Where(c => c.IdCliente == idCliente)
                 .ToListAsync();
         }
+
 
         // GET: api/citas/profesional/5
         [HttpGet("profesional/{idProf}")]
@@ -60,10 +62,12 @@ namespace SalovetAPI.Controllers
         {
             return await _context.Citas
                 .Include(c => c.Cliente)
+                .Include(c => c.Profesional)
                 .Include(c => c.Mascota)
                 .Where(c => c.IdProf == idProf)
                 .ToListAsync();
         }
+
 
         // GET: api/citas/estado/PENDIENTE
         [HttpGet("estado/{estado}")]

@@ -117,20 +117,59 @@ namespace MECAGOENELTFG.Services
             try
             {
                 var jsonContent = JsonSerializer.Serialize(cita, _jsonOptions);
+                Console.WriteLine("JSON ENVIADO:");
+                Console.WriteLine(jsonContent);
                 var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
-
+                Console.WriteLine("POST A: " + BaseURL);
                 var response = await _httpClient.PostAsync(BaseURL, content);
-                response.EnsureSuccessStatusCode();
+                Console.WriteLine("STATUS: " + response.StatusCode);
+                var body = await response.Content.ReadAsStringAsync();
 
-                var jsonRespuesta = await response.Content.ReadAsStringAsync();
-                return JsonSerializer.Deserialize<Cita>(jsonRespuesta, _jsonOptions);
+                Console.WriteLine("STATUS: " + response.StatusCode);
+                Console.WriteLine("BODY: " + body);
+
+                if (!response.IsSuccessStatusCode)
+                    return null;
+
+                return JsonSerializer.Deserialize<Cita>(body, _jsonOptions);
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error: {ex.Message}");
+                Console.WriteLine($"EXCEPTION: {ex}");
                 return null;
             }
         }
+
+        // POST: api/citas
+        public async Task<CitaClient?> CrearCita2(CitaClient cita)
+        {
+            try
+            {
+                var jsonContent = JsonSerializer.Serialize(cita, _jsonOptions);
+                Console.WriteLine("JSON ENVIADO:");
+                Console.WriteLine(jsonContent);
+                var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+                Console.WriteLine("POST A: " + BaseURL);
+                var response = await _httpClient.PostAsync(BaseURL, content);
+                Console.WriteLine("STATUS: " + response.StatusCode);
+                var body = await response.Content.ReadAsStringAsync();
+
+                Console.WriteLine("STATUS: " + response.StatusCode);
+                Console.WriteLine("BODY: " + body);
+
+                if (!response.IsSuccessStatusCode)
+                    return null;
+
+                return JsonSerializer.Deserialize<CitaClient>(body, _jsonOptions);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"EXCEPTION: {ex}");
+                return null;
+            }
+        }
+
+
 
         // PUT: api/citas/5
         public async Task<bool> ActualizarCita(int id, Cita cita)

@@ -1006,6 +1006,101 @@
     ]
   },
   {
+    "ContainingType": "SalovetAPI.Controllers.RegistroMascotaController",
+    "Method": "GetAll",
+    "RelativePath": "api/RegistroMascota",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SalovetAPI.Controllers.RegistroMascotaController",
+    "Method": "Create",
+    "RelativePath": "api/RegistroMascota",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "registro",
+        "Type": "SalovetAPI.Models.RegistroMascota",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SalovetAPI.Controllers.RegistroMascotaController",
+    "Method": "GetById",
+    "RelativePath": "api/RegistroMascota/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SalovetAPI.Controllers.RegistroMascotaController",
+    "Method": "Update",
+    "RelativePath": "api/RegistroMascota/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "registro",
+        "Type": "SalovetAPI.Models.RegistroMascota",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SalovetAPI.Controllers.RegistroMascotaController",
+    "Method": "Delete",
+    "RelativePath": "api/RegistroMascota/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SalovetAPI.Controllers.RegistroMascotaController",
+    "Method": "GetByMascota",
+    "RelativePath": "api/RegistroMascota/mascota/{idMascota}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idMascota",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "SalovetAPI.Controllers.RegistrosController",
     "Method": "GetRegistros",
     "RelativePath": "api/Registros",

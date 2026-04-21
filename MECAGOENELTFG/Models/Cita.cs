@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using MECAGOENELTFG.Models;
 
@@ -26,8 +27,9 @@ namespace MECAGOENELTFG.Models
         public string? Descripcion { get; set; }
 
         // Navegación
-        public Cliente Cliente { get; set; } = null!;
-        public Profesional Profesional { get; set; } = null!;
-        public Mascota Mascota { get; set; } = null!;
+        public Cliente? Cliente { get; set; } = null!;
+        public Profesional? Profesional { get; set; } = null!;
+ 
+        public Mascota? Mascota { get; set; } = null!;
     }
 }

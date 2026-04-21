@@ -24,6 +24,12 @@ namespace MECAGOENELTFG.ViewModels
         [ObservableProperty]
         private bool isLoading;
 
+        //Filtros
+        [ObservableProperty]
+        private string filtroNombre = string.Empty;
+
+        private List<Cliente> _todosLosClientes = new();
+
         public ClientesViewModel()
         {
             _service = new ClienteApiService();
@@ -40,9 +46,6 @@ namespace MECAGOENELTFG.ViewModels
         public async Task CargarClientes()
         {
             if (IsLoading) return;
-
-
-
             try
             {
                 var lista2 = await _service.ObtenerTodos();
@@ -56,6 +59,7 @@ namespace MECAGOENELTFG.ViewModels
                 var lista = await _service.ObtenerTodos();
 
                 Clientes.Clear();
+                _todosLosClientes = lista;
                 foreach (var cliente in lista)
                 {
                     Clientes.Add(cliente);
@@ -73,6 +77,27 @@ namespace MECAGOENELTFG.ViewModels
                 IsLoading = false;
                 IsRefreshing = false;
             }
+        }
+
+        [RelayCommand]
+        public void Filtrar() 
+        {
+            var filtrados = string.IsNullOrWhiteSpace(FiltroNombre)
+          ? _todosLosClientes
+          : _todosLosClientes.Where(c =>
+              c.NombreCli.Contains(FiltroNombre, StringComparison.OrdinalIgnoreCase) ||
+              c.ApeCli.Contains(FiltroNombre, StringComparison.OrdinalIgnoreCase))
+              .ToList();
+
+            Clientes.Clear();
+            foreach (var c in filtrados) Clientes.Add(c);
+        }
+
+        [RelayCommand]
+        public void LimpiarFiltros() 
+        {
+            FiltroNombre = string.Empty;
+            Filtrar();
         }
 
         [RelayCommand]
@@ -128,7 +153,7 @@ namespace MECAGOENELTFG.ViewModels
             if (cliente == null) return;
 
             // Navegar a la página de mascotas pasando el ID del cliente
-            await Shell.Current.GoToAsync($"mascotas?clienteId={cliente.IdCliente}");
+            await Shell.Current.GoToAsync($"MascotasPage?clienteId={cliente.IdCliente}");
         }
 
         [RelayCommand]

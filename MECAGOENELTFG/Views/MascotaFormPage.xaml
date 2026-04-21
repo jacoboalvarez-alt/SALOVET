@@ -2,98 +2,278 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:MECAGOENELTFG.ViewModels"
-             xmlns:converters="clr-namespace:MECAGOENELTFG.Converters"
              x:Class="MECAGOENELTFG.Views.MascotaFormPage"
              x:DataType="vm:MascotaFormViewModel"
-             Title="Formulario de Mascota">
+             Shell.NavBarIsVisible="False"
+             Title="{Binding TituloFormulario}"
+             BackgroundImageSource="fondo2.png">
 
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <converters:StringIsNotNullOrEmptyConverter x:Key="StringIsNotNullOrEmptyConverter" />
-        </ResourceDictionary>
-    </ContentPage.Resources>
+    <ScrollView>
+        <VerticalStackLayout Spacing="20" Padding="16,16,16,32">
 
-    <ScrollView Padding="20">
-        <VerticalStackLayout Spacing="15">
+            <!-- ── Cabecera cliente (solo lectura) ─────────────────── -->
+            <Border BackgroundColor="#E8F5F4"
+                    StrokeThickness="0"
+                    StrokeShape="RoundRectangle 14"
+                    Padding="16,12"
+                    IsVisible="{Binding NombreCliente,
+                                Converter={StaticResource StringIsNotNullOrEmptyConverter}}">
+                <HorizontalStackLayout Spacing="8" HorizontalOptions="Center">
+                    <Label Text="👤" FontSize="16" VerticalOptions="Center"/>
+                    <Label Text="{Binding NombreCliente}"
+                           FontAttributes="Bold"
+                           FontSize="15"
+                           TextColor="#1A7A72"
+                           VerticalOptions="Center"/>
+                </HorizontalStackLayout>
+            </Border>
 
-            <Frame BackgroundColor="#E3F2FD" 
-                   Padding="10"
-                   CornerRadius="5"
-                   IsVisible="{Binding NombreCliente, Converter={StaticResource StringIsNotNullOrEmptyConverter}}">
-                <Label Text="{Binding NombreCliente}"
-                       FontAttributes="Bold"
-                       TextColor="#1976D2"
-                       HorizontalOptions="Center" />
-            </Frame>
+            <!-- ════════════════════════════════════════════════════════
+                 SECCIÓN 1 — IDENTIFICACIÓN
+            ═══════════════════════════════════════════════════════════ -->
+            <Label Text="IDENTIFICACIÓN"
+                   FontAttributes="Bold"
+                   FontSize="13"
+                   TextColor="#888780"
+                   Margin="4,0"/>
 
-            <VerticalStackLayout Spacing="5">
-                <Label Text="Nombre de la mascota *"
-                       FontAttributes="Bold"
-                       TextColor="#333" />
-                <Entry Text="{Binding NombreMasc}"
-                       Placeholder="Ej: Max, Luna, Rocky..."
-                       MaxLength="100" />
-            </VerticalStackLayout>
+            <Border BackgroundColor="White"
+                    StrokeThickness="0"
+                    StrokeShape="RoundRectangle 14"
+                    Padding="16">
+                <VerticalStackLayout Spacing="14">
 
-            <VerticalStackLayout Spacing="5">
-                <Label Text="Especie *"
-                       FontAttributes="Bold"
-                       TextColor="#333" />
-                <Picker Title="Seleccione una especie"
-                        ItemsSource="{Binding EspeciesDisponibles}"
-                        SelectedItem="{Binding Especie}" />
-            </VerticalStackLayout>
+                    <!-- Nombre -->
+                    <VerticalStackLayout Spacing="4">
+                        <Label Text="Nombre *"
+                               FontAttributes="Bold" FontSize="13" TextColor="#2C2C2A"/>
+                        <Border BackgroundColor="#F5F5F0" StrokeThickness="0"
+                                StrokeShape="RoundRectangle 10" Padding="12,0">
+                            <Entry Text="{Binding NombreMasc, Mode=TwoWay}"
+                                   Placeholder="Nombre de la mascota"
+                                   PlaceholderColor="#B4B2A9"
+                                   TextColor="#2C2C2A"
+                                   HeightRequest="44"
+                                   BackgroundColor="Transparent"/>
+                        </Border>
+                    </VerticalStackLayout>
 
-            <VerticalStackLayout Spacing="5">
-                <Label Text="Raza (opcional)"
-                       FontAttributes="Bold"
-                       TextColor="#333" />
-                <Entry Text="{Binding Raza}"
-                       Placeholder="Ej: Golden Retriever, Siamés..."
-                       MaxLength="100" />
-            </VerticalStackLayout>
+                    <!-- Especie -->
+                    <VerticalStackLayout Spacing="4">
+                        <Label Text="Especie *"
+                               FontAttributes="Bold" FontSize="13" TextColor="#2C2C2A"/>
+                        <Border BackgroundColor="#F5F5F0" StrokeThickness="0"
+                                StrokeShape="RoundRectangle 10" Padding="12,0">
+                            <Picker ItemsSource="{Binding EspeciesDisponibles}"
+                                    SelectedItem="{Binding Especie, Mode=TwoWay}"
+                                    TextColor="#2C2C2A"
+                                    HeightRequest="44"
+                                    BackgroundColor="Transparent"/>
+                        </Border>
+                    </VerticalStackLayout>
 
-            <VerticalStackLayout Spacing="5">
-                <Label Text="Edad (años, opcional)"
-                       FontAttributes="Bold"
-                       TextColor="#333" />
-                <Entry Text="{Binding Edad}"
-                       Placeholder="Ingrese la edad en años"
-                       Keyboard="Numeric"
-                       MaxLength="2" />
-            </VerticalStackLayout>
+                    <!-- Raza -->
+                    <VerticalStackLayout Spacing="4">
+                        <Label Text="Raza"
+                               FontAttributes="Bold" FontSize="13" TextColor="#2C2C2A"/>
+                        <Border BackgroundColor="#F5F5F0" StrokeThickness="0"
+                                StrokeShape="RoundRectangle 10" Padding="12,0">
+                            <Entry Text="{Binding Raza, Mode=TwoWay}"
+                                   Placeholder="Ej: Golden Retriever, Siamés..."
+                                   PlaceholderColor="#B4B2A9"
+                                   TextColor="#2C2C2A"
+                                   HeightRequest="44"
+                                   BackgroundColor="Transparent"/>
+                        </Border>
+                    </VerticalStackLayout>
 
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- ════════════════════════════════════════════════════════
+                 SECCIÓN 2 — DATOS FÍSICOS
+            ═══════════════════════════════════════════════════════════ -->
+            <Label Text="DATOS FÍSICOS"
+                   FontAttributes="Bold"
+                   FontSize="13"
+                   TextColor="#888780"
+                   Margin="4,0"/>
+
+            <Border BackgroundColor="White"
+                    StrokeThickness="0"
+                    StrokeShape="RoundRectangle 14"
+                    Padding="16">
+                <VerticalStackLayout Spacing="14">
+
+                    <!-- Edad + Sexo en fila -->
+                    <Grid ColumnDefinitions="*,*" ColumnSpacing="12">
+
+                        <VerticalStackLayout Grid.Column="0" Spacing="4">
+                            <Label Text="Edad (años)"
+                                   FontAttributes="Bold" FontSize="13" TextColor="#2C2C2A"/>
+                            <Border BackgroundColor="#F5F5F0" StrokeThickness="0"
+                                    StrokeShape="RoundRectangle 10" Padding="12,0">
+                                <Entry Text="{Binding Edad, Mode=TwoWay}"
+                                       Placeholder="0"
+                                       Keyboard="Numeric"
+                                       PlaceholderColor="#B4B2A9"
+                                       TextColor="#2C2C2A"
+                                       HeightRequest="44"
+                                       BackgroundColor="Transparent"/>
+                            </Border>
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout Grid.Column="1" Spacing="4">
+                            <Label Text="Sexo"
+                                   FontAttributes="Bold" FontSize="13" TextColor="#2C2C2A"/>
+                            <Border BackgroundColor="#F5F5F0" StrokeThickness="0"
+                                    StrokeShape="RoundRectangle 10" Padding="12,0">
+                                <Picker SelectedItem="{Binding Sexo, Mode=TwoWay}"
+                                        TextColor="#2C2C2A"
+                                        HeightRequest="44"
+                                        BackgroundColor="Transparent">
+                                    <Picker.Items>
+                                        <x:String>Macho</x:String>
+                                        <x:String>Hembra</x:String>
+                                    </Picker.Items>
+                                </Picker>
+                            </Border>
+                        </VerticalStackLayout>
+
+                    </Grid>
+
+                    <!-- Color / pelaje -->
+                    <VerticalStackLayout Spacing="4">
+                        <Label Text="Color / pelaje"
+                               FontAttributes="Bold" FontSize="13" TextColor="#2C2C2A"/>
+                        <Border BackgroundColor="#F5F5F0" StrokeThickness="0"
+                                StrokeShape="RoundRectangle 10" Padding="12,0">
+                            <Entry Text="{Binding Color, Mode=TwoWay}"
+                                   Placeholder="Describe su apariencia"
+                                   PlaceholderColor="#B4B2A9"
+                                   TextColor="#2C2C2A"
+                                   HeightRequest="44"
+                                   BackgroundColor="Transparent"/>
+                        </Border>
+                    </VerticalStackLayout>
+
+                    <!-- Tamaño — solo Perro -->
+                    <VerticalStackLayout Spacing="4"
+                                         IsVisible="{Binding SizeFieldVisible}">
+                        <Label Text="Tamaño"
+                               FontAttributes="Bold" FontSize="13" TextColor="#2C2C2A"/>
+                        <Border BackgroundColor="#F5F5F0" StrokeThickness="0"
+                                StrokeShape="RoundRectangle 10" Padding="12,0">
+                            <Picker ItemsSource="{Binding TamanosDisponibles}"
+                                    SelectedItem="{Binding Tamano, Mode=TwoWay}"
+                                    TextColor="#2C2C2A"
+                                    HeightRequest="44"
+                                    BackgroundColor="Transparent"/>
+                        </Border>
+                    </VerticalStackLayout>
+
+                    <!-- Tipo de pelo — solo Gato -->
+                    <VerticalStackLayout Spacing="4"
+                                         IsVisible="{Binding HairFieldVisible}">
+                        <Label Text="Tipo de pelo"
+                               FontAttributes="Bold" FontSize="13" TextColor="#2C2C2A"/>
+                        <Border BackgroundColor="#F5F5F0" StrokeThickness="0"
+                                StrokeShape="RoundRectangle 10" Padding="12,0">
+                            <Picker ItemsSource="{Binding TiposPeloDisponibles}"
+                                    SelectedItem="{Binding TipoPelo, Mode=TwoWay}"
+                                    TextColor="#2C2C2A"
+                                    HeightRequest="44"
+                                    BackgroundColor="Transparent"/>
+                        </Border>
+                    </VerticalStackLayout>
+
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- ════════════════════════════════════════════════════════
+                 SECCIÓN 3 — DATOS CLÍNICOS
+            ═══════════════════════════════════════════════════════════ -->
+            <Label Text="DATOS CLÍNICOS"
+                   FontAttributes="Bold"
+                   FontSize="13"
+                   TextColor="#888780"
+                   Margin="4,0"/>
+
+            <Border BackgroundColor="White"
+                    StrokeThickness="0"
+                    StrokeShape="RoundRectangle 14"
+                    Padding="16">
+                <VerticalStackLayout Spacing="14">
+
+                    <!-- Vacunado -->
+                    <Border BackgroundColor="#F5F5F0" StrokeThickness="0"
+                            StrokeShape="RoundRectangle 12" Padding="14,12">
+                        <Grid ColumnDefinitions="*,Auto">
+                            <VerticalStackLayout Grid.Column="0" Spacing="2" VerticalOptions="Center">
+                                <Label Text="¿Está vacunado?"
+                                       FontAttributes="Bold" FontSize="13" TextColor="#2C2C2A"/>
+                            </VerticalStackLayout>
+                            <Switch Grid.Column="1"
+                                    IsToggled="{Binding Vacunado, Mode=TwoWay}"
+                                    OnColor="#2EBBB0"
+                                    ThumbColor="White"
+                                    VerticalOptions="Center"/>
+                        </Grid>
+                    </Border>
+
+                    <!-- Notas -->
+                    <VerticalStackLayout Spacing="4">
+                        <Label Text="Notas adicionales"
+                               FontAttributes="Bold" FontSize="13" TextColor="#2C2C2A"/>
+                        <Border BackgroundColor="#F5F5F0" StrokeThickness="0"
+                                StrokeShape="RoundRectangle 10" Padding="12,8">
+                            <Editor Text="{Binding Notas, Mode=TwoWay}"
+                                    Placeholder="Alergias, condiciones especiales..."
+                                    PlaceholderColor="#B4B2A9"
+                                    TextColor="#2C2C2A"
+                                    FontSize="14"
+                                    HeightRequest="90"
+                                    AutoSize="Disabled"
+                                    BackgroundColor="Transparent"/>
+                        </Border>
+                    </VerticalStackLayout>
+
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- ── Nota de obligatorios ─────────────────────────────── -->
             <Label Text="* Campos obligatorios"
                    FontSize="12"
-                   TextColor="Gray"
-                   Margin="0,10,0,0" />
+                   TextColor="#B4B2A9"
+                   Margin="4,0"/>
 
-            <Grid ColumnDefinitions="*,*"
-                  ColumnSpacing="10"
-                  Margin="0,20,0,0">
-
+            <!-- ── Botones ───────────────────────────────────────────── -->
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="12" Margin="0,4,0,0">
                 <Button Grid.Column="0"
                         Text="💾 Guardar"
                         Command="{Binding GuardarCommand}"
-                        BackgroundColor="#4CAF50"
+                        BackgroundColor="#2EBBB0"
                         TextColor="White"
-                        HeightRequest="50" />
-
+                        FontAttributes="Bold"
+                        CornerRadius="12"
+                        HeightRequest="50"/>
                 <Button Grid.Column="1"
-                        Text="❌ Cancelar"
+                        Text="✕ Cancelar"
                         Command="{Binding CancelarCommand}"
-                        BackgroundColor="#F44336"
-                        TextColor="White"
-                        HeightRequest="50" />
+                        BackgroundColor="#E8E8E3"
+                        TextColor="#2C2C2A"
+                        FontAttributes="Bold"
+                        CornerRadius="12"
+                        HeightRequest="50"/>
             </Grid>
 
+            <!-- ── Loading ──────────────────────────────────────────── -->
             <ActivityIndicator IsRunning="{Binding IsLoading}"
                                IsVisible="{Binding IsLoading}"
-                               Color="#2196F3"
-                               WidthRequest="50"
-                               HeightRequest="50"
-                               Margin="0,20,0,0"
-                               HorizontalOptions="Center" />
+                               Color="#2EBBB0"
+                               WidthRequest="40"
+                               HeightRequest="40"
+                               HorizontalOptions="Center"/>
 
         </VerticalStackLayout>
     </ScrollView>

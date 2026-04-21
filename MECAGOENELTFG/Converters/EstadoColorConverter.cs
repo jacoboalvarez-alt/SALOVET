@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MECAGOENELTFG.Converters
 {
-    internal class EstadoColorConverter : IValueConverter
+    public class EstadoColorConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {

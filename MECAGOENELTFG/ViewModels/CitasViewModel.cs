@@ -14,6 +14,8 @@ namespace MECAGOENELTFG.ViewModels
     partial class CitasViewModel : ObservableObject
     {
         private readonly CitasAPIService _service;
+        private readonly ClienteApiService _clienteService;
+        private readonly ProfesionalAPIService _profService;
 
         [ObservableProperty]
         private ObservableCollection<Cita> citas;
@@ -22,17 +24,23 @@ namespace MECAGOENELTFG.ViewModels
         private bool isLoading;
 
         // Filtros
-        [ObservableProperty]
-        private string filtroIdCliente = string.Empty;
+        [ObservableProperty] 
+        private Cliente? filtroClienteSeleccionado;
 
-        [ObservableProperty]
-        private string filtroIdProfesional = string.Empty;
+        [ObservableProperty] 
+        private Profesional? filtroProfesionalSeleccionado;
+
 
         [ObservableProperty]
         private DateTime filtroFecha = DateTime.Today;
 
         [ObservableProperty]
         private string? filtroEstado;
+
+
+        //Listas 
+        public ObservableCollection<Cliente> ClientesFiltro { get; set; } = new();
+        public ObservableCollection<Profesional> ProfesionalesFiltro { get; set; } = new();
 
         public List<string> EstadosDisponibles { get; } = new()
         {
@@ -46,6 +54,8 @@ namespace MECAGOENELTFG.ViewModels
         public CitasViewModel()
         {
             _service = new CitasAPIService();
+            _clienteService = new ClienteApiService();
+            _profService = new ProfesionalAPIService();
             citas = new ObservableCollection<Cita>();
             filtroEstado = EstadosDisponibles[0];
         }
@@ -53,6 +63,25 @@ namespace MECAGOENELTFG.ViewModels
         public async Task InitializeAsync()
         {
             await CargarCitas();
+            await CargarFiltrosAsync();
+        }
+
+        private async Task CargarFiltrosAsync()
+        {
+            var clientes = await _clienteService.ObtenerTodos();
+            var profesionales = await _profService.ObtenerVeterinarios();
+
+            ClientesFiltro.Clear();
+
+            ClientesFiltro.Add(new Cliente { NombreCli = "(Todos)", ApeCli = "" });
+            foreach (var c in clientes) ClientesFiltro.Add(c);
+
+            ProfesionalesFiltro.Clear();
+            ProfesionalesFiltro.Add(new Profesional { NomProf = "(Todos)", ApeProf = "" });
+            foreach (var p in profesionales) ProfesionalesFiltro.Add(p);
+
+            FiltroClienteSeleccionado = ClientesFiltro[0];
+            FiltroProfesionalSeleccionado = ProfesionalesFiltro[0];
         }
 
         [RelayCommand]
@@ -90,14 +119,15 @@ namespace MECAGOENELTFG.ViewModels
                 IsLoading = true;
                 List<Cita> lista;
 
-                // Prioridad: ID Cliente → ID Profesional → Estado → Fecha
-                if (int.TryParse(FiltroIdCliente, out int idCliente) && idCliente > 0)
+                // Cliente seleccionado y no es "(Todos)"
+                if (FiltroClienteSeleccionado?.IdCliente > 0)
                 {
-                    lista = await _service.ObtenerCitasPorCliente(idCliente);
+                    lista = await _service.ObtenerCitasPorCliente(FiltroClienteSeleccionado.IdCliente);
                 }
-                else if (int.TryParse(FiltroIdProfesional, out int idProf) && idProf > 0)
+                // Profesional seleccionado y no es "(Todos)"
+                else if (FiltroProfesionalSeleccionado?.IdProf > 0)
                 {
-                    lista = await _service.ObtenerCitasPorProfesional(idProf);
+                    lista = await _service.ObtenerCitasPorProfesional(FiltroProfesionalSeleccionado.IdProf);
                 }
                 else if (!string.IsNullOrEmpty(FiltroEstado) && FiltroEstado != "(Todos)")
                 {
@@ -109,13 +139,11 @@ namespace MECAGOENELTFG.ViewModels
                 }
 
                 Citas.Clear();
-                foreach (var cita in lista)
-                    Citas.Add(cita);
+                foreach (var cita in lista) Citas.Add(cita);
             }
             catch (Exception ex)
             {
-                await Shell.Current.DisplayAlert("Error",
-                    $"Error al filtrar: {ex.Message}", "OK");
+                await Shell.Current.DisplayAlert("Error", $"Error al filtrar: {ex.Message}", "OK");
             }
             finally
             {
@@ -126,8 +154,8 @@ namespace MECAGOENELTFG.ViewModels
         [RelayCommand]
         public async Task LimpiarFiltros()
         {
-            FiltroIdCliente = string.Empty;
-            FiltroIdProfesional = string.Empty;
+            FiltroClienteSeleccionado = ClientesFiltro.FirstOrDefault();
+            FiltroProfesionalSeleccionado = ProfesionalesFiltro.FirstOrDefault();
             FiltroFecha = DateTime.Today;
             FiltroEstado = EstadosDisponibles[0];
             await CargarCitas();
@@ -176,14 +204,15 @@ namespace MECAGOENELTFG.ViewModels
         [RelayCommand]
         public async Task AgregarCita()
         {
-            await Shell.Current.GoToAsync("citaform");
+            await Shell.Current.GoToAsync("CitasForm");
         }
 
         [RelayCommand]
         public async Task EditarCita(Cita cita)
         {
             if (cita == null) return;
-            await Shell.Current.GoToAsync($"citaform?citaId={cita.IdCita}");
+            SessionService.CitaEdicion = cita;
+            await Shell.Current.GoToAsync("EditarCita");
         }
 
         [RelayCommand]

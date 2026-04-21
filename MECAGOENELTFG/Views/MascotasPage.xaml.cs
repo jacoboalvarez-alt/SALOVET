@@ -9,7 +9,8 @@ public partial class MascotasPage : ContentPage
     public MascotasPage()
     {
         InitializeComponent();
-        _viewModel = (MascotasViewModel)BindingContext;
+        _viewModel = new MascotasViewModel();
+        BindingContext = _viewModel;
     }
 
     protected override async void OnAppearing()

@@ -1,5 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using MECAGOENELTFG.Models;
+using MECAGOENELTFG.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -11,6 +13,8 @@ namespace MECAGOENELTFG.ViewModels2
 {
     public partial class ClienteCitasViewModel : ObservableObject
     {
+        private readonly CitasAPIService _citaService;
+
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(MostrarProximas))]
         [NotifyPropertyChangedFor(nameof(MostrarPasadas))]
@@ -19,52 +23,49 @@ namespace MECAGOENELTFG.ViewModels2
         public bool MostrarProximas => FiltroActivo is "Todas" or "Próximas";
         public bool MostrarPasadas => FiltroActivo is "Todas" or "Pasadas";
 
-        [ObservableProperty]
-        private bool sinCitasProximas;
+        [ObservableProperty] private bool sinCitasProximas;
 
         public ObservableCollection<CitaItem> CitasProximas { get; } = new();
         public ObservableCollection<CitaItem> CitasPasadas { get; } = new();
 
-        public void ClientesCitasViewModel()
+        public ClienteCitasViewModel()
         {
-            CargarDatosEjemplo();
+            _citaService = new CitasAPIService();
         }
 
-        private void CargarDatosEjemplo()
+        public async Task CargarDatosAsync()
         {
-            CitasProximas.Add(new CitaItem
-            {
-                Id = 1,
-                Titulo = "Revisión anual",
-                Fecha = new DateTime(2026, 4, 15, 10, 30, 0),
-                Veterinario = "Dr. García",
-                NombreMascota = "Rocky · Golden Retriever"
-            });
-            CitasProximas.Add(new CitaItem
-            {
-                Id = 2,
-                Titulo = "Desparasitación",
-                Fecha = new DateTime(2026, 5, 3, 9, 0, 0),
-                Veterinario = "Dr. López",
-                NombreMascota = "Luna · Siamés"
-            });
+            int id = SessionService.IdClienteActual;
+            if (id == 0) return;
 
-            CitasPasadas.Add(new CitaItem
+            var citas = await _citaService.ObtenerCitasPorCliente(id); // era ObtenerPorCliente
+            var ahora = DateTime.Now;
+
+            CitasProximas.Clear();
+            CitasPasadas.Clear();
+
+            foreach (var c in citas)
             {
-                Id = 3,
-                Titulo = "Vacunación",
-                Fecha = new DateTime(2026, 3, 22, 9, 0, 0),
-                Veterinario = "Dr. López",
-                NombreMascota = "Rocky · Golden Retriever"
-            });
-            CitasPasadas.Add(new CitaItem
-            {
-                Id = 4,
-                Titulo = "Consulta general",
-                Fecha = new DateTime(2026, 2, 10, 11, 0, 0),
-                Veterinario = "Dr. García",
-                NombreMascota = "Luna · Siamés"
-            });
+                var item = new CitaItem
+                {
+                    Id = c.IdCita,
+                    Titulo = c.Descripcion ?? "Cita veterinaria",
+                    Fecha = c.FechaHora,
+                    Veterinario = c.Profesional != null
+                                    ? $"{c.Profesional.NomProf} {c.Profesional.ApeProf}"
+                                    : "Veterinario",
+                    NombreMascota = c.Mascota != null
+                                    ? $"{c.Mascota.NombreMasc} · {c.Mascota.Especie}"
+                                    : "Mascota",
+                    Estado = c.Estado
+                };
+
+                if (c.FechaHora >= ahora &&
+                    c.Estado is EstadoCita.PENDIENTE or EstadoCita.CONFIRMADA)
+                    CitasProximas.Add(item);
+                else
+                    CitasPasadas.Add(item);
+            }
 
             SinCitasProximas = CitasProximas.Count == 0;
         }
@@ -73,16 +74,13 @@ namespace MECAGOENELTFG.ViewModels2
         private void CambiarFiltro(string filtro) => FiltroActivo = filtro;
 
         [RelayCommand]
-        private async Task SolicitarCita()
-        {
-            await Shell.Current.GoToAsync("SolicitarCitaPage");
-        }
+        private async Task SolicitarCita() =>
+            await Shell.Current.GoToAsync("FormCitasCliente");
 
         [RelayCommand]
-        private async Task ModificarCita(CitaItem cita)
-        {
-            await Shell.Current.GoToAsync($"ModificarCitaPage?id={cita.Id}");
-        }
+        private async Task ModificarCita(CitaItem cita) =>
+            await Shell.Current.GoToAsync("ModificarCitaPageClient",
+                new Dictionary<string, object> { { "CitaActual", cita } });
 
         [RelayCommand]
         private async Task CancelarCita(CitaItem cita)
@@ -91,11 +89,18 @@ namespace MECAGOENELTFG.ViewModels2
                 "Cancelar cita",
                 $"¿Seguro que quieres cancelar la cita del {cita.FechaFormateada}?",
                 "Sí, cancelar", "Volver");
-
             if (!confirmar) return;
 
-            CitasProximas.Remove(cita);
-            SinCitasProximas = CitasProximas.Count == 0;
+            bool ok = await _citaService.CambiarEstadoCita(cita.Id, "CANCELADA");
+            if (ok)
+            {
+                CitasProximas.Remove(cita);
+                SinCitasProximas = CitasProximas.Count == 0;
+            }
+            else
+            {
+                await Shell.Current.DisplayAlert("Error", "No se pudo cancelar la cita.", "OK");
+            }
         }
     }
 
@@ -106,6 +111,7 @@ namespace MECAGOENELTFG.ViewModels2
         public DateTime Fecha { get; set; }
         public string Veterinario { get; set; } = string.Empty;
         public string NombreMascota { get; set; } = string.Empty;
+        public EstadoCita Estado { get; set; }
 
         public string Dia => Fecha.Day.ToString("D2");
         public string MesCorto => Fecha.ToString("MMM").ToUpper()[..3];

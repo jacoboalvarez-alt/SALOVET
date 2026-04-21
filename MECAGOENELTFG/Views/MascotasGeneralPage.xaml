@@ -28,7 +28,7 @@
             <Button Grid.Column="2"
                     Text="← Volver"
                     Command="{Binding IrADashboardCommand}"
-                    BackgroundColor="#1A9E94"
+                    BackgroundColor="#FF6F61"
                     TextColor="White"
                     CornerRadius="10"
                     HeightRequest="40"
@@ -49,13 +49,13 @@
             <HorizontalStackLayout Grid.Column="1" Spacing="8">
                 <Button Text="🔄  Refrescar"
                         Command="{Binding CargarMascotasCommand}"
-                        BackgroundColor="#1A9E94"
+                        BackgroundColor="#4CAF50"
                         TextColor="White"
                         CornerRadius="10"
                         HeightRequest="40"
                         FontAttributes="Bold"
                         Padding="16,0" />
-                <Button Text="➕ Agregar Mascota"  BackgroundColor="#1A9E94"
+                <Button Text="➕ Agregar Mascota"  BackgroundColor="#56CCF2"
                         Command="{Binding IrACrearMascotaCommand}" TextColor="White" CornerRadius="10"
                         HeightRequest="40" FontAttributes="Bold" Padding="16,0"
                         />
@@ -100,7 +100,7 @@
                     <CollectionView ItemsSource="{Binding Mascotas}">
                         <CollectionView.ItemTemplate>
                             <DataTemplate x:DataType="models:Mascota">
-                                <Grid ColumnDefinitions="45,130,130,50,110,140,110"
+                                <Grid ColumnDefinitions="45,130,130,50,110,140,160"
                                       Padding="12,8"
                                       BackgroundColor="#F9FFFE">
 
@@ -118,8 +118,8 @@
 
                                     <HorizontalStackLayout Grid.Column="6"
                                                            Spacing="5"
-                                                           HorizontalOptions="Center"
-                                                           VerticalOptions="Center">
+                                                           HorizontalOptions="Start" Margin="0,0,-20,10"
+                                                           VerticalOptions="Start">
                                         <Button Text="✏️"
                                                 Command="{Binding Source={RelativeSource AncestorType={x:Type vm:MascotasGeneralPageViewModel}}, Path=EditarMascotaCommand}"
                                                 CommandParameter="{Binding .}"
@@ -144,10 +144,11 @@
                                                 FontSize="14" />
                                         <Button Text="📖"
                                                 Command="{Binding Source={RelativeSource AncestorType={x:Type vm:MascotasGeneralPageViewModel}},Path=IrAHistorialCommand}"
+                                                CommandParameter="{Binding}"
                                                 BackgroundColor="Green"
                                                 TextColor="White"
                                                 Margin="0,0,0,0"
-                                                CornerRadius="20"
+                                                CornerRadius="8"
                                                 WidthRequest="36"
                                                 HeightRequest="32"
                                                 Padding="0"

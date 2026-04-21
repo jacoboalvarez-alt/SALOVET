@@ -1,4 +1,5 @@
 using MECAGOENELTFG.ViewModels2;
+using System.Threading.Tasks;
 
 namespace MECAGOENELTFG.Views2;
 
@@ -9,6 +10,14 @@ public partial class CitasPageClient : ContentPage
 		InitializeComponent();
 		BindingContext = new ClienteCitasViewModel();
 	}
+
+    protected override async void OnAppearing()
+    {
+        base.OnAppearing();
+        if (BindingContext is ClienteCitasViewModel vm) 
+            await vm.CargarDatosAsync();
+        
+    }
 
     //---------------------------------------------------------------
     //FUNCIONES PARA EL MOVIMIENTOS ENTRE LAS VISTAS DE LA APLICACION

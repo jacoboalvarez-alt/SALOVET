@@ -19,6 +19,8 @@ namespace SalovetAPI.Data
         public DbSet<Factura> Facturas { get; set; }
         public DbSet<Registro> Registros { get; set; }
 
+        public DbSet<RegistroMascota> RegistroMascotas { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -37,7 +39,6 @@ namespace SalovetAPI.Data
                 entity.Property(e => e.Tel).HasColumnName("tel").HasMaxLength(100);
             });
 
-            // ==================== USUARIOS ====================
             modelBuilder.Entity<Usuario>(entity =>
             {
                 entity.ToTable("usuarios");
@@ -45,12 +46,19 @@ namespace SalovetAPI.Data
                 entity.Property(e => e.IdUsuario).HasColumnName("id_usuario");
                 entity.Property(e => e.Username).HasColumnName("username").HasMaxLength(250).IsRequired();
                 entity.Property(e => e.Pass).HasColumnName("pass").HasMaxLength(200);
-                entity.Property(e => e.Profesional).HasColumnName("profesional").IsRequired();  
+                entity.Property(e => e.Profesional).HasColumnName("profesional").IsRequired();
                 entity.Property(e => e.IdCliente).HasColumnName("id_cliente");
+
+                entity.Property(e => e.IdProf).HasColumnName("id_prof");
 
                 entity.HasOne(e => e.Cliente)
                       .WithMany()
                       .HasForeignKey(e => e.IdCliente)
+                      .OnDelete(DeleteBehavior.Cascade);
+
+                entity.HasOne(e => e.ProfesionalNav)
+                      .WithMany()
+                      .HasForeignKey(e => e.IdProf)
                       .OnDelete(DeleteBehavior.Cascade);
             });
 
@@ -80,6 +88,7 @@ namespace SalovetAPI.Data
                 entity.Property(e => e.Gramos).HasColumnName("gramos").IsRequired();
                 entity.Property(e => e.Stock).HasColumnName("stock").IsRequired();
                 entity.Property(e => e.Estado).HasColumnName("estado").IsRequired();
+                entity.Property(e => e.Precio).HasColumnName("precio").IsRequired();
             });
 
             // ==================== MASCOTAS ====================
@@ -107,6 +116,12 @@ namespace SalovetAPI.Data
                 entity.HasOne(m => m.Cliente)
                     .WithMany(c => c.Mascotas)
                     .HasForeignKey(m => m.IdCliente)
+                    .OnDelete(DeleteBehavior.Cascade);
+
+                //Relacion con RegistroMascota 
+                entity.HasMany(m => m.RegistrosMascota)
+                    .WithOne(r => r.Mascota)
+                    .HasForeignKey(r => r.IdMascota)
                     .OnDelete(DeleteBehavior.Cascade);
             });
 
@@ -182,6 +197,32 @@ namespace SalovetAPI.Data
                     .HasColumnName("fecha")
                     .HasDefaultValueSql("CURRENT_TIMESTAMP");
                 entity.Property(e => e.TipoActividad).HasColumnName("tipo_actividad").HasMaxLength(50);
+            });
+
+            // ==================== REGISTRO MASCOTA ====================
+            modelBuilder.Entity<RegistroMascota>(entity =>
+            {
+                entity.ToTable("registro_mascota");
+                entity.HasKey(e => e.IdRegistro);
+                entity.Property(e => e.IdRegistro)
+                    .HasColumnName("id_registro")
+                    .ValueGeneratedOnAdd(); 
+                entity.Property(e => e.IdMascota)
+                    .HasColumnName("id_mascota")
+                    .IsRequired();
+                entity.Property(e => e.Descripcion)
+                    .HasColumnName("descripcion")
+                    .HasMaxLength(255)
+                    .IsRequired();
+                entity.Property(e => e.FechaInicio)
+                    .HasColumnName("fecha_inicio")
+                    .IsRequired();
+                entity.Property(e => e.FechaFinal)
+                    .HasColumnName("fecha_final");
+                entity.HasOne(e => e.Mascota)
+                    .WithMany(m => m.RegistrosMascota)
+                    .HasForeignKey(e => e.IdMascota)
+                    .OnDelete(DeleteBehavior.Cascade);
             });
         }
 

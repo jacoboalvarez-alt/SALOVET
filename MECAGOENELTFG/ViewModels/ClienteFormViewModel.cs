@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace MECAGOENELTFG.ViewModels
 {
-    public partial class ClienteFormViewModel : ObservableObject
+    public partial class ClienteFormViewModel : ObservableObject, IQueryAttributable
     {
         private readonly ClienteApiService _service;
 
@@ -43,6 +43,15 @@ namespace MECAGOENELTFG.ViewModels
         public ClienteFormViewModel()
         {
             _service = new ClienteApiService();
+        }
+
+        public void ApplyQueryAttributes(IDictionary<string, object> query) 
+        {
+            if (query.TryGetValue("clienteId", out var value) &&
+                 int.TryParse(value?.ToString(), out int id) && id > 0)
+            {
+                ClienteId = id;
+            }
         }
 
         partial void OnClienteIdChanged(int value)

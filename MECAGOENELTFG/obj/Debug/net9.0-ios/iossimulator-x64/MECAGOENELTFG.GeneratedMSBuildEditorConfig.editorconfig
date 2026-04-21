@@ -17,128 +17,188 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MECAGOENELTFG
-build_property.ProjectDir = C:\Users\jorgeg\Videos\Jacobo\TFG\SALOVET\MECAGOENELTFG\
+build_property.ProjectDir = C:\Users\jorgeg\Videos\Jacobo\SALOVET\MECAGOENELTFG\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/jorgeg/Videos/Jacobo/TFG/SALOVET/MECAGOENELTFG/App.xaml]
+[C:/Users/jorgeg/Videos/Jacobo/SALOVET/MECAGOENELTFG/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MECAGOENELTFG.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
 build_metadata.AdditionalFiles.RelativePath = App.xaml
 
-[C:/Users/jorgeg/Videos/Jacobo/TFG/SALOVET/MECAGOENELTFG/AppShell.xaml]
+[C:/Users/jorgeg/Videos/Jacobo/SALOVET/MECAGOENELTFG/AppShell.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MECAGOENELTFG.AppShell.xaml
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
 
-[C:/Users/jorgeg/Videos/Jacobo/TFG/SALOVET/MECAGOENELTFG/Resources/Styles/Colors.xaml]
+[C:/Users/jorgeg/Videos/Jacobo/SALOVET/MECAGOENELTFG/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MECAGOENELTFG.Resources.Styles.Colors.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
 
-[C:/Users/jorgeg/Videos/Jacobo/TFG/SALOVET/MECAGOENELTFG/Resources/Styles/Styles.xaml]
+[C:/Users/jorgeg/Videos/Jacobo/SALOVET/MECAGOENELTFG/Resources/Styles/Styles.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MECAGOENELTFG.Resources.Styles.Styles.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
 
-[C:/Users/jorgeg/Videos/Jacobo/TFG/SALOVET/MECAGOENELTFG/Views2/AgregarMascotaClient.xaml]
+[C:/Users/jorgeg/Videos/Jacobo/SALOVET/MECAGOENELTFG/Views2/AgregarMascotaClient.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MECAGOENELTFG.Views2.AgregarMascotaClient.xaml
 build_metadata.AdditionalFiles.TargetPath = Views2\AgregarMascotaClient.xaml
 build_metadata.AdditionalFiles.RelativePath = Views2\AgregarMascotaClient.xaml
 
-[C:/Users/jorgeg/Videos/Jacobo/TFG/SALOVET/MECAGOENELTFG/Views2/AsistentePageClient.xaml]
+[C:/Users/jorgeg/Videos/Jacobo/SALOVET/MECAGOENELTFG/Views2/AsistentePageClient.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MECAGOENELTFG.Views2.AsistentePageClient.xaml
 build_metadata.AdditionalFiles.TargetPath = Views2\AsistentePageClient.xaml
 build_metadata.AdditionalFiles.RelativePath = Views2\AsistentePageClient.xaml
 
-[C:/Users/jorgeg/Videos/Jacobo/TFG/SALOVET/MECAGOENELTFG/Views2/CitasPageClient.xaml]
+[C:/Users/jorgeg/Videos/Jacobo/SALOVET/MECAGOENELTFG/Views2/CitasPageClient.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MECAGOENELTFG.Views2.CitasPageClient.xaml
 build_metadata.AdditionalFiles.TargetPath = Views2\CitasPageClient.xaml
 build_metadata.AdditionalFiles.RelativePath = Views2\CitasPageClient.xaml
 
-[C:/Users/jorgeg/Videos/Jacobo/TFG/SALOVET/MECAGOENELTFG/Views2/ClientDashBoard.xaml]
+[C:/Users/jorgeg/Videos/Jacobo/SALOVET/MECAGOENELTFG/Views2/ClientDashBoard.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MECAGOENELTFG.Views2.ClientDashBoard.xaml
 build_metadata.AdditionalFiles.TargetPath = Views2\ClientDashBoard.xaml
 build_metadata.AdditionalFiles.RelativePath = Views2\ClientDashBoard.xaml
 
-[C:/Users/jorgeg/Videos/Jacobo/TFG/SALOVET/MECAGOENELTFG/Views2/ClienteEditarPerfilPage.xaml]
+[C:/Users/jorgeg/Videos/Jacobo/SALOVET/MECAGOENELTFG/Views2/ClienteEditarPerfilPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MECAGOENELTFG.Views2.ClienteEditarPerfilPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views2\ClienteEditarPerfilPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views2\ClienteEditarPerfilPage.xaml
 
-[C:/Users/jorgeg/Videos/Jacobo/TFG/SALOVET/MECAGOENELTFG/Views2/PerfilPage.xaml]
+[C:/Users/jorgeg/Videos/Jacobo/SALOVET/MECAGOENELTFG/Views2/EditarMascotaClient.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MECAGOENELTFG.Views2.EditarMascotaClient.xaml
+build_metadata.AdditionalFiles.TargetPath = Views2\EditarMascotaClient.xaml
+build_metadata.AdditionalFiles.RelativePath = Views2\EditarMascotaClient.xaml
+
+[C:/Users/jorgeg/Videos/Jacobo/SALOVET/MECAGOENELTFG/Views2/FormCitasCliente.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MECAGOENELTFG.Views2.FormCitasCliente.xaml
+build_metadata.AdditionalFiles.TargetPath = Views2\FormCitasCliente.xaml
+build_metadata.AdditionalFiles.RelativePath = Views2\FormCitasCliente.xaml
+
+[C:/Users/jorgeg/Videos/Jacobo/SALOVET/MECAGOENELTFG/Views2/ModificarCitasPageClient.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MECAGOENELTFG.Views2.ModificarCitasPageClient.xaml
+build_metadata.AdditionalFiles.TargetPath = Views2\ModificarCitasPageClient.xaml
+build_metadata.AdditionalFiles.RelativePath = Views2\ModificarCitasPageClient.xaml
+
+[C:/Users/jorgeg/Videos/Jacobo/SALOVET/MECAGOENELTFG/Views2/PerfilPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MECAGOENELTFG.Views2.PerfilPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views2\PerfilPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views2\PerfilPage.xaml
 
-[C:/Users/jorgeg/Videos/Jacobo/TFG/SALOVET/MECAGOENELTFG/Views/CitasPage.xaml]
+[C:/Users/jorgeg/Videos/Jacobo/SALOVET/MECAGOENELTFG/Views/AsistenteVetProf.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MECAGOENELTFG.Views.AsistenteVetProf.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\AsistenteVetProf.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\AsistenteVetProf.xaml
+
+[C:/Users/jorgeg/Videos/Jacobo/SALOVET/MECAGOENELTFG/Views/CitaFormPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MECAGOENELTFG.Views.CitaFormPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\CitaFormPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\CitaFormPage.xaml
+
+[C:/Users/jorgeg/Videos/Jacobo/SALOVET/MECAGOENELTFG/Views/CitasPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MECAGOENELTFG.Views.CitasPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\CitasPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\CitasPage.xaml
 
-[C:/Users/jorgeg/Videos/Jacobo/TFG/SALOVET/MECAGOENELTFG/Views/ClienteFormPage.xaml]
+[C:/Users/jorgeg/Videos/Jacobo/SALOVET/MECAGOENELTFG/Views/ClienteFormPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MECAGOENELTFG.Views.ClienteFormPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\ClienteFormPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\ClienteFormPage.xaml
 
-[C:/Users/jorgeg/Videos/Jacobo/TFG/SALOVET/MECAGOENELTFG/Views/ClientesPage.xaml]
+[C:/Users/jorgeg/Videos/Jacobo/SALOVET/MECAGOENELTFG/Views/ClientesPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MECAGOENELTFG.Views.ClientesPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\ClientesPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\ClientesPage.xaml
 
-[C:/Users/jorgeg/Videos/Jacobo/TFG/SALOVET/MECAGOENELTFG/Views/Login.xaml]
+[C:/Users/jorgeg/Videos/Jacobo/SALOVET/MECAGOENELTFG/Views/EditarCitaPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MECAGOENELTFG.Views.EditarCitaPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\EditarCitaPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\EditarCitaPage.xaml
+
+[C:/Users/jorgeg/Videos/Jacobo/SALOVET/MECAGOENELTFG/Views/FacturasPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MECAGOENELTFG.Views.FacturasPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\FacturasPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\FacturasPage.xaml
+
+[C:/Users/jorgeg/Videos/Jacobo/SALOVET/MECAGOENELTFG/Views/Login.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MECAGOENELTFG.Views.Login.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\Login.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\Login.xaml
 
-[C:/Users/jorgeg/Videos/Jacobo/TFG/SALOVET/MECAGOENELTFG/Views/MascotaFormPage.xaml]
+[C:/Users/jorgeg/Videos/Jacobo/SALOVET/MECAGOENELTFG/Views/MascotaFormPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MECAGOENELTFG.Views.MascotaFormPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\MascotaFormPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\MascotaFormPage.xaml
 
-[C:/Users/jorgeg/Videos/Jacobo/TFG/SALOVET/MECAGOENELTFG/Views/MascotasGeneralPage.xaml]
+[C:/Users/jorgeg/Videos/Jacobo/SALOVET/MECAGOENELTFG/Views/MascotasGeneralPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MECAGOENELTFG.Views.MascotasGeneralPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\MascotasGeneralPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\MascotasGeneralPage.xaml
 
-[C:/Users/jorgeg/Videos/Jacobo/TFG/SALOVET/MECAGOENELTFG/Views/MascotasPage.xaml]
+[C:/Users/jorgeg/Videos/Jacobo/SALOVET/MECAGOENELTFG/Views/MascotasPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MECAGOENELTFG.Views.MascotasPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\MascotasPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\MascotasPage.xaml
 
-[C:/Users/jorgeg/Videos/Jacobo/TFG/SALOVET/MECAGOENELTFG/Views/MedicamentosPage.xaml]
+[C:/Users/jorgeg/Videos/Jacobo/SALOVET/MECAGOENELTFG/Views/MedicamentoFormPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MECAGOENELTFG.Views.MedicamentoFormPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\MedicamentoFormPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\MedicamentoFormPage.xaml
+
+[C:/Users/jorgeg/Videos/Jacobo/SALOVET/MECAGOENELTFG/Views/MedicamentosPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MECAGOENELTFG.Views.MedicamentosPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\MedicamentosPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\MedicamentosPage.xaml
 
-[C:/Users/jorgeg/Videos/Jacobo/TFG/SALOVET/MECAGOENELTFG/Views/ProfDashBoard.xaml]
+[C:/Users/jorgeg/Videos/Jacobo/SALOVET/MECAGOENELTFG/Views/ProfDashBoard.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MECAGOENELTFG.Views.ProfDashBoard.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\ProfDashBoard.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\ProfDashBoard.xaml
 
-[C:/Users/jorgeg/Videos/Jacobo/TFG/SALOVET/MECAGOENELTFG/Views/Registro.xaml]
+[C:/Users/jorgeg/Videos/Jacobo/SALOVET/MECAGOENELTFG/Views/Registro.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MECAGOENELTFG.Views.Registro.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\Registro.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\Registro.xaml
+
+[C:/Users/jorgeg/Videos/Jacobo/SALOVET/MECAGOENELTFG/Views/RegistroMascotaFormPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MECAGOENELTFG.Views.RegistroMascotaFormPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\RegistroMascotaFormPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\RegistroMascotaFormPage.xaml
+
+[C:/Users/jorgeg/Videos/Jacobo/SALOVET/MECAGOENELTFG/Views/RegistroMascotasPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MECAGOENELTFG.Views.RegistroMascotasPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\RegistroMascotasPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\RegistroMascotasPage.xaml

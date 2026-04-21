@@ -21,5 +21,7 @@ namespace MECAGOENELTFG.Models
         public int? Edad { get; set; }
         public string Correo { get; set; } = string.Empty;
         public GradoProfesional Grado { get; set; }
+
+        public override string ToString() => $"{NomProf} {ApeProf}";
     }
 }

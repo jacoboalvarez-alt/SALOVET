@@ -18,12 +18,16 @@ namespace MECAGOENELTFG.Models
         // Navegación
         public Cliente? Cliente { get; set; }
 
-        public Usuario(string user, string pas, bool p, int idCli, Cliente cli) {
-            Username = user;    
-            Pass = pas;
-            Profesional = p;
-            IdCliente = idCli;
-            Cliente = cli;
+        public int? IdProf {  get; set; }
+
+        public Usuario(string user, string pass, bool profesional, int? idCliente, Cliente? cliente, int? idProf = null)
+        {
+            Username = user;
+            Pass = pass;
+            Profesional = profesional;
+            IdCliente = idCliente;
+            Cliente = cliente;
+            IdProf = idProf;
         }
 
         public Usuario() { }

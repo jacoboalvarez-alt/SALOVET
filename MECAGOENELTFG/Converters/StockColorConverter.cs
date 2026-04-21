@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MECAGOENELTFG.Converters
 {
-    internal class StockColorConverter
+    internal class StockColorConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
             => value is int stock ? stock switch

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MECAGOENELTFG.Views2.FormCitasCliente"
+             Shell.NavBarIsVisible="False"
+             BackgroundImageSource="fondo.png"
+             Title="Solicitar Cita">
+
+    <Grid RowDefinitions="Auto,*">
+
+        <!-- Header -->
+        <Border Grid.Row="0" StrokeThickness="0" Padding="20,50,20,16">
+            <Grid ColumnDefinitions="*,Auto">
+                <VerticalStackLayout Grid.Column="0" Spacing="2">
+                    <Label Text="Gestión" FontSize="13" TextColor="#C8F0EE"/>
+                    <Label Text="Solicitar cita" FontSize="22" FontAttributes="Bold" TextColor="White"/>
+                </VerticalStackLayout>
+                <Button Grid.Column="1"
+                        Text="CANCELAR"
+                        Command="{Binding CancelarCommand}"
+                        BackgroundColor="White"
+                        TextColor="#2EBBB0"
+                        FontAttributes="Bold"
+                        FontSize="13"
+                        CornerRadius="20"
+                        HeightRequest="38"
+                        Padding="15,0"/>
+            </Grid>
+        </Border>
+
+        <!-- Contenido -->
+        <ScrollView Grid.Row="1">
+            <Border BackgroundColor="#F5F5F0"
+                    StrokeThickness="0"
+                    StrokeShape="RoundRectangle 24,24,0,0"
+                    Padding="16,20,16,40">
+                <VerticalStackLayout Spacing="16">
+
+                    <!-- Loading -->
+                    <ActivityIndicator IsRunning="{Binding IsLoading}"
+                                       IsVisible="{Binding IsLoading}"
+                                       Color="#2EBBB0"
+                                       HorizontalOptions="Center"/>
+
+                    <!-- Error -->
+                    <Border BackgroundColor="#FEF0EE"
+                            StrokeThickness="0"
+                            StrokeShape="RoundRectangle 10"
+                            Padding="14,10"
+                            IsVisible="{Binding MensajeError, Converter={StaticResource StringToBoolConverter}}">
+                        <Label Text="{Binding MensajeError}"
+                               FontSize="13"
+                               TextColor="#D85A30"/>
+                    </Border>
+
+                    <!-- Mascota -->
+                    <VerticalStackLayout Spacing="6">
+                        <Label Text="MASCOTA" FontAttributes="Bold" FontSize="13" TextColor="#888780" Margin="4,0"/>
+                        <Border BackgroundColor="White" StrokeThickness="0" StrokeShape="RoundRectangle 14" Padding="12,4">
+                            <Picker ItemsSource="{Binding Mascotas}"
+                                    SelectedItem="{Binding MascotaSeleccionada, Mode=TwoWay}"
+                                    ItemDisplayBinding="{Binding NombreMasc}"
+                                    TitleColor="#B4B2A9"
+                                    TextColor="#2C2C2A"
+                                    HeightRequest="48"
+                                    BackgroundColor="Transparent"/>
+                        </Border>
+                    </VerticalStackLayout>
+
+                    <!-- Veterinario -->
+                    <VerticalStackLayout Spacing="6">
+                        <Label Text="VETERINARIO" FontAttributes="Bold" FontSize="13" TextColor="#888780" Margin="4,0"/>
+                        <Border BackgroundColor="White" StrokeThickness="0" StrokeShape="RoundRectangle 14" Padding="12,4">
+                            <Picker ItemsSource="{Binding Veterinarios}"
+                                    SelectedItem="{Binding ProfesionalSeleccionado, Mode=TwoWay}"
+                                    ItemDisplayBinding="{Binding NomProf}"
+                                    TitleColor="#B4B2A9"
+                                    TextColor="#2C2C2A"
+                                    HeightRequest="48"
+                                    BackgroundColor="Transparent"/>
+                        </Border>
+                    </VerticalStackLayout>
+
+                    <!-- Fecha -->
+                    <VerticalStackLayout Spacing="6">
+                        <Label Text="FECHA" FontAttributes="Bold" FontSize="13" TextColor="#888780" Margin="4,0"/>
+                        <Border BackgroundColor="White" StrokeThickness="0" StrokeShape="RoundRectangle 14" Padding="12,4">
+                            <DatePicker Date="{Binding FechaSeleccionada, Mode=TwoWay}"
+                                        MinimumDate="{Binding FechaMinima}"
+                                        MaximumDate="{Binding FechaMaxima}"
+                                        TextColor="#2C2C2A"
+                                        HeightRequest="48"
+                                        BackgroundColor="Transparent"/>
+                        </Border>
+                    </VerticalStackLayout>
+
+                    <!-- Horas disponibles -->
+                    <VerticalStackLayout Spacing="6">
+                        <Label Text="HORA DISPONIBLE" FontAttributes="Bold" FontSize="13" TextColor="#888780" Margin="4,0"/>
+                        <Border BackgroundColor="White" StrokeThickness="0" StrokeShape="RoundRectangle 14" Padding="12,4">
+                            <Picker ItemsSource="{Binding HorasDisponibles}"
+                                    SelectedItem="{Binding HoraSeleccionada, Mode=TwoWay}"
+
+                                    TitleColor="#B4B2A9"
+                                    TextColor="#2C2C2A"
+                                    HeightRequest="48"
+                                    BackgroundColor="Transparent"/>
+                        </Border>
+                        <Label Text="Solo se muestran horas con al menos 1h de diferencia entre citas"
+                               FontSize="11"
+                               TextColor="#888780"
+                               Margin="4,0"/>
+                    </VerticalStackLayout>
+
+                    <!-- Descripción -->
+                    <VerticalStackLayout Spacing="6">
+                        <Label Text="DESCRIPCIÓN" FontAttributes="Bold" FontSize="13" TextColor="#888780" Margin="4,0"/>
+                        <Border BackgroundColor="White" StrokeThickness="0" StrokeShape="RoundRectangle 14" Padding="12,8">
+                            <Editor Text="{Binding Descripcion, Mode=TwoWay}"
+                                    Placeholder="Describe el motivo de la cita..."
+                                    PlaceholderColor="#B4B2A9"
+                                    TextColor="#2C2C2A"
+                                    FontSize="14"
+                                    HeightRequest="100"
+                                    AutoSize="Disabled"
+                                    BackgroundColor="Transparent"/>
+                        </Border>
+                    </VerticalStackLayout>
+
+                    <!-- Botón solicitar -->
+                    <Border BackgroundColor="#2EBBB0"
+                            StrokeThickness="0"
+                            StrokeShape="RoundRectangle 14"
+                            Padding="0,16"
+                            Margin="0,8,0,0">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding SolicitarCommand}"/>
+                        </Border.GestureRecognizers>
+                        <Label Text="Solicitar cita"
+                               FontAttributes="Bold"
+                               FontSize="15"
+                               TextColor="White"
+                               HorizontalOptions="Center"/>
+                    </Border>
+
+                </VerticalStackLayout>
+            </Border>
+        </ScrollView>
+    </Grid>
+</ContentPage>

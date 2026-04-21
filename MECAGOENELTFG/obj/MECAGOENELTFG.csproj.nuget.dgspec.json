@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jorgeg\\Videos\\Jacobo\\TFG\\SALOVET\\MECAGOENELTFG\\MECAGOENELTFG.csproj": {}
+    "C:\\Users\\jorgeg\\Videos\\Jacobo\\SALOVET\\MECAGOENELTFG\\MECAGOENELTFG.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jorgeg\\Videos\\Jacobo\\TFG\\SALOVET\\MECAGOENELTFG\\MECAGOENELTFG.csproj": {
+    "C:\\Users\\jorgeg\\Videos\\Jacobo\\SALOVET\\MECAGOENELTFG\\MECAGOENELTFG.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jorgeg\\Videos\\Jacobo\\TFG\\SALOVET\\MECAGOENELTFG\\MECAGOENELTFG.csproj",
+        "projectUniqueName": "C:\\Users\\jorgeg\\Videos\\Jacobo\\SALOVET\\MECAGOENELTFG\\MECAGOENELTFG.csproj",
         "projectName": "MECAGOENELTFG",
-        "projectPath": "C:\\Users\\jorgeg\\Videos\\Jacobo\\TFG\\SALOVET\\MECAGOENELTFG\\MECAGOENELTFG.csproj",
+        "projectPath": "C:\\Users\\jorgeg\\Videos\\Jacobo\\SALOVET\\MECAGOENELTFG\\MECAGOENELTFG.csproj",
         "packagesPath": "C:\\Users\\jorgeg\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jorgeg\\Videos\\Jacobo\\TFG\\SALOVET\\MECAGOENELTFG\\obj\\",
+        "outputPath": "C:\\Users\\jorgeg\\Videos\\Jacobo\\SALOVET\\MECAGOENELTFG\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [
@@ -86,7 +86,7 @@
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[9.0.14, )",
+              "version": "[9.0.15, )",
               "autoReferenced": true
             }
           },
@@ -109,7 +109,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.312/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.313/PortableRuntimeIdentifierGraph.json"
         },
         "net9.0-ios26.0": {
           "targetAlias": "net9.0-ios",
@@ -129,7 +129,7 @@
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[9.0.14, )",
+              "version": "[9.0.15, )",
               "autoReferenced": true
             }
           },
@@ -152,7 +152,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.312/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.313/PortableRuntimeIdentifierGraph.json"
         },
         "net9.0-maccatalyst26.0": {
           "targetAlias": "net9.0-maccatalyst",
@@ -172,7 +172,7 @@
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[9.0.14, )",
+              "version": "[9.0.15, )",
               "autoReferenced": true
             }
           },
@@ -196,7 +196,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.312/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.313/PortableRuntimeIdentifierGraph.json"
         },
         "net9.0-windows10.0.19041": {
           "targetAlias": "net9.0-windows10.0.19041.0",
@@ -239,7 +239,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.312\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.313\\RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {

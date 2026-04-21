@@ -6,12 +6,17 @@
         public string Username { get; set; } = string.Empty;
         public string? Pass { get; set; }
         public bool Profesional { get; set; }
-        public int? IdCliente { get; set; }
+
 
         // Navegación
+        public int? IdCliente { get; set; }
         public Cliente? Cliente { get; set; }
 
-        public Usuario(int idUsuario, string username, string? pass, bool profesional, int? idCliente, Cliente? cliente)
+        //FK para los profesionales
+        public int? IdProf {  get; set; }
+        public Profesional? ProfesionalNav { get; set; }
+
+        public Usuario(int idUsuario, string username, string? pass, bool profesional,  int? idCliente, Cliente? cliente, int? idProf = null, Profesional? profesionalNav = null)
         {
             IdUsuario = idUsuario;
             Username = username;
@@ -19,6 +24,8 @@
             Profesional = profesional;
             IdCliente = idCliente;
             Cliente = cliente;
+            IdProf = idProf;
+            ProfesionalNav = profesionalNav;
         }
 
         public Usuario() { }

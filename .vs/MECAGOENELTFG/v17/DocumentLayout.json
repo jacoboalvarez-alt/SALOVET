@@ -1,58 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\jorgeg\\Videos\\Jacobo\\TFG\\SALOVET\\",
+  "WorkspaceRootPath": "C:\\Users\\jorgeg\\Videos\\Jacobo\\SALOVET\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|c:\\users\\jorgeg\\videos\\jacobo\\tfg\\salovet\\mecagoeneltfg\\viewmodels2\\perfilpageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|solutionrelative:mecagoeneltfg\\viewmodels2\\perfilpageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|c:\\users\\jorgeg\\videos\\jacobo\\salovet\\mecagoeneltfg\\views\\clientespage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|solutionrelative:mecagoeneltfg\\views\\clientespage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|c:\\users\\jorgeg\\videos\\jacobo\\tfg\\salovet\\mecagoeneltfg\\views2\\perfilpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|solutionrelative:mecagoeneltfg\\views2\\perfilpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|c:\\users\\jorgeg\\videos\\jacobo\\tfg\\salovet\\mecagoeneltfg\\viewmodels2\\clienteeditarpefilviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|solutionrelative:mecagoeneltfg\\viewmodels2\\clienteeditarpefilviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|c:\\users\\jorgeg\\videos\\jacobo\\tfg\\salovet\\mecagoeneltfg\\views2\\clienteeditarperfilpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|solutionrelative:mecagoeneltfg\\views2\\clienteeditarperfilpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|c:\\users\\jorgeg\\videos\\jacobo\\tfg\\salovet\\mecagoeneltfg\\views2\\clientdashboard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|solutionrelative:mecagoeneltfg\\views2\\clientdashboard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|c:\\users\\jorgeg\\videos\\jacobo\\tfg\\salovet\\mecagoeneltfg\\views2\\citaspageclient.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|solutionrelative:mecagoeneltfg\\views2\\citaspageclient.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|c:\\users\\jorgeg\\videos\\jacobo\\tfg\\salovet\\mecagoeneltfg\\viewmodels2\\agregarmascotaclientviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|solutionrelative:mecagoeneltfg\\viewmodels2\\agregarmascotaclientviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|c:\\users\\jorgeg\\videos\\jacobo\\tfg\\salovet\\mecagoeneltfg\\views2\\perfilpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|solutionrelative:mecagoeneltfg\\views2\\perfilpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|c:\\users\\jorgeg\\videos\\jacobo\\tfg\\salovet\\mecagoeneltfg\\views2\\asistentepageclient.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|solutionrelative:mecagoeneltfg\\views2\\asistentepageclient.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|c:\\users\\jorgeg\\videos\\jacobo\\tfg\\salovet\\mecagoeneltfg\\views\\login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|solutionrelative:mecagoeneltfg\\views\\login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|c:\\users\\jorgeg\\videos\\jacobo\\tfg\\salovet\\mecagoeneltfg\\views2\\agregarmascotaclient.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|solutionrelative:mecagoeneltfg\\views2\\agregarmascotaclient.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|c:\\users\\jorgeg\\videos\\jacobo\\tfg\\salovet\\mecagoeneltfg\\views2\\citaspageclient.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|solutionrelative:mecagoeneltfg\\views2\\citaspageclient.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|c:\\users\\jorgeg\\videos\\jacobo\\tfg\\salovet\\mecagoeneltfg\\views2\\clientdashboard.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|solutionrelative:mecagoeneltfg\\views2\\clientdashboard.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|c:\\users\\jorgeg\\videos\\jacobo\\salovet\\mecagoeneltfg\\viewmodels\\clientesviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|solutionrelative:mecagoeneltfg\\viewmodels\\clientesviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -262,171 +218,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ClienteEditarPefilViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\jorgeg\\Videos\\Jacobo\\TFG\\SALOVET\\MECAGOENELTFG\\ViewModels2\\ClienteEditarPefilViewModel.cs",
-              "RelativeDocumentMoniker": "MECAGOENELTFG\\ViewModels2\\ClienteEditarPefilViewModel.cs",
-              "ToolTip": "C:\\Users\\jorgeg\\Videos\\Jacobo\\TFG\\SALOVET\\MECAGOENELTFG\\ViewModels2\\ClienteEditarPefilViewModel.cs",
-              "RelativeToolTip": "MECAGOENELTFG\\ViewModels2\\ClienteEditarPefilViewModel.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAowCcAAAAnAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "ClientesViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\jorgeg\\Videos\\Jacobo\\SALOVET\\MECAGOENELTFG\\ViewModels\\ClientesViewModel.cs",
+              "RelativeDocumentMoniker": "MECAGOENELTFG\\ViewModels\\ClientesViewModel.cs",
+              "ToolTip": "C:\\Users\\jorgeg\\Videos\\Jacobo\\SALOVET\\MECAGOENELTFG\\ViewModels\\ClientesViewModel.cs",
+              "RelativeToolTip": "MECAGOENELTFG\\ViewModels\\ClientesViewModel.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAiwD0AAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-14T14:02:53.962Z",
+              "WhenOpened": "2026-04-21T15:31:06.539Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "PerfilPageViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\jorgeg\\Videos\\Jacobo\\TFG\\SALOVET\\MECAGOENELTFG\\ViewModels2\\PerfilPageViewModel.cs",
-              "RelativeDocumentMoniker": "MECAGOENELTFG\\ViewModels2\\PerfilPageViewModel.cs",
-              "ToolTip": "C:\\Users\\jorgeg\\Videos\\Jacobo\\TFG\\SALOVET\\MECAGOENELTFG\\ViewModels2\\PerfilPageViewModel.cs",
-              "RelativeToolTip": "MECAGOENELTFG\\ViewModels2\\PerfilPageViewModel.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAQwEMAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-14T08:36:49.992Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "PerfilPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\jorgeg\\Videos\\Jacobo\\TFG\\SALOVET\\MECAGOENELTFG\\Views2\\PerfilPage.xaml.cs",
-              "RelativeDocumentMoniker": "MECAGOENELTFG\\Views2\\PerfilPage.xaml.cs",
-              "ToolTip": "C:\\Users\\jorgeg\\Videos\\Jacobo\\TFG\\SALOVET\\MECAGOENELTFG\\Views2\\PerfilPage.xaml.cs",
-              "RelativeToolTip": "MECAGOENELTFG\\Views2\\PerfilPage.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-14T08:16:41.364Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PerfilPage.xaml",
-              "DocumentMoniker": "C:\\Users\\jorgeg\\Videos\\Jacobo\\TFG\\SALOVET\\MECAGOENELTFG\\Views2\\PerfilPage.xaml",
-              "RelativeDocumentMoniker": "MECAGOENELTFG\\Views2\\PerfilPage.xaml",
-              "ToolTip": "C:\\Users\\jorgeg\\Videos\\Jacobo\\TFG\\SALOVET\\MECAGOENELTFG\\Views2\\PerfilPage.xaml",
-              "RelativeToolTip": "MECAGOENELTFG\\Views2\\PerfilPage.xaml",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAEwCQAAAAzAAAAAAAAAA==",
+              "Title": "ClientesPage.xaml",
+              "DocumentMoniker": "C:\\Users\\jorgeg\\Videos\\Jacobo\\SALOVET\\MECAGOENELTFG\\Views\\ClientesPage.xaml",
+              "RelativeDocumentMoniker": "MECAGOENELTFG\\Views\\ClientesPage.xaml",
+              "ToolTip": "C:\\Users\\jorgeg\\Videos\\Jacobo\\SALOVET\\MECAGOENELTFG\\Views\\ClientesPage.xaml",
+              "RelativeToolTip": "MECAGOENELTFG\\Views\\ClientesPage.xaml",
+              "ViewState": "AgIAAFgAAAAAAAAAAAAYwC4AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-04-14T11:54:45.795Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ClienteEditarPerfilPage.xaml",
-              "DocumentMoniker": "C:\\Users\\jorgeg\\Videos\\Jacobo\\TFG\\SALOVET\\MECAGOENELTFG\\Views2\\ClienteEditarPerfilPage.xaml",
-              "RelativeDocumentMoniker": "MECAGOENELTFG\\Views2\\ClienteEditarPerfilPage.xaml",
-              "ToolTip": "C:\\Users\\jorgeg\\Videos\\Jacobo\\TFG\\SALOVET\\MECAGOENELTFG\\Views2\\ClienteEditarPerfilPage.xaml",
-              "RelativeToolTip": "MECAGOENELTFG\\Views2\\ClienteEditarPerfilPage.xaml",
-              "ViewState": "AgIAACYAAAAAAAAAAAAtwC0AAABFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-04-14T13:54:28.882Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AgregarMascotaClientViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\jorgeg\\Videos\\Jacobo\\TFG\\SALOVET\\MECAGOENELTFG\\ViewModels2\\AgregarMascotaClientViewModel.cs",
-              "RelativeDocumentMoniker": "MECAGOENELTFG\\ViewModels2\\AgregarMascotaClientViewModel.cs",
-              "ToolTip": "C:\\Users\\jorgeg\\Videos\\Jacobo\\TFG\\SALOVET\\MECAGOENELTFG\\ViewModels2\\AgregarMascotaClientViewModel.cs",
-              "RelativeToolTip": "MECAGOENELTFG\\ViewModels2\\AgregarMascotaClientViewModel.cs",
-              "ViewState": "AgIAAH8AAAAAAAAAAAAgwJsAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-14T10:25:55.495Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ClientDashBoard.xaml",
-              "DocumentMoniker": "C:\\Users\\jorgeg\\Videos\\Jacobo\\TFG\\SALOVET\\MECAGOENELTFG\\Views2\\ClientDashBoard.xaml",
-              "RelativeDocumentMoniker": "MECAGOENELTFG\\Views2\\ClientDashBoard.xaml",
-              "ToolTip": "C:\\Users\\jorgeg\\Videos\\Jacobo\\TFG\\SALOVET\\MECAGOENELTFG\\Views2\\ClientDashBoard.xaml",
-              "RelativeToolTip": "MECAGOENELTFG\\Views2\\ClientDashBoard.xaml",
-              "ViewState": "AgIAAG0AAAAAAAAAAAArwH0AAABXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-04-14T11:55:00.416Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CitasPageClient.xaml",
-              "DocumentMoniker": "C:\\Users\\jorgeg\\Videos\\Jacobo\\TFG\\SALOVET\\MECAGOENELTFG\\Views2\\CitasPageClient.xaml",
-              "RelativeDocumentMoniker": "MECAGOENELTFG\\Views2\\CitasPageClient.xaml",
-              "ToolTip": "C:\\Users\\jorgeg\\Videos\\Jacobo\\TFG\\SALOVET\\MECAGOENELTFG\\Views2\\CitasPageClient.xaml",
-              "RelativeToolTip": "MECAGOENELTFG\\Views2\\CitasPageClient.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-04-14T08:11:49.706Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "AsistentePageClient.xaml",
-              "DocumentMoniker": "C:\\Users\\jorgeg\\Videos\\Jacobo\\TFG\\SALOVET\\MECAGOENELTFG\\Views2\\AsistentePageClient.xaml",
-              "RelativeDocumentMoniker": "MECAGOENELTFG\\Views2\\AsistentePageClient.xaml",
-              "ToolTip": "C:\\Users\\jorgeg\\Videos\\Jacobo\\TFG\\SALOVET\\MECAGOENELTFG\\Views2\\AsistentePageClient.xaml",
-              "RelativeToolTip": "MECAGOENELTFG\\Views2\\AsistentePageClient.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-04-14T11:38:02.146Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Login.xaml",
-              "DocumentMoniker": "C:\\Users\\jorgeg\\Videos\\Jacobo\\TFG\\SALOVET\\MECAGOENELTFG\\Views\\Login.xaml",
-              "RelativeDocumentMoniker": "MECAGOENELTFG\\Views\\Login.xaml",
-              "ToolTip": "C:\\Users\\jorgeg\\Videos\\Jacobo\\TFG\\SALOVET\\MECAGOENELTFG\\Views\\Login.xaml",
-              "RelativeToolTip": "MECAGOENELTFG\\Views\\Login.xaml",
-              "ViewState": "AgIAACcAAAAAAAAAAAAUwDQAAABjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-04-14T11:44:22.163Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "AgregarMascotaClient.xaml",
-              "DocumentMoniker": "C:\\Users\\jorgeg\\Videos\\Jacobo\\TFG\\SALOVET\\MECAGOENELTFG\\Views2\\AgregarMascotaClient.xaml",
-              "RelativeDocumentMoniker": "MECAGOENELTFG\\Views2\\AgregarMascotaClient.xaml",
-              "ToolTip": "C:\\Users\\jorgeg\\Videos\\Jacobo\\TFG\\SALOVET\\MECAGOENELTFG\\Views2\\AgregarMascotaClient.xaml",
-              "RelativeToolTip": "MECAGOENELTFG\\Views2\\AgregarMascotaClient.xaml",
-              "ViewState": "AgIAAJYBAAAAAAAAAAAiwJ0BAABLAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-04-14T09:56:07.287Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "ClientDashBoard.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\jorgeg\\Videos\\Jacobo\\TFG\\SALOVET\\MECAGOENELTFG\\Views2\\ClientDashBoard.xaml.cs",
-              "RelativeDocumentMoniker": "MECAGOENELTFG\\Views2\\ClientDashBoard.xaml.cs",
-              "ToolTip": "C:\\Users\\jorgeg\\Videos\\Jacobo\\TFG\\SALOVET\\MECAGOENELTFG\\Views2\\ClientDashBoard.xaml.cs",
-              "RelativeToolTip": "MECAGOENELTFG\\Views2\\ClientDashBoard.xaml.cs",
-              "ViewState": "AgIAAEEAAAAAAAAAAAAIwFUAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-14T08:13:10.445Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "CitasPageClient.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\jorgeg\\Videos\\Jacobo\\TFG\\SALOVET\\MECAGOENELTFG\\Views2\\CitasPageClient.xaml.cs",
-              "RelativeDocumentMoniker": "MECAGOENELTFG\\Views2\\CitasPageClient.xaml.cs",
-              "ToolTip": "C:\\Users\\jorgeg\\Videos\\Jacobo\\TFG\\SALOVET\\MECAGOENELTFG\\Views2\\CitasPageClient.xaml.cs",
-              "RelativeToolTip": "MECAGOENELTFG\\Views2\\CitasPageClient.xaml.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAgwBcAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-14T08:12:28.116Z",
+              "WhenOpened": "2026-04-21T15:30:47.882Z",
               "EditorCaption": ""
             }
           ]

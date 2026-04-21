@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MECAGOENELTFG.Views.RegistroMascotasPage"
+             x:Name="PageRoot"
+             Shell.NavBarIsVisible="False"
+             BackgroundImageSource="fondo2.png">
+
+    <Grid RowDefinitions="Auto,Auto,*" Padding="30,20">
+
+        <!-- HEADER -->
+        <Grid Grid.Row="0" ColumnDefinitions="*,Auto,Auto">
+            <Label Text="{Binding NombreMascota}"
+                   FontSize="32"
+                   TextColor="White"
+                   HorizontalOptions="Center"
+                   FontFamily="Milano"
+                   FontAttributes="Bold"
+                   VerticalOptions="Center" />
+
+            <Button Text="➕ Añadir"
+                    Command="{Binding AgregarRegistroCommand}"
+                    BackgroundColor="#56CCF2"
+                    TextColor="White"
+                    CornerRadius="10"
+                    HeightRequest="40"
+                    Padding="16,0"
+                    FontAttributes="Bold"
+                    HorizontalOptions="End"/>
+            <Button
+                Grid.Column="2"
+                Text="Volver"
+                FontAttributes="Bold"
+                Command="{Binding VolverCommand}"
+                Margin="10,0,0,0"
+                BackgroundColor="#56CCF2"
+                TextColor="White"
+                CornerRadius="10"
+                HeightRequest="40"
+                HorizontalOptions="End"
+                />
+        </Grid>
+
+        <!-- SEPARADOR -->
+        <BoxView Grid.Row="1"
+                 HeightRequest="1"
+                 BackgroundColor="#FFFFFF40"
+                 Margin="10,40,0,10"/>
+
+        <!-- LISTA -->
+        <CollectionView Grid.Row="2"
+                        ItemsSource="{Binding Registros}"
+                        SelectionMode="None">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+
+                    <Border StrokeShape="RoundRectangle 14"
+                            BackgroundColor="White"
+                            Stroke="#E0F5F3"
+                            Margin="0,8"
+                            Padding="15">
+
+                        <VerticalStackLayout Spacing="10">
+
+                            <!-- DESCRIPCIÓN -->
+                            <Label Text="{Binding Descripcion}"
+                                   FontSize="18"
+                                   FontAttributes="Bold"
+                                   TextColor="#222" />
+
+                            <!-- FECHAS -->
+                            <Grid ColumnDefinitions="*,*">
+                                <Label Grid.Column="0"
+                                       Text="{Binding FechaInicio, StringFormat='Inicio: {0:dd/MM/yyyy}'}"
+                                       TextColor="#666"
+                                       FontSize="13"/>
+
+                                <Label Grid.Column="1"
+                                       Text="{Binding FechaFinal, StringFormat='Fin: {0:dd/MM/yyyy}'}"
+                                       TextColor="#666"
+                                       FontSize="13"
+                                       HorizontalOptions="End"/>
+                            </Grid>
+
+                            <!-- ACCIONES -->
+                            <HorizontalStackLayout HorizontalOptions="End"
+                                                   Spacing="8">
+
+                                <Button Text="✏️"
+                                        Command="{Binding BindingContext.EditarRegistroCommand, Source={x:Reference PageRoot}}"
+                                        CommandParameter="{Binding}"
+                                        BackgroundColor="#2196F3"
+                                        TextColor="White"
+                                        CornerRadius="8"
+                                        WidthRequest="40"
+                                        HeightRequest="35"
+                                        Padding="0"/>
+
+                                <Button Text="🗑️"
+                                        Command="{Binding BindingContext.EliminarRegistroCommand, Source={x:Reference PageRoot}}"
+                                        CommandParameter="{Binding}"
+                                        BackgroundColor="#F44336"
+                                        TextColor="White"
+                                        CornerRadius="8"
+                                        WidthRequest="40"
+                                        HeightRequest="35"
+                                        Padding="0"/>
+
+                            </HorizontalStackLayout>
+
+                        </VerticalStackLayout>
+
+                    </Border>
+
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+
+    </Grid>
+
+</ContentPage>

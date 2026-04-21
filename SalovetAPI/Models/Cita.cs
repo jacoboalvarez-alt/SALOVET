@@ -1,4 +1,6 @@
-﻿namespace SalovetAPI.Models
+﻿using System.Text.Json.Serialization;
+
+namespace SalovetAPI.Models
 {
     public enum EstadoCita
     {
@@ -19,8 +21,8 @@
         public string? Descripcion { get; set; }
 
         // Navegación
-        public Cliente Cliente { get; set; } = null!;
-        public Profesional Profesional { get; set; } = null!;
-        public Mascota Mascota { get; set; } = null!;
+        public Cliente? Cliente { get; set; } = null!;
+        public Profesional? Profesional { get; set; } = null!;
+        public Mascota? Mascota { get; set; } = null!;
     }
 }

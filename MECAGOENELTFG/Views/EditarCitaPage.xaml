@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Shell.NavBarIsVisible="False"
+             BackgroundImageSource="fondo2.png"
+             x:Class="MECAGOENELTFG.Views.EditarCitaPage"
+             Title="EditarCitaPage">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="0" Margin="0,80,0,0">
+
+            <!-- Botón volver -->
+            <Button Text="← Volver"
+                    BackgroundColor="#56CCF2"
+                    Command="{Binding VolverCommand}"
+                    HorizontalOptions="End"
+                    Margin="0,0,20,20" />
+
+            <!-- Título -->
+            <Label Text="Editar Cita"
+                   HorizontalOptions="Center"
+                   FontSize="25"
+                   FontFamily="Milano"
+                   FontAttributes="Bold"
+                   TextColor="#1A3C6E"
+                   Margin="0,0,0,30" />
+
+            <!-- Contenedor blanco -->
+            <Border BackgroundColor="White"
+                    Stroke="#CCCCCC"
+                    StrokeThickness="1"
+                    Padding="20"
+                    Margin="0,0,0,30"
+                    StrokeShape="RoundRectangle 12">
+                <VerticalStackLayout Spacing="15">
+
+                    <ActivityIndicator IsRunning="{Binding IsLoading}"
+                                       IsVisible="{Binding IsLoading}"
+                                       Color="#56CCF2" />
+
+                    <!-- INFO: Cliente (solo lectura) -->
+                    <Label Text="Cliente" FontAttributes="Bold" />
+                    <Border BackgroundColor="#F5F5F5"
+                            StrokeShape="RoundRectangle 8"
+                            Stroke="#CCCCCC"
+                            Padding="12,10">
+                        <Label Text="{Binding NombreCliente}"
+                               TextColor="#666" />
+                    </Border>
+
+                    <!-- INFO: Mascota (solo lectura) -->
+                    <Label Text="Mascota" FontAttributes="Bold" />
+                    <Border BackgroundColor="#F5F5F5"
+                            StrokeShape="RoundRectangle 8"
+                            Stroke="#CCCCCC"
+                            Padding="12,10">
+                        <Label Text="{Binding NombreMascota}"
+                               TextColor="#666" />
+                    </Border>
+
+                    <!-- INFO: Fecha y hora (solo lectura) -->
+                    <Label Text="Fecha y hora" FontAttributes="Bold" />
+                    <Border BackgroundColor="#F5F5F5"
+                            StrokeShape="RoundRectangle 8"
+                            Stroke="#CCCCCC"
+                            Padding="12,10">
+                        <Label Text="{Binding FechaHoraTexto}"
+                               TextColor="#666" />
+                    </Border>
+
+                    <!-- EDITABLE: Profesional -->
+                    <Label Text="Veterinario" FontAttributes="Bold" />
+                    <Picker ItemsSource="{Binding Veterinarios}"
+                            SelectedItem="{Binding ProfesionalSeleccionado}"
+                            Title="Selecciona un veterinario" />
+
+                    <!-- EDITABLE: Estado -->
+                    <Label Text="Estado" FontAttributes="Bold" />
+                    <Picker ItemsSource="{Binding EstadosDisponibles}"
+                            SelectedItem="{Binding EstadoSeleccionado}"
+                            Title="Selecciona un estado" />
+
+                    <!-- EDITABLE: Descripción -->
+                    <Label Text="Descripción" FontAttributes="Bold" />
+                    <Editor Text="{Binding Descripcion}"
+                            AutoSize="TextChanges"
+                            HeightRequest="80"
+                            Placeholder="Motivo de la consulta..." />
+
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Botón guardar -->
+            <Button Text="Guardar cambios"
+                    Command="{Binding GuardarCommand}"
+                    BackgroundColor="#56CCF2"
+                    TextColor="White"
+                    CornerRadius="10"
+                    HeightRequest="45"
+                    Margin="0,0,0,20" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

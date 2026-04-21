@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MECAGOENELTFG.Views.CitaFormPage"
+             Shell.NavBarIsVisible="False"
+             BackgroundImageSource="fondo2.png"
+             Title="CitaFormPage">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="0" Margin="0,80,0,0">
+
+            <!-- Botón volver -->
+            <Button Text="← Volver"
+                    BackgroundColor="#FF6F61"
+                    Command="{Binding CancelarCommand}"
+                    HorizontalOptions="End"
+                    Margin="0,0,20,20" />
+
+            <!-- Título -->
+            <Label Text="Nueva Cita"
+                   HorizontalOptions="Center"
+                   FontSize="40"
+                   FontFamily="Milano"
+                   FontAttributes="Bold"
+                   TextColor="#1A3C6E"
+                   Margin="0,0,0,20" />
+
+            <!-- Contenedor blanco -->
+            <Border BackgroundColor="White"
+                    Stroke="#CCCCCC"
+                    StrokeThickness="1"
+                    Padding="20"
+                    Margin="0,0,0,30"
+                    StrokeShape="RoundRectangle 12">
+                <VerticalStackLayout Spacing="15">
+
+                    <!-- Indicador de carga -->
+                    <ActivityIndicator IsRunning="{Binding IsLoading}"
+                                       IsVisible="{Binding IsLoading}"
+                                       Color="#56CCF2" />
+
+                    <!-- 1. Cliente -->
+                    <Label Text="Cliente" FontAttributes="Bold" />
+                    <Picker Title="Selecciona un cliente"
+                            ItemsSource="{Binding Clientes}"
+                            TextColor="Black"
+                            ItemDisplayBinding="{Binding NombreCli}"
+                            SelectedItem="{Binding ClienteSeleccionado}" />
+
+                    <!-- 2. Mascota (solo si hay cliente seleccionado) -->
+                    <Label Text="Mascota" FontAttributes="Bold"
+                           IsVisible="{Binding HayMascotas}" />
+                    <Picker Title="Selecciona una mascota"
+                            ItemsSource="{Binding Mascotas}"
+                            TextColor="Black"
+                            ItemDisplayBinding="{Binding NombreMasc}"
+                            SelectedItem="{Binding MascotaSeleccionada}"
+                            IsVisible="{Binding HayMascotas}" />
+
+                    <!-- 3. Veterinario -->
+                    <Label Text="Veterinario" FontAttributes="Bold" />
+                    <Picker Title="Selecciona un veterinario"
+                            TextColor="Black"
+                            ItemsSource="{Binding Veterinarios}"
+                            ItemDisplayBinding="{Binding NomProf}"
+                            SelectedItem="{Binding ProfesionalSeleccionado}" />
+
+                    <!-- 4. Fecha -->
+                    <Label Text="Fecha" FontAttributes="Bold" />
+                    <DatePicker Date="{Binding FechaSeleccionada}"
+                                MinimumDate="{Binding FechaMinima}"
+                                MaximumDate="{Binding FechaMaxima}" />
+
+                    <!-- 5. Hora disponible -->
+                    <Label Text="Hora disponible" FontAttributes="Bold" />
+                    <Picker Title="Selecciona una hora"
+                            ItemsSource="{Binding HorasDisponibles}"
+                            SelectedItem="{Binding HoraSeleccionada}" />
+
+                    <!-- 6. Descripción -->
+                    <Label Text="Descripción (opcional)" FontAttributes="Bold" />
+                    <Editor Text="{Binding Descripcion}"
+                            AutoSize="TextChanges"
+                            HeightRequest="80"
+                            Placeholder="Motivo de la consulta..." />
+
+                    <!-- Mensaje de error -->
+                    <Label Text="{Binding MensajeError}"
+                           TextColor="Red"
+                           IsVisible="{Binding MensajeError, Converter={x:StaticResource StringToBoolConverter}}"
+                           FontAttributes="Italic" />
+
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Botón guardar -->
+            <Button Text="Crear Cita"
+                    Command="{Binding SolicitarCommand}"
+                    BackgroundColor="#56CCF2"
+                    TextColor="White"
+                    CornerRadius="10"
+                    HeightRequest="45"
+                    Margin="0,0,0,20" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

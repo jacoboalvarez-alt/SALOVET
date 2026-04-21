@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "a/8GwlK1558=",
+  "dgSpecHash": "F5lxLJpLLh8=",
   "success": true,
-  "projectFilePath": "C:\\Users\\jorgeg\\Videos\\Jacobo\\TFG\\SALOVET\\MECAGOENELTFG\\MECAGOENELTFG.csproj",
+  "projectFilePath": "C:\\Users\\jorgeg\\Videos\\Jacobo\\SALOVET\\MECAGOENELTFG\\MECAGOENELTFG.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jorgeg\\.nuget\\packages\\communitytoolkit.mvvm\\8.4.0\\communitytoolkit.mvvm.8.4.0.nupkg.sha512",
     "C:\\Users\\jorgeg\\.nuget\\packages\\googlegson\\2.13.0.1\\googlegson.2.13.0.1.nupkg.sha512",
@@ -26,7 +26,7 @@
     "C:\\Users\\jorgeg\\.nuget\\packages\\microsoft.maui.graphics\\9.0.111\\microsoft.maui.graphics.9.0.111.nupkg.sha512",
     "C:\\Users\\jorgeg\\.nuget\\packages\\microsoft.maui.graphics.win2d.winui.desktop\\9.0.111\\microsoft.maui.graphics.win2d.winui.desktop.9.0.111.nupkg.sha512",
     "C:\\Users\\jorgeg\\.nuget\\packages\\microsoft.maui.resizetizer\\9.0.111\\microsoft.maui.resizetizer.9.0.111.nupkg.sha512",
-    "C:\\Users\\jorgeg\\.nuget\\packages\\microsoft.net.illink.tasks\\9.0.14\\microsoft.net.illink.tasks.9.0.14.nupkg.sha512",
+    "C:\\Users\\jorgeg\\.nuget\\packages\\microsoft.net.illink.tasks\\9.0.15\\microsoft.net.illink.tasks.9.0.15.nupkg.sha512",
     "C:\\Users\\jorgeg\\.nuget\\packages\\microsoft.web.webview2\\1.0.3179.45\\microsoft.web.webview2.1.0.3179.45.nupkg.sha512",
     "C:\\Users\\jorgeg\\.nuget\\packages\\microsoft.windows.sdk.buildtools\\10.0.22621.756\\microsoft.windows.sdk.buildtools.10.0.22621.756.nupkg.sha512",
     "C:\\Users\\jorgeg\\.nuget\\packages\\microsoft.windowsappsdk\\1.7.250606001\\microsoft.windowsappsdk.1.7.250606001.nupkg.sha512",

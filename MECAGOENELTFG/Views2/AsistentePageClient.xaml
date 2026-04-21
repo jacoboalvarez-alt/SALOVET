@@ -18,8 +18,8 @@
                          BackgroundColor="#E8F8F7"
                          StrokeThickness="0"
                          StrokeShape="RoundRectangle 16"
-                         WidthRequest="32"
-                         HeightRequest="32"
+                         WidthRequest="35"
+                         HeightRequest="35"
                          VerticalOptions="End">
                         <Image Source="logo.png"
                             HorizontalOptions="Fill"
@@ -107,14 +107,13 @@
                         <Border BackgroundColor="#E8F8F7"
                          StrokeThickness="0"
                          StrokeShape="RoundRectangle 18"
-                         WidthRequest="36"
-                         HeightRequest="36"
+                         WidthRequest="50"
+                         HeightRequest="50"
                          Padding="0">
                             <Image Source="logo.png"
                             HorizontalOptions="Fill"
                             VerticalOptions="Fill"
-                            Aspect="AspectFit" 
-                            Margin="4"/>
+                            Aspect="AspectFit" />
                         </Border>
                         <Border x:Name="StatusDot"
                              BackgroundColor="#1D9E75"

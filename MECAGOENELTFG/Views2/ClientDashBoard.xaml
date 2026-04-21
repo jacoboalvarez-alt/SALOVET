@@ -130,114 +130,6 @@
 
                             <!-- Lista de citas -->
                             <VerticalStackLayout x:Name="CitasContainer" Spacing="10">
-
-                                <!-- Cita de ejemplo 1 -->
-                                <Border BackgroundColor="White"
-                                    StrokeThickness="0"
-                                    StrokeShape="RoundRectangle 14"
-                                    Padding="16,14">
-                                    <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
-                                        <!-- Icono fecha -->
-                                        <Border Grid.Column="0"
-                                            BackgroundColor="#E8F8F7"
-                                            StrokeThickness="0"
-                                            StrokeShape="RoundRectangle 12"
-                                            WidthRequest="48"
-                                            HeightRequest="48">
-                                            <VerticalStackLayout HorizontalOptions="Center"
-                                                              VerticalOptions="Center"
-                                                              Spacing="0">
-                                                <Label Text="ABR"
-                                                   FontSize="9"
-                                                   FontAttributes="Bold"
-                                                   TextColor="#2EBBB0"
-                                                   HorizontalOptions="Center"/>
-                                                <Label Text="15"
-                                                   FontSize="20"
-                                                   FontAttributes="Bold"
-                                                   TextColor="#2EBBB0"
-                                                   HorizontalOptions="Center"/>
-                                            </VerticalStackLayout>
-                                        </Border>
-                                        <!-- Info cita -->
-                                        <VerticalStackLayout Grid.Column="1"
-                                                          VerticalOptions="Center"
-                                                          Spacing="3">
-                                            <Label Text="Revisión anual"
-                                               FontAttributes="Bold"
-                                               FontSize="14"
-                                               TextColor="#2C2C2A"/>
-                                            <Label Text="10:30 · Dr. García"
-                                               FontSize="12"
-                                               TextColor="#888780"/>
-                                        </VerticalStackLayout>
-                                        <!-- Estado -->
-                                        <Border Grid.Column="2"
-                                            BackgroundColor="#E8F8F7"
-                                            StrokeThickness="0"
-                                            StrokeShape="RoundRectangle 8"
-                                            Padding="8,4"
-                                            VerticalOptions="Center">
-                                            <Label Text="Próxima"
-                                               FontSize="11"
-                                               FontAttributes="Bold"
-                                               TextColor="#2EBBB0"/>
-                                        </Border>
-                                    </Grid>
-                                </Border>
-
-                                <!-- Cita de ejemplo 2 -->
-                                <Border BackgroundColor="White"
-                                    StrokeThickness="0"
-                                    StrokeShape="RoundRectangle 14"
-                                    Padding="16,14">
-                                    <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
-                                        <Border Grid.Column="0"
-                                            BackgroundColor="#F5F5F0"
-                                            StrokeThickness="0"
-                                            StrokeShape="RoundRectangle 12"
-                                            WidthRequest="48"
-                                            HeightRequest="48">
-                                            <VerticalStackLayout HorizontalOptions="Center"
-                                                              VerticalOptions="Center"
-                                                              Spacing="0">
-                                                <Label Text="MAR"
-                                                   FontSize="9"
-                                                   FontAttributes="Bold"
-                                                   TextColor="#888780"
-                                                   HorizontalOptions="Center"/>
-                                                <Label Text="22"
-                                                   FontSize="20"
-                                                   FontAttributes="Bold"
-                                                   TextColor="#888780"
-                                                   HorizontalOptions="Center"/>
-                                            </VerticalStackLayout>
-                                        </Border>
-                                        <VerticalStackLayout Grid.Column="1"
-                                                          VerticalOptions="Center"
-                                                          Spacing="3">
-                                            <Label Text="Vacunación"
-                                               FontAttributes="Bold"
-                                               FontSize="14"
-                                               TextColor="#2C2C2A"/>
-                                            <Label Text="09:00 · Dr. López"
-                                               FontSize="12"
-                                               TextColor="#888780"/>
-                                        </VerticalStackLayout>
-                                        <Border Grid.Column="2"
-                                            BackgroundColor="#F5F5F0"
-                                            StrokeThickness="0"
-                                            StrokeShape="RoundRectangle 8"
-                                            Padding="8,4"
-                                            VerticalOptions="Center">
-                                            <Label Text="Pasada"
-                                               FontSize="11"
-                                               FontAttributes="Bold"
-                                               TextColor="#888780"/>
-                                        </Border>
-                                    </Grid>
-                                </Border>
-
                                 <!-- Placeholder si no hay citas -->
                                 <Border x:Name="SinCitasPlaceholder"
                                     BackgroundColor="White"
@@ -246,16 +138,12 @@
                                     Padding="20"
                                     IsVisible="False">
                                     <VerticalStackLayout HorizontalOptions="Center" Spacing="8">
-                                        <Label Text="📅"
-                                           FontSize="32"
-                                           HorizontalOptions="Center"/>
+                                        <Label Text="📅" FontSize="32" HorizontalOptions="Center"/>
                                         <Label Text="No tienes citas programadas"
-                                           FontSize="13"
-                                           TextColor="#888780"
-                                           HorizontalOptions="Center"/>
+                                       FontSize="13" TextColor="#888780"
+                                       HorizontalOptions="Center"/>
                                     </VerticalStackLayout>
                                 </Border>
-
                             </VerticalStackLayout>
                         </VerticalStackLayout>
 

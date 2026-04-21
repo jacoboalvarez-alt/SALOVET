@@ -27,7 +27,7 @@
             <Button Grid.Column="2"
                     Text="← Volver"
                     Command="{Binding IrADashboardCommand}"
-                    BackgroundColor="#1A9E94"
+                    BackgroundColor="#FF6F61"
                     TextColor="White"
                     CornerRadius="10"
                     HeightRequest="40"
@@ -54,37 +54,35 @@
 
                 <!-- Filtro por ID Cliente -->
                 <VerticalStackLayout Grid.Column="0" Spacing="4">
-                    <Label Text="ID Cliente"
+                    <Label Text="Cliente"
                            FontSize="12"
                            FontAttributes="Bold"
                            FontFamily="Nunito"
                            TextColor="#444" />
                     <Border StrokeShape="RoundRectangle 8" Stroke="#2EBBB0" Padding="8,0">
-                        <Entry Placeholder="Ej: 3"
-                               Text="{Binding FiltroIdCliente}"
-                               Keyboard="Numeric"
-                               FontFamily="Nunito"
-                               FontSize="14"
-                               TextColor="#222"
-                               HeightRequest="38" />
+                        <Picker ItemsSource="{Binding ClientesFiltro}"
+                            SelectedItem="{Binding FiltroClienteSeleccionado}"
+                            FontFamily="Nunito"
+                            FontSize="14"
+                            TextColor="#222"
+                            HeightRequest="38" />
                     </Border>
                 </VerticalStackLayout>
 
                 <!-- Filtro por ID Profesional -->
                 <VerticalStackLayout Grid.Column="1" Spacing="4">
-                    <Label Text="ID Profesional"
-                           FontSize="12"
-                           FontAttributes="Bold"
-                           FontFamily="Nunito"
-                           TextColor="#444" />
+                    <Label Text="Profesional"
+                       FontSize="12"
+                       FontAttributes="Bold"
+                       FontFamily="Nunito"
+                       TextColor="#444" />
                     <Border StrokeShape="RoundRectangle 8" Stroke="#2EBBB0" Padding="8,0">
-                        <Entry Placeholder="Ej: 1"
-                               Text="{Binding FiltroIdProfesional}"
-                               Keyboard="Numeric"
-                               FontFamily="Nunito"
-                               FontSize="14"
-                               TextColor="#222"
-                               HeightRequest="38" />
+                        <Picker ItemsSource="{Binding ProfesionalesFiltro}"
+                SelectedItem="{Binding FiltroProfesionalSeleccionado}"
+                        FontFamily="Nunito"
+                        FontSize="14"
+                        TextColor="#222"
+                        HeightRequest="38" />
                     </Border>
                 </VerticalStackLayout>
 
@@ -159,7 +157,7 @@
                         Padding="16,0" />
                 <Button Text="🔄  Refrescar"
                         Command="{Binding CargarCitasCommand}"
-                        BackgroundColor="#1A9E94"
+                        BackgroundColor="#56CCF2"
                         TextColor="White"
                         CornerRadius="10"
                         HeightRequest="40"

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MECAGOENELTFG.Views.RegistroMascotaFormPage"
+             Shell.NavBarIsVisible="False"
+             BackgroundImageSource="fondo2.png"
+             Title="RegistroMascotaFormPage">
+
+    <ScrollView>
+
+        <VerticalStackLayout Padding="20" Spacing="0" Margin="0,80,0,0">
+            <Button
+                Text="← Volver"
+                BackgroundColor="#56CCF2"
+                Command="{Binding VolverCommand}"
+                HorizontalOptions="End"
+                Margin="0,0,20,20"
+                />
+            <Label
+                Text="{Binding Titulo}"
+                x:Name="Titulo"
+                HorizontalOptions="Center"
+                FontSize="40"
+                FontFamily="Milano"
+                FontAttributes="Bold"
+                TextColor="White"
+                VerticalOptions="Center"
+                Margin="0,0,0,30"
+                />
+            <!-- Contenedor blanco con Border -->
+            <Border
+                BackgroundColor="White"
+                Stroke="#CCCCCC"
+                StrokeThickness="1"
+                Padding="20"
+                Shadow="0,2,10,#00000022"
+                Margin="0,0,0,30"
+                StrokeShape="RoundRectangle 12">
+
+                <VerticalStackLayout Spacing="15">
+
+                    <Label Text="Descripción"
+                           FontAttributes="Bold" />
+                    <Editor Text="{Binding Descripcion}"
+                            AutoSize="TextChanges"
+                            HeightRequest="100" />
+
+                    <Label Text="Fecha de inicio"
+                           FontAttributes="Bold" />
+                    <DatePicker Date="{Binding FechaInicio}" />
+
+                    <Label Text="Fecha final (opcional)"
+                           FontAttributes="Bold" />
+                    <DatePicker Date="{Binding FechaFinal}"
+                                IsEnabled="{Binding TieneFechaFinal}" />
+
+                    <HorizontalStackLayout Spacing="10">
+                        <Switch IsToggled="{Binding TieneFechaFinal}" />
+                        <Label Text="¿Añadir fecha final?"
+                               VerticalOptions="Center" />
+                    </HorizontalStackLayout>
+
+                </VerticalStackLayout>
+
+            </Border>
+
+            <!-- Botón fuera del fondo blanco -->
+            <Button Text="Guardar"
+                    Command="{Binding GuardarCommand}"
+                    BackgroundColor="#56CCF2"
+                    TextColor="White"
+                    CornerRadius="10"
+                    HeightRequest="45"
+                    Margin="0,0,0,20"/>
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+</ContentPage>

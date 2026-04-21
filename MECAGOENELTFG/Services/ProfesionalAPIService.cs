@@ -51,6 +51,20 @@ namespace MECAGOENELTFG.Services
             }
         }
 
+        public async Task<List<Profesional>> ObtenerVeterinarios()
+        {
+            try
+            {
+                var json = await _httpClient.GetStringAsync($"{BaseUrl}/grado/VETERINARIO");
+                return JsonSerializer.Deserialize<List<Profesional>>(json, _jsonOptions) ?? new List<Profesional>();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al obtener veterinarios: {ex.Message}");
+                return new List<Profesional>();
+            }
+        }
+
 
     }
 }

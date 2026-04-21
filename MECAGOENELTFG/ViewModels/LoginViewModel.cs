@@ -55,8 +55,8 @@ namespace MECAGOENELTFG.ViewModels
 
                 if (usuario.Profesional)
                 {
+                    SessionService.IdProfesional = usuario.IdProf ?? 0;
                     await Shell.Current.GoToAsync("ProfDashBoard");
-
                     username = string.Empty;
                     password = string.Empty;
                 }

@@ -33,17 +33,48 @@ namespace MECAGOENELTFG.ViewModels2
         [ObservableProperty]
         private int edad; //Se va a mostrar pero no se va a poder editar
 
-        [RelayCommand]
-        private async Task GuardarCommand() 
+        public ClienteEditarPefilViewModel() 
         {
-            Cliente nuevo = new Cliente(nombre,apellidos,edad,email,telefono);
-            _service.Actualizar(nuevo);
+            _service = new ClienteApiService();
+        }
+
+        partial void OnClienteActualChanged(Cliente Value)
+        {
+            if (Value == null) return;
+            Nombre = Value.NombreCli;
+            Apellidos = Value.ApeCli;
+            Email = Value.Correo;
+            Telefono = Value.Tel;
+            Edad = Value.Edad;
         }
 
         [RelayCommand]
-        private async Task CancelarCommand() 
+        private async Task Guardar() 
         {
-            await Shell.Current.GoToAsync("PerfilPage");
+            if (ClienteActual == null) return;
+
+            ClienteActual.NombreCli = Nombre;
+            ClienteActual.ApeCli = Apellidos;
+            ClienteActual.Correo = Email;
+            ClienteActual.Tel = Telefono;
+            // Edad no se modifica
+
+            bool ok = await _service.Actualizar(ClienteActual);
+            if (ok)
+            {
+                await Shell.Current.DisplayAlert("¡Listo!", "Perfil actualizado correctamente.", "OK");
+                await Shell.Current.GoToAsync(".."); 
+            }
+            else
+            {
+                await Shell.Current.DisplayAlert("Error", "No se pudo actualizar el perfil.", "OK");
+            }
+        }
+
+        [RelayCommand]
+        private async Task Cancelar() 
+        {
+            await Shell.Current.GoToAsync("..");
         }
     }
 }

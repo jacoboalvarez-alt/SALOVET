@@ -27,5 +27,7 @@ namespace MECAGOENELTFG.Models
         }
 
         public Cliente() { }
+
+        public override string ToString() => $"{NombreCli} {ApeCli}";
     }
 }

@@ -21,10 +21,11 @@ namespace SalovetAPI.Models
         [JsonIgnore]  // Esto rompe la referencia circular
         public Cliente? Cliente { get; set; }
 
+        public ICollection<RegistroMascota> RegistrosMascota { get; set; }
 
         public Mascota() { }
 
-        public Mascota(int idMascota, int idCliente, string nombreMasc, string especie, string? raza, int? edad, string? sexo, string? color, string? tamano, string? tipoPelo, bool vacunado, string? notas, Cliente? cliente)
+        public Mascota(int idMascota, int idCliente, string nombreMasc, string especie, string? raza, int? edad, string? sexo, string? color, string? tamano, string? tipoPelo, bool vacunado, string? notas, Cliente? cliente, ICollection<RegistroMascota> registrosMascota)
         {
             IdMascota = idMascota;
             IdCliente = idCliente;
@@ -39,6 +40,7 @@ namespace SalovetAPI.Models
             Vacunado = vacunado;
             Notas = notas;
             Cliente = cliente;
+            RegistrosMascota = registrosMascota;
         }
     }
 }

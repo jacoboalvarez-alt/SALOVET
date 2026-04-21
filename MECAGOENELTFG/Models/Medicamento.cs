@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MECAGOENELTFG.Models
 {
-    internal partial class Medicamento : ObservableObject
+    public partial class Medicamento : ObservableObject
     {
 
         [ObservableProperty]
@@ -19,6 +19,8 @@ namespace MECAGOENELTFG.Models
         [ObservableProperty]
         public float gramos;
 
+        [ObservableProperty]
+        public float precio;
 
         [ObservableProperty]
         public int stock;

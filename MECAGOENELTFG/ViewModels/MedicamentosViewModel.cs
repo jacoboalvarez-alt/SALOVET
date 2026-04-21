@@ -33,9 +33,10 @@ namespace MECAGOENELTFG.ViewModels
 
         public List<string> EstadosDisponibles { get; } = new()
         {
-            "(Todos)",
-            "Disponibles",
-            "Sin stock"
+                "(Todos)",
+                "Activos",     
+                "Inactivos",   
+                "Sin stock"
         };
 
         public MedicamentosViewModel()
@@ -71,30 +72,26 @@ namespace MECAGOENELTFG.ViewModels
             try
             {
                 IsLoading = true;
+
+                // Carga base — bajo stock tiene prioridad si se especifica
                 List<Medicamento> lista;
-
-                // Filtro por bajo stock tiene prioridad si se especifica un límite
                 if (int.TryParse(FiltroBajoStock, out int limite) && limite > 0)
-                {
                     lista = await _service.ObtenerBajoStock(limite);
-                }
-                else if (FiltroEstado == "Disponibles")
-                {
-                    lista = await _service.ObtenerDisponibles();
-                }
                 else
-                {
                     lista = await _service.ObtenerMedicamentos();
-                }
 
-                // Filtro por nombre se aplica siempre en cliente sobre los resultados
+                // Filtro por nombre
                 if (!string.IsNullOrWhiteSpace(FiltroNombre))
                     lista = lista.Where(m =>
                         m.NomMedica.Contains(FiltroNombre, StringComparison.OrdinalIgnoreCase))
                         .ToList();
 
-                // Filtro "Sin stock" en cliente
-                if (FiltroEstado == "Sin stock")
+                // Filtro por estado/disponibilidad
+                if (FiltroEstado == "Activos")
+                    lista = lista.Where(m => m.Estado).ToList();
+                else if (FiltroEstado == "Inactivos")
+                    lista = lista.Where(m => !m.Estado).ToList();
+                else if (FiltroEstado == "Sin stock")
                     lista = lista.Where(m => m.Stock == 0).ToList();
 
                 Medicamentos.Clear();
@@ -197,13 +194,14 @@ namespace MECAGOENELTFG.ViewModels
 
         [RelayCommand]
         public async Task AgregarMedicamento() =>
-            await Shell.Current.GoToAsync("medicamentoform");
+            await Shell.Current.GoToAsync("MedicamentoForm");
 
         [RelayCommand]
         public async Task EditarMedicamento(Medicamento medicamento)
         {
             if (medicamento == null) return;
-            await Shell.Current.GoToAsync($"medicamentoform?medicamentoId={medicamento.IdMedica}");
+            SessionService.MedicamentoEdicion = medicamento;
+            await Shell.Current.GoToAsync("MedicamentoForm");
         }
 
         [RelayCommand]

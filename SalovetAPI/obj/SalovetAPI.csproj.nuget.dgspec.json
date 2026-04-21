@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jorgeg\\Videos\\Jacobo\\TFG\\SALOVET\\SalovetAPI\\SalovetAPI.csproj": {}
+    "C:\\Users\\jorgeg\\Videos\\Jacobo\\SALOVET\\SalovetAPI\\SalovetAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jorgeg\\Videos\\Jacobo\\TFG\\SALOVET\\SalovetAPI\\SalovetAPI.csproj": {
+    "C:\\Users\\jorgeg\\Videos\\Jacobo\\SALOVET\\SalovetAPI\\SalovetAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jorgeg\\Videos\\Jacobo\\TFG\\SALOVET\\SalovetAPI\\SalovetAPI.csproj",
+        "projectUniqueName": "C:\\Users\\jorgeg\\Videos\\Jacobo\\SALOVET\\SalovetAPI\\SalovetAPI.csproj",
         "projectName": "SalovetAPI",
-        "projectPath": "C:\\Users\\jorgeg\\Videos\\Jacobo\\TFG\\SALOVET\\SalovetAPI\\SalovetAPI.csproj",
+        "projectPath": "C:\\Users\\jorgeg\\Videos\\Jacobo\\SALOVET\\SalovetAPI\\SalovetAPI.csproj",
         "packagesPath": "C:\\Users\\jorgeg\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jorgeg\\Videos\\Jacobo\\TFG\\SALOVET\\SalovetAPI\\obj\\",
+        "outputPath": "C:\\Users\\jorgeg\\Videos\\Jacobo\\SALOVET\\SalovetAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\DevExpress 22.1\\Components\\Offline Packages",
@@ -95,7 +95,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.312/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.313/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

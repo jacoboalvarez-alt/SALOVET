@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MECAGOENELTFG.Views.MedicamentoFormPage"
+             Shell.NavBarIsVisible="False"
+             BackgroundImageSource="fondo2.png"
+             Title="MedicamentoFormPage">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="0" Margin="0,80,0,0">
+
+            <!-- Botón volver -->
+            <Button Text="← Volver"
+                    BackgroundColor="#FF6F61"
+                    Command="{Binding VolverCommand}"
+                    HorizontalOptions="End"
+                    Margin="0,0,20,20" />
+
+            <!-- Título dinámico -->
+            <Label Text="{Binding Titulo}"
+                   HorizontalOptions="Center"
+                   FontSize="40"
+                   FontFamily="Milano"
+                   FontAttributes="Bold"
+                   TextColor="#1A3C6E"
+                   Margin="0,0,0,30" />
+
+            <!-- Contenedor blanco -->
+            <Border BackgroundColor="White"
+                    Stroke="#CCCCCC"
+                    StrokeThickness="1"
+                    Padding="20"
+                    Margin="0,0,0,30"
+                    StrokeShape="RoundRectangle 12">
+                <VerticalStackLayout Spacing="15">
+
+                    <!-- Nombre -->
+                    <Label Text="Nombre" FontAttributes="Bold" />
+                    <Entry Text="{Binding NomMedica}"
+                           Placeholder="Nombre del medicamento" />
+
+                    <!-- Gramos -->
+                    <Label Text="Gramos" FontAttributes="Bold" />
+                    <Entry Text="{Binding Gramos}"
+                           Placeholder="Ej: 500"
+                           Keyboard="Numeric" />
+
+                    <!-- Precio -->
+                    <Label Text="Precio (€)" FontAttributes="Bold" />
+                    <Entry Text="{Binding Precio}"
+                           Placeholder="Ej: 12.50"
+                           Keyboard="Numeric" />
+
+                    <!-- Stock -->
+                    <Label Text="Stock" FontAttributes="Bold" />
+                    <Entry Text="{Binding Stock}"
+                           Placeholder="Ej: 100"
+                           Keyboard="Numeric" />
+
+                    <!-- Estado -->
+                    <HorizontalStackLayout Spacing="10">
+                        <Switch IsToggled="{Binding Estado}" />
+                        <Label Text="Activo (disponible)"
+                               VerticalOptions="Center"
+                               FontAttributes="Bold" />
+                    </HorizontalStackLayout>
+
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Botón guardar -->
+            <Button Text="Guardar"
+                    Command="{Binding GuardarCommand}"
+                    BackgroundColor="#56CCF2"
+                    TextColor="White"
+                    CornerRadius="10"
+                    HeightRequest="45"
+                    Margin="0,0,0,20" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

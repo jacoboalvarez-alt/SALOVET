@@ -36,7 +36,7 @@
             <Button Grid.Column="2"
                     Text="← Volver"
                     Command="{Binding IrADashboardCommand}"
-                    BackgroundColor="#1A9E94"
+                    BackgroundColor="#FF6F61"
                     TextColor="White"
                     CornerRadius="10"
                     HeightRequest="40"
@@ -91,8 +91,8 @@
                     <Label Text="Disponibilidad" FontSize="12" FontAttributes="Bold"
                            FontFamily="Nunito" TextColor="#444" />
                     <Border StrokeShape="RoundRectangle 8" Stroke="#2EBBB0" Padding="8,0">
-                        <Picker SelectedItem="{Binding FiltroDisponibilidad}"
-                                ItemsSource="{Binding DisponibilidadOpciones}"
+                        <Picker SelectedItem="{Binding FiltroEstado}"
+                                ItemsSource="{Binding EstadosDisponibles}"
                                 FontFamily="Nunito" FontSize="14"
                                 TextColor="#222" HeightRequest="38" />
                     </Border>
@@ -124,7 +124,7 @@
                         FontAttributes="Bold" Padding="16,0" />
                 <Button Text="🔄  Refrescar"
                         Command="{Binding CargarMedicamentosCommand}"
-                        BackgroundColor="#1A9E94" TextColor="White"
+                        BackgroundColor="#56CCF2" TextColor="White"
                         CornerRadius="10" HeightRequest="40"
                         FontAttributes="Bold" Padding="16,0" />
             </HorizontalStackLayout>

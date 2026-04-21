@@ -36,6 +36,8 @@ namespace MECAGOENELTFG.ViewModels2
             var cliente = await _clienteService.ObtenerPorId(id);
             if (cliente == null) return;
 
+            ClienteLogueado = cliente;
+
             NombreCompleto = $"{cliente.NombreCli} {cliente.ApeCli}";
             Iniciales = $"{cliente.NombreCli.FirstOrDefault()}{cliente.ApeCli.FirstOrDefault()}".ToUpper();
             Email = cliente.Correo;
@@ -49,12 +51,30 @@ namespace MECAGOENELTFG.ViewModels2
             {
                 Mascotas.Add(new MascotaItem
                 {
+                    IdMascota = m.IdMascota,
                     Nombre = m.NombreMasc,
                     Descripcion = $"{m.Especie}{(m.Raza != null ? " · " + m.Raza : "")} · {m.Edad} años",
                     Icono = m.Especie.ToLower() switch
                     {
                         "perro" => "🐕",
                         "gato" => "🐈",
+                        "lagarto" => "🦎",
+                        "hamster" => "🐁",
+                        "rata" => "🐁",
+                        "chinchilla" => "🐁",
+                        "ratones" => "🐀",
+                        "cobayas" => "🐁",
+                        "tortuga" => "🐢",
+                        "conejo" => "🐇",
+                        "pajaro" => "🐦",
+                        "periquito" => "🐦",
+                        "ave" => "🐦",
+                        "iguana" => "🦎",
+                        "serpiente" => "🐍",
+                        "gecko" => "🦎",
+                        "pogonas" => "🦎",
+                        "agaporni" => "🐦",
+                        "canario" => "🐦",
                         _ => "🐾"
                     }
                 });
@@ -68,8 +88,8 @@ namespace MECAGOENELTFG.ViewModels2
             if (ClienteLogueado == null) return;
 
             var navigationParameter = new Dictionary<string, object>
-         {
-        { "ClienteActual", ClienteLogueado }
+             {
+            { "ClienteActual", ClienteLogueado }
                  };
 
             // Ojo: He corregido el paréntesis que tenías mal puesto
@@ -77,9 +97,17 @@ namespace MECAGOENELTFG.ViewModels2
         }
 
 
-        //[RelayCommand]
-        //private async Task VerMascota(MascotaItem mascota) =>
-        //    await Shell.Current.GoToAsync("EditPagePet");
+        [RelayCommand]
+        private async Task VerMascota(MascotaItem mascota) 
+        {
+            var mascot = await _mascotaService.ObtenerPorId(mascota.IdMascota);
+            if (mascot == null) return;
+            await Shell.Current.GoToAsync("EditarMascotaClient", new Dictionary<string, object>
+            {
+                {"MascotaActual",mascot }
+            });
+        }
+            
 
         [RelayCommand]
         private async Task AgregarMascota() =>
@@ -101,6 +129,7 @@ namespace MECAGOENELTFG.ViewModels2
     // Clase auxiliar de presentación
     public class MascotaItem
     {
+        public int IdMascota {  get; set; }
         public string Nombre { get; set; } = "";
         public string Descripcion { get; set; } = "";
         public string Icono { get; set; } = "";

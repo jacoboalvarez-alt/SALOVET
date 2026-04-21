@@ -12,7 +12,7 @@
         <vm:ClientesViewModel />
     </ContentPage.BindingContext>
 
-    <Grid RowDefinitions="Auto,Auto,Auto,*" Padding="30,20,30,20">
+    <Grid RowDefinitions="Auto,Auto,Auto,Auto,*" Padding="30,20,30,20">
 
         <!-- Fila superior: Título centrado + Volver a la derecha -->
         <Grid Grid.Row="0" ColumnDefinitions="150,*,150" Margin="0,10,0,10">
@@ -28,7 +28,7 @@
             <Button Grid.Column="2"
                     Text="← Volver"
                     Command="{Binding IrADashboardCommand}"
-                    BackgroundColor="#1A9E94"
+                    BackgroundColor="#FF6F61"
                     TextColor="White"
                     CornerRadius="10"
                     HeightRequest="40"
@@ -38,6 +38,61 @@
                     VerticalOptions="Center" />
         </Grid>
 
+        <!-- Filtros -->
+        <Border Grid.Row="2"
+        BackgroundColor="#FFFFFFCC"
+        StrokeShape="RoundRectangle 12"
+        Stroke="#FFFFFF30"
+        Padding="16,12"
+        WidthRequest="800"
+        Margin="0,0,0,12">
+            <Grid ColumnDefinitions="*,Auto,Auto" ColumnSpacing="12" WidthRequest="700">
+
+                <!-- Búsqueda por nombre -->
+                <VerticalStackLayout Grid.Column="0" Spacing="4">
+                    <Label Text="Buscar por nombre o apellido"
+                   FontSize="12"
+                   FontAttributes="Bold"
+                   FontFamily="Nunito"
+                   TextColor="#444" />
+                    <Border StrokeShape="RoundRectangle 8" Stroke="#2EBBB0" Padding="8,0">
+                        <Entry Placeholder="Ej: Juan García"
+                       Text="{Binding FiltroNombre}"
+                       FontFamily="Nunito"
+                       FontSize="14"
+                       TextColor="#222"
+                       HeightRequest="38" />
+                    </Border>
+                </VerticalStackLayout>
+
+                <!-- Botones -->
+                <VerticalStackLayout Grid.Column="1" Spacing="6" VerticalOptions="End">
+                    <Button Text="🔍 Filtrar"
+                    Command="{Binding FiltrarCommand}"
+                    BackgroundColor="#2EBBB0"
+                    TextColor="White"
+                    CornerRadius="8"
+                    HeightRequest="38"
+                    FontAttributes="Bold"
+                    FontFamily="Nunito"
+                    Padding="16,0" />
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Grid.Column="2" Spacing="6" VerticalOptions="End">
+                    <Button Text="✖ Limpiar"
+                    Command="{Binding LimpiarFiltrosCommand}"
+                    BackgroundColor="#90A4AE"
+                    TextColor="White"
+                    CornerRadius="8"
+                    HeightRequest="38"
+                    FontAttributes="Bold"
+                    FontFamily="Nunito"
+                    Padding="16,0" />
+                </VerticalStackLayout>
+
+            </Grid>
+        </Border>
+
         <!-- Separador decorativo -->
         <BoxView Grid.Row="1"
                  HeightRequest="1" WidthRequest="270"
@@ -45,7 +100,7 @@
                  Margin="0,0,0,15" />
 
         <!-- Barra de acciones -->
-        <Grid Grid.Row="2" ColumnDefinitions="*,Auto" Margin="0,0,0,12">
+        <Grid Grid.Row="3" ColumnDefinitions="*,Auto" Margin="0,0,0,12">
             <HorizontalStackLayout Grid.Column="1" Spacing="8">
                 <Button Text="➕  Agregar Cliente"
                         Command="{Binding AgregarClienteCommand}"
@@ -57,7 +112,7 @@
                         Padding="16,0" />
                 <Button Text="🔄  Refrescar"
                         Command="{Binding CargarClientesCommand}"
-                        BackgroundColor="#1A9E94"
+                        BackgroundColor="#56CCF2"
                         TextColor="White"
                         CornerRadius="10"
                         HeightRequest="40"
@@ -67,7 +122,7 @@
         </Grid>
 
         <!-- Tabla con borde y sombra -->
-        <Border Grid.Row="3" WidthRequest="1250"
+        <Border Grid.Row="4" WidthRequest="1250"
                 BackgroundColor="White"
                 StrokeShape="RoundRectangle 14"
                 Stroke="#FFFFFF30"
