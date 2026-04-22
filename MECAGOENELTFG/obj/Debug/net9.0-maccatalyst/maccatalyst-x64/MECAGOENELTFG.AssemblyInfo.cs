@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MECAGOENELTFG")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+0986edc45351a06648c0b537830755efb88a4636")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+8a2b708b838c456cc36f4833591a6f763ee6cf6d")]
 [assembly: System.Reflection.AssemblyProductAttribute("MECAGOENELTFG")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MECAGOENELTFG")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

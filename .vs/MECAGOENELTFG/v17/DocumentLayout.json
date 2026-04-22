@@ -3,12 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\jorgeg\\Videos\\Jacobo\\SALOVET\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|c:\\users\\jorgeg\\videos\\jacobo\\salovet\\mecagoeneltfg\\views\\clientespage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|solutionrelative:mecagoeneltfg\\views\\clientespage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|c:\\users\\jorgeg\\videos\\jacobo\\salovet\\mecagoeneltfg\\viewmodels\\clientesviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{883B42A4-E5F9-4A4C-93A5-9F8D627BD709}|MECAGOENELTFG\\MECAGOENELTFG.csproj|solutionrelative:mecagoeneltfg\\viewmodels\\clientesviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{23E3659B-639A-4993-9391-E53EBDD18059}|SalovetAPI\\SalovetAPI.csproj|c:\\users\\jorgeg\\videos\\jacobo\\salovet\\salovetapi\\data\\salovetdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23E3659B-639A-4993-9391-E53EBDD18059}|SalovetAPI\\SalovetAPI.csproj|solutionrelative:salovetapi\\data\\salovetdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 500,
-          "SelectedChildIndex": 50,
+          "SelectedChildIndex": 49,
           "Children": [
             {
               "$type": "Bookmark",
@@ -218,28 +214,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ClientesViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\jorgeg\\Videos\\Jacobo\\SALOVET\\MECAGOENELTFG\\ViewModels\\ClientesViewModel.cs",
-              "RelativeDocumentMoniker": "MECAGOENELTFG\\ViewModels\\ClientesViewModel.cs",
-              "ToolTip": "C:\\Users\\jorgeg\\Videos\\Jacobo\\SALOVET\\MECAGOENELTFG\\ViewModels\\ClientesViewModel.cs",
-              "RelativeToolTip": "MECAGOENELTFG\\ViewModels\\ClientesViewModel.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAiwD0AAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-21T15:31:06.539Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ClientesPage.xaml",
-              "DocumentMoniker": "C:\\Users\\jorgeg\\Videos\\Jacobo\\SALOVET\\MECAGOENELTFG\\Views\\ClientesPage.xaml",
-              "RelativeDocumentMoniker": "MECAGOENELTFG\\Views\\ClientesPage.xaml",
-              "ToolTip": "C:\\Users\\jorgeg\\Videos\\Jacobo\\SALOVET\\MECAGOENELTFG\\Views\\ClientesPage.xaml",
-              "RelativeToolTip": "MECAGOENELTFG\\Views\\ClientesPage.xaml",
-              "ViewState": "AgIAAFgAAAAAAAAAAAAYwC4AAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-04-21T15:30:47.882Z",
+              "Title": "SalovetDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\jorgeg\\Videos\\Jacobo\\SALOVET\\SalovetAPI\\Data\\SalovetDbContext.cs",
+              "RelativeDocumentMoniker": "SalovetAPI\\Data\\SalovetDbContext.cs",
+              "ToolTip": "C:\\Users\\jorgeg\\Videos\\Jacobo\\SALOVET\\SalovetAPI\\Data\\SalovetDbContext.cs",
+              "RelativeToolTip": "SalovetAPI\\Data\\SalovetDbContext.cs",
+              "ViewState": "AgIAANcAAAAAAAAAAAAlwPEAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-22T14:59:26.817Z",
               "EditorCaption": ""
             }
           ]

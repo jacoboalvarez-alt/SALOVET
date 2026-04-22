@@ -41,7 +41,8 @@ namespace MECAGOENELTFG.ViewModels
                 var citasHoy = citas
                     .Where(c => c.FechaHora.Date == hoy
                              && c.Estado != EstadoCita.CANCELADA
-                             && c.Estado != EstadoCita.COMPLETADA)
+                             && c.Estado != EstadoCita.COMPLETADA
+                             && c.Estado != EstadoCita.PENDIENTE)
                     .OrderBy(c => c.FechaHora);
 
                 foreach (var c in citasHoy)

@@ -314,7 +314,7 @@
                         <Label Text="🤖"
                 FontSize="36"
                 HorizontalOptions="Center" />
-                        <Label Text="VETERINAR IA"
+                        <Label Text="Asistente IA"
                 FontSize="16"
                 FontAttributes="Bold"
                 FontFamily="Mirano"

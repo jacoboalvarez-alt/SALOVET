@@ -57,15 +57,15 @@ namespace MECAGOENELTFG.ViewModels
                 {
                     SessionService.IdProfesional = usuario.IdProf ?? 0;
                     await Shell.Current.GoToAsync("ProfDashBoard");
-                    username = string.Empty;
-                    password = string.Empty;
+                    Username = string.Empty;
+                    Password = string.Empty;
                 }
                 else
                 {
                     SessionService.IdClienteActual = (int)usuario.IdCliente;
                     await Shell.Current.GoToAsync("ClientDashBoard");
-                    username = string.Empty;
-                    password = string.Empty;
+                    Username = string.Empty;
+                    Password = string.Empty;
                 }
             }
             catch (Exception ex)

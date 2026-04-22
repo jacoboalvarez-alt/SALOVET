@@ -20,6 +20,15 @@ namespace MECAGOENELTFG.ViewModels
         [ObservableProperty]
         private bool isLoading;
 
+        [ObservableProperty]
+        private string filtroNombre = string.Empty;
+
+        [ObservableProperty]
+        private Cliente? filtroClienteSeleccionado;
+
+        public ObservableCollection<Cliente> ClientesFlitro { get; set; } = new();
+        public List<Mascota> _todasLasMascotas = new();
+
         public MascotasGeneralPageViewModel()
         {
             m_apiService = new MascotaApiService();
@@ -27,6 +36,36 @@ namespace MECAGOENELTFG.ViewModels
             mascotas = new ObservableCollection<Mascota>();
         }
 
+        private async Task CargarClientesFiltro() 
+        { 
+          var clientes = await m_clienteService.ObtenerTodos();
+            ClientesFlitro.Clear();
+            ClientesFlitro.Add(new Cliente { NombreCli = "(Todos)", ApeCli = "" });
+            foreach (var c in clientes) ClientesFlitro.Add(c);
+            FiltroClienteSeleccionado = ClientesFlitro[0];
+        }
+
+        [RelayCommand]
+        public void Filtrar() 
+        {
+            var filtrados = _todasLasMascotas.AsEnumerable();
+            if (FiltroClienteSeleccionado?.IdCliente > 0)
+                filtrados = filtrados.Where(m => m.IdCliente == FiltroClienteSeleccionado.IdCliente);
+            if(!string.IsNullOrWhiteSpace(FiltroNombre))
+                filtrados = filtrados.Where(m=> m.NombreMasc.Contains(FiltroNombre, StringComparison.OrdinalIgnoreCase));
+
+            Mascotas.Clear();
+            foreach (var m in filtrados) Mascotas.Add(m);
+        }
+
+
+        [RelayCommand]
+        public void LimpiarFiltros() 
+        { 
+          FiltroNombre = string.Empty;
+          FiltroClienteSeleccionado = ClientesFlitro.FirstOrDefault();
+            Filtrar();
+        }
         [RelayCommand]
         public async Task CargarMascotas()
         {
@@ -51,10 +90,13 @@ namespace MECAGOENELTFG.ViewModels
                         // Si falla la búsqueda de un cliente concreto, continuamos
                     }
                 }
-
+                _todasLasMascotas = lista;
                 Mascotas.Clear();
                 foreach (var mascota in lista)
                     Mascotas.Add(mascota);
+                await CargarClientesFiltro();
+                if (ClientesFlitro.Count == 0)
+                    await CargarClientesFiltro();
             }
             catch (Exception ex)
             {

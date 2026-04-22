@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MECAGOENELTFG.Views2"
+             xmlns:converters="clr-namespace:MECAGOENELTFG.Converters"
              x:Class="MECAGOENELTFG.Views2.CitasPageClient"
              x:Name="CitasPage"
              Shell.NavBarIsVisible="False"
              BackgroundImageSource="fondo.png"
              Title="Citas">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:EstadoColorConverter x:Key="EstadoColorConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
     <Shell.TitleView>
         <Label Text="" IsVisible="False"/>
@@ -13,7 +21,6 @@
 
     <Grid RowDefinitions="Auto,*,Auto">
 
-        <!-- HEADER -->
         <Border Grid.Row="0"
                 StrokeThickness="0"
                 Padding="20,50,20,16">
@@ -28,7 +35,6 @@
             </VerticalStackLayout>
         </Border>
 
-        <!-- CONTENIDO -->
         <ScrollView Grid.Row="1">
             <VerticalStackLayout Spacing="0">
 
@@ -39,99 +45,83 @@
 
                     <VerticalStackLayout Spacing="20">
 
-                        <!-- FILTROS -->
                         <HorizontalStackLayout Spacing="8">
-
-                            <!-- FILTRO: TODAS -->
                             <Border StrokeThickness="0"
                                     StrokeShape="RoundRectangle 20"
                                     Padding="14,6">
-
                                 <Border.Style>
                                     <Style TargetType="Border">
                                         <Setter Property="BackgroundColor"
                                                 Value="{Binding Source={x:Reference CitasPage},
-                                                                Path=BindingContext.FiltroActivo,
-                                                                Converter={StaticResource FiltroColorConverter},
-                                                                ConverterParameter=Todas}"/>
+                                                        Path=BindingContext.FiltroActivo,
+                                                        Converter={StaticResource FiltroColorConverter},
+                                                        ConverterParameter=Todas}"/>
                                     </Style>
                                 </Border.Style>
-
                                 <Border.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding CambiarFiltroCommand}"
                                                           CommandParameter="Todas"/>
                                 </Border.GestureRecognizers>
-
                                 <Label Text="Todas"
                                        FontSize="12"
                                        FontAttributes="Bold"
                                        TextColor="{Binding Source={x:Reference CitasPage},
-                                                           Path=BindingContext.FiltroActivo,
-                                                           Converter={StaticResource FiltroTextoConverter},
-                                                           ConverterParameter=Todas}"/>
+                                                   Path=BindingContext.FiltroActivo,
+                                                   Converter={StaticResource FiltroTextoConverter},
+                                                   ConverterParameter=Todas}"/>
                             </Border>
 
-                            <!-- FILTRO: PRÓXIMAS -->
                             <Border StrokeThickness="0"
                                     StrokeShape="RoundRectangle 20"
                                     Padding="14,6">
-
                                 <Border.Style>
                                     <Style TargetType="Border">
                                         <Setter Property="BackgroundColor"
                                                 Value="{Binding Source={x:Reference CitasPage},
-                                                                Path=BindingContext.FiltroActivo,
-                                                                Converter={StaticResource FiltroColorConverter},
-                                                                ConverterParameter=Próximas}"/>
+                                                        Path=BindingContext.FiltroActivo,
+                                                        Converter={StaticResource FiltroColorConverter},
+                                                        ConverterParameter=Próximas}"/>
                                     </Style>
                                 </Border.Style>
-
                                 <Border.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding CambiarFiltroCommand}"
                                                           CommandParameter="Próximas"/>
                                 </Border.GestureRecognizers>
-
                                 <Label Text="Próximas"
                                        FontSize="12"
                                        FontAttributes="Bold"
                                        TextColor="{Binding Source={x:Reference CitasPage},
-                                                           Path=BindingContext.FiltroActivo,
-                                                           Converter={StaticResource FiltroTextoConverter},
-                                                           ConverterParameter=Próximas}"/>
+                                                   Path=BindingContext.FiltroActivo,
+                                                   Converter={StaticResource FiltroTextoConverter},
+                                                   ConverterParameter=Próximas}"/>
                             </Border>
 
-                            <!-- FILTRO: PASADAS -->
                             <Border StrokeThickness="0"
                                     StrokeShape="RoundRectangle 20"
                                     Padding="14,6">
-
                                 <Border.Style>
                                     <Style TargetType="Border">
                                         <Setter Property="BackgroundColor"
                                                 Value="{Binding Source={x:Reference CitasPage},
-                                                                Path=BindingContext.FiltroActivo,
-                                                                Converter={StaticResource FiltroColorConverter},
-                                                                ConverterParameter=Pasadas}"/>
+                                                        Path=BindingContext.FiltroActivo,
+                                                        Converter={StaticResource FiltroColorConverter},
+                                                        ConverterParameter=Pasadas}"/>
                                     </Style>
                                 </Border.Style>
-
                                 <Border.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding CambiarFiltroCommand}"
                                                           CommandParameter="Pasadas"/>
                                 </Border.GestureRecognizers>
-
                                 <Label Text="Pasadas"
                                        FontSize="12"
                                        FontAttributes="Bold"
                                        TextColor="{Binding Source={x:Reference CitasPage},
-                                                           Path=BindingContext.FiltroActivo,
-                                                           Converter={StaticResource FiltroTextoConverter},
-                                                           ConverterParameter=Pasadas}"/>
+                                                   Path=BindingContext.FiltroActivo,
+                                                   Converter={StaticResource FiltroTextoConverter},
+                                                   ConverterParameter=Pasadas}"/>
                             </Border>
-
                         </HorizontalStackLayout>
 
-                        <!-- PRÓXIMAS -->
                         <VerticalStackLayout Spacing="10"
                                              IsVisible="{Binding MostrarProximas}">
 
@@ -152,11 +142,9 @@
                                                 Margin="0,0,0,8">
 
                                             <VerticalStackLayout Spacing="0">
-
                                                 <Grid ColumnDefinitions="Auto,*,Auto"
                                                       ColumnSpacing="12">
 
-                                                    <!-- Fecha -->
                                                     <Border Grid.Column="0"
                                                             BackgroundColor="#E8F8F7"
                                                             StrokeThickness="0"
@@ -177,7 +165,6 @@
                                                         </VerticalStackLayout>
                                                     </Border>
 
-                                                    <!-- Info -->
                                                     <VerticalStackLayout Grid.Column="1"
                                                                          VerticalOptions="Center"
                                                                          Spacing="2">
@@ -193,26 +180,22 @@
                                                                TextColor="#888780"/>
                                                     </VerticalStackLayout>
 
-                                                    <!-- Badge -->
                                                     <Border Grid.Column="2"
-                                                            BackgroundColor="#E8F8F7"
+                                                            BackgroundColor="{Binding Estado, Converter={StaticResource EstadoColorConverter}}"
                                                             StrokeThickness="0"
                                                             StrokeShape="RoundRectangle 8"
                                                             Padding="8,4"
                                                             VerticalOptions="Center">
-                                                        <Label Text="Próxima"
+                                                        <Label Text="{Binding Estado}"
                                                                FontSize="11"
                                                                FontAttributes="Bold"
-                                                               TextColor="#2EBBB0"/>
+                                                               TextColor="White"/>
                                                     </Border>
-
                                                 </Grid>
 
-                                                <!-- Acciones -->
                                                 <Grid ColumnDefinitions="*,*"
                                                       ColumnSpacing="8"
                                                       Margin="0,10,0,0">
-
                                                     <Border Grid.Column="0"
                                                             BackgroundColor="#E8F8F7"
                                                             StrokeThickness="0"
@@ -246,35 +229,27 @@
                                                                TextColor="#D85A30"
                                                                HorizontalOptions="Center"/>
                                                     </Border>
-
                                                 </Grid>
-
                                             </VerticalStackLayout>
-
                                         </Border>
                                     </DataTemplate>
                                 </CollectionView.ItemTemplate>
                             </CollectionView>
 
-                            <!-- Sin próximas -->
                             <Border BackgroundColor="White"
                                     StrokeThickness="0"
                                     StrokeShape="RoundRectangle 14"
                                     Padding="20"
                                     IsVisible="{Binding SinCitasProximas}">
-                                <VerticalStackLayout HorizontalOptions="Center"
-                                                     Spacing="8">
-                                    <Label Text="📅"
-                                           FontSize="32"/>
+                                <VerticalStackLayout HorizontalOptions="Center" Spacing="8">
+                                    <Label Text="📅" FontSize="32"/>
                                     <Label Text="No tienes citas próximas"
                                            FontSize="13"
                                            TextColor="#888780"/>
                                 </VerticalStackLayout>
                             </Border>
-
                         </VerticalStackLayout>
 
-                        <!-- HISTORIAL -->
                         <VerticalStackLayout Spacing="10"
                                              IsVisible="{Binding MostrarPasadas}">
 
@@ -334,27 +309,23 @@
                                                 </VerticalStackLayout>
 
                                                 <Border Grid.Column="2"
-                                                        BackgroundColor="#F5F5F0"
+                                                        BackgroundColor="{Binding Estado, Converter={StaticResource EstadoColorConverter}}"
                                                         StrokeThickness="0"
                                                         StrokeShape="RoundRectangle 8"
                                                         Padding="8,4"
                                                         VerticalOptions="Center">
-                                                    <Label Text="Pasada"
+                                                    <Label Text="{Binding Estado}"
                                                            FontSize="11"
                                                            FontAttributes="Bold"
-                                                           TextColor="#888780"/>
+                                                           TextColor="White"/>
                                                 </Border>
-
                                             </Grid>
-
                                         </Border>
                                     </DataTemplate>
                                 </CollectionView.ItemTemplate>
                             </CollectionView>
-
                         </VerticalStackLayout>
 
-                        <!-- BOTÓN NUEVA CITA -->
                         <Border BackgroundColor="#2EBBB0"
                                 StrokeThickness="0"
                                 StrokeShape="RoundRectangle 14"
@@ -370,13 +341,10 @@
                         </Border>
 
                     </VerticalStackLayout>
-
                 </Border>
-
             </VerticalStackLayout>
         </ScrollView>
 
-        <!-- NAVBAR -->
         <Border Grid.Row="2"
                 BackgroundColor="White"
                 StrokeThickness="0.5"
@@ -384,7 +352,6 @@
                 Padding="10,10,10,30">
 
             <Grid ColumnDefinitions="*,*,*,*">
-
                 <VerticalStackLayout Grid.Column="0" HorizontalOptions="Center" Spacing="4">
                     <Border BackgroundColor="#F5F5F0"
                             StrokeThickness="0"
@@ -394,10 +361,7 @@
                         <Border.GestureRecognizers>
                             <TapGestureRecognizer Tapped="OnChatTapped"/>
                         </Border.GestureRecognizers>
-                        <Label Text="🐾"
-                               FontSize="20"
-                               HorizontalOptions="Center"
-                               VerticalOptions="Center"/>
+                        <Label Text="🐾" FontSize="20" HorizontalOptions="Center" VerticalOptions="Center"/>
                     </Border>
                 </VerticalStackLayout>
 
@@ -410,10 +374,7 @@
                         <Border.GestureRecognizers>
                             <TapGestureRecognizer Tapped="OnInicioTapped"/>
                         </Border.GestureRecognizers>
-                        <Label Text="🏠"
-                               FontSize="24"
-                               HorizontalOptions="Center"
-                               VerticalOptions="Center"/>
+                        <Label Text="🏠" FontSize="24" HorizontalOptions="Center" VerticalOptions="Center"/>
                     </Border>
                 </VerticalStackLayout>
 
@@ -426,10 +387,7 @@
                         <Border.GestureRecognizers>
                             <TapGestureRecognizer Tapped="OnNavCitasTapped"/>
                         </Border.GestureRecognizers>
-                        <Label Text="📅"
-                               FontSize="20"
-                               HorizontalOptions="Center"
-                               VerticalOptions="Center"/>
+                        <Label Text="📅" FontSize="20" HorizontalOptions="Center" VerticalOptions="Center"/>
                     </Border>
                 </VerticalStackLayout>
 
@@ -442,17 +400,10 @@
                         <Border.GestureRecognizers>
                             <TapGestureRecognizer Tapped="OnNavPerfilTapped"/>
                         </Border.GestureRecognizers>
-                        <Label Text="👤"
-                               FontSize="20"
-                               HorizontalOptions="Center"
-                               VerticalOptions="Center"/>
+                        <Label Text="👤" FontSize="20" HorizontalOptions="Center" VerticalOptions="Center"/>
                     </Border>
                 </VerticalStackLayout>
-
             </Grid>
-
         </Border>
-
     </Grid>
-
 </ContentPage>

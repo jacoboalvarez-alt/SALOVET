@@ -9,11 +9,7 @@
              BackgroundImageSource="fondo2.png"
              Shell.NavBarIsVisible="False">
 
-    <ContentPage.BindingContext>
-        <vm:MascotasGeneralPageViewModel />
-    </ContentPage.BindingContext>
-
-    <Grid RowDefinitions="Auto,Auto,Auto,*" Padding="30,20,30,20">
+    <Grid RowDefinitions="Auto,Auto,Auto,Auto,*" Padding="30,20,30,20">
 
         <!-- Fila superior: Título + Volver -->
         <Grid Grid.Row="0" ColumnDefinitions="150,*,150" Margin="0,10,0,10">
@@ -62,8 +58,73 @@
             </HorizontalStackLayout>
         </Grid>
 
-        <!-- Tabla -->
+        <!-- Filtros -->
         <Border Grid.Row="3"
+        BackgroundColor="#FFFFFFCC"
+        StrokeShape="RoundRectangle 12"
+        Stroke="#FFFFFF30"
+        WidthRequest="700"
+        Padding="16,12"
+        Margin="0,0,0,12">
+            <Grid ColumnDefinitions="*,*,Auto,Auto" ColumnSpacing="12">
+
+                <!-- Filtro por nombre de mascota -->
+                <VerticalStackLayout Grid.Column="0" Spacing="4">
+                    <Label Text="Nombre de mascota"
+                   FontSize="12" FontAttributes="Bold"
+                   FontFamily="Nunito" TextColor="#444" />
+                    <Border StrokeShape="RoundRectangle 8" Stroke="#2EBBB0" Padding="8,0">
+                        <Entry Placeholder="Ej: Toby"
+                       Text="{Binding FiltroNombre}"
+                       FontFamily="Nunito" FontSize="14"
+                       TextColor="#222" HeightRequest="38" />
+                    </Border>
+                </VerticalStackLayout>
+
+                <!-- Filtro por cliente (Picker) -->
+                <VerticalStackLayout Grid.Column="1" Spacing="4">
+                    <Label Text="Cliente"
+                   FontSize="12" FontAttributes="Bold"
+                   FontFamily="Nunito" TextColor="#444" />
+                    <Border StrokeShape="RoundRectangle 8" Stroke="#2EBBB0" Padding="8,0">
+                        <Picker ItemsSource="{Binding ClientesFlitro}"
+                        SelectedItem="{Binding FiltroClienteSeleccionado}"
+                        FontFamily="Nunito" FontSize="14"
+                        TextColor="#222" HeightRequest="38" />
+                    </Border>
+                </VerticalStackLayout>
+
+                <!-- Botón Filtrar -->
+                <VerticalStackLayout Grid.Column="2" Spacing="6" VerticalOptions="End">
+                    <Button Text="🔍 Filtrar"
+                    Command="{Binding FiltrarCommand}"
+                    BackgroundColor="#2EBBB0"
+                    TextColor="White"
+                    CornerRadius="8"
+                    HeightRequest="38"
+                    FontAttributes="Bold"
+                    FontFamily="Nunito"
+                    Padding="16,0" />
+                </VerticalStackLayout>
+
+                <!-- Botón Limpiar -->
+                <VerticalStackLayout Grid.Column="3" Spacing="6" VerticalOptions="End">
+                    <Button Text="✖ Limpiar"
+                    Command="{Binding LimpiarFiltrosCommand}"
+                    BackgroundColor="#90A4AE"
+                    TextColor="White"
+                    CornerRadius="8"
+                    HeightRequest="38"
+                    FontAttributes="Bold"
+                    FontFamily="Nunito"
+                    Padding="16,0" />
+                </VerticalStackLayout>
+
+            </Grid>
+        </Border>
+
+        <!-- Tabla -->
+        <Border Grid.Row="4"
                 BackgroundColor="White"
                 StrokeShape="RoundRectangle 14"
                 Stroke="#FFFFFF30" WidthRequest="790" 

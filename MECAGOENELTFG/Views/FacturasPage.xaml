@@ -5,10 +5,5 @@
              Shell.NavBarIsVisible="False"
              BackgroundImageSource="fondo2.png"
              Title="Facturas">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+        
 </ContentPage>

@@ -36,7 +36,7 @@ public partial class ClientDashBoard : ContentPage
         // Filtramos solo las 2 más próximas para el dashboard
         var proximas = citas
             .Where(c => c.FechaHora >= ahora &&
-                        c.Estado is EstadoCita.PENDIENTE or EstadoCita.CONFIRMADA)
+                        c.Estado is EstadoCita.CONFIRMADA)
             .OrderBy(c => c.FechaHora)
             .Take(2)
             .ToList();

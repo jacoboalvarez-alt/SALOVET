@@ -13,14 +13,8 @@ public partial class MascotasGeneralPage : ContentPage
     protected override async void OnAppearing()
     {
         base.OnAppearing();
-
-        // Obtener el ViewModel del BindingContext (que se creó en XAML)
-        var viewModel = BindingContext as MascotasGeneralPageViewModel;
-
-        if (viewModel != null)
-        {
-            await viewModel.CargarMascotasCommand.ExecuteAsync(null);
-        }
+        if (BindingContext is MascotasGeneralPageViewModel vm)
+            await vm.CargarMascotas();
     }
 
 }

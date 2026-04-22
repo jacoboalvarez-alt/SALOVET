@@ -847,6 +847,8 @@
             <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
         </member>
         <member name="P:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel.Mascotas">
             <inheritdoc cref="F:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel.mascotas"/>
@@ -856,6 +858,24 @@
         </member>
         <member name="P:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel.IsLoading">
             <inheritdoc cref="F:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel.isLoading"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel.FiltroNombre">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel.filtroNombre"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel.FiltroClienteSeleccionado">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel.filtroClienteSeleccionado"/>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel.filtrarCommand">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel.FiltrarCommand"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel.FiltrarCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel.Filtrar"/>.</summary>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel.limpiarFiltrosCommand">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel.LimpiarFiltrosCommand"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel.LimpiarFiltrosCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel.LimpiarFiltros"/>.</summary>
         </member>
         <member name="F:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel.cargarMascotasCommand">
             <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel.CargarMascotasCommand"/>.</summary>

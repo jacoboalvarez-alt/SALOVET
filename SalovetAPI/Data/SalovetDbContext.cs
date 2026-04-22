@@ -18,8 +18,8 @@ namespace SalovetAPI.Data
         public DbSet<Cita> Citas { get; set; }
         public DbSet<Factura> Facturas { get; set; }
         public DbSet<Registro> Registros { get; set; }
-
         public DbSet<RegistroMascota> RegistroMascotas { get; set; }
+        public DbSet<Servicio> Servicios { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -223,6 +223,26 @@ namespace SalovetAPI.Data
                     .WithMany(m => m.RegistrosMascota)
                     .HasForeignKey(e => e.IdMascota)
                     .OnDelete(DeleteBehavior.Cascade);
+            });
+            // ==================== SERVICIO =================
+
+            modelBuilder.Entity<Servicio>(entity =>
+            {
+                entity.ToTable("servicios");
+                entity.HasKey(e => e.IdServicio);
+                entity.Property(e => e.IdServicio)
+                    .HasColumnName("id_servicio")
+                    .ValueGeneratedOnAdd();
+                entity.Property(e => e.NomServicio)
+                    .HasColumnName("nom_servicio")
+                    .IsRequired();
+                entity.Property(e => e.Precio)
+                    .HasColumnName("precio")
+                    .IsRequired();
+                entity.Property(e => e.Descripcion)
+                    .HasColumnName("descripcion")
+                    .IsRequired();
+                
             });
         }
 
