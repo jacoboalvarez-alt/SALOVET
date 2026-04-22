@@ -15,6 +15,7 @@ Su objetivo principal es facilitar el trabajo diario del personal veterinario me
 * Historial clínico
 * Organización de citas
 * Administración de datos veterinarios
+* Asistencia Veterinaria con IA
 
 ---
 
@@ -50,16 +51,8 @@ El proyecto SALOVET nace con la finalidad de digitalizar y optimizar la gestión
 
 ## 📷 Capturas (opcional)
 
-*Aquí puedes añadir imágenes de la aplicación para mostrar su interfaz.*
+<img width="1593" height="817" alt="image" src="https://github.com/user-attachments/assets/51e0f042-9bb0-42e0-a450-67330f2bbb54" />
 
 ---
 
-## 🤝 Contribuciones
 
-Las contribuciones son bienvenidas. Si deseas mejorar este proyecto, no dudes en hacer un fork y enviar un pull request.
-
----
-
-## 📄 Licencia
-
-*Especifica aquí la licencia del proyecto (MIT, GPL, etc.)*
