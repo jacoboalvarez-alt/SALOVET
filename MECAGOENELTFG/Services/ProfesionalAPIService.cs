@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MECAGOENELTFG.Services
 {
-    internal class ProfesionalAPIService
+    public class ProfesionalAPIService
     {
         private readonly HttpClient _httpClient;
         private const string BaseUrl = "http://localhost:5201/api/profesionales";

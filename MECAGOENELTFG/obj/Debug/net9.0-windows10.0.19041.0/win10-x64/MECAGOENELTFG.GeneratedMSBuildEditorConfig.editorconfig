@@ -141,6 +141,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = MECAGOENELTFG.Views.Editar
 build_metadata.AdditionalFiles.TargetPath = Views\EditarCitaPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\EditarCitaPage.xaml
 
+[C:/Users/jorgeg/Videos/Jacobo/SALOVET/MECAGOENELTFG/Views/FacturaFormPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MECAGOENELTFG.Views.FacturaFormPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\FacturaFormPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\FacturaFormPage.xaml
+
 [C:/Users/jorgeg/Videos/Jacobo/SALOVET/MECAGOENELTFG/Views/FacturasPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MECAGOENELTFG.Views.FacturasPage.xaml

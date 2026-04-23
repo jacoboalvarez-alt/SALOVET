@@ -2,8 +2,168 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MECAGOENELTFG.Views.FacturasPage"
+             xmlns:vm="clr-namespace:MECAGOENELTFG.ViewModels"
+             xmlns:vml="clr-namespace:MECAGOENELTFG.Models"
              Shell.NavBarIsVisible="False"
              BackgroundImageSource="fondo2.png"
              Title="Facturas">
-        
+    <Grid RowDefinitions="Auto, Auto, *">
+
+        <!-- Header -->
+        <Grid Grid.Row="0" Padding="16,12" ColumnDefinitions="*, Auto">
+            <Button 
+                Grid.Column="0"
+                Text="VOLVER"
+                Command="{Binding VolverCommand}"
+                TextColor="White"
+                FontSize="12"
+                BackgroundColor="#FF6F61"
+                FontAttributes="Bold"
+                HorizontalOptions="End"
+                WidthRequest="140"
+                CornerRadius="12"
+                Margin="0,0,5,0"
+                Padding="12,8"
+                />
+            <Button
+                Grid.Column="1"
+                Text="AGREGAR FACTURA"
+                Command="{Binding AgregarFacturaCommand}"
+                BackgroundColor="#1ABCFE"
+                TextColor="White"
+                FontSize="12"
+                FontAttributes="Bold"
+                CornerRadius="12"
+                Padding="12,8" />
+        </Grid>
+
+        <!-- Título -->
+        <Label
+            Grid.Row="1"
+            Text="FACTURAS"
+            FontSize="28"
+            FontAttributes="Bold"
+            TextColor="White"
+            HorizontalOptions="Center"
+            Margin="0,0,0,16" />
+
+        <!-- Lista -->
+        <RefreshView
+            Grid.Row="2"
+            Command="{Binding RefrescarCommand}"
+            IsRefreshing="{Binding IsRefreshing}">
+
+            <CollectionView
+                ItemsSource="{Binding Facturas}"
+                Margin="16,0,16,16">
+
+                <CollectionView.EmptyView>
+                    <Label
+                        Text="No hay facturas registradas."
+                        TextColor="White"
+                        FontSize="16"
+                        HorizontalOptions="Center"
+                        Margin="0,40,0,0" />
+                </CollectionView.EmptyView>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="vml:FacturaItemViewModel">
+                        <Frame
+                            Margin="0,0,0,12"
+                            Padding="16,14"
+                            BackgroundColor="#E8E8E8"
+                            BorderColor="Transparent"
+                            CornerRadius="6"
+                            HasShadow="False">
+
+                            <Grid ColumnDefinitions="*, Auto">
+
+                                <!-- Datos de la cita/factura -->
+                                <StackLayout Grid.Column="0" Spacing="3" VerticalOptions="Center">
+
+                                    <Label
+                                        Text="{Binding NombreMascota}"
+                                        FontSize="15"
+                                        FontAttributes="Bold"
+                                        TextColor="#1A1A1A" />
+
+                                    <Label
+                                        Text="{Binding NombreCliente}"
+                                        FontSize="13"
+                                        TextColor="#555555" />
+
+                                    <Label
+                                        Text="{Binding FechaHora, StringFormat='{0:dd/MM/yyyy  HH:mm}'}"
+                                        FontSize="13"
+                                        TextColor="#555555" />
+
+                                    <Label
+                                        Text="{Binding Descripcion}"
+                                        FontSize="13"
+                                        TextColor="#555555"
+                                        IsVisible="{Binding TieneDescripcion}" />
+
+                                    <Label
+                                        Text="{Binding Monto, StringFormat='Monto: {0:C2}'}"
+                                        FontSize="14"
+                                        FontAttributes="Bold"
+                                        TextColor="#0F6E56"
+                                        Margin="0,4,0,0" />
+
+                                    <!-- Badge de estado de pago -->
+                                    <Frame
+                                        Padding="8,3"
+                                        CornerRadius="4"
+                                        HasShadow="False"
+                                        HorizontalOptions="Start"
+                                        BackgroundColor="{Binding ColorEstadoPago}">
+                                        <Label
+                                            Text="{Binding EstadoPagoTexto}"
+                                            FontSize="11"
+                                            FontAttributes="Bold"
+                                            TextColor="White" />
+                                    </Frame>
+
+                                </StackLayout>
+
+                                <!-- Botones -->
+                                <StackLayout
+                                    Grid.Column="1"
+                                    Spacing="8"
+                                    VerticalOptions="Center"
+                                    Margin="12,0,0,0">
+
+                                    <Button
+                                        Text="CERRAR"
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type vm:FacturasViewModel}}, Path=CerrarFacturaCommand}"
+                                        CommandParameter="{Binding .}"
+                                        IsEnabled="{Binding PuedeCerrarse}"
+                                        BackgroundColor="#888888"
+                                        TextColor="White"
+                                        FontSize="12"
+                                        FontAttributes="Bold"
+                                        CornerRadius="12"
+                                        Padding="14,6"
+                                        HeightRequest="34" />
+
+                                    <Button
+                                        Text="CANCELAR"
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type vm:FacturasViewModel}}, Path=CancelarFacturaCommand}"
+                                        CommandParameter="{Binding .}"
+                                        BackgroundColor="#E53935"
+                                        TextColor="White"
+                                        FontSize="12"
+                                        FontAttributes="Bold"
+                                        CornerRadius="12"
+                                        Padding="14,6"
+                                        HeightRequest="34" />
+                                </StackLayout>
+
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </RefreshView>
+    </Grid>
 </ContentPage>

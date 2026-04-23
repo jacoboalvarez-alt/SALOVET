@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\jorgeg\Videos\Jacobo\SALOVET\MECAGOENELTFG\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2026-04-22T14:57:41.432</Modified>
+      <Modified>2026-04-23T14:01:32.989</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\jorgeg\Videos\Jacobo\SALOVET\MECAGOENELTFG\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2026-04-21T15:24:06.552</Modified>
+      <Modified>2026-04-23T09:10:30.610</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jorgeg\Videos\Jacobo\SALOVET\MECAGOENELTFG\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\MECAGOENELTFG.runtimeconfig.json">
       <PackagePath>MECAGOENELTFG.runtimeconfig.json</PackagePath>
@@ -44,11 +44,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jorgeg\Videos\Jacobo\SALOVET\MECAGOENELTFG\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\MECAGOENELTFG.dll">
       <PackagePath>MECAGOENELTFG.dll</PackagePath>
-      <Modified>2026-04-22T14:57:36.259</Modified>
+      <Modified>2026-04-23T14:01:27.792</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jorgeg\Videos\Jacobo\SALOVET\MECAGOENELTFG\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>MECAGOENELTFG.exe</PackagePath>
-      <Modified>2026-04-22T14:57:36.577</Modified>
+      <Modified>2026-04-23T14:01:27.894</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jorgeg\Videos\Jacobo\SALOVET\MECAGOENELTFG\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
@@ -668,7 +668,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jorgeg\Videos\Jacobo\SALOVET\MECAGOENELTFG\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\MECAGOENELTFG.deps.json">
       <PackagePath>MECAGOENELTFG.deps.json</PackagePath>
-      <Modified>2026-04-21T15:24:05.553</Modified>
+      <Modified>2026-04-23T09:10:29.627</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jorgeg\.nuget\packages\microsoft.maui.controls.core\9.0.111\lib\net9.0-windows10.0.19041\Microsoft.Maui.Controls.pri">
       <PackagePath>Microsoft.Maui.Controls.pri</PackagePath>

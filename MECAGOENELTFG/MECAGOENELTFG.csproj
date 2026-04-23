@@ -109,6 +109,9 @@
 		<MauiXaml Update="Views\EditarCitaPage.xaml">
 		  <Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
+		<MauiXaml Update="Views\FacturaFormPage.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
 		<MauiXaml Update="Views\FacturasPage.xaml">
 		  <Generator>MSBuild:Compile</Generator>
 		</MauiXaml>

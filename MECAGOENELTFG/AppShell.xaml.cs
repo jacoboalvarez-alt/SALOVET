@@ -36,6 +36,7 @@ namespace MECAGOENELTFG
             Routing.RegisterRoute("MedicamentoForm", typeof(MedicamentoFormPage));
 
             Routing.RegisterRoute("EditarCita", typeof(EditarCitaPage));
+            Routing.RegisterRoute("FacturasFormPage", typeof(FacturaFormPage));
             
 
             //CLIENTES

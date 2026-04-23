@@ -15,6 +15,6 @@
         public EstadoPago EstadoPago { get; set; } = EstadoPago.PENDIENTE;
 
         // Navegación
-        public Cita Cita { get; set; } = null!;
+        public Cita? Cita { get; set; } = null!;
     }
 }

@@ -4,6 +4,18 @@
         <name>MECAGOENELTFG</name>
     </assembly>
     <members>
+        <member name="T:MECAGOENELTFG.Models.FacturaItemViewModel">
+            <inheritdoc/>
+        </member>
+        <member name="P:MECAGOENELTFG.Models.FacturaItemViewModel.EstadoPagoTexto">
+            <inheritdoc cref="F:MECAGOENELTFG.Models.FacturaItemViewModel._estadoPagoTexto"/>
+        </member>
+        <member name="P:MECAGOENELTFG.Models.FacturaItemViewModel.ColorEstadoPago">
+            <inheritdoc cref="F:MECAGOENELTFG.Models.FacturaItemViewModel._colorEstadoPago"/>
+        </member>
+        <member name="P:MECAGOENELTFG.Models.FacturaItemViewModel.PuedeCerrarse">
+            <inheritdoc cref="F:MECAGOENELTFG.Models.FacturaItemViewModel._puedeCerrarse"/>
+        </member>
         <member name="M:MECAGOENELTFG.Models.HashHelper.HashText(System.String)">
             <summary>
             Transforma un texto plano en un hash SHA256 en formato Base64.
@@ -724,6 +736,57 @@
         <member name="P:MECAGOENELTFG.ViewModels.EditarCitaViewModel.GuardarCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.EditarCitaViewModel.Guardar"/>.</summary>
         </member>
+        <member name="T:MECAGOENELTFG.ViewModels.FacturasViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.FacturasViewModel.Facturas">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels.FacturasViewModel._facturas"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.FacturasViewModel.IsRefreshing">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels.FacturasViewModel._isRefreshing"/>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels.FacturasViewModel.cargarFacturasCommand">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels.FacturasViewModel.CargarFacturasCommand"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.FacturasViewModel.CargarFacturasCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.FacturasViewModel.CargarFacturas"/>.</summary>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels.FacturasViewModel.refrescarCommand">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels.FacturasViewModel.RefrescarCommand"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.FacturasViewModel.RefrescarCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.FacturasViewModel.Refrescar"/>.</summary>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels.FacturasViewModel.agregarFacturaCommand">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels.FacturasViewModel.AgregarFacturaCommand"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.FacturasViewModel.AgregarFacturaCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.FacturasViewModel.AgregarFactura"/>.</summary>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels.FacturasViewModel.cerrarFacturaCommand">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels.FacturasViewModel.CerrarFacturaCommand"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.FacturasViewModel.CerrarFacturaCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.FacturasViewModel.CerrarFactura(MECAGOENELTFG.Models.FacturaItemViewModel)"/>.</summary>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels.FacturasViewModel.cancelarFacturaCommand">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels.FacturasViewModel.CancelarFacturaCommand"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.FacturasViewModel.CancelarFacturaCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.FacturasViewModel.CancelarFactura(MECAGOENELTFG.Models.FacturaItemViewModel)"/>.</summary>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels.FacturasViewModel.volverCommand">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels.FacturasViewModel.VolverCommand"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.FacturasViewModel.VolverCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.FacturasViewModel.Volver"/>.</summary>
+        </member>
         <member name="T:MECAGOENELTFG.ViewModels.LoginViewModel">
             <inheritdoc/>
             <inheritdoc/>
@@ -1077,6 +1140,104 @@
         <member name="P:MECAGOENELTFG.ViewModels.MedicamentosViewModel.IrADashboardCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.MedicamentosViewModel.IrADashboard"/>.</summary>
         </member>
+        <member name="T:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.Profesionales">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel._profesionales"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.ProfesionalSeleccionado">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel._profesionalSeleccionado"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.Citas">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel._citas"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.CitaSeleccionada">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel._citaSeleccionada"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.CargandoCitas">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel._cargandoCitas"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.HayCitas">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel._hayCitas"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.SinCitas">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel._sinCitas"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.Servicios">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel._servicios"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.ServicioSeleccionado">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel._servicioSeleccionado"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.HayServicioSeleccionado">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel._hayServicioSeleccionado"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.ServiciosAgregados">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel._serviciosAgregados"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.MontoTotal">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel._montoTotal"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.HayServiciosAgregados">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel._hayServiciosAgregados"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.SinServiciosAgregados">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel._sinServiciosAgregados"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.PuedeCrear">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel._puedeCrear"/>
+        </member>
+        <member name="M:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.OnProfesionalSeleccionadoChanged(MECAGOENELTFG.ViewModels.ProfesionalPickerItem)">
+            <summary>Executes the logic for when <see cref="P:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.ProfesionalSeleccionado"/> just changed.</summary>
+            <param name="value">The new property value that was set.</param>
+            <remarks>This method is invoked right after the value of <see cref="P:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.ProfesionalSeleccionado"/> is changed.</remarks>
+        </member>
+        <member name="M:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.OnCitaSeleccionadaChanged(MECAGOENELTFG.ViewModels.CitaPickerItem)">
+            <summary>Executes the logic for when <see cref="P:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.CitaSeleccionada"/> just changed.</summary>
+            <param name="value">The new property value that was set.</param>
+            <remarks>This method is invoked right after the value of <see cref="P:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.CitaSeleccionada"/> is changed.</remarks>
+        </member>
+        <member name="M:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.OnServicioSeleccionadoChanged(MECAGOENELTFG.ViewModels.ServicioPickerItem)">
+            <summary>Executes the logic for when <see cref="P:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.ServicioSeleccionado"/> just changed.</summary>
+            <param name="value">The new property value that was set.</param>
+            <remarks>This method is invoked right after the value of <see cref="P:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.ServicioSeleccionado"/> is changed.</remarks>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.cargarCitasCommand">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.CargarCitasCommand"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.CargarCitasCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.CargarCitas(System.Int32)"/>.</summary>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.agregarServicioCommand">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.AgregarServicioCommand"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.AgregarServicioCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.AgregarServicio"/>.</summary>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.eliminarServicioCommand">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.EliminarServicioCommand"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.EliminarServicioCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.EliminarServicio(MECAGOENELTFG.ViewModels.ServicioAgregadoViewModel)"/>.</summary>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.crearFacturaCommand">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.CrearFacturaCommand"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.CrearFacturaCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.CrearFactura"/>.</summary>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.volverCommand">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.VolverCommand"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.VolverCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.Volver"/>.</summary>
+        </member>
         <member name="T:MECAGOENELTFG.ViewModels.ProfDashBoardModelView">
             <inheritdoc/>
             <inheritdoc/>
@@ -1231,6 +1392,15 @@
             A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instances
             for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
             </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.EstadoPagoTexto">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "EstadoPagoTexto" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ColorEstadoPago">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ColorEstadoPago" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.PuedeCerrarse">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "PuedeCerrarse" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IdMedica">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IdMedica" generated properties.</summary>
@@ -1436,6 +1606,9 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.EstadoSeleccionado">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "EstadoSeleccionado" generated properties.</summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Facturas">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Facturas" generated properties.</summary>
+        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Username">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Username" generated properties.</summary>
         </member>
@@ -1456,6 +1629,45 @@
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.FiltroBajoStock">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "FiltroBajoStock" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Profesionales">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Profesionales" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.CitaSeleccionada">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "CitaSeleccionada" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.CargandoCitas">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "CargandoCitas" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.HayCitas">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "HayCitas" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SinCitas">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SinCitas" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Servicios">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Servicios" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ServicioSeleccionado">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ServicioSeleccionado" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.HayServicioSeleccionado">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "HayServicioSeleccionado" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ServiciosAgregados">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ServiciosAgregados" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.MontoTotal">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "MontoTotal" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.HayServiciosAgregados">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "HayServiciosAgregados" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SinServiciosAgregados">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SinServiciosAgregados" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.PuedeCrear">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "PuedeCrear" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Notificaciones">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Notificaciones" generated properties.</summary>
@@ -1495,6 +1707,15 @@
             A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instances
             for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
             </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.EstadoPagoTexto">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "EstadoPagoTexto" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ColorEstadoPago">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ColorEstadoPago" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.PuedeCerrarse">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "PuedeCerrarse" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IdMedica">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IdMedica" generated properties.</summary>
@@ -1700,6 +1921,9 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.EstadoSeleccionado">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "EstadoSeleccionado" generated properties.</summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Facturas">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Facturas" generated properties.</summary>
+        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Username">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Username" generated properties.</summary>
         </member>
@@ -1720,6 +1944,45 @@
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.FiltroBajoStock">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "FiltroBajoStock" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Profesionales">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Profesionales" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.CitaSeleccionada">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "CitaSeleccionada" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.CargandoCitas">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "CargandoCitas" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.HayCitas">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "HayCitas" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SinCitas">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SinCitas" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Servicios">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Servicios" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ServicioSeleccionado">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ServicioSeleccionado" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.HayServicioSeleccionado">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "HayServicioSeleccionado" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ServiciosAgregados">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ServiciosAgregados" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.MontoTotal">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "MontoTotal" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.HayServiciosAgregados">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "HayServiciosAgregados" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SinServiciosAgregados">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SinServiciosAgregados" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.PuedeCrear">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "PuedeCrear" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Notificaciones">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Notificaciones" generated properties.</summary>

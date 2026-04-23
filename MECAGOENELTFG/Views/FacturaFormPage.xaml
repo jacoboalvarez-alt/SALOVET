@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:MECAGOENELTFG.ViewModels"
+             Shell.NavBarIsVisible="False"
+             BackgroundImageSource="fondo2.png"
+             x:Class="MECAGOENELTFG.Views.FacturaFormPage"
+             Title="FacturaFormPage">
+    <ContentPage.Resources>
+
+        <!-- Frame → Border -->
+        <Style x:Key="CardFrame" TargetType="Border">
+            <Setter Property="BackgroundColor" Value="#E8E8E8" />
+            <Setter Property="Stroke" Value="Transparent" />
+            <Setter Property="StrokeShape" Value="RoundRectangle 6" />
+            <Setter Property="Padding" Value="16,14" />
+            <Setter Property="Margin" Value="0,0,0,12" />
+        </Style>
+
+        <Style x:Key="LabelSeccion" TargetType="Label">
+            <Setter Property="FontSize" Value="13" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="TextColor" Value="#555555" />
+            <Setter Property="Margin" Value="0,0,0,4" />
+        </Style>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <StackLayout Padding="16" Spacing="0" Margin="0,100,0,0">
+
+            <!-- Botón volver -->
+            <Button
+                Text="← Cancelar"
+                Command="{Binding VolverCommand}"
+                BackgroundColor="Transparent"
+                TextColor="White"
+                FontSize="14"
+                FontAttributes="Bold"
+                HorizontalOptions="Start"
+                Padding="0"
+                Margin="0,0,0,12" />
+
+            <!-- ══════════════════════════════
+                 BLOQUE 1 — Profesional
+                 ══════════════════════════════ -->
+            <Border Style="{StaticResource CardFrame}" WidthRequest="800">
+                <StackLayout Spacing="8">
+                    <Label Text="1. Selecciona el veterinario" Style="{StaticResource LabelSeccion}" />
+                    <Picker
+                        Title="— Seleccione el veterinario —"
+                        ItemsSource="{Binding Profesionales}"
+                        SelectedItem="{Binding ProfesionalSeleccionado}"
+                        ItemDisplayBinding="{Binding NombreCompleto}"
+                        TextColor="#222222" />
+                </StackLayout>
+            </Border>
+
+            <!-- ══════════════════════════════
+                 BLOQUE 2 — Cita
+                 ══════════════════════════════ -->
+            <Border Style="{StaticResource CardFrame}" WidthRequest="800">
+                <StackLayout Spacing="8">
+                    <Label Text="2. Selecciona la cita" Style="{StaticResource LabelSeccion}" />
+
+                    <ActivityIndicator
+                        IsRunning="{Binding CargandoCitas}"
+                        IsVisible="{Binding CargandoCitas}"
+                        Color="#0F6E56"
+                        HorizontalOptions="Center" />
+
+                    <Picker
+                        Title="— Selecciona una cita —"
+                        ItemsSource="{Binding Citas}"
+                        SelectedItem="{Binding CitaSeleccionada}"
+                        ItemDisplayBinding="{Binding ResumenCita}"
+                        IsEnabled="{Binding HayCitas}"
+                        TextColor="#222222" />
+
+                    <Label
+                        Text="No hay citas disponibles para este veterinario."
+                        FontSize="13"
+                        TextColor="#888888"
+                        HorizontalOptions="Center"
+                        IsVisible="{Binding SinCitas}" />
+                </StackLayout>
+            </Border>
+
+            <!-- ══════════════════════════════
+                 BLOQUE 3 — Servicios
+                 ══════════════════════════════ -->
+            <Border Style="{StaticResource CardFrame}" WidthRequest="800">
+                <StackLayout Spacing="10">
+                    <Label Text="3. Agrega los servicios prestados" Style="{StaticResource LabelSeccion}" />
+
+                    <!-- Picker + botón añadir -->
+                    <Grid ColumnDefinitions="*, Auto" ColumnSpacing="8">
+                        <Picker
+                            Grid.Column="0"
+                            Title="— Agrega los servicios usados —"
+                            ItemsSource="{Binding Servicios}"
+                            SelectedItem="{Binding ServicioSeleccionado}"
+                            ItemDisplayBinding="{Binding ResumenServicio}"
+                            TextColor="#222222" />
+
+                        <Button
+                            Grid.Column="1"
+                            Text="+"
+                            Command="{Binding AgregarServicioCommand}"
+                            IsEnabled="{Binding HayServicioSeleccionado}"
+                            BackgroundColor="#0F6E56"
+                            TextColor="White"
+                            FontSize="22"
+                            FontAttributes="Bold"
+                            CornerRadius="6"
+                            WidthRequest="46"
+                            HeightRequest="46"
+                            Padding="0" />
+                    </Grid>
+
+                    <!-- Lista de servicios añadidos -->
+                    <StackLayout IsVisible="{Binding HayServiciosAgregados}" Spacing="0">
+
+                        <BoxView HeightRequest="1" Color="#CCCCCC" Margin="0,6,0,4" />
+
+                        <StackLayout BindableLayout.ItemsSource="{Binding ServiciosAgregados}" Spacing="0">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate x:DataType="vm:ServicioAgregadoViewModel">
+                                    <Grid ColumnDefinitions="*, Auto, Auto" Padding="0,7" ColumnSpacing="10">
+
+                                        <Label
+                                            Grid.Column="0"
+                                            Text="{Binding NomServicio}"
+                                            FontSize="14"
+                                            TextColor="#222222"
+                                            VerticalOptions="Center" />
+
+                                        <Label
+                                            Grid.Column="1"
+                                            Text="{Binding Precio, StringFormat='{0:C2}'}"
+                                            FontSize="14"
+                                            FontAttributes="Bold"
+                                            TextColor="#0F6E56"
+                                            VerticalOptions="Center" />
+
+                                        <Button
+                                            Grid.Column="2"
+                                            Text="✕"
+                                            Command="{Binding Source={RelativeSource AncestorType={x:Type vm:NuevaFacturaViewModel}}, Path=EliminarServicioCommand}"
+                                            CommandParameter="{Binding .}"
+                                            BackgroundColor="Transparent"
+                                            TextColor="#E53935"
+                                            FontSize="14"
+                                            Padding="4,0"
+                                            HeightRequest="32"
+                                            WidthRequest="32" />
+                                    </Grid>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </StackLayout>
+
+                        <BoxView HeightRequest="1" Color="#CCCCCC" Margin="0,4,0,10" />
+
+                        <!-- Total -->
+                        <Grid ColumnDefinitions="*, Auto" Margin="0,0,0,2">
+                            <Label
+                                Grid.Column="0"
+                                Text="Total"
+                                FontSize="16"
+                                FontAttributes="Bold"
+                                TextColor="#1A1A1A" />
+                            <Label
+                                Grid.Column="1"
+                                Text="{Binding MontoTotal, StringFormat='{0:C2}'}"
+                                FontSize="16"
+                                FontAttributes="Bold"
+                                TextColor="#0F6E56" />
+                        </Grid>
+                    </StackLayout>
+
+                    <Label
+                        Text="Añade al menos un servicio para continuar."
+                        FontSize="13"
+                        TextColor="#888888"
+                        HorizontalOptions="Center"
+                        IsVisible="{Binding SinServiciosAgregados}" />
+                </StackLayout>
+            </Border>
+
+            <!-- ══════════════════════════════
+                 BOTÓN CREAR
+                 ══════════════════════════════ -->
+            <Button
+                Text="CREAR FACTURA"
+                Command="{Binding CrearFacturaCommand}"
+                IsEnabled="{Binding PuedeCrear}"
+                BackgroundColor="#1ABCFE"
+                TextColor="White"
+                FontSize="15"
+                FontAttributes="Bold"
+                CornerRadius="6"
+                HeightRequest="50"
+                WidthRequest="800"
+                Margin="0,4,0,24" />
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

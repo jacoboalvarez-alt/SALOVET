@@ -57,7 +57,7 @@
                     <ActivityIndicator IsRunning="{Binding IsLoading}" IsVisible="{Binding IsLoading}" Color="#1A3C6E"  HorizontalOptions="Center" />
                 </VerticalStackLayout>
             </Border>
-            <Label Text="Usuario:vet_roberto Pass:vetpass001" FontSize="22" TextColor="Black" />
+            <!--<Label Text="Usuario:vet_roberto Pass:vetpass001" FontSize="22" TextColor="Black" />-->
             <!-- REGISTRO -->
             <HorizontalStackLayout HorizontalOptions="Center" Spacing="4">
                 <Label Text="¿No tienes cuenta?"

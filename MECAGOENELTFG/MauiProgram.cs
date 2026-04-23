@@ -24,7 +24,11 @@ namespace MECAGOENELTFG
                 });
             builder.Services.AddSingleton<ClienteApiService>();
             builder.Services.AddSingleton<MascotaApiService>();
-
+            // Services
+            builder.Services.AddSingleton<FacturasService>();
+            builder.Services.AddSingleton<ProfesionalAPIService>();
+            builder.Services.AddSingleton<CitasAPIService>();
+            builder.Services.AddSingleton<ServiciosService>();
 
             builder.Services.AddTransient<ClientesViewModel>();
             builder.Services.AddTransient<MascotasViewModel>();
@@ -34,6 +38,11 @@ namespace MECAGOENELTFG
             builder.Services.AddTransient<MascotasPage>();
             builder.Services.AddTransient<ClienteFormPage>();
 
+            builder.Services.AddTransient<FacturasViewModel>();
+            builder.Services.AddTransient<FacturasPage>();
+
+            builder.Services.AddTransient<NuevaFacturaViewModel>();  
+            builder.Services.AddTransient<FacturaFormPage>();
 
 #if DEBUG
             builder.Logging.AddDebug();

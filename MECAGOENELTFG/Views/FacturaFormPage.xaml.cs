@@ -1,11 +1,10 @@
-using MECAGOENELTFG.Services;
 using MECAGOENELTFG.ViewModels;
 
 namespace MECAGOENELTFG.Views;
 
-public partial class FacturasPage : ContentPage
+public partial class FacturaFormPage : ContentPage
 {
-	public FacturasPage(FacturasViewModel vm)
+	public FacturaFormPage(NuevaFacturaViewModel vm)
 	{
 		InitializeComponent();
 		BindingContext = vm;

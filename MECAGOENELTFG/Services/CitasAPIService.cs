@@ -4,7 +4,7 @@ using System.Text.Json;
 
 namespace MECAGOENELTFG.Services
 {
-    internal class CitasAPIService
+    public class CitasAPIService
     {
         private readonly HttpClient _httpClient;
         private const string BaseURL = "http://localhost:5201/api/citas";
