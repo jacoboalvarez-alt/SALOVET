@@ -149,5 +149,12 @@ namespace MECAGOENELTFG.ViewModels
         {
             await Shell.Current.GoToAsync("..");
         }
+
+        [RelayCommand]
+        public static async Task IrAHistorial(Mascota mascota)
+        {
+            if (mascota == null) return;
+            await Shell.Current.GoToAsync($"RegistroMascota?idMascota={mascota.IdMascota}&nombre={mascota.NombreMasc}");
+        }
     }
 }

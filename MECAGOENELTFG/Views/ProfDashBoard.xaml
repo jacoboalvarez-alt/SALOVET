@@ -15,332 +15,369 @@
     <ContentPage.Resources>
         <converters:InverseBoolConverter x:Key="InverseBoolConverter"/>
     </ContentPage.Resources>
-    <ScrollView>
-        <VerticalStackLayout Padding="115" Spacing="50" >
 
-            <!-- CABECERA -->
+    <!-- ✅ Grid raíz: el scroll crece, la barra se queda fija abajo -->
+    <Grid RowDefinitions="*, Auto">
 
-            <Label Text="Panel de Profesionales Veterinarios"
-                   FontSize="39"
-                   Margin="10"
-                   FontAttributes="Bold,Italic"
-                   FontFamily="Mirano"
-                   TextColor="#1A3C6E"
-                   HorizontalOptions="Center" />
-            
+        <Image Source="salovet_logo1.png"
+               Grid.Row="-1"
+       HeightRequest="340"
+       Aspect="AspectFit"
+       HorizontalOptions="Center" />
+        <!-- ── CONTENIDO SCROLLABLE ── -->
+        <ScrollView Grid.Row="0">
+            <VerticalStackLayout Padding="115" Spacing="50">
 
-            <Label Text="¿QUE TOCA HOY?"
-                   FontSize="25" FontAttributes="Bold" FontFamily="Euphorigenic"
-                   TextColor="#253324"
-                   HorizontalOptions="Center" />
-            <!-- NOTIFICACIONES -->
-            <VerticalStackLayout Spacing="8">
+                <!-- CABECERA -->
+                <Label Text="Panel de Profesionales Veterinarios"
+                       FontSize="39"
+                       Margin="10"
+                       FontAttributes="Bold,Italic"
+                       FontFamily="Mirano"
+                       TextColor="#1A3C6E"
+                       HorizontalOptions="Center" />
 
-                <!-- Cabecera con botón refrescar -->
-                <Grid ColumnDefinitions="*,Auto">
-                    <Label Grid.Column="0"
-               Text="🔔  Citas pendientes"
-               FontSize="14" FontAttributes="Bold"
-               FontFamily="Milano"
-               TextColor="#1A3C6E"
-               VerticalOptions="Center"/>
-                    <Button Grid.Column="1"
-                Text="↻"
-                FontSize="16"
-                WidthRequest="40" HeightRequest="40"
-                CornerRadius="20"
-                BackgroundColor="#56CCF2"
-                TextColor="White"
-                Command="{Binding RefrescarNotificacionesCommand}" />
+                <Label Text="¿QUE TOCA HOY?"
+                       FontSize="25" FontAttributes="Bold" FontFamily="Euphorigenic"
+                       TextColor="#253324"
+                       HorizontalOptions="Center" />
+
+                <!-- NOTIFICACIONES -->
+                <VerticalStackLayout Spacing="8">
+
+                    <Grid ColumnDefinitions="*,Auto">
+                        <Label Grid.Column="0"
+                               Text="🔔  Citas pendientes"
+                               FontSize="14" FontAttributes="Bold"
+                               FontFamily="Milano"
+                               TextColor="#1A3C6E"
+                               VerticalOptions="Center"/>
+                        <Button Grid.Column="1"
+                                Text="↻"
+                                FontSize="16"
+                                WidthRequest="40" HeightRequest="40"
+                                CornerRadius="20"
+                                BackgroundColor="#56CCF2"
+                                TextColor="White"
+                                Command="{Binding RefrescarNotificacionesCommand}" />
+                    </Grid>
+
+                    <ActivityIndicator IsRunning="{Binding Cargando}"
+                                       IsVisible="{Binding Cargando}"
+                                       Color="#1A3C6E"
+                                       HorizontalOptions="Center"/>
+
+                    <Label Text="✅ No tienes citas próximas"
+                           FontSize="13" TextColor="#6c757d"
+                           HorizontalOptions="Center"
+                           IsVisible="{Binding HayNotificaciones, Converter={StaticResource InverseBoolConverter}}"/>
+
+                    <ScrollView Orientation="Horizontal"
+                                IsVisible="{Binding HayNotificaciones}"
+                                HorizontalScrollBarVisibility="Never">
+                        <HorizontalStackLayout Spacing="12"
+                                               BindableLayout.ItemsSource="{Binding Notificaciones}">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate x:DataType="models:CitaNotificacion">
+                                    <Border WidthRequest="200"
+                                            Padding="14"
+                                            StrokeShape="RoundRectangle 14"
+                                            BackgroundColor="{Binding ColorFondo}"
+                                            Stroke="{Binding ColorBorde}"
+                                            StrokeThickness="2">
+                                        <Border.Shadow>
+                                            <Shadow Brush="Black" Offset="0,4" Radius="10" Opacity="0.15"/>
+                                        </Border.Shadow>
+                                        <VerticalStackLayout Spacing="6">
+                                            <Border BackgroundColor="{Binding ColorBorde}"
+                                                    StrokeShape="RoundRectangle 6"
+                                                    Padding="6,2"
+                                                    HorizontalOptions="Start">
+                                                <Label Text="{Binding Etiqueta}"
+                                                       FontSize="10" FontAttributes="Bold"
+                                                       TextColor="White"/>
+                                            </Border>
+                                            <Label FontSize="22" FontAttributes="Bold"
+                                                   TextColor="{Binding ColorEtiqueta}">
+                                                <Label.FormattedText>
+                                                    <FormattedString>
+                                                        <Span Text="{Binding HoraTexto}" FontSize="22" FontAttributes="Bold"/>
+                                                        <Span Text=" · "/>
+                                                        <Span Text="{Binding FechaTexto}" FontSize="11"/>
+                                                    </FormattedString>
+                                                </Label.FormattedText>
+                                            </Label>
+                                            <Label FontSize="12" TextColor="#333333">
+                                                <Label.FormattedText>
+                                                    <FormattedString>
+                                                        <Span Text="🐾 "/>
+                                                        <Span Text="{Binding MascotaNombre}" FontAttributes="Bold"/>
+                                                    </FormattedString>
+                                                </Label.FormattedText>
+                                            </Label>
+                                            <Label FontSize="12" TextColor="#555555">
+                                                <Label.FormattedText>
+                                                    <FormattedString>
+                                                        <Span Text="👤 "/>
+                                                        <Span Text="{Binding ClienteNombre}"/>
+                                                    </FormattedString>
+                                                </Label.FormattedText>
+                                            </Label>
+                                            <Label Text="{Binding Descripcion}"
+                                                   FontSize="11" TextColor="#777777"
+                                                   LineBreakMode="TailTruncation"
+                                                   MaxLines="2"/>
+                                        </VerticalStackLayout>
+                                    </Border>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </HorizontalStackLayout>
+                    </ScrollView>
+                </VerticalStackLayout>
+
+                <!-- GRID 2x2 -->
+                <Grid ColumnDefinitions="*,*"
+                      RowDefinitions="Auto,Auto,Auto"
+                      ColumnSpacing="0"
+                      RowSpacing="10">
+
+                    <Border Grid.Row="0" Grid.Column="0" BackgroundColor="#EBF1FC"
+                            StrokeShape="RoundRectangle 16" Stroke="Transparent"
+                            Padding="20" WidthRequest="540" HeightRequest="190">
+                        <Border.Shadow>
+                            <Shadow Brush="Black" Offset="0,8" Radius="20" Opacity="0.25"/>
+                        </Border.Shadow>
+                        <VerticalStackLayout Spacing="12" HorizontalOptions="Center">
+                            <Label Text="👤" FontSize="36" HorizontalOptions="Center"/>
+                            <Label Text="Clientes" FontSize="16" FontFamily="Mirano" FontAttributes="Bold" TextColor="#1A3C6E" HorizontalOptions="Center"/>
+                            <Button Text="Gestionar" Command="{Binding IrAClientesCommand}" BackgroundColor="#56CCF2" TextColor="#405F5D" CornerRadius="8" FontSize="13" HeightRequest="38"/>
+                        </VerticalStackLayout>
+                    </Border>
+
+                    <Border Grid.Row="0" Grid.Column="1" BackgroundColor="#EBF1FC"
+                            StrokeShape="RoundRectangle 16" Stroke="Transparent"
+                            Padding="20" WidthRequest="540" HeightRequest="190">
+                        <Border.Shadow>
+                            <Shadow Brush="Black" Offset="0,8" Radius="20" Opacity="0.25"/>
+                        </Border.Shadow>
+                        <VerticalStackLayout Spacing="12" HorizontalOptions="Center">
+                            <Label Text="🐾" FontSize="36" HorizontalOptions="Center"/>
+                            <Label Text="Mascotas" FontSize="16" FontAttributes="Bold" FontFamily="Mirano" TextColor="#1A3C6E" HorizontalOptions="Center"/>
+                            <Button Text="Gestionar" Command="{Binding IrAMascotasCommand}" BackgroundColor="#56CCF2" TextColor="#405F5D" CornerRadius="8" FontSize="13" HeightRequest="38"/>
+                        </VerticalStackLayout>
+                    </Border>
+
+                    <Border Grid.Row="1" Grid.Column="0" Background="#EBF1FC"
+                            StrokeShape="RoundRectangle 16" Stroke="Transparent"
+                            Padding="20" WidthRequest="540" HeightRequest="190">
+                        <Border.Shadow>
+                            <Shadow Brush="Black" Offset="0,8" Radius="20" Opacity="0.25"/>
+                        </Border.Shadow>
+                        <VerticalStackLayout Spacing="12" HorizontalOptions="Center">
+                            <Label Text="📅" FontSize="36" HorizontalOptions="Center"/>
+                            <Label Text="Citas" FontSize="16" FontAttributes="Bold" FontFamily="Mirano" TextColor="#1A3C6E" HorizontalOptions="Center"/>
+                            <Button Text="Gestionar" Command="{Binding IrACitasCommand}" BackgroundColor="#56CCF2" TextColor="#405F5D" CornerRadius="8" FontSize="13" HeightRequest="38"/>
+                        </VerticalStackLayout>
+                    </Border>
+
+                    <Border Grid.Row="1" Grid.Column="1" Background="#EBF1FC"
+                            StrokeShape="RoundRectangle 16" Stroke="Transparent"
+                            Padding="20" WidthRequest="540" HeightRequest="190">
+                        <Border.Shadow>
+                            <Shadow Brush="Black" Offset="0,8" Radius="20" Opacity="0.25"/>
+                        </Border.Shadow>
+                        <VerticalStackLayout Spacing="12" HorizontalOptions="Center">
+                            <Label Text="💊" FontSize="36" HorizontalOptions="Center"/>
+                            <Label Text="Medicamentos" FontSize="16" FontAttributes="Bold" TextColor="#1A3C6E" FontFamily="Mirano" HorizontalOptions="Center"/>
+                            <Button Text="Gestionar" Command="{Binding IrAMedicamentosCommand}" BackgroundColor="#56CCF2" TextColor="#405F5D" CornerRadius="8" FontSize="13" HeightRequest="38"/>
+                        </VerticalStackLayout>
+                    </Border>
+
+                    <Border Grid.Row="2" Grid.Column="0" Background="#EBF1FC"
+                            StrokeShape="RoundRectangle 16" Stroke="Transparent"
+                            Padding="20" WidthRequest="540" HeightRequest="190">
+                        <Border.Shadow>
+                            <Shadow Brush="Black" Offset="0,8" Radius="20" Opacity="0.25"/>
+                        </Border.Shadow>
+                        <VerticalStackLayout Spacing="12" HorizontalOptions="Center">
+                            <Label Text="📋" FontSize="36" HorizontalOptions="Center"/>
+                            <Label Text="Facturas" FontSize="16" FontAttributes="Bold" FontFamily="Mirano" TextColor="#1A3C6E" HorizontalOptions="Center"/>
+                            <Button Text="Gestionar" Command="{Binding IrAFacturasCommand}" BackgroundColor="#56CCF2" TextColor="#405F5D" CornerRadius="8" FontSize="13" HeightRequest="38"/>
+                        </VerticalStackLayout>
+                    </Border>
+
+                    <Border Grid.Row="2" Grid.Column="1" Background="#EBF1FC"
+                            StrokeShape="RoundRectangle 16" Stroke="Transparent"
+                            Padding="20" WidthRequest="540" HeightRequest="190">
+                        <Border.Shadow>
+                            <Shadow Brush="Black" Offset="0,8" Radius="20" Opacity="0.25"/>
+                        </Border.Shadow>
+                        <VerticalStackLayout Spacing="12" HorizontalOptions="Center">
+                            <Label Text="🤖" FontSize="36" HorizontalOptions="Center"/>
+                            <Label Text="Asistente IA" FontSize="16" FontAttributes="Bold" FontFamily="Mirano" TextColor="#1A3C6E" HorizontalOptions="Center"/>
+                            <Button Text="Gestionar" Command="{Binding IrAAsistenteCommand}" BackgroundColor="#56CCF2" TextColor="#405F5D" CornerRadius="8" FontSize="13" HeightRequest="38"/>
+                        </VerticalStackLayout>
+                    </Border>
                 </Grid>
 
-                <!-- Indicador de carga -->
-                <ActivityIndicator IsRunning="{Binding Cargando}"
-                       IsVisible="{Binding Cargando}"
-                       Color="#1A3C6E"
-                       HorizontalOptions="Center"/>
-
-                <!-- Sin citas -->
-                <Label Text="✅ No tienes citas próximas"
-           FontSize="13" TextColor="#6c757d"
-           HorizontalOptions="Center"
-           IsVisible="{Binding HayNotificaciones, Converter={StaticResource InverseBoolConverter}}"/>
-
-                <!-- Tarjetas horizontales -->
-                <ScrollView Orientation="Horizontal"
-                IsVisible="{Binding HayNotificaciones}"
-                HorizontalScrollBarVisibility="Never">
-
-                    <HorizontalStackLayout Spacing="12"
-                               BindableLayout.ItemsSource="{Binding Notificaciones}">
-                        <BindableLayout.ItemTemplate>
-                            <DataTemplate x:DataType="models:CitaNotificacion">
-                                <Border WidthRequest="200"
-                            Padding="14"
-                            StrokeShape="RoundRectangle 14"
-                            BackgroundColor="{Binding ColorFondo}"
-                            Stroke="{Binding ColorBorde}"
-                            StrokeThickness="2">
-                                    <Border.Shadow>
-                                        <Shadow Brush="Black" Offset="0,4" Radius="10" Opacity="0.15"/>
-                                    </Border.Shadow>
-
-                                    <VerticalStackLayout Spacing="6">
-
-                                        <!-- Etiqueta HOY / PRÓXIMA -->
-                                        <Border BackgroundColor="{Binding ColorBorde}"
-                                    StrokeShape="RoundRectangle 6"
-                                    Padding="6,2"
-                                    HorizontalOptions="Start">
-                                            <Label Text="{Binding Etiqueta}"
-                                       FontSize="10" FontAttributes="Bold"
-                                       TextColor="White"/>
-                                        </Border>
-
-                                        <!-- Hora y fecha -->
-                                        <Label FontSize="22" FontAttributes="Bold"
-                                   TextColor="{Binding ColorEtiqueta}">
-                                            <Label.FormattedText>
-                                                <FormattedString>
-                                                    <Span Text="{Binding HoraTexto}" FontSize="22" FontAttributes="Bold"/>
-                                                    <Span Text=" · "/>
-                                                    <Span Text="{Binding FechaTexto}" FontSize="11"/>
-                                                </FormattedString>
-                                            </Label.FormattedText>
-                                        </Label>
-
-                                        <!-- Mascota -->
-                                        <Label FontSize="12" TextColor="#333333">
-                                            <Label.FormattedText>
-                                                <FormattedString>
-                                                    <Span Text="🐾 "/>
-                                                    <Span Text="{Binding MascotaNombre}" FontAttributes="Bold"/>
-                                                </FormattedString>
-                                            </Label.FormattedText>
-                                        </Label>
-
-                                        <!-- Cliente -->
-                                        <Label FontSize="12" TextColor="#555555">
-                                            <Label.FormattedText>
-                                                <FormattedString>
-                                                    <Span Text="👤 "/>
-                                                    <Span Text="{Binding ClienteNombre}"/>
-                                                </FormattedString>
-                                            </Label.FormattedText>
-                                        </Label>
-
-                                        <!-- Descripción -->
-                                        <Label Text="{Binding Descripcion}"
-                                   FontSize="11" TextColor="#777777"
-                                   LineBreakMode="TailTruncation"
-                                   MaxLines="2"/>
-                                    </VerticalStackLayout>
-                                </Border>
-                            </DataTemplate>
-                        </BindableLayout.ItemTemplate>
-                    </HorizontalStackLayout>
-                </ScrollView>
+                <Button
+                    Text="Cerrar Sesion"
+                    Margin="0,60,0,20"
+                    WidthRequest="120"
+                    HorizontalOptions="Center"
+                    BackgroundColor="#FF6F61"
+                    TextColor="White"
+                    Command="{Binding IrALoginCommand}" />
 
             </VerticalStackLayout>
+        </ScrollView>
 
-            <!-- GRID 2x2 -->
-            <Grid ColumnDefinitions="*,*"
-                  RowDefinitions="Auto,Auto,Auto"
-                  ColumnSpacing="0"
-                  RowSpacing="10">
+        <Border Grid.Row="1"
+        Margin="40,8,40,16"
+        Padding="12,10"
+        WidthRequest="1230"
+        BackgroundColor="#FFFFFFEE"
+        StrokeShape="RoundRectangle 24"
+        Stroke="#D0D8E8"
+        StrokeThickness="1">
+            <Border.Shadow>
+                <Shadow Brush="Black" Offset="0,4" Radius="16" Opacity="0.12"/>
+            </Border.Shadow>
 
-                <!-- CLIENTES -->
-                <Border Grid.Row="0" Grid.Column="0"
-                        BackgroundColor="#EBF1FC"
-                        StrokeShape="RoundRectangle 16"
-                        Stroke="Transparent"
-                        Padding="20" 
-                        WidthRequest="540" HeightRequest="190">
-                    <Border.Shadow>
-                        <Shadow Brush="Black" Offset="0,8" Radius="20" Opacity="0.25" />
-                    </Border.Shadow>
+            <Grid ColumnDefinitions="*,*,*,*" ColumnSpacing="8">
 
-                    <VerticalStackLayout Spacing="12"
-                                         HorizontalOptions="Center">
-                        <Label Text="👤"
-                               FontSize="36" 
-                               HorizontalOptions="Center" />
-                        <Label Text="Clientes"
-                               FontSize="16" FontFamily="Mirano"
-                               FontAttributes="Bold"
-                               TextColor="#1A3C6E"
-                               HorizontalOptions="Center" />
-                        <Button Text="Gestionar"
-                                Command="{Binding IrAClientesCommand}"
-                                BackgroundColor="#56CCF2"
-                                TextColor="#405F5D"
-                                CornerRadius="8"
-                                FontSize="13"
-                                HeightRequest="38" />
-                        
-                    </VerticalStackLayout>
+                <!-- 🟠 Hover Naranja -->
+                <Border Grid.Column="0"
+                BackgroundColor="#EBF1FC"
+                StrokeShape="RoundRectangle 16"
+                Stroke="Transparent"
+                Padding="0">
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroupList>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="BackgroundColor" Value="#EBF1FC"/>
+                                        <Setter Property="Stroke" Value="Transparent"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="PointerOver">
+                                    <VisualState.Setters>
+                                        <Setter Property="BackgroundColor" Value="#FFEDD5"/>
+                                        <Setter Property="Stroke" Value="#F97316"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateGroupList>
+                    </VisualStateManager.VisualStateGroups>
+                    <Button Text="👤 Agregar Cliente"
+                    Command="{Binding AccionRapida1Command}"
+                    BackgroundColor="Transparent"
+                    FontFamily="Mirano"
+                    TextColor="#1A3C6E"
+                    FontSize="15" FontAttributes="Bold"
+                    HeightRequest="60"/>
                 </Border>
 
-                <!-- MASCOTAS -->
-                <Border Grid.Row="0" Grid.Column="1"
-                        BackgroundColor="#EBF1FC"
-                        StrokeShape="RoundRectangle 16"
-                        Stroke="Transparent"
-                        Padding="20" WidthRequest="540" HeightRequest="190">
-                    <Border.Shadow>
-                        <Shadow Brush="Black" Offset="0,8" Radius="20" Opacity="0.25" />
-                    </Border.Shadow>
-                    <VerticalStackLayout Spacing="12"
-                                         HorizontalOptions="Center">
-                        <Label Text="🐾"
-                               FontSize="36"
-                               HorizontalOptions="Center" />
-                        <Label Text="Mascotas"
-                               FontSize="16"
-                               FontAttributes="Bold"
-                               FontFamily="Mirano"
-                               TextColor="#1A3C6E"
-                               HorizontalOptions="Center" />
-                        <Button Text="Gestionar"
-                                Command="{Binding IrAMascotasCommand}"
-                                BackgroundColor="#56CCF2"
-                                TextColor="#405F5D"
-                                CornerRadius="8"
-                                FontSize="13"
-                                HeightRequest="38" />
-                    </VerticalStackLayout>
+                <!-- 🟢 Hover Verde -->
+                <Border Grid.Column="1"
+                BackgroundColor="#EBF1FC"
+                StrokeShape="RoundRectangle 16"
+                Stroke="Transparent"
+                Padding="0">
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroupList>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="BackgroundColor" Value="#EBF1FC"/>
+                                        <Setter Property="Stroke" Value="Transparent"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="PointerOver">
+                                    <VisualState.Setters>
+                                        <Setter Property="BackgroundColor" Value="#DCFCE7"/>
+                                        <Setter Property="Stroke" Value="#22C55E"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateGroupList>
+                    </VisualStateManager.VisualStateGroups>
+                    <Button Text="🗓️ Dar Cita"
+                    Command="{Binding AccionRapida2Command}"
+                    FontFamily="Mirano"
+                    BackgroundColor="Transparent"
+                    TextColor="#1A3C6E"
+                    FontSize="15" FontAttributes="Bold"
+                    HeightRequest="60"/>
                 </Border>
 
-                <!-- CITAS -->
-                <Border Grid.Row="1" Grid.Column="0"
-                        Background="#EBF1FC"
-                        StrokeShape="RoundRectangle 16"
-                        Stroke="Transparent"
-                        Padding="20" WidthRequest="540" HeightRequest="190">
-                    <Border.Shadow>
-                        <Shadow Brush="Black" Offset="0,8" Radius="20" Opacity="0.25" />
-                    </Border.Shadow>
-                    <VerticalStackLayout Spacing="12"
-                                         HorizontalOptions="Center">
-                        <Label Text="📅"
-                               FontSize="36"
-                               HorizontalOptions="Center" />
-                        <Label Text="Citas"
-                               FontSize="16"
-                               FontAttributes="Bold"
-                               FontFamily="Mirano"
-                               TextColor="#1A3C6E"
-                               HorizontalOptions="Center" />
-                        <Button Text="Gestionar"
-                                Command="{Binding IrACitasCommand}"
-                                BackgroundColor="#56CCF2"
-                                TextColor="#405F5D"
-                                CornerRadius="8"
-                                FontSize="13"
-                                HeightRequest="38" />
-                    </VerticalStackLayout>
+                <!-- 🟡 Hover Amarillo -->
+                <Border Grid.Column="2"
+                BackgroundColor="#EBF1FC"
+                StrokeShape="RoundRectangle 16"
+                Stroke="Transparent"
+                Padding="0">
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroupList>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="BackgroundColor" Value="#EBF1FC"/>
+                                        <Setter Property="Stroke" Value="Transparent"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="PointerOver">
+                                    <VisualState.Setters>
+                                        <Setter Property="BackgroundColor" Value="#FEF9C3"/>
+                                        <Setter Property="Stroke" Value="#EAB308"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateGroupList>
+                    </VisualStateManager.VisualStateGroups>
+                    <Button Text="🐾 Agregar Mascota"
+                    Command="{Binding AccionRapida3Command}"
+                    BackgroundColor="Transparent"
+                    TextColor="#1A3C6E"
+                    FontSize="15" FontAttributes="Bold"
+                    HeightRequest="60"/>
                 </Border>
 
-                <!-- MEDICAMENTOS -->
-                <Border Grid.Row="1" Grid.Column="1"
-                       Background="#EBF1FC"
-                        StrokeShape="RoundRectangle 16"
-                        Stroke="Transparent"
-                        Padding="20" WidthRequest="540" HeightRequest="190">
-                    <Border.Shadow>
-                        <Shadow Brush="Black" Offset="0,8" Radius="20" Opacity="0.25" />
-                    </Border.Shadow>
-                    <VerticalStackLayout Spacing="12"
-                                         HorizontalOptions="Center">
-                        <Label Text="💊"
-                               FontSize="36"
-                               HorizontalOptions="Center" />
-                        <Label Text="Medicamentos"
-                               FontSize="16"
-                               FontAttributes="Bold"
-                               TextColor="#1A3C6E"
-                               FontFamily="Mirano"
-                               HorizontalOptions="Center" />
-                        <Button Text="Gestionar"
-                                Command="{Binding IrAMedicamentosCommand}"
-                                BackgroundColor="#56CCF2"
-                                TextColor="#405F5D"
-                                CornerRadius="8"
-                                FontSize="13"
-                                HeightRequest="38" />
-                    </VerticalStackLayout>
+                <!-- 🔴 Hover Rojo -->
+                <Border Grid.Column="3"
+                BackgroundColor="#EBF1FC"
+                StrokeShape="RoundRectangle 16"
+                Stroke="Transparent"
+                Padding="0">
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroupList>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="BackgroundColor" Value="#EBF1FC"/>
+                                        <Setter Property="Stroke" Value="Transparent"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="PointerOver">
+                                    <VisualState.Setters>
+                                        <Setter Property="BackgroundColor" Value="#FEE2E2"/>
+                                        <Setter Property="Stroke" Value="#EF4444"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateGroupList>
+                    </VisualStateManager.VisualStateGroups>
+                    <Button Text="💵 Facturar Cita"
+                    Command="{Binding AccionRapida4Command}"
+                    BackgroundColor="Transparent"
+                    TextColor="#1A3C6E"
+                    FontSize="15" FontAttributes="Bold"
+                    HeightRequest="60"/>
                 </Border>
 
-                <!-- FACTURAS -->
-                <Border Grid.Row="2" Grid.Column="0"
-         Background="#EBF1FC"
-         StrokeShape="RoundRectangle 16"
-         Stroke="Transparent"
-         Padding="20" WidthRequest="540" HeightRequest="190">
-                    <Border.Shadow>
-                        <Shadow Brush="Black" Offset="0,8" Radius="20" Opacity="0.25" />
-                    </Border.Shadow>
-                    <VerticalStackLayout Spacing="12"
-                          HorizontalOptions="Center">
-                        <Label Text="📋"
-                FontSize="36"
-                HorizontalOptions="Center" />
-                        <Label Text="Facturas"
-                FontSize="16"
-                FontAttributes="Bold"
-                FontFamily="Mirano"
-                TextColor="#1A3C6E"
-                HorizontalOptions="Center" />
-                        <Button Text="Gestionar"
-                 Command="{Binding IrAFacturasCommand}"
-                 BackgroundColor="#56CCF2"
-                 TextColor="#405F5D"
-                 CornerRadius="8"
-                 FontSize="13"
-                 HeightRequest="38" />
-                    </VerticalStackLayout>
-                </Border>
-                <!-- AI -->
-                <Border Grid.Row="2" Grid.Column="1"
-         Background="#EBF1FC"
-         StrokeShape="RoundRectangle 16"
-         Stroke="Transparent"
-         Padding="20" WidthRequest="540" HeightRequest="190">
-                    <Border.Shadow>
-                        <Shadow Brush="Black" Offset="0,8" Radius="20" Opacity="0.25" />
-                    </Border.Shadow>
-                    <VerticalStackLayout Spacing="12"
-                          HorizontalOptions="Center">
-                        <Label Text="🤖"
-                FontSize="36"
-                HorizontalOptions="Center" />
-                        <Label Text="Asistente IA"
-                FontSize="16"
-                FontAttributes="Bold"
-                FontFamily="Mirano"
-                TextColor="#1A3C6E"
-                HorizontalOptions="Center" />
-                        <Button Text="Gestionar"
-                 Command="{Binding IrAAsistenteCommand}"
-                 BackgroundColor="#56CCF2"
-                 TextColor="#405F5D"
-                 CornerRadius="8"
-                 FontSize="13"
-                 HeightRequest="38" />
-                    </VerticalStackLayout>
-                </Border>
             </Grid>
-            <Button
-                Text="Cerrar Sesion"
-                Margin="0,60,0,0"
-                WidthRequest="120"
-                HorizontalOptions="Center"
-                BackgroundColor="#FF6F61"
-                TextColor="White"
-                Command="{Binding IrALoginCommand}"
-                >
-                
-            </Button>
-        </VerticalStackLayout>
-    </ScrollView>
+        </Border>
+
+    </Grid>
 </ContentPage>

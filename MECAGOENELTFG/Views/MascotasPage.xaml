@@ -1,133 +1,175 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:MECAGOENELTFG.ViewModels"
+             xmlns:models="clr-namespace:MECAGOENELTFG.Models"
              x:Class="MECAGOENELTFG.Views.MascotasPage"
+             x:DataType="vm:MascotasViewModel"
              Shell.NavBarIsVisible="False"
              BackgroundImageSource="fondo2.png"
-             Title="MascotasPage">
-    
-    <Grid RowDefinitions="Auto,*" Padding="10" Margin="0,80,0,0">
+             Title="{Binding NombreCliente}">
 
-        <!-- Encabezado -->
-        <HorizontalStackLayout Grid.Row="0" 
-                               Spacing="10" 
-                               Margin="0,0,0,10">
-            <Button Text="⬅️ Volver"
+    <Grid RowDefinitions="Auto,Auto,*" Padding="30,20,30,20">
+
+        <!-- Fila superior: Título + Volver -->
+        <Grid Grid.Row="0" ColumnDefinitions="150,*,150" Margin="0,10,0,10">
+            <Label Grid.Column="1"
+                   Text="{Binding NombreCliente}"
+                   FontSize="28"
+                   TextColor="White"
+                   FontFamily="Milano"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" />
+            <Button Grid.Column="2"
+                    Text="← Volver"
                     Command="{Binding VolverCommand}"
-                    BackgroundColor="#9E9E9E"
-                    TextColor="White" />
+                    BackgroundColor="#FF6F61"
+                    TextColor="White"
+                    CornerRadius="10"
+                    HeightRequest="40"
+                    WidthRequest="130"
+                    FontAttributes="Bold"
+                    HorizontalOptions="End"
+                    VerticalOptions="Center" />
+        </Grid>
 
-            <Button Text="➕ Agregar Mascota"
-                    Command="{Binding AgregarMascotaCommand}"
-                    BackgroundColor="#4CAF50"
-                    TextColor="White" />
+        <!-- Barra de acciones -->
+        <Grid Grid.Row="1" ColumnDefinitions="*,Auto" Margin="0,0,0,12">
+            <HorizontalStackLayout Grid.Column="1" Spacing="8">
+                <Button Text="🔄  Refrescar"
+                        Command="{Binding CargarMascotasDelClienteCommand}"
+                        BackgroundColor="#4CAF50"
+                        TextColor="White"
+                        CornerRadius="10"
+                        HeightRequest="40"
+                        FontAttributes="Bold"
+                        Padding="16,0" />
+                <Button Text="➕ Agregar Mascota"
+                        Command="{Binding AgregarMascotaCommand}"
+                        BackgroundColor="#56CCF2"
+                        TextColor="White"
+                        CornerRadius="10"
+                        HeightRequest="40"
+                        FontAttributes="Bold"
+                        Padding="16,0" />
+            </HorizontalStackLayout>
+        </Grid>
 
-            <Button Text="🔄 Refrescar"
-                    Command="{Binding CargarMascotasDelClienteCommand}"
-                    BackgroundColor="#2196F3"
-                    TextColor="White" />
-        </HorizontalStackLayout>
+        <!-- Tabla -->
+        <Border Grid.Row="2"
+                BackgroundColor="White"
+                WidthRequest="800"
+                StrokeShape="RoundRectangle 14"
+                Stroke="#FFFFFF30"
+                Padding="0">
 
-        <!-- Tabla de Mascotas -->
-        <ScrollView Grid.Row="1">
-            <VerticalStackLayout Spacing="0">
+            <Grid RowDefinitions="Auto,*">
 
-                <!-- Encabezado de tabla -->
-                <Grid ColumnDefinitions="40,*,*,*,80,120" 
-                      BackgroundColor="#E0E0E0"
-                      Padding="10,15"
-                      Margin="0,0,0,2">
-                    <Label Grid.Column="0" Text="ID" FontAttributes="Bold" />
-                    <Label Grid.Column="1" Text="Nombre" FontAttributes="Bold" />
-                    <Label Grid.Column="2" Text="Especie" FontAttributes="Bold" />
-                    <Label Grid.Column="3" Text="Raza" FontAttributes="Bold" />
-                    <Label Grid.Column="4" Text="Edad" FontAttributes="Bold" />
-                    <Label Grid.Column="5" Text="Acciones" FontAttributes="Bold" HorizontalOptions="Center" />
+                <!-- Encabezado -->
+                <Grid Grid.Row="0"
+                      ColumnDefinitions="45,*,*,*,60,140"
+                      BackgroundColor="#2EBBB0"
+                      Padding="12,12">
+                    <Label Grid.Column="0" Text="ID"       TextColor="White" FontAttributes="Bold" FontSize="13" FontFamily="Nunito" VerticalOptions="Center"/>
+                    <Label Grid.Column="1" Text="Nombre"   TextColor="White" FontAttributes="Bold" FontSize="13" FontFamily="Nunito" VerticalOptions="Center"/>
+                    <Label Grid.Column="2" Text="Especie"  TextColor="White" FontAttributes="Bold" FontSize="13" FontFamily="Nunito" VerticalOptions="Center"/>
+                    <Label Grid.Column="3" Text="Raza"     TextColor="White" FontAttributes="Bold" FontSize="13" FontFamily="Nunito" VerticalOptions="Center"/>
+                    <Label Grid.Column="4" Text="Edad"     TextColor="White" FontAttributes="Bold" FontSize="13" FontFamily="Nunito" VerticalOptions="Center"/>
+                    <Label Grid.Column="5" Text="Acciones" TextColor="White" FontAttributes="Bold" FontSize="13" FontFamily="Nunito" HorizontalOptions="Center" VerticalOptions="Center"/>
                 </Grid>
 
-                <!-- Filas de datos -->
-                <CollectionView ItemsSource="{Binding Mascotas}">
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
-                            <Grid ColumnDefinitions="40,*,*,*,80,120" 
-                                  BackgroundColor="White"
-                                  Padding="10"
-                                  Margin="0,0,0,1">
+                <!-- Indicador de carga -->
+                <ActivityIndicator Grid.Row="1"
+                                   IsRunning="{Binding IsLoading}"
+                                   IsVisible="{Binding IsLoading}"
+                                   Color="#2EBBB0"
+                                   WidthRequest="50"
+                                   HeightRequest="50"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center" />
 
-                                <Label Grid.Column="0" 
-                                       Text="{Binding IdMascota}" 
-                                       VerticalOptions="Center" />
+                <!-- Filas -->
+                <ScrollView Grid.Row="1">
+                    <CollectionView ItemsSource="{Binding Mascotas}">
 
-                                <Label Grid.Column="1" 
-                                       Text="{Binding NombreMasc}" 
-                                       VerticalOptions="Center"
-                                       FontAttributes="Bold" />
+                        <CollectionView.EmptyView>
+                            <Label Text="Este cliente no tiene mascotas registradas."
+                                   TextColor="Gray"
+                                   FontSize="16"
+                                   HorizontalOptions="Center"
+                                   Margin="0,40,0,0" />
+                        </CollectionView.EmptyView>
 
-                                <Label Grid.Column="2" 
-                                       Text="{Binding Especie}" 
-                                       VerticalOptions="Center" />
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate x:DataType="models:Mascota">
+                                <Grid ColumnDefinitions="45,*,*,*,60,140"
+                                      Padding="12,8"
+                                      BackgroundColor="#F9FFFE">
 
-                                <Label Grid.Column="3" 
-                                       Text="{Binding Raza}" 
-                                       VerticalOptions="Center" />
+                                    <!-- Separador -->
+                                    <BoxView Grid.ColumnSpan="6"
+                                             HeightRequest="1"
+                                             BackgroundColor="#E0F5F3"
+                                             VerticalOptions="End" />
 
-                                <Label Grid.Column="4" 
-                                       Text="{Binding Edad}" 
-                                       VerticalOptions="Center" />
+                                    <Label Grid.Column="0" Text="{Binding IdMascota}"  TextColor="#444" FontSize="14" FontFamily="Nunito" VerticalOptions="Center"/>
+                                    <Label Grid.Column="1" Text="{Binding NombreMasc}" TextColor="#222" FontSize="14" FontFamily="Nunito" VerticalOptions="Center" FontAttributes="Bold"/>
+                                    <Label Grid.Column="2" Text="{Binding Especie}"    TextColor="#444" FontSize="14" FontFamily="Nunito" VerticalOptions="Center"/>
+                                    <Label Grid.Column="3" Text="{Binding Raza}"       TextColor="#555" FontSize="13" FontFamily="Nunito" VerticalOptions="Center"/>
+                                    <Label Grid.Column="4" Text="{Binding Edad}"       TextColor="#444" FontSize="14" FontFamily="Nunito" VerticalOptions="Center"/>
 
-                                <!-- Botones de acción -->
-                                <!--<HorizontalStackLayout Grid.Column="5" 
-                                                       Spacing="5"
-                                                       HorizontalOptions="Center">
+                     
+                                    <HorizontalStackLayout Grid.Column="5"
+                                                           Spacing="6"
+                                                           HorizontalOptions="Center"
+                                                           VerticalOptions="Center">
 
-                                    <Button Text="✏️"
-                                            ToolTipProperties.Text="Editar"
-                                        Command="{Binding Source={RelativeSource AncestorType={x:Type vm:MascotasViewModel}}, Path=EditarMascotaCommand}"
-                                            CommandParameter="{Binding .}"
-                                            BackgroundColor="#2196F3"
-                                            TextColor="White"
-                                            WidthRequest="40"
-                                            HeightRequest="35"
-                                            Padding="0"
-                                            FontSize="16" />
+                                        <!-- Editar -->
+                                        <Button Text="✏️"
+                                                Command="{Binding Source={RelativeSource AncestorType={x:Type vm:MascotasViewModel}}, Path=EditarMascotaCommand}"
+                                                CommandParameter="{Binding .}"
+                                                BackgroundColor="#2196F3"
+                                                TextColor="White"
+                                                CornerRadius="8"
+                                                WidthRequest="36"
+                                                HeightRequest="32"
+                                                Padding="0"
+                                                FontSize="14" />
 
+                                        <!-- Eliminar — typo corregido: MascotaViewModel → MascotasViewModel -->
                                         <Button Text="🗑️"
-                                            ToolTipProperties.Text="Eliminar"
-                                         Command="{Binding Source={RelativeSource AncestorType={x:Type vm:MascotaViewModel}}, Path=EliminarMascotaCommand}"
-                                            CommandParameter="{Binding .}"
-                                            BackgroundColor="#F44336"
-                                            TextColor="White"
-                                            WidthRequest="40"
-                                            HeightRequest="35"
-                                            Padding="0"
-                                            FontSize="16" />
+                                                Command="{Binding Source={RelativeSource AncestorType={x:Type vm:MascotasViewModel}}, Path=EliminarMascotaCommand}"
+                                                CommandParameter="{Binding .}"
+                                                BackgroundColor="#F44336"
+                                                TextColor="White"
+                                                CornerRadius="8"
+                                                WidthRequest="36"
+                                                HeightRequest="32"
+                                                Padding="0"
+                                                FontSize="14" />
+                                        <Button Text="📖"
+                                         Command="{Binding Source={RelativeSource AncestorType={x:Type vm:MascotasViewModel}},Path=IrAHistorialCommand}"
+                                         CommandParameter="{Binding}"
+                                         BackgroundColor="Green"
+                                         TextColor="White"
+                                         Margin="0,0,0,0"
+                                         CornerRadius="8"
+                                         WidthRequest="36"
+                                         HeightRequest="32"
+                                         Padding="0"
+                                         FontSize="14"
+                                         />
 
-                                </HorizontalStackLayout>-->
-                            </Grid>
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
+                                    </HorizontalStackLayout>
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </ScrollView>
 
-                <!-- Mensaje sin datos -->
-                <Label Text="Este cliente no tiene mascotas registradas"
-                       IsVisible="{Binding Mascotas.Count, Converter={StaticResource IsZeroConverter}}"
-                       HorizontalOptions="Center"
-                       VerticalOptions="Center"
-                       Margin="0,50,0,0"
-                       FontSize="18"
-                       TextColor="Gray" />
+            </Grid>
+        </Border>
 
-            </VerticalStackLayout>
-        </ScrollView>
-
-        <!-- Indicador de carga -->
-        <ActivityIndicator Grid.Row="1"
-                          IsRunning="{Binding IsLoading}"
-                          IsVisible="{Binding IsLoading}"
-                          Color="#2196F3"
-                          WidthRequest="50"
-                          HeightRequest="50"
-                          HorizontalOptions="Center"
-                          VerticalOptions="Center" />
     </Grid>
 </ContentPage>

@@ -820,6 +820,7 @@
             <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
+            <inheritdoc/>
         </member>
         <member name="P:MECAGOENELTFG.ViewModels.MascotaFormViewModel.MascotaId">
             <inheritdoc cref="F:MECAGOENELTFG.ViewModels.MascotaFormViewModel.mascotaId"/>
@@ -830,8 +831,11 @@
         <member name="P:MECAGOENELTFG.ViewModels.MascotaFormViewModel.NombreMasc">
             <inheritdoc cref="F:MECAGOENELTFG.ViewModels.MascotaFormViewModel.nombreMasc"/>
         </member>
-        <member name="P:MECAGOENELTFG.ViewModels.MascotaFormViewModel.Especie">
-            <inheritdoc cref="F:MECAGOENELTFG.ViewModels.MascotaFormViewModel.especie"/>
+        <member name="P:MECAGOENELTFG.ViewModels.MascotaFormViewModel.TipoAnimal">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels.MascotaFormViewModel.tipoAnimal"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.MascotaFormViewModel.EspeciePersonalizada">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels.MascotaFormViewModel.especiePersonalizada"/>
         </member>
         <member name="P:MECAGOENELTFG.ViewModels.MascotaFormViewModel.Raza">
             <inheritdoc cref="F:MECAGOENELTFG.ViewModels.MascotaFormViewModel.raza"/>
@@ -857,6 +861,15 @@
         <member name="P:MECAGOENELTFG.ViewModels.MascotaFormViewModel.Notas">
             <inheritdoc cref="F:MECAGOENELTFG.ViewModels.MascotaFormViewModel.notas"/>
         </member>
+        <member name="P:MECAGOENELTFG.ViewModels.MascotaFormViewModel.ClientesDisponibles">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels.MascotaFormViewModel.clientesDisponibles"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.MascotaFormViewModel.ClienteSeleccionado">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels.MascotaFormViewModel.clienteSeleccionado"/>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.MascotaFormViewModel.MostrarSelectorCliente">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels.MascotaFormViewModel.mostrarSelectorCliente"/>
+        </member>
         <member name="P:MECAGOENELTFG.ViewModels.MascotaFormViewModel.TituloFormulario">
             <inheritdoc cref="F:MECAGOENELTFG.ViewModels.MascotaFormViewModel.tituloFormulario"/>
         </member>
@@ -872,8 +885,8 @@
         <member name="P:MECAGOENELTFG.ViewModels.MascotaFormViewModel.HairFieldVisible">
             <inheritdoc cref="F:MECAGOENELTFG.ViewModels.MascotaFormViewModel.hairFieldVisible"/>
         </member>
-        <member name="P:MECAGOENELTFG.ViewModels.MascotaFormViewModel.SpeciesFieldVisible">
-            <inheritdoc cref="F:MECAGOENELTFG.ViewModels.MascotaFormViewModel.speciesFieldVisible"/>
+        <member name="P:MECAGOENELTFG.ViewModels.MascotaFormViewModel.EspecieFieldVisible">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels.MascotaFormViewModel.especieFieldVisible"/>
         </member>
         <member name="M:MECAGOENELTFG.ViewModels.MascotaFormViewModel.OnMascotaIdChanged(System.Int32)">
             <summary>Executes the logic for when <see cref="P:MECAGOENELTFG.ViewModels.MascotaFormViewModel.MascotaId"/> just changed.</summary>
@@ -885,10 +898,15 @@
             <param name="value">The new property value that was set.</param>
             <remarks>This method is invoked right after the value of <see cref="P:MECAGOENELTFG.ViewModels.MascotaFormViewModel.ClienteId"/> is changed.</remarks>
         </member>
-        <member name="M:MECAGOENELTFG.ViewModels.MascotaFormViewModel.OnEspecieChanged(System.String)">
-            <summary>Executes the logic for when <see cref="P:MECAGOENELTFG.ViewModels.MascotaFormViewModel.Especie"/> just changed.</summary>
+        <member name="M:MECAGOENELTFG.ViewModels.MascotaFormViewModel.OnTipoAnimalChanged(System.String)">
+            <summary>Executes the logic for when <see cref="P:MECAGOENELTFG.ViewModels.MascotaFormViewModel.TipoAnimal"/> just changed.</summary>
             <param name="value">The new property value that was set.</param>
-            <remarks>This method is invoked right after the value of <see cref="P:MECAGOENELTFG.ViewModels.MascotaFormViewModel.Especie"/> is changed.</remarks>
+            <remarks>This method is invoked right after the value of <see cref="P:MECAGOENELTFG.ViewModels.MascotaFormViewModel.TipoAnimal"/> is changed.</remarks>
+        </member>
+        <member name="M:MECAGOENELTFG.ViewModels.MascotaFormViewModel.OnClienteSeleccionadoChanged(MECAGOENELTFG.Models.Cliente)">
+            <summary>Executes the logic for when <see cref="P:MECAGOENELTFG.ViewModels.MascotaFormViewModel.ClienteSeleccionado"/> just changed.</summary>
+            <param name="value">The new property value that was set.</param>
+            <remarks>This method is invoked right after the value of <see cref="P:MECAGOENELTFG.ViewModels.MascotaFormViewModel.ClienteSeleccionado"/> is changed.</remarks>
         </member>
         <member name="F:MECAGOENELTFG.ViewModels.MascotaFormViewModel.guardarCommand">
             <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels.MascotaFormViewModel.GuardarCommand"/>.</summary>
@@ -901,6 +919,12 @@
         </member>
         <member name="P:MECAGOENELTFG.ViewModels.MascotaFormViewModel.CancelarCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.MascotaFormViewModel.Cancelar"/>.</summary>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels.MascotaFormViewModel.volverCommand">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels.MascotaFormViewModel.VolverCommand"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.MascotaFormViewModel.VolverCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.MascotaFormViewModel.Volver"/>.</summary>
         </member>
         <member name="T:MECAGOENELTFG.ViewModels.MascotasGeneralPageViewModel">
             <inheritdoc/>
@@ -983,6 +1007,7 @@
             <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
+            <inheritdoc/>
         </member>
         <member name="P:MECAGOENELTFG.ViewModels.MascotasViewModel.Mascotas">
             <inheritdoc cref="F:MECAGOENELTFG.ViewModels.MascotasViewModel.mascotas"/>
@@ -1030,6 +1055,12 @@
         </member>
         <member name="P:MECAGOENELTFG.ViewModels.MascotasViewModel.VolverCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.MascotasViewModel.Volver"/>.</summary>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels.MascotasViewModel.irAHistorialCommand">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels.MascotasViewModel.IrAHistorialCommand"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.MascotasViewModel.IrAHistorialCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.MascotasViewModel.IrAHistorial(MECAGOENELTFG.Models.Mascota)"/>.</summary>
         </member>
         <member name="T:MECAGOENELTFG.ViewModels.MedicamentoFormViewModel">
             <inheritdoc/>
@@ -1248,6 +1279,10 @@
             <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
         </member>
         <member name="P:MECAGOENELTFG.ViewModels.ProfDashBoardModelView.Notificaciones">
             <inheritdoc cref="F:MECAGOENELTFG.ViewModels.ProfDashBoardModelView._notificaciones"/>
@@ -1305,6 +1340,30 @@
         </member>
         <member name="P:MECAGOENELTFG.ViewModels.ProfDashBoardModelView.IrAFacturasCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.ProfDashBoardModelView.IrAFacturas"/>.</summary>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels.ProfDashBoardModelView.accionRapida1Command">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels.ProfDashBoardModelView.AccionRapida1Command"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.ProfDashBoardModelView.AccionRapida1Command">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.ProfDashBoardModelView.AccionRapida1"/>.</summary>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels.ProfDashBoardModelView.accionRapida2Command">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels.ProfDashBoardModelView.AccionRapida2Command"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.ProfDashBoardModelView.AccionRapida2Command">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.ProfDashBoardModelView.AccionRapida2"/>.</summary>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels.ProfDashBoardModelView.accionRapida3Command">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels.ProfDashBoardModelView.AccionRapida3Command"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.ProfDashBoardModelView.AccionRapida3Command">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.ProfDashBoardModelView.AccionRapida3"/>.</summary>
+        </member>
+        <member name="F:MECAGOENELTFG.ViewModels.ProfDashBoardModelView.accionRapida4Command">
+            <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels.ProfDashBoardModelView.AccionRapida4Command"/>.</summary>
+        </member>
+        <member name="P:MECAGOENELTFG.ViewModels.ProfDashBoardModelView.AccionRapida4Command">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.ProfDashBoardModelView.AccionRapida4"/>.</summary>
         </member>
         <member name="T:MECAGOENELTFG.ViewModels.RegistroMascotaFormViewModel">
             <inheritdoc/>
@@ -1618,8 +1677,23 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.MascotaId">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "MascotaId" generated properties.</summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.TipoAnimal">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "TipoAnimal" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.EspeciePersonalizada">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "EspeciePersonalizada" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ClientesDisponibles">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ClientesDisponibles" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.MostrarSelectorCliente">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "MostrarSelectorCliente" generated properties.</summary>
+        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.NombreCliente">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "NombreCliente" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.EspecieFieldVisible">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "EspecieFieldVisible" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Mascotas">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Mascotas" generated properties.</summary>
@@ -1933,8 +2007,23 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.MascotaId">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "MascotaId" generated properties.</summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.TipoAnimal">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "TipoAnimal" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.EspeciePersonalizada">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "EspeciePersonalizada" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ClientesDisponibles">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ClientesDisponibles" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.MostrarSelectorCliente">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "MostrarSelectorCliente" generated properties.</summary>
+        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.NombreCliente">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "NombreCliente" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.EspecieFieldVisible">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "EspecieFieldVisible" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Mascotas">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Mascotas" generated properties.</summary>

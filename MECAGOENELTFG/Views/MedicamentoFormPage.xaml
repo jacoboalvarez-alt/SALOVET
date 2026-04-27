@@ -27,6 +27,7 @@
             <!-- Contenedor blanco -->
             <Border BackgroundColor="White"
                     Stroke="#CCCCCC"
+                    WidthRequest="800"
                     StrokeThickness="1"
                     Padding="20"
                     Margin="0,0,0,30"
@@ -74,6 +75,7 @@
                     TextColor="White"
                     CornerRadius="10"
                     HeightRequest="45"
+                    WidthRequest="800"
                     Margin="0,0,0,20" />
 
         </VerticalStackLayout>

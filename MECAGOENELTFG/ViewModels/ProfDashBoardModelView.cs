@@ -76,7 +76,7 @@ namespace MECAGOENELTFG.ViewModels
         public async Task RefrescarNotificaciones()
             => await CargarNotificacionesAsync();
 
-        // ── Navegación ──────────────────────────────────────────────
+        // ── Navegación
 
         [RelayCommand]
         public async Task IrAClientes()
@@ -105,5 +105,21 @@ namespace MECAGOENELTFG.ViewModels
         [RelayCommand]
         public async Task IrAFacturas()
             => await Shell.Current.GoToAsync("FacturasPage");
+
+        [RelayCommand]
+        public async Task AccionRapida1()
+            => await Shell.Current.GoToAsync("clienteform");
+
+        [RelayCommand]
+        public async Task AccionRapida2()
+            => await Shell.Current.GoToAsync("CitasForm");
+
+        [RelayCommand]
+        public async Task AccionRapida3() 
+            => await Shell.Current.GoToAsync("mascotaform"); 
+
+        [RelayCommand]
+        public async Task AccionRapida4() 
+            => await Shell.Current.GoToAsync("FacturasFormPage");
     }
 }

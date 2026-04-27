@@ -62,10 +62,19 @@ namespace MECAGOENELTFG.Services
             try
             {
                 var response = await _httpClient.PostAsJsonAsync(BaseUrl, mascota);
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    // Verás el error exacto de la API en la consola de depuración
+                    var errorBody = await response.Content.ReadAsStringAsync();
+                    Console.WriteLine($"Error al crear mascota: {(int)response.StatusCode} - {errorBody}");
+                }
+
                 return response.IsSuccessStatusCode;
             }
-            catch
+            catch (Exception ex)
             {
+                Console.WriteLine($"Excepción al crear mascota: {ex.Message}");
                 return false;
             }
         }

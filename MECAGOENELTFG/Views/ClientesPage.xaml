@@ -122,7 +122,7 @@
         </Grid>
 
         <!-- Tabla con borde y sombra -->
-        <Border Grid.Row="4" WidthRequest="1250"
+        <Border Grid.Row="4" WidthRequest="1000"
                 BackgroundColor="White"
                 StrokeShape="RoundRectangle 14"
                 Stroke="#FFFFFF30"

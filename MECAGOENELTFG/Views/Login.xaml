@@ -49,10 +49,35 @@
                            IsVisible="{Binding MensajeError, Converter={x:StaticResource StringToBoolConverter }}" Text="{Binding MensajeError}"/>
 
                     <!--BOTON DE INICIO DE SESION-->
-                    <Button Text="Entrar" Command="{Binding LoginCommand}" BackgroundColor="#2EBBB0" TextColor="White"
-                            FontAttributes="Bold"     CornerRadius="10"  HeightRequest="50" 
-                            IsEnabled="{Binding IsLoading, Converter={x:StaticResource InvertedBoolConverter}}"
-                            />
+                    <!--BOTON DE INICIO DE SESION-->
+                    <Button Text="Entrar"
+        Command="{Binding LoginCommand}" BackgroundColor="#2EBBB0" TextColor="White" FontAttributes="Bold"
+        CornerRadius="10" HeightRequest="50" IsEnabled="{Binding IsLoading, Converter={x:StaticResource InvertedBoolConverter}}">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroupList>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal">
+                                        <VisualState.Setters>
+                                            <Setter Property="BackgroundColor" Value="#2EBBB0"/>
+                                            <Setter Property="TextColor" Value="White"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                    <VisualState x:Name="PointerOver">
+                                        <VisualState.Setters>
+                                            <Setter Property="BackgroundColor" Value="#16A34A"/>
+                                            <Setter Property="TextColor" Value="White"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled">
+                                        <VisualState.Setters>
+                                            <Setter Property="BackgroundColor" Value="#A0C4BF"/>
+                                            <Setter Property="TextColor" Value="#E0E0E0"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateGroupList>
+                        </VisualStateManager.VisualStateGroups>
+                    </Button>
                     <!--LOADING-->
                     <ActivityIndicator IsRunning="{Binding IsLoading}" IsVisible="{Binding IsLoading}" Color="#1A3C6E"  HorizontalOptions="Center" />
                 </VerticalStackLayout>

@@ -13,7 +13,7 @@
         <Grid Grid.Row="0" Padding="16,12" ColumnDefinitions="*, Auto">
             <Button 
                 Grid.Column="0"
-                Text="VOLVER"
+                Text=" ← VOLVER"
                 Command="{Binding VolverCommand}"
                 TextColor="White"
                 FontSize="12"
@@ -23,8 +23,7 @@
                 WidthRequest="140"
                 CornerRadius="12"
                 Margin="0,0,5,0"
-                Padding="12,8"
-                />
+                Padding="12,8" />
             <Button
                 Grid.Column="1"
                 Text="AGREGAR FACTURA"
@@ -42,6 +41,7 @@
             Grid.Row="1"
             Text="FACTURAS"
             FontSize="28"
+            FontFamily="Milano"
             FontAttributes="Bold"
             TextColor="White"
             HorizontalOptions="Center"
@@ -49,7 +49,7 @@
 
         <!-- Lista -->
         <RefreshView
-            Grid.Row="2"
+            Grid.Row="2" Margin="0,0,0,10"
             Command="{Binding RefrescarCommand}"
             IsRefreshing="{Binding IsRefreshing}">
 
@@ -68,18 +68,19 @@
 
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="vml:FacturaItemViewModel">
-                        <Frame
-                            Margin="0,0,0,12"
-                            Padding="16,14"
+
+                        <Border
+                            Margin="0,0,0,0"
+                            WidthRequest="1000"
+                            Padding="19,14"
                             BackgroundColor="#E8E8E8"
-                            BorderColor="Transparent"
-                            CornerRadius="6"
-                            HasShadow="False">
+                            Stroke="Transparent"
+                            StrokeShape="RoundRectangle 20">
 
                             <Grid ColumnDefinitions="*, Auto">
 
                                 <!-- Datos de la cita/factura -->
-                                <StackLayout Grid.Column="0" Spacing="3" VerticalOptions="Center">
+                                <StackLayout Grid.Column="0" Spacing="3" VerticalOptions="Center" >
 
                                     <Label
                                         Text="{Binding NombreMascota}"
@@ -110,11 +111,11 @@
                                         TextColor="#0F6E56"
                                         Margin="0,4,0,0" />
 
-                                    <!-- Badge de estado de pago -->
-                                    <Frame
+                                    <!-- ✅ Frame → Border (badge de estado de pago) -->
+                                    <Border
                                         Padding="8,3"
-                                        CornerRadius="4"
-                                        HasShadow="False"
+                                        StrokeShape="RoundRectangle 4"
+                                        Stroke="Transparent"
                                         HorizontalOptions="Start"
                                         BackgroundColor="{Binding ColorEstadoPago}">
                                         <Label
@@ -122,7 +123,7 @@
                                             FontSize="11"
                                             FontAttributes="Bold"
                                             TextColor="White" />
-                                    </Frame>
+                                    </Border>
 
                                 </StackLayout>
 
@@ -134,11 +135,11 @@
                                     Margin="12,0,0,0">
 
                                     <Button
-                                        Text="CERRAR"
+                                        Text="CERRAR FACTURA"
                                         Command="{Binding Source={RelativeSource AncestorType={x:Type vm:FacturasViewModel}}, Path=CerrarFacturaCommand}"
                                         CommandParameter="{Binding .}"
                                         IsEnabled="{Binding PuedeCerrarse}"
-                                        BackgroundColor="#888888"
+                                        BackgroundColor="#5DDEA2"
                                         TextColor="White"
                                         FontSize="12"
                                         FontAttributes="Bold"
@@ -160,7 +161,8 @@
                                 </StackLayout>
 
                             </Grid>
-                        </Frame>
+                        </Border>
+
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>

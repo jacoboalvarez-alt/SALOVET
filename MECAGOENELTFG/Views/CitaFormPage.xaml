@@ -26,6 +26,9 @@
 
             <!-- Contenedor blanco -->
             <Border BackgroundColor="White"
+                    WidthRequest="730"
+                    MaximumWidthRequest="1000"
+                    MinimumWidthRequest="600"
                     Stroke="#CCCCCC"
                     StrokeThickness="1"
                     Padding="20"
@@ -96,6 +99,9 @@
             <Button Text="Crear Cita"
                     Command="{Binding SolicitarCommand}"
                     BackgroundColor="#56CCF2"
+                    WidthRequest="730"
+                    MaximumWidthRequest="1000"
+                    MinimumWidthRequest="600"
                     TextColor="White"
                     CornerRadius="10"
                     HeightRequest="45"

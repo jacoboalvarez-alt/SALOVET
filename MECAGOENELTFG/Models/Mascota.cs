@@ -26,7 +26,7 @@ namespace MECAGOENELTFG.Models
         [JsonIgnore]  // Esto rompe la referencia circular
         public Cliente? Cliente { get; set; }
 
-
+        public List<object> RegistrosMascota { get; set; } = new();
         public Mascota() { }
 
         public Mascota(int idMascota, int idCliente, string nombreMasc, string especie, string? raza, int? edad, string? sexo, string? color, string? tamano, string? tipoPelo, bool vacunado, string? notas, Cliente? cliente)

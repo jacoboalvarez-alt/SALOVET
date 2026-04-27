@@ -47,6 +47,7 @@
         <Border Grid.Row="2"
                 BackgroundColor="#FFFFFFCC"
                 StrokeShape="RoundRectangle 12"
+                WidthRequest="1000"
                 Stroke="#FFFFFF30"
                 Padding="16,12"
                 Margin="0,0,0,12">
@@ -169,6 +170,7 @@
         <!-- Tabla -->
         <Border Grid.Row="4"
                 BackgroundColor="White"
+                WidthRequest="1000"
                 StrokeShape="RoundRectangle 14"
                 Stroke="#FFFFFF30"
                 Padding="0">
@@ -177,7 +179,7 @@
 
                 <!-- Encabezado -->
                 <Grid Grid.Row="0"
-                      ColumnDefinitions="45,100,130,130,*,120,120"
+                      ColumnDefinitions="45,120,130,130,*,120,120"
                       BackgroundColor="#2EBBB0"
                       Padding="12,12">
                     <Label Grid.Column="0" Text="ID"           TextColor="White" FontAttributes="Bold" FontSize="13" FontFamily="Nunito" VerticalOptions="Center"/>
@@ -204,7 +206,7 @@
                     <CollectionView ItemsSource="{Binding Citas}">
                         <CollectionView.ItemTemplate>
                             <DataTemplate x:DataType="models:Cita">
-                                <Grid ColumnDefinitions="45,100,130,130,*,120,120"
+                                <Grid ColumnDefinitions="45,120,130,130,*,120,120"
                                       Padding="12,8">
                                     <Grid.BackgroundColor>#F9FFFE</Grid.BackgroundColor>
 

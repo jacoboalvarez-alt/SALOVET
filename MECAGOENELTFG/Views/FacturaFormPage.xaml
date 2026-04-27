@@ -29,6 +29,13 @@
         <StackLayout Padding="16" Spacing="0" Margin="0,100,0,0">
 
             <!-- Botón volver -->
+            <Label 
+                Text="CREAR FACTURA"
+                HorizontalOptions="Center"
+                FontSize="40"
+                TextColor="White"
+                FontAttributes="Bold"
+                FontFamily="Milano"/>
             <Button
                 Text="← Cancelar"
                 Command="{Binding VolverCommand}"
@@ -39,6 +46,7 @@
                 HorizontalOptions="Start"
                 Padding="0"
                 Margin="0,0,0,12" />
+            
 
             <!-- ══════════════════════════════
                  BLOQUE 1 — Profesional

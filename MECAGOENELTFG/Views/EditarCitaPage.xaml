@@ -11,7 +11,7 @@
 
             <!-- Botón volver -->
             <Button Text="← Volver"
-                    BackgroundColor="#56CCF2"
+                    BackgroundColor="#FF6F61"
                     Command="{Binding VolverCommand}"
                     HorizontalOptions="End"
                     Margin="0,0,20,20" />
@@ -19,7 +19,7 @@
             <!-- Título -->
             <Label Text="Editar Cita"
                    HorizontalOptions="Center"
-                   FontSize="25"
+                   FontSize="35"
                    FontFamily="Milano"
                    FontAttributes="Bold"
                    TextColor="#1A3C6E"
@@ -29,6 +29,7 @@
             <Border BackgroundColor="White"
                     Stroke="#CCCCCC"
                     StrokeThickness="1"
+                    WidthRequest="700"
                     Padding="20"
                     Margin="0,0,0,30"
                     StrokeShape="RoundRectangle 12">
@@ -94,6 +95,7 @@
             <Button Text="Guardar cambios"
                     Command="{Binding GuardarCommand}"
                     BackgroundColor="#56CCF2"
+                    WidthRequest="700"
                     TextColor="White"
                     CornerRadius="10"
                     HeightRequest="45"

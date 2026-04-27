@@ -18,7 +18,7 @@
 
             <!-- LOGO -->
             <Image Source="salovet_logo1.png"
-                   HeightRequest="240"
+                   HeightRequest="340"
                    Aspect="AspectFit"
                    HorizontalOptions="Center" />
 

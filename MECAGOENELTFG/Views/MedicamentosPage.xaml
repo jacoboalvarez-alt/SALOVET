@@ -57,6 +57,7 @@
                 BackgroundColor="#FFFFFFCC"
                 StrokeShape="RoundRectangle 12"
                 Stroke="#FFFFFF30"
+                WidthRequest="1000"
                 Padding="16,12"
                 Margin="0,0,0,12">
             <Grid ColumnDefinitions="*,*,*,Auto" ColumnSpacing="12">
@@ -134,6 +135,7 @@
         <Border Grid.Row="4"
                 BackgroundColor="White"
                 StrokeShape="RoundRectangle 14"
+                WidthRequest="1000"
                 Stroke="#FFFFFF30"
                 Padding="0">
             <Grid RowDefinitions="Auto,*">
@@ -226,7 +228,7 @@
                                                 CommandParameter="{Binding .}"
                                                 BackgroundColor="#F44336"
                                                 TextColor="White"
-                                                CornerRadius="8"
+                                                CornerRadius="14"
                                                 WidthRequest="36" HeightRequest="32"
                                                 Padding="0" FontSize="18" FontAttributes="Bold"/>
                                         <Button Text="+"
@@ -234,7 +236,7 @@
                                                 CommandParameter="{Binding .}"
                                                 BackgroundColor="#4CAF50"
                                                 TextColor="White"
-                                                CornerRadius="8"
+                                                CornerRadius="14"
                                                 WidthRequest="36" HeightRequest="32"
                                                 Padding="0" FontSize="18" FontAttributes="Bold"/>
                                     </HorizontalStackLayout>
