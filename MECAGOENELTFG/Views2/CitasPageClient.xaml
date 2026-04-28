@@ -242,7 +242,7 @@
                                     Padding="20"
                                     IsVisible="{Binding SinCitasProximas}">
                                 <VerticalStackLayout HorizontalOptions="Center" Spacing="8">
-                                    <Label Text="📅" FontSize="32"/>
+                                    <Label Text="📅" FontSize="32" Margin="50,0"/>
                                     <Label Text="No tienes citas próximas"
                                            FontSize="13"
                                            TextColor="#888780"/>

@@ -16,6 +16,9 @@
         public int? IdProf {  get; set; }
         public Profesional? ProfesionalNav { get; set; }
 
+        //Boleano para 1er inicio de sesion
+        public bool? Primero {  get; set; }
+
         public Usuario(int idUsuario, string username, string? pass, bool profesional,  int? idCliente, Cliente? cliente, int? idProf = null, Profesional? profesionalNav = null)
         {
             IdUsuario = idUsuario;

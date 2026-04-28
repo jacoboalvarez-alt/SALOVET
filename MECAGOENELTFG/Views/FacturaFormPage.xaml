@@ -27,25 +27,27 @@
 
     <ScrollView>
         <StackLayout Padding="16" Spacing="0" Margin="0,100,0,0">
-
+            <Button
+                Text="← Cancelar"
+                Command="{Binding VolverCommand}"
+                BackgroundColor="#FF6F61"
+                TextColor="White"
+                FontSize="14"
+                FontAttributes="Bold"
+                WidthRequest="110"
+                HorizontalOptions="End"
+                Padding="0"
+                Margin="0,0,0,12" />
             <!-- Botón volver -->
             <Label 
                 Text="CREAR FACTURA"
                 HorizontalOptions="Center"
                 FontSize="40"
+                Margin="0,0,0,20"
                 TextColor="White"
                 FontAttributes="Bold"
                 FontFamily="Milano"/>
-            <Button
-                Text="← Cancelar"
-                Command="{Binding VolverCommand}"
-                BackgroundColor="Transparent"
-                TextColor="White"
-                FontSize="14"
-                FontAttributes="Bold"
-                HorizontalOptions="Start"
-                Padding="0"
-                Margin="0,0,0,12" />
+        
             
 
             <!-- ══════════════════════════════
@@ -191,6 +193,98 @@
                         TextColor="#888888"
                         HorizontalOptions="Center"
                         IsVisible="{Binding SinServiciosAgregados}" />
+                </StackLayout>
+            </Border>
+            <!-- ══════════════════════════════
+     BLOQUE 4 — Medicamentos
+     ══════════════════════════════ -->
+            <Border Style="{StaticResource CardFrame}" WidthRequest="800">
+                <StackLayout Spacing="10">
+                    <Label Text="4. Agrega los medicamentos utilizados" Style="{StaticResource LabelSeccion}" />
+
+                    <!-- Picker + botón añadir -->
+                    <Grid ColumnDefinitions="*, Auto" ColumnSpacing="8">
+                        <Picker
+                Grid.Column="0"
+                Title="— Elige un medicamento —"
+                ItemsSource="{Binding Medicamentos}"
+                SelectedItem="{Binding MedicamentoSeleccionado}"
+                ItemDisplayBinding="{Binding ResumenMedicamento}"
+                TextColor="#222222" />
+
+                        <Button
+                Grid.Column="1"
+                Text="+"
+                Command="{Binding AgregarMedicamentoCommand}"
+                IsEnabled="{Binding HayMedicamentoSeleccionado}"
+                BackgroundColor="#0F6E56"
+                TextColor="White"
+                FontSize="22"
+                FontAttributes="Bold"
+                CornerRadius="6"
+                WidthRequest="46"
+                HeightRequest="46"
+                Padding="0" />
+                    </Grid>
+
+                    <!-- Lista de medicamentos añadidos -->
+                    <StackLayout IsVisible="{Binding HayMedicamentosAgregados}" Spacing="0">
+
+                        <BoxView HeightRequest="1" Color="#CCCCCC" Margin="0,6,0,4" />
+
+                        <StackLayout BindableLayout.ItemsSource="{Binding MedicamentosAgregados}" Spacing="0">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate x:DataType="vm:MedicamentoAgregadoViewModel">
+                                    <Grid ColumnDefinitions="*, Auto, Auto, Auto" Padding="0,7" ColumnSpacing="10">
+
+                                        <Label
+                                Grid.Column="0"
+                                Text="{Binding NomMedica}"
+                                FontSize="14"
+                                TextColor="#222222"
+                                VerticalOptions="Center" />
+
+                                        <!-- Stock disponible -->
+                                        <Label
+                                Grid.Column="1"
+                                Text="{Binding StockTexto}"
+                                FontSize="12"
+                                TextColor="#888888"
+                                VerticalOptions="Center" />
+
+                                        <Label
+                                Grid.Column="2"
+                                Text="{Binding Precio, StringFormat='{0:C2}'}"
+                                FontSize="14"
+                                FontAttributes="Bold"
+                                TextColor="#0F6E56"
+                                VerticalOptions="Center" />
+
+                                        <Button
+                                Grid.Column="3"
+                                Text="✕"
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type vm:NuevaFacturaViewModel}}, Path=EliminarMedicamentoCommand}"
+                                CommandParameter="{Binding .}"
+                                BackgroundColor="Transparent"
+                                TextColor="#E53935"
+                                FontSize="14"
+                                Padding="4,0"
+                                HeightRequest="32"
+                                WidthRequest="32" />
+                                    </Grid>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </StackLayout>
+
+                        <BoxView HeightRequest="1" Color="#CCCCCC" Margin="0,4,0,4" />
+                    </StackLayout>
+
+                    <Label
+            Text="Sin medicamentos (opcional)."
+            FontSize="13"
+            TextColor="#888888"
+            HorizontalOptions="Center"
+            IsVisible="{Binding SinMedicamentosAgregados}" />
                 </StackLayout>
             </Border>
 

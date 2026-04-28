@@ -30,7 +30,7 @@
     <AppXManifest Include="C:\Users\jorgeg\Videos\Jacobo\SALOVET\MECAGOENELTFG\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2026-04-27T15:29:02.442</Modified>
+      <Modified>2026-04-28T15:59:21.857</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -44,11 +44,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jorgeg\Videos\Jacobo\SALOVET\MECAGOENELTFG\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\MECAGOENELTFG.dll">
       <PackagePath>MECAGOENELTFG.dll</PackagePath>
-      <Modified>2026-04-27T15:28:53.086</Modified>
+      <Modified>2026-04-28T15:59:13.804</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jorgeg\Videos\Jacobo\SALOVET\MECAGOENELTFG\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>MECAGOENELTFG.exe</PackagePath>
-      <Modified>2026-04-27T15:28:53.544</Modified>
+      <Modified>2026-04-28T15:59:13.992</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jorgeg\Videos\Jacobo\SALOVET\MECAGOENELTFG\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>

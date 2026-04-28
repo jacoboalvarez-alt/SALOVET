@@ -2986,6 +2986,10 @@
           },
           "profesionalNav": {
             "$ref": "#/components/schemas/Profesional"
+          },
+          "primero": {
+            "type": "boolean",
+            "nullable": true
           }
         },
         "additionalProperties": false

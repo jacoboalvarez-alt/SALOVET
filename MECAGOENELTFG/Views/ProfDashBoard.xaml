@@ -16,19 +16,18 @@
         <converters:InverseBoolConverter x:Key="InverseBoolConverter"/>
     </ContentPage.Resources>
 
-    <!-- ✅ Grid raíz: el scroll crece, la barra se queda fija abajo -->
     <Grid RowDefinitions="*, Auto">
 
         <Image Source="salovet_logo1.png"
                Grid.Row="-1"
-       HeightRequest="340"
-       Aspect="AspectFit"
-       HorizontalOptions="Center" />
-        <!-- ── CONTENIDO SCROLLABLE ── -->
+               Margin="20,0,0,0"
+               HeightRequest="340"
+               Aspect="AspectFit"
+               HorizontalOptions="Center" />
+
         <ScrollView Grid.Row="0">
             <VerticalStackLayout Padding="115" Spacing="50">
 
-                <!-- CABECERA -->
                 <Label Text="Panel de Profesionales Veterinarios"
                        FontSize="39"
                        Margin="10"
@@ -42,7 +41,6 @@
                        TextColor="#253324"
                        HorizontalOptions="Center" />
 
-                <!-- NOTIFICACIONES -->
                 <VerticalStackLayout Spacing="8">
 
                     <Grid ColumnDefinitions="*,Auto">
@@ -59,7 +57,13 @@
                                 CornerRadius="20"
                                 BackgroundColor="#56CCF2"
                                 TextColor="White"
-                                Command="{Binding RefrescarNotificacionesCommand}" />
+                                Command="{Binding RefrescarNotificacionesCommand}">
+                            <Button.GestureRecognizers>
+                                <PointerGestureRecognizer
+                                    PointerEntered="OnBtn_PointerEntered"
+                                    PointerExited="OnBtn_PointerExited"/>
+                            </Button.GestureRecognizers>
+                        </Button>
                     </Grid>
 
                     <ActivityIndicator IsRunning="{Binding Cargando}"
@@ -150,7 +154,13 @@
                         <VerticalStackLayout Spacing="12" HorizontalOptions="Center">
                             <Label Text="👤" FontSize="36" HorizontalOptions="Center"/>
                             <Label Text="Clientes" FontSize="16" FontFamily="Mirano" FontAttributes="Bold" TextColor="#1A3C6E" HorizontalOptions="Center"/>
-                            <Button Text="Gestionar" Command="{Binding IrAClientesCommand}" BackgroundColor="#56CCF2" TextColor="#405F5D" CornerRadius="8" FontSize="13" HeightRequest="38"/>
+                            <Button Text="Gestionar" Command="{Binding IrAClientesCommand}" BackgroundColor="#56CCF2" TextColor="#405F5D" CornerRadius="8" FontSize="13" HeightRequest="32">
+                                <Button.GestureRecognizers>
+                                    <PointerGestureRecognizer
+                                        PointerEntered="OnBtn_PointerEntered"
+                                        PointerExited="OnBtn_PointerExited"/>
+                                </Button.GestureRecognizers>
+                            </Button>
                         </VerticalStackLayout>
                     </Border>
 
@@ -163,7 +173,13 @@
                         <VerticalStackLayout Spacing="12" HorizontalOptions="Center">
                             <Label Text="🐾" FontSize="36" HorizontalOptions="Center"/>
                             <Label Text="Mascotas" FontSize="16" FontAttributes="Bold" FontFamily="Mirano" TextColor="#1A3C6E" HorizontalOptions="Center"/>
-                            <Button Text="Gestionar" Command="{Binding IrAMascotasCommand}" BackgroundColor="#56CCF2" TextColor="#405F5D" CornerRadius="8" FontSize="13" HeightRequest="38"/>
+                            <Button Text="Gestionar" Command="{Binding IrAMascotasCommand}" BackgroundColor="#56CCF2" TextColor="#405F5D" CornerRadius="8" FontSize="13" HeightRequest="38">
+                                <Button.GestureRecognizers>
+                                    <PointerGestureRecognizer
+                                        PointerEntered="OnBtn_PointerEntered"
+                                        PointerExited="OnBtn_PointerExited"/>
+                                </Button.GestureRecognizers>
+                            </Button>
                         </VerticalStackLayout>
                     </Border>
 
@@ -176,7 +192,13 @@
                         <VerticalStackLayout Spacing="12" HorizontalOptions="Center">
                             <Label Text="📅" FontSize="36" HorizontalOptions="Center"/>
                             <Label Text="Citas" FontSize="16" FontAttributes="Bold" FontFamily="Mirano" TextColor="#1A3C6E" HorizontalOptions="Center"/>
-                            <Button Text="Gestionar" Command="{Binding IrACitasCommand}" BackgroundColor="#56CCF2" TextColor="#405F5D" CornerRadius="8" FontSize="13" HeightRequest="38"/>
+                            <Button Text="Gestionar" Command="{Binding IrACitasCommand}" BackgroundColor="#56CCF2" TextColor="#405F5D" CornerRadius="8" FontSize="13" HeightRequest="38">
+                                <Button.GestureRecognizers>
+                                    <PointerGestureRecognizer
+                                        PointerEntered="OnBtn_PointerEntered"
+                                        PointerExited="OnBtn_PointerExited"/>
+                                </Button.GestureRecognizers>
+                            </Button>
                         </VerticalStackLayout>
                     </Border>
 
@@ -189,7 +211,13 @@
                         <VerticalStackLayout Spacing="12" HorizontalOptions="Center">
                             <Label Text="💊" FontSize="36" HorizontalOptions="Center"/>
                             <Label Text="Medicamentos" FontSize="16" FontAttributes="Bold" TextColor="#1A3C6E" FontFamily="Mirano" HorizontalOptions="Center"/>
-                            <Button Text="Gestionar" Command="{Binding IrAMedicamentosCommand}" BackgroundColor="#56CCF2" TextColor="#405F5D" CornerRadius="8" FontSize="13" HeightRequest="38"/>
+                            <Button Text="Gestionar" Command="{Binding IrAMedicamentosCommand}" BackgroundColor="#56CCF2" TextColor="#405F5D" CornerRadius="8" FontSize="13" HeightRequest="38">
+                                <Button.GestureRecognizers>
+                                    <PointerGestureRecognizer
+                                        PointerEntered="OnBtn_PointerEntered"
+                                        PointerExited="OnBtn_PointerExited"/>
+                                </Button.GestureRecognizers>
+                            </Button>
                         </VerticalStackLayout>
                     </Border>
 
@@ -202,7 +230,13 @@
                         <VerticalStackLayout Spacing="12" HorizontalOptions="Center">
                             <Label Text="📋" FontSize="36" HorizontalOptions="Center"/>
                             <Label Text="Facturas" FontSize="16" FontAttributes="Bold" FontFamily="Mirano" TextColor="#1A3C6E" HorizontalOptions="Center"/>
-                            <Button Text="Gestionar" Command="{Binding IrAFacturasCommand}" BackgroundColor="#56CCF2" TextColor="#405F5D" CornerRadius="8" FontSize="13" HeightRequest="38"/>
+                            <Button Text="Gestionar" Command="{Binding IrAFacturasCommand}" BackgroundColor="#56CCF2" TextColor="#405F5D" CornerRadius="8" FontSize="13" HeightRequest="38">
+                                <Button.GestureRecognizers>
+                                    <PointerGestureRecognizer
+                                        PointerEntered="OnBtn_PointerEntered"
+                                        PointerExited="OnBtn_PointerExited"/>
+                                </Button.GestureRecognizers>
+                            </Button>
                         </VerticalStackLayout>
                     </Border>
 
@@ -215,31 +249,63 @@
                         <VerticalStackLayout Spacing="12" HorizontalOptions="Center">
                             <Label Text="🤖" FontSize="36" HorizontalOptions="Center"/>
                             <Label Text="Asistente IA" FontSize="16" FontAttributes="Bold" FontFamily="Mirano" TextColor="#1A3C6E" HorizontalOptions="Center"/>
-                            <Button Text="Gestionar" Command="{Binding IrAAsistenteCommand}" BackgroundColor="#56CCF2" TextColor="#405F5D" CornerRadius="8" FontSize="13" HeightRequest="38"/>
+                            <Button Text="Gestionar" Command="{Binding IrAAsistenteCommand}" BackgroundColor="#56CCF2" TextColor="#405F5D" CornerRadius="8" FontSize="13" HeightRequest="38">
+                                <Button.GestureRecognizers>
+                                    <PointerGestureRecognizer
+                                        PointerEntered="OnBtn_PointerEntered"
+                                        PointerExited="OnBtn_PointerExited"/>
+                                </Button.GestureRecognizers>
+                            </Button>
                         </VerticalStackLayout>
                     </Border>
                 </Grid>
 
                 <Button
+                    x:Name="BtnCerrarSesion"
                     Text="Cerrar Sesion"
                     Margin="0,60,0,20"
                     WidthRequest="120"
                     HorizontalOptions="Center"
                     BackgroundColor="#FF6F61"
                     TextColor="White"
-                    Command="{Binding IrALoginCommand}" />
+                    Command="{Binding IrALoginCommand}">
+                    <Button.GestureRecognizers>
+                        <PointerGestureRecognizer
+                            PointerEntered="OnBtn_PointerEntered"
+                            PointerExited="OnBtn_PointerExited"/>
+                    </Button.GestureRecognizers>
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroupList>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="BackgroundColor" Value="#FF6F61"/>
+                                        <Setter Property="TextColor" Value="White"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="PointerOver">
+                                    <VisualState.Setters>
+                                        <Setter Property="BackgroundColor" Value="#C0392B"/>
+                                        <Setter Property="TextColor" Value="White"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateGroupList>
+                    </VisualStateManager.VisualStateGroups>
+                </Button>
 
             </VerticalStackLayout>
         </ScrollView>
 
+        <!-- BARRA RÁPIDA -->
         <Border Grid.Row="1"
-        Margin="40,8,40,16"
-        Padding="12,10"
-        WidthRequest="1230"
-        BackgroundColor="#FFFFFFEE"
-        StrokeShape="RoundRectangle 24"
-        Stroke="#D0D8E8"
-        StrokeThickness="1">
+                Margin="40,8,40,16"
+                Padding="12,10"
+                WidthRequest="1230"
+                BackgroundColor="#FFFFFFEE"
+                StrokeShape="RoundRectangle 24"
+                Stroke="#D0D8E8"
+                StrokeThickness="1">
             <Border.Shadow>
                 <Shadow Brush="Black" Offset="0,4" Radius="16" Opacity="0.12"/>
             </Border.Shadow>
@@ -248,10 +314,10 @@
 
                 <!-- 🟠 Hover Naranja -->
                 <Border Grid.Column="0"
-                BackgroundColor="#EBF1FC"
-                StrokeShape="RoundRectangle 16"
-                Stroke="Transparent"
-                Padding="0">
+                        BackgroundColor="#EBF1FC"
+                        StrokeShape="RoundRectangle 16"
+                        Stroke="Transparent"
+                        Padding="0">
                     <VisualStateManager.VisualStateGroups>
                         <VisualStateGroupList>
                             <VisualStateGroup x:Name="CommonStates">
@@ -271,20 +337,26 @@
                         </VisualStateGroupList>
                     </VisualStateManager.VisualStateGroups>
                     <Button Text="👤 Agregar Cliente"
-                    Command="{Binding AccionRapida1Command}"
-                    BackgroundColor="Transparent"
-                    FontFamily="Mirano"
-                    TextColor="#1A3C6E"
-                    FontSize="15" FontAttributes="Bold"
-                    HeightRequest="60"/>
+                            Command="{Binding AccionRapida1Command}"
+                            BackgroundColor="Transparent"
+                            FontFamily="Mirano"
+                            TextColor="#1A3C6E"
+                            FontSize="15" FontAttributes="Bold"
+                            HeightRequest="60">
+                        <Button.GestureRecognizers>
+                            <PointerGestureRecognizer
+                                PointerEntered="OnBtn_PointerEntered"
+                                PointerExited="OnBtn_PointerExited"/>
+                        </Button.GestureRecognizers>
+                    </Button>
                 </Border>
 
                 <!-- 🟢 Hover Verde -->
                 <Border Grid.Column="1"
-                BackgroundColor="#EBF1FC"
-                StrokeShape="RoundRectangle 16"
-                Stroke="Transparent"
-                Padding="0">
+                        BackgroundColor="#EBF1FC"
+                        StrokeShape="RoundRectangle 16"
+                        Stroke="Transparent"
+                        Padding="0">
                     <VisualStateManager.VisualStateGroups>
                         <VisualStateGroupList>
                             <VisualStateGroup x:Name="CommonStates">
@@ -304,20 +376,26 @@
                         </VisualStateGroupList>
                     </VisualStateManager.VisualStateGroups>
                     <Button Text="🗓️ Dar Cita"
-                    Command="{Binding AccionRapida2Command}"
-                    FontFamily="Mirano"
-                    BackgroundColor="Transparent"
-                    TextColor="#1A3C6E"
-                    FontSize="15" FontAttributes="Bold"
-                    HeightRequest="60"/>
+                            Command="{Binding AccionRapida2Command}"
+                            FontFamily="Mirano"
+                            BackgroundColor="Transparent"
+                            TextColor="#1A3C6E"
+                            FontSize="15" FontAttributes="Bold"
+                            HeightRequest="60">
+                        <Button.GestureRecognizers>
+                            <PointerGestureRecognizer
+                                PointerEntered="OnBtn_PointerEntered"
+                                PointerExited="OnBtn_PointerExited"/>
+                        </Button.GestureRecognizers>
+                    </Button>
                 </Border>
 
                 <!-- 🟡 Hover Amarillo -->
                 <Border Grid.Column="2"
-                BackgroundColor="#EBF1FC"
-                StrokeShape="RoundRectangle 16"
-                Stroke="Transparent"
-                Padding="0">
+                        BackgroundColor="#EBF1FC"
+                        StrokeShape="RoundRectangle 16"
+                        Stroke="Transparent"
+                        Padding="0">
                     <VisualStateManager.VisualStateGroups>
                         <VisualStateGroupList>
                             <VisualStateGroup x:Name="CommonStates">
@@ -337,19 +415,25 @@
                         </VisualStateGroupList>
                     </VisualStateManager.VisualStateGroups>
                     <Button Text="🐾 Agregar Mascota"
-                    Command="{Binding AccionRapida3Command}"
-                    BackgroundColor="Transparent"
-                    TextColor="#1A3C6E"
-                    FontSize="15" FontAttributes="Bold"
-                    HeightRequest="60"/>
+                            Command="{Binding AccionRapida3Command}"
+                            BackgroundColor="Transparent"
+                            TextColor="#1A3C6E"
+                            FontSize="15" FontAttributes="Bold"
+                            HeightRequest="60">
+                        <Button.GestureRecognizers>
+                            <PointerGestureRecognizer
+                                PointerEntered="OnBtn_PointerEntered"
+                                PointerExited="OnBtn_PointerExited"/>
+                        </Button.GestureRecognizers>
+                    </Button>
                 </Border>
 
                 <!-- 🔴 Hover Rojo -->
                 <Border Grid.Column="3"
-                BackgroundColor="#EBF1FC"
-                StrokeShape="RoundRectangle 16"
-                Stroke="Transparent"
-                Padding="0">
+                        BackgroundColor="#EBF1FC"
+                        StrokeShape="RoundRectangle 16"
+                        Stroke="Transparent"
+                        Padding="0">
                     <VisualStateManager.VisualStateGroups>
                         <VisualStateGroupList>
                             <VisualStateGroup x:Name="CommonStates">
@@ -369,11 +453,17 @@
                         </VisualStateGroupList>
                     </VisualStateManager.VisualStateGroups>
                     <Button Text="💵 Facturar Cita"
-                    Command="{Binding AccionRapida4Command}"
-                    BackgroundColor="Transparent"
-                    TextColor="#1A3C6E"
-                    FontSize="15" FontAttributes="Bold"
-                    HeightRequest="60"/>
+                            Command="{Binding AccionRapida4Command}"
+                            BackgroundColor="Transparent"
+                            TextColor="#1A3C6E"
+                            FontSize="15" FontAttributes="Bold"
+                            HeightRequest="60">
+                        <Button.GestureRecognizers>
+                            <PointerGestureRecognizer
+                                PointerEntered="OnBtn_PointerEntered"
+                                PointerExited="OnBtn_PointerExited"/>
+                        </Button.GestureRecognizers>
+                    </Button>
                 </Border>
 
             </Grid>

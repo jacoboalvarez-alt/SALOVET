@@ -46,6 +46,7 @@ namespace SalovetAPI.Data
                 entity.Property(e => e.IdUsuario).HasColumnName("id_usuario");
                 entity.Property(e => e.Username).HasColumnName("username").HasMaxLength(250).IsRequired();
                 entity.Property(e => e.Pass).HasColumnName("pass").HasMaxLength(200);
+                entity.Property(e => e.Primero).HasColumnName("primero");
                 entity.Property(e => e.Profesional).HasColumnName("profesional").IsRequired();
                 entity.Property(e => e.IdCliente).HasColumnName("id_cliente");
 

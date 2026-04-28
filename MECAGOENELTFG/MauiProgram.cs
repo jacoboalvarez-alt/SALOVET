@@ -43,6 +43,7 @@ namespace MECAGOENELTFG
 
             builder.Services.AddTransient<NuevaFacturaViewModel>();  
             builder.Services.AddTransient<FacturaFormPage>();
+            builder.Services.AddSingleton<MedicamentosAPIService>();
 
 #if DEBUG
             builder.Logging.AddDebug();

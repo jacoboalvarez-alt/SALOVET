@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MECAGOENELTFG.Models
 {
-    internal class Usuario
+    public class Usuario
     {
         public int IdUsuario { get; set; }
         public string Username { get; set; } = string.Empty;
@@ -19,6 +19,9 @@ namespace MECAGOENELTFG.Models
         public Cliente? Cliente { get; set; }
 
         public int? IdProf {  get; set; }
+
+        //Primer inicio de sesion
+        public bool Primero { get; set; }
 
         public Usuario(string user, string pass, bool profesional, int? idCliente, Cliente? cliente, int? idProf = null)
         {

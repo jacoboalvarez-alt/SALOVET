@@ -5,7 +5,7 @@ using System.Text.Json;
 
 namespace MECAGOENELTFG.Services
 {
-    internal class MedicamentosAPIService
+    public class MedicamentosAPIService
     {
         private readonly HttpClient _httpClient;
         private const string BaseUrl = "http://localhost:5201/api/medicamentos";

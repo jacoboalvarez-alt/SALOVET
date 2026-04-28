@@ -23,5 +23,7 @@ namespace MECAGOENELTFG.Services
         public static Medicamento? MedicamentoEdicion { get; set; }
 
         public static Cita? CitaEdicion { get; set; }
+
+        public static Usuario? UsuarioActual { get; set; }
     }
 }

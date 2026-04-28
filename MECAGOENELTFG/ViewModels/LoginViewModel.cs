@@ -63,6 +63,7 @@ namespace MECAGOENELTFG.ViewModels
                 else
                 {
                     SessionService.IdClienteActual = (int)usuario.IdCliente;
+                    SessionService.UsuarioActual = usuario;
                     await Shell.Current.GoToAsync("ClientDashBoard");
                     Username = string.Empty;
                     Password = string.Empty;

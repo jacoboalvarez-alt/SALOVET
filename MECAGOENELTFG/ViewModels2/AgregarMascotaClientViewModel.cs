@@ -139,6 +139,13 @@ namespace MECAGOENELTFG.ViewModels2
 
             if (ok)
             {
+                if (SessionService.UsuarioActual != null && !SessionService.UsuarioActual.Primero)
+                {
+                    SessionService.UsuarioActual.Primero = true;
+                    Console.WriteLine($">>> IdUsuario: {SessionService.UsuarioActual?.IdUsuario}, Primero: {SessionService.UsuarioActual?.Primero}");
+                    var usuarioService = new UsuarioService();
+                    await usuarioService.Actualizar(SessionService.UsuarioActual);
+                }
                 await Shell.Current.DisplayAlert("¡Listo!", $"{NombreMascota} ha sido añadido correctamente.", "OK");
                 await Shell.Current.GoToAsync("PerfilPage");
             }

@@ -69,12 +69,14 @@ namespace MECAGOENELTFG.ViewModels
             ProfesionalAPIService profesionalService,
             CitasAPIService citasService,
             ServiciosService serviciosService,
-            FacturasService facturasService)
+            FacturasService facturasService,
+            MedicamentosAPIService medicamentosService)   
         {
             _profesionalService = profesionalService;
             _citasService = citasService;
             _serviciosService = serviciosService;
             _facturasService = facturasService;
+            _medicamentosService = medicamentosService;    
 
             CargarDatosIniciales();
         }
@@ -191,10 +193,90 @@ namespace MECAGOENELTFG.ViewModels
 
         private void RecalcularTotal()
         {
-            MontoTotal = ServiciosAgregados.Sum(s => (decimal)s.Precio);
+            var totalServicios = ServiciosAgregados.Sum(s => (decimal)s.Precio);
+            var totalMedicamentos = MedicamentosAgregados.Sum(m => (decimal)m.Precio);
+
+            MontoTotal = totalServicios + totalMedicamentos;
             HayServiciosAgregados = ServiciosAgregados.Count > 0;
             SinServiciosAgregados = ServiciosAgregados.Count == 0;
             ActualizarPuedeCrear();
+        }
+
+
+        public class MedicamentoPickerItem
+        {
+            public Medicamento Medicamento { get; }
+            // Muestra nombre, gramos y precio — y avisa si no hay stock
+            public string ResumenMedicamento => Medicamento.Stock > 0
+                ? $"{Medicamento.NomMedica} ({Medicamento.Gramos}g)  —  {Medicamento.Precio:C2}  · Stock: {Medicamento.Stock}"
+                : $"{Medicamento.NomMedica}  —  SIN STOCK";
+
+            public MedicamentoPickerItem(Medicamento medicamento) => Medicamento = medicamento;
+        }
+
+        public class MedicamentoAgregadoViewModel
+        {
+            public Medicamento Medicamento { get; }
+            public string NomMedica => Medicamento.NomMedica;
+            public float Precio => Medicamento.Precio;
+            public string StockTexto => $"Stock: {Medicamento.Stock}";
+
+            public MedicamentoAgregadoViewModel(Medicamento medicamento) => Medicamento = medicamento;
+        }
+
+        // ── Picker medicamentos ───────────────────────────────────────────────────────
+
+        private readonly MedicamentosAPIService _medicamentosService;
+
+        [ObservableProperty]
+        private ObservableCollection<MedicamentoPickerItem> _medicamentos = [];
+
+        [ObservableProperty]
+        private MedicamentoPickerItem? _medicamentoSeleccionado;
+
+        [ObservableProperty]
+        private bool _hayMedicamentoSeleccionado;
+
+        partial void OnMedicamentoSeleccionadoChanged(MedicamentoPickerItem? value)
+            => HayMedicamentoSeleccionado = value is not null && value.Medicamento.Stock > 0;
+
+        // ── Lista de medicamentos añadidos ────────────────────────────────────────────
+
+        [ObservableProperty]
+        private ObservableCollection<MedicamentoAgregadoViewModel> _medicamentosAgregados = [];
+
+        [ObservableProperty]
+        private bool _hayMedicamentosAgregados;
+
+        [ObservableProperty]
+        private bool _sinMedicamentosAgregados = true;
+
+        [RelayCommand]
+        private void AgregarMedicamento()
+        {
+            if (MedicamentoSeleccionado is null) return;
+
+            // Evitar duplicados — si ya está en la lista, no lo añade
+            if (MedicamentosAgregados.Any(m => m.Medicamento.IdMedica == MedicamentoSeleccionado.Medicamento.IdMedica))
+            {
+                Shell.Current.DisplayAlert("Aviso", "Este medicamento ya está añadido.", "Aceptar");
+                return;
+            }
+
+            MedicamentosAgregados.Add(new MedicamentoAgregadoViewModel(MedicamentoSeleccionado.Medicamento));
+            RecalcularTotal();
+            HayMedicamentosAgregados = true;
+            SinMedicamentosAgregados = false;
+            MedicamentoSeleccionado = null;
+        }
+
+        [RelayCommand]
+        private void EliminarMedicamento(MedicamentoAgregadoViewModel item)
+        {
+            MedicamentosAgregados.Remove(item);
+            RecalcularTotal();
+            HayMedicamentosAgregados = MedicamentosAgregados.Count > 0;
+            SinMedicamentosAgregados = MedicamentosAgregados.Count == 0;
         }
 
         // ── Validación global ─────────────────────────────────────────────────────
@@ -220,6 +302,11 @@ namespace MECAGOENELTFG.ViewModels
             var servicios = await _serviciosService.ObtenerTodosServicios();
             Servicios = new ObservableCollection<ServicioPickerItem>(
                 servicios.Select(s => new ServicioPickerItem(s)));
+
+            // Solo medicamentos con stock disponible
+            var medicamentos = await _medicamentosService.ObtenerDisponibles();
+            Medicamentos = new ObservableCollection<MedicamentoPickerItem>(
+                medicamentos.Select(m => new MedicamentoPickerItem(m)));
         }
 
         // ── Crear Factura ─────────────────────────────────────────────────────────
@@ -234,26 +321,37 @@ namespace MECAGOENELTFG.ViewModels
                 IdCita = CitaSeleccionada.Cita.IdCita,
                 Monto = MontoTotal,
                 FechaEmision = DateTime.Now,
-                EstadoPago = EstadoPago.PENDIENTE
+                EstadoPago = EstadoPago.PENDIENTE,
+                Cita = null!
             };
 
             bool ok = await _facturasService.CrearFactura(nuevaFactura);
 
             if (ok)
             {
+                // Descontamos stock de cada medicamento añadido
+                foreach (var med in MedicamentosAgregados)
+                {
+                    int nuevoStock = med.Medicamento.Stock - 1;
+                    bool stockOk = await _medicamentosService.ActualizarStock(
+                        med.Medicamento.IdMedica, nuevoStock);
+
+                    if (!stockOk)
+                        Console.WriteLine($"⚠️ No se pudo actualizar stock de {med.NomMedica}");
+                }
+
                 await Shell.Current.DisplayAlert(
                     "Factura creada",
-                    $"Se ha creado la factura por {MontoTotal:C2} correctamente.",
+                    $"Factura creada correctamente por {MontoTotal:C2}.",
                     "Aceptar");
 
-                // Volvemos a la pantalla de facturas
                 await Shell.Current.GoToAsync("..");
             }
             else
             {
                 await Shell.Current.DisplayAlert(
                     "Error",
-                    "No se pudo crear la factura. Comprueba la conexión e inténtalo de nuevo.",
+                    "No se pudo crear la factura. Inténtalo de nuevo.",
                     "Aceptar");
             }
         }

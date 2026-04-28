@@ -20,6 +20,21 @@ public partial class ClientDashBoard : ContentPage
 
     private IDispatcherTimer? _carruselTimer;
 
+    protected override async void OnAppearing()
+    {
+        base.OnAppearing();
+        _carruselTimer?.Start();
+        AsociarID();
+        await CargarCitasAsync();
+        await ComprobarPrimerInicioAsync();  
+    }
+
+    private async Task ComprobarPrimerInicioAsync()
+    {
+        if (SessionService.UsuarioActual != null && !SessionService.UsuarioActual.Primero)
+            await Shell.Current.GoToAsync("AgregarMascotaClient");
+    }
+
     public async void AsociarID()
     {
         client = await _service.ObtenerPorId(id_cliente);
@@ -195,13 +210,6 @@ public partial class ClientDashBoard : ContentPage
         _carruselTimer.Start();
     }
 
-    protected override async void OnAppearing()
-    {
-        base.OnAppearing();
-        _carruselTimer?.Start();
-        AsociarID();
-        await CargarCitasAsync();
-    }
 
     protected override void OnDisappearing()
     {
