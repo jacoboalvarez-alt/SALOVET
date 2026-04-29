@@ -10,7 +10,7 @@
     <Grid RowDefinitions="Auto, Auto, *">
 
         <!-- Header -->
-        <Grid Grid.Row="0" Padding="16,12" ColumnDefinitions="*, Auto">
+        <Grid Grid.Row="0" Padding="16,12" ColumnDefinitions="*,Auto ,Auto">
             <Button 
                 Grid.Column="0"
                 Text=" ← VOLVER"
@@ -24,9 +24,23 @@
                 CornerRadius="12"
                 Margin="0,0,5,0"
                 Padding="12,8" />
-            <Button
+            <Button 
                 Grid.Column="1"
-                Text="AGREGAR FACTURA"
+                Text="🔁 REFRESCAR"
+                TextColor="White"
+                FontSize="12"
+                FontAttributes="Bold"
+                HorizontalOptions="End"
+                WidthRequest="140"
+                CornerRadius="12"
+                Margin="0,0,5,0"
+                Padding="12,8"
+                Command="{Binding RefrescarCommand}"
+                BackgroundColor="#4CAF50"
+                />
+            <Button
+                Grid.Column="2"
+                Text=" ➕ AGREGAR FACTURA"
                 Command="{Binding AgregarFacturaCommand}"
                 BackgroundColor="#1ABCFE"
                 TextColor="White"
@@ -46,6 +60,12 @@
             TextColor="White"
             HorizontalOptions="Center"
             Margin="0,0,0,16" />
+        
+        
+        <BoxView Grid.Row="1"
+         HeightRequest="1" WidthRequest="250"
+         BackgroundColor="#FFFFFF40"
+         Margin="0,35,0,15" />
 
         <!-- Lista -->
         <RefreshView

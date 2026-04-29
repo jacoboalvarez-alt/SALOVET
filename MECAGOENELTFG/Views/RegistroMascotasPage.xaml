@@ -20,7 +20,7 @@
 
             <Button Text="➕ Añadir"
                     Command="{Binding AgregarRegistroCommand}"
-                    BackgroundColor="#56CCF2"
+                    BackgroundColor="#4CAF50"
                     TextColor="White"
                     CornerRadius="10"
                     HeightRequest="40"
@@ -29,7 +29,7 @@
                     HorizontalOptions="End"/>
             <Button
                 Grid.Column="2"
-                Text="Volver"
+                Text="← Volver"
                 FontAttributes="Bold"
                 Command="{Binding VolverCommand}"
                 Margin="10,0,0,0"

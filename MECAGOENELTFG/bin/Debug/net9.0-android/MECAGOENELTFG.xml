@@ -1214,9 +1214,6 @@
         <member name="P:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.ServiciosAgregados">
             <inheritdoc cref="F:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel._serviciosAgregados"/>
         </member>
-        <member name="P:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.MontoTotal">
-            <inheritdoc cref="F:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel._montoTotal"/>
-        </member>
         <member name="P:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.HayServiciosAgregados">
             <inheritdoc cref="F:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel._hayServiciosAgregados"/>
         </member>
@@ -1241,6 +1238,9 @@
         <member name="P:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.SinMedicamentosAgregados">
             <inheritdoc cref="F:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel._sinMedicamentosAgregados"/>
         </member>
+        <member name="P:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.MontoTotal">
+            <inheritdoc cref="F:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel._montoTotal"/>
+        </member>
         <member name="P:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.PuedeCrear">
             <inheritdoc cref="F:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel._puedeCrear"/>
         </member>
@@ -1259,7 +1259,7 @@
             <param name="value">The new property value that was set.</param>
             <remarks>This method is invoked right after the value of <see cref="P:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.ServicioSeleccionado"/> is changed.</remarks>
         </member>
-        <member name="M:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.OnMedicamentoSeleccionadoChanged(MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.MedicamentoPickerItem)">
+        <member name="M:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.OnMedicamentoSeleccionadoChanged(MECAGOENELTFG.ViewModels.MedicamentoPickerItem)">
             <summary>Executes the logic for when <see cref="P:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.MedicamentoSeleccionado"/> just changed.</summary>
             <param name="value">The new property value that was set.</param>
             <remarks>This method is invoked right after the value of <see cref="P:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.MedicamentoSeleccionado"/> is changed.</remarks>
@@ -1292,7 +1292,7 @@
             <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.EliminarMedicamentoCommand"/>.</summary>
         </member>
         <member name="P:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.EliminarMedicamentoCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.EliminarMedicamento(MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.MedicamentoAgregadoViewModel)"/>.</summary>
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.EliminarMedicamento(MECAGOENELTFG.ViewModels.MedicamentoAgregadoViewModel)"/>.</summary>
         </member>
         <member name="F:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.crearFacturaCommand">
             <summary>The backing field for <see cref="P:MECAGOENELTFG.ViewModels.NuevaFacturaViewModel.CrearFacturaCommand"/>.</summary>
@@ -1768,9 +1768,6 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ServiciosAgregados">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ServiciosAgregados" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.MontoTotal">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "MontoTotal" generated properties.</summary>
-        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.HayServiciosAgregados">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "HayServiciosAgregados" generated properties.</summary>
         </member>
@@ -1791,6 +1788,9 @@
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SinMedicamentosAgregados">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SinMedicamentosAgregados" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.MontoTotal">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "MontoTotal" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.PuedeCrear">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "PuedeCrear" generated properties.</summary>
@@ -2113,9 +2113,6 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ServiciosAgregados">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ServiciosAgregados" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.MontoTotal">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "MontoTotal" generated properties.</summary>
-        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.HayServiciosAgregados">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "HayServiciosAgregados" generated properties.</summary>
         </member>
@@ -2136,6 +2133,9 @@
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SinMedicamentosAgregados">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SinMedicamentosAgregados" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.MontoTotal">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "MontoTotal" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.PuedeCrear">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "PuedeCrear" generated properties.</summary>

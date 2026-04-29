@@ -72,7 +72,8 @@
                                        HorizontalOptions="Center"/>
 
                     <Label Text="✅ No tienes citas próximas"
-                           FontSize="13" TextColor="#6c757d"
+                           FontSize="15" TextColor="#F0F0F0"
+                           BackgroundColor="Transparent"
                            HorizontalOptions="Center"
                            IsVisible="{Binding HayNotificaciones, Converter={StaticResource InverseBoolConverter}}"/>
 

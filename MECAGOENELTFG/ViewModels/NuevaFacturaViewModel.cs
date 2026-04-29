@@ -2,15 +2,41 @@
 using CommunityToolkit.Mvvm.Input;
 using MECAGOENELTFG.Models;
 using MECAGOENELTFG.Services;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MECAGOENELTFG.ViewModels
 {
+    // ─── Wrappers Picker ──────────────────────────────────────────────────────────
+
+    public class MedicamentoAgregadoViewModel
+    {
+        public Medicamento Medicamento { get; }
+        public string NomMedica { get; }
+        public float Precio { get; }
+        public string StockTexto { get; }
+
+        public MedicamentoAgregadoViewModel(Medicamento medicamento)
+        {
+            Medicamento = medicamento;
+            NomMedica = medicamento.NomMedica;
+            Precio = medicamento.Precio;
+            StockTexto = $"Stock: {medicamento.Stock}";
+        }
+    }
+
+    public class MedicamentoPickerItem
+    {
+        public Medicamento Medicamento { get; }
+        public string ResumenMedicamento { get; }
+
+        public MedicamentoPickerItem(Medicamento medicamento)
+        {
+            Medicamento = medicamento;
+            ResumenMedicamento = medicamento.Stock > 0
+                ? $"{medicamento.NomMedica} ({medicamento.Gramos}g)  —  {medicamento.Precio:C2}  · Stock: {medicamento.Stock}"
+                : $"{medicamento.NomMedica}  —  SIN STOCK";
+        }
+    }
 
     public class ProfesionalPickerItem
     {
@@ -23,8 +49,6 @@ namespace MECAGOENELTFG.ViewModels
     public class CitaPickerItem
     {
         public Cita Cita { get; }
-
-        // Formato: "Juan García tratamiento a Toby: Fecha 12/04/2025 10:30"
         public string ResumenCita =>
             $"{NombreCliente} tratamiento a {NombreMascota}: Fecha {Cita.FechaHora:dd/MM/yyyy HH:mm}";
 
@@ -45,8 +69,6 @@ namespace MECAGOENELTFG.ViewModels
         public ServicioPickerItem(Servicio servicio) => Servicio = servicio;
     }
 
-    // ─── Item en la lista de servicios añadidos ───────────────────────────────────
-
     public class ServicioAgregadoViewModel
     {
         public Servicio Servicio { get; }
@@ -64,19 +86,20 @@ namespace MECAGOENELTFG.ViewModels
         private readonly CitasAPIService _citasService;
         private readonly ServiciosService _serviciosService;
         private readonly FacturasService _facturasService;
+        private readonly MedicamentosAPIService _medicamentosService;
 
         public NuevaFacturaViewModel(
             ProfesionalAPIService profesionalService,
             CitasAPIService citasService,
             ServiciosService serviciosService,
             FacturasService facturasService,
-            MedicamentosAPIService medicamentosService)   
+            MedicamentosAPIService medicamentosService)
         {
             _profesionalService = profesionalService;
             _citasService = citasService;
             _serviciosService = serviciosService;
             _facturasService = facturasService;
-            _medicamentosService = medicamentosService;    
+            _medicamentosService = medicamentosService;
 
             CargarDatosIniciales();
         }
@@ -91,7 +114,6 @@ namespace MECAGOENELTFG.ViewModels
 
         partial void OnProfesionalSeleccionadoChanged(ProfesionalPickerItem? value)
         {
-            // Limpiamos la selección de cita al cambiar de profesional
             CitaSeleccionada = null;
             Citas.Clear();
             SinCitas = false;
@@ -130,8 +152,6 @@ namespace MECAGOENELTFG.ViewModels
 
             var lista = await _citasService.ObtenerCitasPorProfesional(idProfesional);
 
-            // Solo mostramos citas que no estén canceladas y que no tengan factura aún
-            // Si necesitas filtrar más (p.ej. solo COMPLETADAS), ajusta el Where aquí
             var items = lista
                 .Where(c => c.Estado != EstadoCita.CANCELADA)
                 .Select(c => new CitaPickerItem(c))
@@ -144,7 +164,7 @@ namespace MECAGOENELTFG.ViewModels
             CargandoCitas = false;
         }
 
-        // ── Picker 3: Servicios disponibles ──────────────────────────────────────
+        // ── Picker 3: Servicios ───────────────────────────────────────────────────
 
         [ObservableProperty]
         private ObservableCollection<ServicioPickerItem> _servicios = [];
@@ -158,13 +178,10 @@ namespace MECAGOENELTFG.ViewModels
         partial void OnServicioSeleccionadoChanged(ServicioPickerItem? value)
             => HayServicioSeleccionado = value is not null;
 
-        // ── Lista de servicios añadidos + total ───────────────────────────────────
+        // ── Lista de servicios añadidos ───────────────────────────────────────────
 
         [ObservableProperty]
         private ObservableCollection<ServicioAgregadoViewModel> _serviciosAgregados = [];
-
-        [ObservableProperty]
-        private decimal _montoTotal;
 
         [ObservableProperty]
         private bool _hayServiciosAgregados;
@@ -179,8 +196,6 @@ namespace MECAGOENELTFG.ViewModels
 
             ServiciosAgregados.Add(new ServicioAgregadoViewModel(ServicioSeleccionado.Servicio));
             RecalcularTotal();
-
-            // Resetear picker tras añadir
             ServicioSeleccionado = null;
         }
 
@@ -191,42 +206,7 @@ namespace MECAGOENELTFG.ViewModels
             RecalcularTotal();
         }
 
-        private void RecalcularTotal()
-        {
-            var totalServicios = ServiciosAgregados.Sum(s => (decimal)s.Precio);
-            var totalMedicamentos = MedicamentosAgregados.Sum(m => (decimal)m.Precio);
-
-            MontoTotal = totalServicios + totalMedicamentos;
-            HayServiciosAgregados = ServiciosAgregados.Count > 0;
-            SinServiciosAgregados = ServiciosAgregados.Count == 0;
-            ActualizarPuedeCrear();
-        }
-
-
-        public class MedicamentoPickerItem
-        {
-            public Medicamento Medicamento { get; }
-            // Muestra nombre, gramos y precio — y avisa si no hay stock
-            public string ResumenMedicamento => Medicamento.Stock > 0
-                ? $"{Medicamento.NomMedica} ({Medicamento.Gramos}g)  —  {Medicamento.Precio:C2}  · Stock: {Medicamento.Stock}"
-                : $"{Medicamento.NomMedica}  —  SIN STOCK";
-
-            public MedicamentoPickerItem(Medicamento medicamento) => Medicamento = medicamento;
-        }
-
-        public class MedicamentoAgregadoViewModel
-        {
-            public Medicamento Medicamento { get; }
-            public string NomMedica => Medicamento.NomMedica;
-            public float Precio => Medicamento.Precio;
-            public string StockTexto => $"Stock: {Medicamento.Stock}";
-
-            public MedicamentoAgregadoViewModel(Medicamento medicamento) => Medicamento = medicamento;
-        }
-
-        // ── Picker medicamentos ───────────────────────────────────────────────────────
-
-        private readonly MedicamentosAPIService _medicamentosService;
+        // ── Picker 4: Medicamentos ────────────────────────────────────────────────
 
         [ObservableProperty]
         private ObservableCollection<MedicamentoPickerItem> _medicamentos = [];
@@ -240,7 +220,7 @@ namespace MECAGOENELTFG.ViewModels
         partial void OnMedicamentoSeleccionadoChanged(MedicamentoPickerItem? value)
             => HayMedicamentoSeleccionado = value is not null && value.Medicamento.Stock > 0;
 
-        // ── Lista de medicamentos añadidos ────────────────────────────────────────────
+        // ── Lista de medicamentos añadidos ────────────────────────────────────────
 
         [ObservableProperty]
         private ObservableCollection<MedicamentoAgregadoViewModel> _medicamentosAgregados = [];
@@ -256,7 +236,6 @@ namespace MECAGOENELTFG.ViewModels
         {
             if (MedicamentoSeleccionado is null) return;
 
-            // Evitar duplicados — si ya está en la lista, no lo añade
             if (MedicamentosAgregados.Any(m => m.Medicamento.IdMedica == MedicamentoSeleccionado.Medicamento.IdMedica))
             {
                 Shell.Current.DisplayAlert("Aviso", "Este medicamento ya está añadido.", "Aceptar");
@@ -279,7 +258,23 @@ namespace MECAGOENELTFG.ViewModels
             SinMedicamentosAgregados = MedicamentosAgregados.Count == 0;
         }
 
-        // ── Validación global ─────────────────────────────────────────────────────
+        // ── Total ─────────────────────────────────────────────────────────────────
+
+        [ObservableProperty]
+        private decimal _montoTotal;
+
+        private void RecalcularTotal()
+        {
+            var totalServicios = ServiciosAgregados.Sum(s => (decimal)s.Precio);
+            var totalMedicamentos = MedicamentosAgregados.Sum(m => (decimal)m.Precio);
+
+            MontoTotal = totalServicios + totalMedicamentos;
+            HayServiciosAgregados = ServiciosAgregados.Count > 0;
+            SinServiciosAgregados = ServiciosAgregados.Count == 0;
+            ActualizarPuedeCrear();
+        }
+
+        // ── Validación ────────────────────────────────────────────────────────────
 
         [ObservableProperty]
         private bool _puedeCrear;
@@ -303,7 +298,6 @@ namespace MECAGOENELTFG.ViewModels
             Servicios = new ObservableCollection<ServicioPickerItem>(
                 servicios.Select(s => new ServicioPickerItem(s)));
 
-            // Solo medicamentos con stock disponible
             var medicamentos = await _medicamentosService.ObtenerDisponibles();
             Medicamentos = new ObservableCollection<MedicamentoPickerItem>(
                 medicamentos.Select(m => new MedicamentoPickerItem(m)));
@@ -329,12 +323,11 @@ namespace MECAGOENELTFG.ViewModels
 
             if (ok)
             {
-                // Descontamos stock de cada medicamento añadido
                 foreach (var med in MedicamentosAgregados)
                 {
                     int nuevoStock = med.Medicamento.Stock - 1;
                     bool stockOk = await _medicamentosService.ActualizarStock(
-                        med.Medicamento.IdMedica, nuevoStock);
+                                          med.Medicamento.IdMedica, nuevoStock);
 
                     if (!stockOk)
                         Console.WriteLine($"⚠️ No se pudo actualizar stock de {med.NomMedica}");
@@ -356,8 +349,10 @@ namespace MECAGOENELTFG.ViewModels
             }
         }
 
+        // ── Volver ────────────────────────────────────────────────────────────────
+
         [RelayCommand]
-        public async void Volver() 
+        public async void Volver()
         {
             await Shell.Current.GoToAsync("..");
         }
