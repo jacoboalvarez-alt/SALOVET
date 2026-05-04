@@ -31,6 +31,20 @@ namespace MECAGOENELTFG.Services
                 return false;
             }
         }
+
+        public async Task<bool> Crear(Usuario usuario) 
+        {
+            try
+            {
+                var response = await _httpClient.PostAsJsonAsync(BASEURL, usuario);
+                return response.IsSuccessStatusCode;
+            }
+            catch (Exception ex) 
+            {
+                Console.WriteLine($"Error: {ex} Definicion: {ex.Message}");
+                return false;
+            }
+        }
     }
 }
 

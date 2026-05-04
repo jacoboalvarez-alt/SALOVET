@@ -10,7 +10,7 @@
       {
         "Path": "MECAGOENELTFG\\MECAGOENELTFG.csproj",
         "Action": "Start",
-        "DebugTarget": "Windows Machine"
+        "DebugTarget": "iPhone de Andres"
       }
     ]
   },

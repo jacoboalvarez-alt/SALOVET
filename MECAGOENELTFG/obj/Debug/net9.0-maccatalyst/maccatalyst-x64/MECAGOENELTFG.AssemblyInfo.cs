@@ -14,11 +14,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MECAGOENELTFG")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+fc8d2a4ac4ddc722d81fbcdd6be3ddc9c08dc9c4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+b7230ec4f5d5ae7ac156266e6a597f5d2d3a11c2")]
 [assembly: System.Reflection.AssemblyProductAttribute("MECAGOENELTFG")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MECAGOENELTFG")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
-[assembly: System.Runtime.Versioning.TargetPlatformAttribute("MacCatalyst26.0")]
+[assembly: System.Runtime.Versioning.TargetPlatformAttribute("MacCatalyst26.2")]
 [assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("MacCatalyst15.0")]
 
 // Generado por la clase WriteCodeFragment de MSBuild.

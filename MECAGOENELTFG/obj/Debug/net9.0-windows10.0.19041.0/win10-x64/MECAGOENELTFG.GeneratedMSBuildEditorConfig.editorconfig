@@ -105,6 +105,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = MECAGOENELTFG.Views2.Perfi
 build_metadata.AdditionalFiles.TargetPath = Views2\PerfilPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views2\PerfilPage.xaml
 
+[C:/Users/jorgeg/Videos/Jacobo/SALOVET/MECAGOENELTFG/ViewsAdmin/AdminDashBoard.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MECAGOENELTFG.ViewsAdmin.AdminDashBoard.xaml
+build_metadata.AdditionalFiles.TargetPath = ViewsAdmin\AdminDashBoard.xaml
+build_metadata.AdditionalFiles.RelativePath = ViewsAdmin\AdminDashBoard.xaml
+
 [C:/Users/jorgeg/Videos/Jacobo/SALOVET/MECAGOENELTFG/Views/AsistenteVetProf.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MECAGOENELTFG.Views.AsistenteVetProf.xaml

@@ -82,6 +82,28 @@
                                MaxLength="100" HeightRequest="30" />
                     </VerticalStackLayout>
 
+                    <VerticalStackLayout>
+                        <Label Text="Usuario *"
+                               FontAttributes="Bold"
+                               TextColor="#333"
+                            />
+                        <Entry Text="{Binding Usuario}"
+                               Placeholder="Ingrese nombre de Usuario"
+                               Keyboard="Text"
+                               MaxLength="100" HeightRequest="30"
+                            />
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout >
+                        <Label Text="Contraseña *"
+                               FontAttributes="Bold"
+                               TextColor="#333"/>
+                        <Entry Text="{Binding Pass}"
+                               Placeholder="Ingresa Contraseña"
+                               Keyboard="Password"
+                               MaxLength="100" HeightRequest="30"/>
+                    </VerticalStackLayout>
+
                     <!-- Nota -->
                     <Label Text="* Campos obligatorios"
                            FontSize="12"

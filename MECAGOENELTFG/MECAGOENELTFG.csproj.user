@@ -4,9 +4,32 @@
     <IsFirstTimeProjectOpen>False</IsFirstTimeProjectOpen>
     <ActiveDebugFramework>net9.0-windows10.0.19041.0</ActiveDebugFramework>
     <ActiveDebugProfile>Windows Machine</ActiveDebugProfile>
+    <SelectedPlatformGroup>RemoteDevice</SelectedPlatformGroup>
+    <TargetiOSDevice>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;
+&lt;plist version="1.0"&gt;
+&lt;dict&gt;
+	&lt;key&gt;device&lt;/key&gt;
+	&lt;dict&gt;
+		&lt;key&gt;architecture&lt;/key&gt;
+		&lt;string&gt;ARMv6, ARMv7, ARMv7s, ARM64&lt;/string&gt;
+		&lt;key&gt;model&lt;/key&gt;
+		&lt;string&gt;iPhone12,3&lt;/string&gt;
+		&lt;key&gt;os-version&lt;/key&gt;
+		&lt;string&gt;18.6.2&lt;/string&gt;
+		&lt;key&gt;os&lt;/key&gt;
+		&lt;string&gt;iOS&lt;/string&gt;
+	&lt;/dict&gt;
+&lt;/dict&gt;
+&lt;/plist&gt;
+</TargetiOSDevice>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net9.0-android|AnyCPU'">
     <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(TargetPlatformIdentifier)'=='iOS'">
+    <RuntimeIdentifier>ios-arm64</RuntimeIdentifier>
+    <PlatformTarget>arm64</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
     <None Update="App.xaml">

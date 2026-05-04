@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SalovetAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fc8d2a4ac4ddc722d81fbcdd6be3ddc9c08dc9c4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b7230ec4f5d5ae7ac156266e6a597f5d2d3a11c2")]
 [assembly: System.Reflection.AssemblyProductAttribute("SalovetAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SalovetAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

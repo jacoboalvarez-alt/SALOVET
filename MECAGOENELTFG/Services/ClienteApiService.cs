@@ -57,16 +57,19 @@ namespace MECAGOENELTFG.Services
             }
         }
 
-        public async Task<bool> Crear(Cliente cliente)
+        public async Task<Cliente?> Crear(Cliente cliente)
         {
             try
             {
                 var response = await _httpClient.PostAsJsonAsync(BaseUrl, cliente);
-                return response.IsSuccessStatusCode;
+                if (!response.IsSuccessStatusCode) return null;
+
+                var json = await response.Content.ReadAsStringAsync();
+                return JsonSerializer.Deserialize<Cliente>(json, _jsonOptions);
             }
             catch
             {
-                return false;
+                return null;
             }
         }
 
